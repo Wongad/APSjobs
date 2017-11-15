@@ -1,0 +1,4 @@
+name = APS Jobs Employees
+description = APS Jobs Employees Entity.
+package = APSJobs
+core = 7.x 

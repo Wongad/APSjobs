@@ -1,0 +1,4 @@
+name = APS Jobs Saved Searches
+description = APS Jobs Saved Searches Entity.
+package = APSJobs
+core = 7.x 

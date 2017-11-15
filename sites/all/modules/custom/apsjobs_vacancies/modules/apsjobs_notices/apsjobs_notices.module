@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function apsjobs_notices_cron() {
+  $last_run = variable_get('apsjobs_notices_cron_last_run', time()-24*3600);
+  //$last_run = 0;
+  $list_job_alert = apsjobs_notices_load_job_alerts();
+  $list_job_candidate = apsjobs_notices_load_job_candidate($last_run);
+
+  variable_set('apsjobs_notices_cron_last_run', time());
+
+  $list_job_per_user = array();
+
+  foreach ($list_job_candidate as $job_candidate) {
+    foreach ($list_job_alert as $job_alert) {
+      if (apsjobs_notices_check_condition($job_candidate, $job_alert)) {
+        $list_job_per_user[$job_alert->uid][] = $job_candidate;
+      }
+    }
+  }
+
+  foreach ($list_job_per_user as $uid => $jobs) {
+    if (!empty($jobs)) {
+      apsjobs_notices_send_mail($uid, $jobs);
+    }
+  }
+}
+
+function apsjobs_notices_load_job_alerts() {
+  return db_select('aps_job_alerts')
+    ->fields('aps_job_alerts')
+    ->execute()
+    ->fetchAll();
+}
+
+function apsjobs_notices_load_job_candidate($time) {
+  $query = new EntityFieldQuery();
+  $entity_type = 'node';
+  $bundle = 'aps_jobs';
+  $ids = $query->entityCondition('entity_type', $entity_type)
+    ->entityCondition('bundle', $bundle)
+    ->propertyCondition('created', $time, '>=')
+    ->execute();
+  if (empty($ids)) return $ids;
+  return entity_load('node', array_keys($ids[$entity_type]));
+}
+
+
+function apsjobs_notices_check_condition($job_candidate, $job_alert) {
+  $condition = drupal_json_decode($job_alert->data);
+  return apsjobs_notices_check_key_word($job_candidate, $condition['key_word'])
+    && apsjobs_notices_check_key_location($job_candidate, $condition['key_location'])
+    && apsjobs_notices_check_key_salary($job_candidate, $condition['key_salary_from'], $condition['key_salary_to']);
+}
+
+function apsjobs_notices_check_key_word($job_candidate, $key_word) {
+  return TRUE;
+}
+
+function apsjobs_notices_check_key_location($job_candidate, $key_location) {
+  return TRUE;
+}
+
+function apsjobs_notices_check_key_salary($job_candidate, $key_salary_from, $key_salary_to) {
+  return TRUE;
+}
+
+function apsjobs_notices_send_mail($uid, $jobs) {
+  $user = user_load($uid);
+  $mail = $user->mail;
+  $message = apsjobs_notices_prepare_message($jobs);
+  $key = 'apsjobs_notices';
+  $params = array(
+    'subject' => t('GOV APS Notices'),
+    'body' => check_markup(
+      $message,
+      'full_html'
+    ),
+  );
+  drupal_mail('apsjobs_notices', $key, $mail, language_default(), $params);
+  watchdog('apsjobs_notices', 'Send notices to ' . $mail);
+}
+
+function apsjobs_notices_prepare_message($jobs) {
+  $msg = '<h3>Jobs meet your condition</h3><ul>';
+  global $base_url;
+  foreach ($jobs as $job) {
+    $msg .= '<li><a href="'.  $base_url . '/node/' . $job->nid . '">' . $job->title . '</a></li>' ;
+  }
+  $msg .= '</ul>';
+  return $msg;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function apsjobs_notices_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'apsjobs_notices':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}

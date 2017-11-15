@@ -1,0 +1,5235 @@
+// ====================
+// Block list: block-system, block-block, block-views, block-[name of modules], ....
+// ---
+.block{
+	@at-root{
+		// Block menu
+		// Block highligh
+		// ...
+	}
+}
+
+// ====================
+// Panel List: panel-pane, panel-[field], panel-[class], ...
+// ---
+.panel-pane{
+    margin:{
+        @include sizeRem(top, 15);
+        @include sizeRem(bottom, 15);
+    }
+	@at-root{
+		// Panel a
+		// Panel b
+		// ...
+	}
+}
+
+// Block Banner
+// .panel-tt-bootstrap-landing-banner,
+
+/*..............Css Tren IE...................*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    selector { property:value; }
+    .tt-bootstrap-banner .container-fluid{
+    	@include sizeRem(height, 1);
+    }
+}
+
+/*..............Css Tren IE...................*/
+.view-project-gift{
+    &:not(.view-project-news){
+    	.view-inner{
+		    -webkit-box-flex: 1;
+		    -webkit-flex: 1 1 auto;
+		    -ms-flex: 1 1 auto;
+		    flex: 1 1 auto;
+    	}
+    	.views-row{
+			position: relative;
+    	}
+    }
+}
+
+/*.................search..............*/
+
+/*...new.........*/
+// cach 2 4filed={
+	//view-row{
+	// 	position:relative;
+	//min-height:285px;
+	// }
+	//view-image{
+	// 	position:absolute;
+	// 	right:0;
+	// 	top:0;
+	//height:100%;
+	// field-content{
+	// 	height:100%;
+	// }
+	// a{
+	// 	display: flex;
+	// 	height:100%;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// }
+	// }
+
+//}
+.view-abs-job-new-list{
+	background: #eee;
+	overflow: hidden;
+	.views-row{
+		&:first-child{
+			.views-field-title{
+				@include sizeRem(max-width, 250);
+			}
+		}
+		@include display-flex;
+		background: $white-color;
+		&:nth-child(2n+1){
+			.views-field-field-image{
+				order:2;
+				width: 50%;
+			}
+			.view-aps-job-list-inner{
+				width: 50%;
+				@include justify-content(flex-end);
+				background: $blue-color2;
+				margin-bottom: -1px;
+				//max-height: 387px;
+				&:before{
+					right: -5%;
+					left: auto;
+					background: $blue-color2;
+				}
+			}
+			.group-aps-job-inner{
+		    	// @include sizeRem(max-width, 540);
+		    	@include sizeRem(padding, 40,2,0);
+		    }
+		}
+		.hover,&:hover{
+			a,.field-content{
+				img{
+					@include scale(1.2);
+				}
+			}
+			.views-field-title,.views-field-name{
+				a,span{
+					border-bottom:2px solid rgba(204,204,204, .8);
+				}
+			}
+		}
+	}
+	.views-field-title,.views-field-name{
+		font-style: initial;
+		letter-spacing: 0.15px;
+		color: $white-color;
+		@include sizeRem(font-size, 28);
+		@include sizeRem(margin-bottom, 25);
+		@include sizeRem(max-width, 325);
+		text-transform: inherit;
+	}
+	.views-field-body{
+		color: $white-color;
+		line-height: 20px;
+		@include sizeRem(font-size, 14);
+		@include wp-font(font-body);
+		@include sizeRem(max-width, 467);
+	}
+	
+	.views-field-name{
+		width: 50%;
+	}
+
+	.views-field-field-image{
+		width: 61%;
+		overflow: hidden;
+		margin-bottom: 0;
+		cursor: pointer;
+		a,.field-content{
+			display: block;
+			width:100%;
+			height:100%;
+			@include transition(all .8s ease-out);
+			img{
+				@include transition(all .8s ease-out);
+			}
+			&:hover,&:focus{
+				img{
+					@include scale(1.2);
+				}
+			}
+		}
+        &:hover{
+			+ .view-aps-job-list-inner{
+				.views-field-title,.views-field-name{
+					a,span{
+						border-bottom:2px solid rgba(204,204,204, .8);
+					}
+				}
+			}
+		}
+	}
+	
+    .view-aps-job-list-inner{
+    	position: relative;
+    	width: 39%;
+    	@include display-flex;
+    	@include flex-wrap(wrap);
+    	@include justify-content(flex-start);
+    	@include sizeRem(padding, 20, 1);
+		background: #2b2b2b;
+		z-index: 1;
+		&:before{
+	    	content: "";
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    background:  #2b2b2b;
+		    position: absolute;
+		    top: 0;
+		    left: -6%;
+		    @include skewX(-8deg);
+		    z-index: -1;
+	    }
+    }
+
+    .group-aps-job-inner{
+    	@include sizeRem(max-width, 540);
+    	//@include sizeRem(padding, 100,2,0);
+    	@include sizeRem(padding-left, 45);
+    	text-align: left;
+        @include display-flex;
+        @include flex-wrap(wrap);
+        @include align-self(center);
+    }
+    @media(max-width: 1440px){
+        .views-row:nth-child(2n+1) .group-aps-job-inner{
+        	//padding: 0;
+        	max-height: 387px;
+        }
+        .view-abs-job-new-list .views-row:nth-child(2n+1) .view-aps-job-list-inner{
+        	max-height: 387px;
+        }
+        .group-aps-job-inner{
+       	    //padding:0;
+        }
+    }
+}
+
+
+/*................suz................*/
+
+.aps-left-block{
+	@include display-flex;
+	@include flex-wrap(wrap);
+	.locations,.govemment,.job-vacancies{
+		position: relative;
+		//@include ico-font;
+		@include display-flex;
+		@include justify-content(center);
+		@include align-items(flex-end);
+		@include sizeRem(min-height, 80);
+		@include sizeRem(padding-bottom, 5);
+		color: #f5f5f5;
+		.views-field-title{
+			@include sizeRem(font-size, 20 ,$important: true);
+		}
+	}
+	.owl-carousel {
+		//display: none !important;
+	}
+	.info{
+		position: relative;
+		@include sizeRem(min-height, 144);
+		@include  bg-icon;
+		@include flex-wrap(wrap);
+	}
+	.locations{
+		@include flex-width-col-xs(100%);
+		@include sizeRem(margin-bottom, 15);
+		@include sizeRem(padding-bottom, 18);
+		.views-field-number{
+			top: 25px;
+		}
+	}
+	.govemment{
+		@include flex-width-col-xs(50%);
+       &:before{
+			background: url('../images/icon/agency.svg') 0 0 no-repeat;
+			background-position: center;
+			height: 152px;
+    		width: 80.6px;
+    		background-size: 80.6px 152px;
+		}
+	}
+	.job-vacancies{
+        @include flex-width-col-xs(50%);
+        .views-field-number{
+        	max-width: 120px;
+        	margin: 0 auto;
+        	@include sizeRem(padding-right, 15);
+        }
+       &:before{
+			background: url('../images/icon/mafy-glass.svg') 0 0 no-repeat;
+			background-position: center;
+			height: 131px;
+    		width: 131px;
+    		background-size: 131px 131px;
+    		margin-top: 10px;
+		}
+	}
+	.views-field-title{
+		@include sizeRem(padding-bottom, 10, $important: true);
+		margin-bottom: 0 !important;
+		text-align: center;
+		width: 100%;
+		a{
+			color: $white-color;
+		}
+	}
+	.views-field-number{
+		text-align: center;
+		width: 100%;
+		position: relative;
+		top: 30px;
+		span{
+			max-width: 160px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: normal;
+			display: inline-block;
+		}
+	}
+}
+@media (min-width: 1400px){
+	.aps-left-block .govemment{
+		padding-left: 0;
+		&:before{
+			background: url('../images/icon/agency.svg') 0 0 no-repeat;
+			// left: auto;
+			// right: -15px;
+			background-position: center;
+		}
+	}
+}
+
+.view-abs-job-list{
+	.views-row{
+		position: relative;
+		display: none;
+		&.tablet-show{
+			display: none;
+		}
+		&.mobile-show{
+			display: none;
+		}
+		&.desktop-show{
+			display: block;
+		}
+		&:focus,&:hover{
+			.views-field-name a{
+				background-color: $hover-color;
+	            border-color: $hover-color;
+			}
+			.views-field-field-image{
+				cursor: pointer;
+				// &:before{
+				// 	@include opacity(0);
+				// }
+				img{
+					@include scale(1.2);
+				}
+			}
+		}
+	}
+	.views-field-field-image{
+		overflow: hidden;
+		margin-bottom: 0;
+		@include border-radius(4px);
+		@include sizeRem(min-height, 237);
+		img{
+			@include transition(all .8s ease-out);
+		}
+		.field-content{
+			
+		}
+	}
+	.views-field-name{
+       position: absolute;
+       bottom: 0;
+       width: 100%;
+       margin-bottom: 0;
+       z-index: 10;
+	}
+	.views-field-name a{
+		@include btn;
+	    @include sizeRem(font-size, 16);
+	    @include border-radius(4px);
+	    @include border-top-left-radius(0);
+		@include border-top-right-radius(0);
+	    text-align: center;
+	    @include sizeRem(padding, 10,1);
+	    @include sizeRem(height, 54);
+	    color: $title-color;
+	    @include wp-font(font-title-med);
+	    @include display-flex;
+	    @include align-items(center);
+	    @include justify-content(center);
+	    line-height: 1.11;
+	   
+	    &:hover, &:focus{
+	        background-color: $hover-color;
+	        border-color: $hover-color;
+	        color: $title-color;
+	    }
+	}
+}
+
+.view-abs-job-relation{
+	.views-field-field-image{
+	    margin-bottom: 0;
+	}
+	.views-row{
+     	@include display-flex;
+     	//background: $white-color;
+     	//@include justify-content(center);
+     	//@include border-radius(4px);
+     	//@include sizeRem(padding-right, 20);
+    }
+   	@media (min-width: $desktop){
+   		.views-row{
+	     	@include display-flex;
+	     	background: $white-color;
+	     	@include justify-content(center);
+	     	@include align-items(center);
+	     	@include border-radius(4px);
+	     	@include sizeRem(padding-right, 20);
+	    }
+	    .views-field-body{
+	    	@include sizeRem(padding-right, 30);
+	    }
+	    .views-field-field-image{
+	    	position: relative;
+	    	overflow: hidden;
+	    	@include sizeRem(min-width, 366);
+	    	@include sizeRem(min-height, 269);
+			@include border-top-left-radius(4px);
+			@include border-bottom-left-radius(4px);
+			img{
+				position: absolute;
+				max-width: inherit;
+				width: auto;
+				height: auto;
+				-webkit-transform: translate3d(0, 0, 0);
+			    transform: translate3d(0, 0, 0);
+			    -webkit-transform: translate(-20%, -12%);
+			    transform: translate(-20%, -12%);
+			}
+	    }
+   	}
+}
+.group-abs-job-relation{
+	@media (max-width: $desktop - 1){
+	}
+	//@include flex-width-col-xs(40%);
+	@include sizeRem(padding-left, 30);
+}
+.view-abs-job-agency{
+	.views-field-field-image img{
+    	@include transition(all .8s ease-out);
+    }
+    .views-row{
+    	padding:0 20px 20px;
+    	background: $white-color;
+    	@include border-radius(4px);
+    	&:hover, &:focus{
+	        border-color: #dddddd;
+	        @include box-shadow(0 0 1px 2px rgba($border-color-un-title,0.2));
+	        .views-field-field-image {
+	        	cursor: pointer;
+	        	img{
+					@include scale(1.2);
+				}
+	        }
+	    }
+    }
+    .views-field-field-image{
+    	overflow: hidden;
+    	margin-left: -20px;
+    	margin-right: -20px;
+    	min-height: 246px;
+    	img{
+    		//width: 100%;
+    	}
+    }
+    .views-field-body p:last-child{
+    	//text-align: center;
+    }
+}
+.view-abs-job-future{
+	.views-field{
+		margin-bottom: 0;
+	}
+   .views-field-body{
+		@include sizeRem(font-size, 14);
+		@include wp-font(font-body);
+		color: $white-color;
+		p{
+           margin-bottom: 0;
+		}
+	}
+	.views-field-title{
+		@include sizeRem(font-size, 28);
+		@include wp-font(font-title);
+		@include sizeRem(margin-bottom, 15);
+		a{
+			color: $white-color;
+		}
+	}
+	@media (min-width: $desktop){
+		.views-field-field-image img{
+			height: 363px;
+		}
+	}
+}
+#views-inner-future{
+    position:absolute;
+	top:50%;
+	left:50%;
+	z-index:22;
+	text-align:left;
+	@include translate(-50%,-50%);
+	color:$white-color;
+	@include sizeRem(font-size, 30);
+	@include wp-font(font-body);
+	@include container;
+	.field-content{
+		@include sizeRem(max-width, 465);	
+	}
+}
+
+/*...............view-search................*/
+.not-front{
+	background:#f6f6f6;
+}
+.views-field-created{
+	text-align: right;
+	color: #606060;
+	@include sizeRem(margin-bottom, 15);
+	@include sizeRem(font-size, 16);
+	@include wp-font(font-title-med);
+}
+.group-info{
+	background: $white-color;
+	@include sizeRem(padding, 20);
+	margin-bottom: 20px;
+	@include border-radius(4px);
+	@include display-flex;
+	@include justify-content(space-around);
+	> *{
+		@include flex-width-col-xs(50%);
+	}
+}
+.group-first{
+	text-align: left;
+	@include flex-width-col-xs(70%);
+	@include sizeRem(padding-right, 15);
+}
+.group-second{
+	text-align: right;
+	@include flex-width-col-xs(30%);
+	@include sizeRem(padding-left, 15);
+	.views-field{
+		color: $place-color;
+		@include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16);
+	}
+}
+.group-top{
+	@include justify-content(space-between);
+	@include flex-width-col-xs(100%);
+	@include display-flex;
+}
+.view-aps-job-search-list{
+	.views-field-created{
+		@include sizeRem(padding-right, 37);
+	}
+	.view-row{
+		@include sizeRem(margin-bottom, 30);
+	}
+	.views-field-field-location-raw{
+		color: $place-color ;
+	    @include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16);  
+	    @include sizeRem(margin-bottom, 23);  
+	}
+	.views-field-field-closing-date{
+		color: $place-color ;
+	    @include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16); 
+	}
+	.views-field-field-agency{
+		color: $title-color ;
+	    @include wp-font(font-title-med);
+	    @include sizeRem(font-size, 20);  
+	    a{
+	    	color: $title-color ;
+	    }  
+	}
+	.views-field-title{
+		color:$blue-color;
+	    a{
+	    	color:$blue-color1;
+	    	text-decoration: underline;
+	    	&:hover{
+	    		color: $title-color;
+	    	}
+	    }
+	}
+	.views-field-field-job-category{
+        color: $place-color;
+		@include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16);
+	}
+	.group-info{
+		@include sizeRem(padding, 40);
+		@include sizeRem(padding-top, 35);
+		@include justify-content(inherit);
+		@include flex-wrap(wrap);
+	}
+}
+
+.view-aps-job-icon{
+	.views-field-title{
+		color: $blue-color1;
+		@include sizeRem(font-size, 28);
+		@include sizeRem(margin-bottom, 20);
+	}
+	.views-field-body{
+		@include sizeRem(padding, 0 , 2, 23);
+	}
+	.views-field-field-image{
+		position: relative;
+		@include sizeRem(min-height, 120);
+		@include sizeRem(margin-bottom, 25);
+		@include  bg-icon;
+		&:before{
+			background: url('../images/icon/target.svg') 0 0 no-repeat;
+			width: 115px;
+			height: 115px;
+			background-size: 115px 115px;
+			display: block;
+			background-position: center;
+		}
+		img{
+			display: none;
+		}
+	}
+	.views-row{
+		text-align: center;
+		&:nth-child(2){
+			.views-field-field-image{
+				&:before{
+					background: url('../images/icon/balance.svg') 0 0 no-repeat;
+					background-position: center;
+				}
+			}
+		}
+		&:nth-child(3){
+			.views-field-field-image{
+				&:before{
+					background: url('../images/icon/light-bulb.svg') 0 0 no-repeat;
+					background-position: center;
+				}
+			}
+		}
+		&:last-child{
+			.views-field-field-image{
+				&:before{
+					background: url('../images/icon/medal.svg') 0 0 no-repeat;
+					background-position: center;
+				}
+			}
+		}
+	}
+}
+/*..........gazettes-detail.............*/
+.view-aps-gazettes-detail{
+	.views-row{
+		background-color:$white-color;
+		@include sizeRem(padding, 35, 4, 40, 30, 40);
+		@include sizeRem(margin-top, 15);
+	}
+	.views-field-title{
+		color:$blue-color;
+	    //margin-bottom: 0;
+	    a{
+	    	color:$blue-color1;
+	    	text-decoration: underline;
+	    	&:hover{
+	    		color: $title-color;
+	    	}
+	    }
+	}
+	.views-field-field-address{
+        color: $place-color;
+		@include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16);
+	}
+	.views-field-created{
+		@include sizeRem(font-size, 14);
+		text-align: left;
+	}
+	.views-field-body{
+		a{
+			color: $title-color;
+		}
+	}
+}
+/*.....................user-admin.......................*/
+.view-aps-user-admin{
+	background: $white-color;
+	@include sizeRem(margin-bottom, 20);
+	@include sizeRem(padding, 40, 1);
+	@include border-radius(4px);
+	
+	legend{
+		@extend .h2;
+		@include wp-font(font-title-med);
+		@include sizeRem(margin-bottom, 32);
+        border-bottom: transparent;
+	}
+	.views-field {
+		a{
+			@include button-btn;
+			background-color: transparent;
+			@include sizeRem(margin-left, 12);
+			@include sizeRem(padding, 12, 2, 15);
+			@include sizeRem(min-width, 176);
+			border: 1.5px solid $blue-color;
+			@include sizeRem(font-size, 16);
+			text-align: center;
+		}
+		span{
+			display: block;
+			@include sizeRem(font-size, 20);
+			@include wp-font(font-medium);
+			&:last-child{
+				@include sizeRem(font-size, 21);
+				@include wp-font(font-body);
+			}
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.btn-group {
+		.views-field{
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		text-align: right;
+	}
+	.views-row{
+        @include display-flex;
+		@include justify-content(space-between);
+		> *{
+			@include flex-width-col-xs(50%);
+		}
+	}
+}
+
+.view-aps-govcms-email-alerts {
+	h2{
+		@include sizeRem(font-size, 28);
+		@include wp-font(font-title-med);
+		background: transparent;
+		padding: 0;
+		text-align: left;
+		width: auto;
+		margin: 0;
+		color: $title-color;
+		@include sizeRem(margin-bottom, 15);
+	}
+	a.btn-a{
+		position: absolute;
+		right: 0;
+		top: -50px;
+		@include button-btn;
+		background-color: transparent;
+		&.active{
+			background: $blue-color;
+		}
+	}
+	a.views-more {
+		position: static;
+		background: transparent;
+		padding: 0;
+		border: none;
+		&:hover,&:focus{
+			background: transparent;
+		}
+	}
+	.group-info{
+		display: initial;
+		padding: 0;
+		> *{
+			@include flex-width-col-xs(initial);
+		}
+	}
+	.views-field-type {
+		color:  #606060;
+		@include sizeRem(font-size, 16);
+		@include wp-font(font-title-med);
+	}
+
+	.views-field {
+		a{
+			@include button-btn;
+			background-color: transparent;
+			@include sizeRem(margin-left, 12);
+			@include sizeRem(padding, 12, 2, 15);
+			border: 1.5px solid $blue-color;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.btn-group,.views-field-nothing {
+		.views-field{
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		text-align: right;
+		a{
+			@include button-btn;
+			background-color: transparent;
+			&.active{
+				background: $blue-color;
+			}
+		}//move
+	}
+	.views-row{
+		a{
+			position: static;
+			@include sizeRem(margin-left, 12);
+			@include sizeRem(font-size, 12);
+			&.active{
+				background: $blue-color;
+				border-color: $blue-color;
+			}
+		}
+		background: $white-color;
+		@include sizeRem(margin-bottom, 20);
+		@include sizeRem(padding, 40, 1);
+		@include border-radius(4px);
+        @include display-flex;
+		@include justify-content(space-between);
+		> *{
+			@include flex-width-col-xs(50%);
+			margin-bottom: 0; 
+		}
+	}
+	.views-field-title{
+		@include sizeRem(font-size, 20);
+		a{
+			background: transparent;
+			padding: 0;
+			margin-left: 0;
+			border: none;
+			@include wp-font(font-title-med);
+			@include sizeRem(font-size, 20);
+			&:hover,&:focus{
+				background: transparent;
+			}
+		}
+	}
+    .views-field-field-frequently{
+    	color: $place-color;
+    	@include sizeRem(font-size, 16);
+    }
+	//move
+	.item-list{
+			margin-top: 40px;
+		}
+	.pager li > a{
+		&:hover,&:focus{
+			background: transparent;
+		}
+	}
+	.pager-next a, .pager-first a{
+		&:before{
+			display: none;
+		}
+		@include sizeRem(font-size, 12);
+		color: $title-color;
+		@include wp-font(font-medium);
+		background-color: transparent;
+		&:after{
+	        content: "\f107";
+	        position:absolute;
+	        text-align: center;
+	        @include fontawesome;
+	        //@include rotate(-180deg);
+			right: -20px;
+			color: $blue-color;
+			top: -2px;
+			font-size: 20px;
+		}
+	}
+}
+//.......................
+.block-abs-find-job{
+	text-align: center;
+	@include sizeRem(padding,60, 2, 0);
+    .views-field-title{
+    	@include sizeRem(font-size, 28);
+    	@include sizeRem(margin-bottom, 30);
+    	color: #3085be;
+    }
+    .views-field-body {
+    	p{
+    		margin-bottom: 0;
+    	}
+    	a{
+   			@include btn;
+		    @include sizeRem(padding, 13.5, 2, 25);
+		    @include sizeRem(font-size, 16);
+		    @include wp-font(font-body);
+		    min-width: 176px;
+		    color: #07352b;
+		    &:hover, &:focus{
+		        background-color: $hover-color;
+		        border-color: $hover-color;
+		        //color: $title-color;
+		        color: #07352b;
+		    }
+    	}
+    }
+}
+
+.block-aps-public-server{
+	text-align: center;
+	@include sizeRem(margin-top, 10);
+    .views-field-title{
+    	@include sizeRem(font-size, 28);
+    	color: #3085be;
+    	@include sizeRem(margin-bottom, 30);
+    }
+}
+
+/*............add new vacancy............*/
+// #govcms-employment-vacancy-form
+.govcms-form-add-new{
+	@include menu-add;
+	#edit-label p:nth-child(2){
+		span{
+			@include wp-font(font-bold);
+			padding-left: 0;
+		}
+	}
+}
+
+#govcms-engagement-add-new-engagement-form{
+   @include menu-add;
+   #edit-label p{
+   	&:nth-child(3){
+   		margin-bottom: 5px;
+   	   }
+    }
+}
+#edit-header{
+	width: 100%;
+	.item-list{
+		background: $bg-menu-color;
+		@include sizeRem(margin-top, 10);
+		margin-bottom: 0;
+		@include border-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
+		// @include display-flex;
+		// @include justify-content(center);
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		@include display-flex;
+		@include justify-content(center);
+	}  
+	li{
+		@include sizeRem(min-height, 60);
+		@include display-flex;
+		@include align-items(center);
+		margin: 0;
+		padding: 0;
+		background: $bg-active;
+		list-style: none;
+		position: relative;
+		color: $white-color;
+		text-align: center;
+		text-transform: capitalize;
+		a{
+			color: $white-color;
+			line-height: 1.67;
+		    letter-spacing: 0.2px;
+			@include sizeRem(font-size, 16);
+			@include wp-font(font-bold);
+			@include sizeRem(padding, 23 ,2, 15);
+		}
+		&.active{
+			
+			background: $bg-menu-inner;
+		}
+	}
+}
+@mixin background-menu{
+	ul.menu{
+		margin: 0 auto;
+		padding: 0;
+		//@include container;
+		@include display-flex;
+		@include justify-content(flex-start);
+		li{
+			margin: 0;
+		}
+	}  
+	li{
+		@include sizeRem(min-height, 40);
+		@include display-flex;
+		@include align-items(center);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+		color: $white-color;
+		text-align: center;
+		text-transform: capitalize;
+		&:first-child{
+			a{
+				padding-left: 0;
+			}
+		}
+		a{
+			color: $title-color;
+			@include sizeRem(font-size, 14);
+			@include wp-font(font-body);
+			@include sizeRem(padding, 10 ,2, 15);
+			border-bottom: 1.5px solid rgba($boder-bottom, .0);
+			position: relative;
+			&:before{
+				content:"";
+				position: absolute;
+				height: 4px;
+				width: 0;
+				left: 0;
+				background: $blue-color;
+				bottom: -4px;
+				// @include opacity(0);
+				@include transition(all .3s ease-out);
+			}
+			&:hover,&:focus,&.active{
+				border-bottom: 1.5px solid rgba($boder-bottom, .0);
+				&:before{
+					width: 100%;
+					// @include opacity(1);
+				}
+			}
+		}
+		&.active{
+			a{ 
+				border-bottom: 1.5px solid rgba($boder-bottom, .0);
+				&:before{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.paner-menu-dashbord-vacancy-state{
+	@include background-menu;
+	ul.menu{
+		border-bottom: 1.5px solid $boder-bottom;
+	}	
+}
+.pane-menu-menu-agency-home-page{
+	display: none;
+	background: $bg-menu-color;
+	@include background-menu;
+	ul.menu{
+		margin: 0 auto;
+		@include container;
+	}
+}
+.view-baner-detail{
+	.views-field-title{
+        @include sizeRem(font-size, 40);
+
+	}
+	.views-field-body{
+		@include sizeRem(font-size, 14);
+	}
+	.views-field-created{
+	    a{
+	    	@include button-btn;
+	    	color: $title-color;
+	    }	
+	}
+}
+/*...................new vacacy.................*/
+#edit-agency{
+	@include background-vacy;
+	@include form-ite;
+}
+legend{
+	line-height: 1.33;
+	letter-spacing: 0.3px;
+}
+#edit-aps-class{
+	legend{
+		@include sizeRem(font-size, 14);
+	}
+	.fieldset-wrapper{
+		@include display-flex;
+	}
+	.form-item{
+		@include flex-wrap(wrap);
+	    //width: 33.3333333%;
+		label{	
+			@include wp-font(font-bold);
+			width: 100%;
+			@include sizeRem(margin-bottom, 20);
+		}
+	}
+	.form-radios{
+		width: 100%;
+		label{
+			width: auto;
+			margin-bottom: 0;
+		}
+	}
+	.form-checkboxes{
+		label{
+			width: auto;
+			margin-bottom: 0;
+		}
+	}
+
+	.form-checkboxes > *{
+        @include sizeRem(margin-bottom, 15);
+		@include flex-wrap(nowrap);
+		width: 100%;
+	}
+}
+.edit-aps-form-agency{
+	legend{
+		@include sizeRem(margin-bottom, 25, $important:true);
+	}
+	.fieldset-wrapper{
+		@include flex-wrap(wrap);
+	}
+	.form-item{
+		@include flex-width-col-xs(100%);
+		display: inherit;
+		margin: 0;
+		label{
+			@include sizeRem(margin-bottom, 5);
+		}
+	}
+}
+/*...................position.................*/
+#edit-position{
+	@include background-vacy;
+	
+	#edit-detail{
+		@include form-ite;
+		.form-item > label{
+			@include sizeRem(min-width, 200);
+		}
+		.form-item{
+			@include sizeRem(margin,5 ,2 ,0);
+			width: 50%;
+			padding-right: 10px;
+		}
+		.form-item-title,.form-item-category{
+ 			label{
+ 				@include wp-font(font-bold);
+ 			}
+		}
+		.form-type-checkboxes{
+			@include sizeRem(margin, 20, 2, 0);
+			> label{
+				@include wp-font(font-bold);
+			}
+		}
+		.form-item-expected-vacancy{
+			@include sizeRem(margin-top, 20);
+			@include sizeRem(padding-left, 200);
+		}
+		.form-checkboxes{
+			@include display-flex;
+		}
+		.form-text{
+			max-width: 100%;
+			margin: 0;
+		}
+	}
+	#edit-salary{
+		width: 50%;
+		legend{
+			@include wp-font(font-bold);
+			@include sizeRem(font-size, 15);
+			@include sizeRem(margin-top, 12);
+			@include sizeRem(min-width, 200);
+			width: auto;
+			float: left;
+		}
+		.form-item{
+			width: 150px;
+		}
+		.fieldset-wrapper{
+			@include display-flex;
+			@include align-items(center);
+		}
+		.ui-slider-horizontal{}
+		.form-text{
+			@include sizeRem(padding, 5, 1);
+		}
+	}
+	.ui-slider-horizontal{
+		@include sizeRem(height, 1);
+		@include sizeRem(width, 220);
+		@include sizeRem(margin, 0 , 2 , 25);
+		.ui-slider-handle{
+			top: -12px;
+		}
+	}
+	
+	.ui-slider {
+		.ui-slider-handle{
+			@include sizeRem(width, 24);
+			@include sizeRem(height, 24);
+			@include border-radius(50%);
+			background: $blue-color;
+			border: 1px solid $blue-color;
+	    }
+	}
+	input[type=radio], input[type=checkbox]{
+		top: 0px;
+	}
+	.form-item-initialtives{
+		.form-item{
+            width: 35%;
+            float: left;
+            display: inline-block;
+		}
+	}
+}
+
+#edit-agency-detail{
+	label{
+		@include sizeRem(min-width, 215);
+		padding-right: 0;
+	}
+}
+
+#edit-location{
+	@include form-ite;
+	.form-item > label{
+		@include sizeRem(min-width, 200);
+	}
+	.form-item{
+		@include sizeRem(margin,5 ,2 ,0);
+	}
+}
+
+#edit-group-left,#edit-group-rigth{
+	width: 50%;
+	display: inline-block;
+}
+#edit-group-left{
+	float: left;
+	@include sizeRem(padding-right, 10);
+}
+#edit-group-right{
+	position: relative;
+	> *{
+		@include sizeRem(padding-left, 10);
+	}
+	.form-item > label{
+		 @include sizeRem(min-width, 150);
+	}
+	.form-item-postcode,.form-item-suburb{
+        .form-text{
+        	width: 40%;
+        }
+    }
+    .form-submit{
+        @include sizeRem(width, 155);
+        position: absolute;
+        right:0;
+        top: 0;
+    }
+}
+#group-btn-location{
+	clear: both;
+	text-align: right;
+	@include sizeRem(padding-top, 25);
+	.form-submit{
+    	@include sizeRem(margin-left, 10);
+    }
+}
+div[id*="edit-group-btn-"],#edit-group-btn{
+    text-align: right;
+    @include sizeRem(padding, 45, 2, 0);
+    .form-submit{
+    	@include sizeRem(margin-left, 10);
+    }
+}
+
+/*...................review.................*/
+#edit-review{
+	@include background-vacy;
+	.form-item{
+		@include sizeRem(margin,5 ,2 ,0);
+	}
+	#edit-detail{
+		background: #ecedf2;
+		@include sizeRem(margin, 0, 2,-40);
+		@include sizeRem(margin-bottom, 20);
+		@include sizeRem(margin-top, 20);
+		> div{
+			@include sizeRem(padding, 40, 1);
+		}
+		.form-item{
+			@include wp-font(font-bold);
+		}
+		label{
+			@include sizeRem(min-width, 215);
+			@include wp-font(font-body);
+		}
+	}
+	#edit-duties{
+		padding: 0;
+		ul{
+			padding-left: 0;
+		}
+		label{
+			@include sizeRem(margin-bottom,20);
+			@include sizeRem(margin-top,15);
+		}
+		li{
+			list-style: none;
+			@include display-flex;
+			@include sizeRem(padding-bottom, 15);
+			@include sizeRem(margin-bottom, 15);
+			border-bottom: 1px solid $border-color-streght;
+			p{
+				@include wp-font(font-medium);
+		        @include sizeRem(padding-left,168);
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+/*...................submit.............*/
+#edit-submit{
+    @include background-vacy;
+    //padding-bottom: 0;
+    .form-type-item{
+    	margin: 0;
+    	@include sizeRem(padding-bottom, 40);
+    	label{
+    		@include sizeRem(font-size, 20);
+    		@include sizeRem(margin-bottom, 15);
+    	}
+    }
+    #edit-approver{
+		background: #ecedf2;
+		@include sizeRem(margin, 0, 2,-40);
+		@include sizeRem(margin-top, 40);
+		> *{
+			@include sizeRem(padding, 20, 2, 40);
+		}
+		legend{
+			float: left;
+			@include sizeRem(padding-top, 30);
+			@include sizeRem(padding-bottom, 48);
+			@include wp-font(font-bold);
+		}
+		
+		.form-item{
+			@include wp-font(font-bold);
+			padding-bottom: 0;
+		}
+		.form-item-user{
+			@include display-flex;
+			@include align-items(center);
+			clear: left;
+			label{
+				@include sizeRem(min-width, 225);
+			}
+		}
+		label{
+			@include sizeRem(font-size, 15);
+			@include wp-font(font-body);
+		}
+	}
+}
+/*...................work-tray.............*/
+.views-aps-work-tray{
+	.view-row{
+		@include display-flex;
+		@include align-items(center);
+		background-color:$white-color;
+		@include sizeRem(margin-bottom, 35);
+		@include sizeRem(padding,35,1);
+		@include border-radius(5px);
+	}
+	.view-field-title{
+		@include wp-font(font-bold);
+		@include sizeRem(font-size, 20);
+		@include sizeRem(margin-bottom, 3);
+		a{
+			color:$blue-color1;
+			&:hover{
+				border-bottom:1px solid $blue-color1;
+			}
+		}
+	}
+}
+.group-field-inner{
+	@include sizeRem(padding-left, 30);
+}
+
+#subnav{
+	background: $bg-menu-color;
+	@include sizeRem(margin-bottom, 30);
+	.container{
+		@include sizeRem(padding-top, 0);
+		@include sizeRem(padding-bottom, 0);
+	}
+	.panel-pane{
+		margin: 0;
+	}
+}
+.menu-name-menu-secondary-menu{
+	ul{
+		margin: 0;
+		padding: 0;
+		@include display-flex;
+		@include justify-content(center);
+		li{
+			margin: 0;
+		}
+	}  
+	li{
+		@include sizeRem(min-height, 60);
+		@include display-flex;
+		@include align-items(center);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+		color: $white-color;
+		text-align: center;
+		text-transform: capitalize;
+		a{
+			color: $white-color;
+			line-height: 0.88;
+		    letter-spacing: 0.2px;
+			@include sizeRem(font-size, 16);
+			@include wp-font(font-body);
+			@include sizeRem(padding, 23 ,2, 20);
+		}
+		&.active{
+			background: $bg-active;
+		}
+	}
+}
+
+/*......17  Engagement Task Card.........*/
+
+#govcms-engagement-action-existing-notice-form{
+	#edit-header-item{
+		label{
+			@include sizeRem(font-size, 30);
+		}
+	}
+	.form-item-notify-outcome{
+		@include background-vacy;
+		@include sizeRem(padding-bottom, 20);
+		@include border-radius(4px);
+		margin-bottom: 0;
+		border-bottom: none;
+		label{
+			@include sizeRem(font-size, 20);
+			@include sizeRem(margin-bottom, 20);
+		}
+		.form-item-notify-outcome-group .form-item{
+			@include sizeRem(margin-bottom, 10);
+			width: 33%;
+			padding: 0;
+			border: none !important;
+			display: inline-block;
+			label{
+				@include sizeRem(font-size, 15);
+				@include wp-font(font-bold);
+			}
+		}
+	}
+	.form-item-gazette-issue{
+		@include background-vacy;
+		@include border-radius(4px);
+		padding-top: 0;
+		margin: 0;
+		border-top: none;
+		label{
+			@include sizeRem(font-size, 20);
+			@include sizeRem(padding-right, 45);
+		}
+		select{
+			@include sizeRem(max-width, 400);
+		}
+
+	}
+	#edit-original-notice-summary{
+        @include background-vacy;
+        border-bottom: transparent;
+        label{
+    		@include wp-font(font-body);
+    		letter-spacing: 0.2px;
+    		@include sizeRem(min-width, 300);
+    	}
+    	.form-item{
+    		margin: 0;
+    	}
+	}
+	#edit-notice-summary{
+		@include background-vacy;
+		@include sizeRem(padding-bottom, 20);
+		border-top: transparent;
+		border-bottom: transparent;
+		label{
+    		@include wp-font(font-body);
+    		letter-spacing: 0.2px;
+    		@include sizeRem(min-width, 300);
+    	}
+    	.form-item{
+    		margin: 0;
+    	}
+	}
+	#edit-notify-outcome{
+		> legend{
+			display: none;
+		}
+		.form-item-notify-outcome{
+			margin-top: 0;
+			border-top: transparent;
+			border-bottom: 1px solid $border-color-streght;
+		}
+	}
+	.btn-full-notice{
+		float: right;
+		@include button-btn;
+	}
+}
+#govcms-engagement-add-new-engagement-form{
+    #edit-agency-details{
+        label{
+    		@include wp-font(font-body);
+    		letter-spacing: 0.2px;
+    		@include sizeRem(min-width, 300);
+    	}
+    	legend{
+    		@include sizeRem(margin-bottom, 30);
+    	}
+    }
+    #edit-engagement-general{
+    	display: none;
+    }
+    #edit-engagement-details{
+    	label{
+    		@include wp-font(font-body);
+    		letter-spacing: 0.2px;
+    		@include sizeRem(min-width, 300);
+    	}
+    	legend{
+    		@include sizeRem(margin-bottom, 30);
+    		float: none;
+    	}
+    	.form-item {
+    		@include form-ite;
+    		@include display-flex;
+    		label{
+				@include sizeRem(max-width, 250);
+				@include sizeRem(padding-left, 20);
+				@include wp-font(font-bold);
+			}
+			select,input{
+				@include sizeRem(width, 190);
+			}
+    	}
+    	.form-item-registerd-user{
+			position: relative;
+			@include flex-wrap(wrap);
+			select{
+				width: 80%;
+				@include sizeRem(max-width, 500);
+			}
+			> label{
+				@include sizeRem(min-width, 175);
+				@include wp-font(font-bold);
+				padding-left: 0;
+			}
+			.description{
+				position: absolute;
+				top: 17px;
+				left: 0;
+			}
+		}
+    }
+    #edit-admin-instruction{
+		.form-item {
+    		@include form-ite;
+    		@include display-flex;
+    	}
+    }
+    #edit-submit{
+		legend{
+			border-bottom: 3px solid #e5e5e5;
+			line-height: 1.33;
+  			letter-spacing: 0.3px;
+			@include wp-font(font-bold);
+			@include sizeRem(margin-bottom, 25);
+		}
+	}
+    #edit-review{
+    	.form-item {
+    		// border-bottom: 1px solid $border-color-streght;
+    		// @include sizeRem(margin, 5,2,0);
+    		label{
+				@include wp-font(font-bold);
+			}
+    	}
+    	#edit-agency-details{
+
+    	}
+    	#edit-engagement-group{
+    		border-top: 1px solid $border-color-streght;
+    		border-bottom: 1px solid $border-color-streght;
+    		@include sizeRem(margin, 20 ,2 , -40);
+    		position: relative;
+    		> *{
+    			@include sizeRem(padding, 40);
+    		}
+    		legend{
+				border-bottom: 3px solid #e5e5e5;
+				@include wp-font(font-bold);
+				@include sizeRem(margin-bottom, 25);
+			}
+    		#edit-position{
+    			background: transparent;
+    			padding: 0;
+    			border: none;
+    		}
+    		.form-item {
+	    		border-bottom: 1px solid $border-color-streght;
+	    		@include sizeRem(margin, 7,2,0);
+	    		label{
+	    			@include sizeRem(min-width, 245);
+	    		}
+	    	}
+	    	#edit-general{
+	    		@include sizeRem(margin-bottom, 40);
+	    		.form-item{
+	    			border-bottom: none;
+	    			@include sizeRem(font-size, 20);
+	    			@include wp-font(font-bold);
+	    		}
+	    	}
+	    	#edit-engagement-no{
+	    		position: absolute;
+	    		right: 40px;
+	    		border-bottom: transparent;
+	    	}
+    	}
+
+    }
+	#edit-description{
+		@include wp-font(font-body);
+		line-height: 1.78;
+        letter-spacing: 0.2px;
+        text-align: center;
+	}
+	div[id*="edit-group-btn"]{
+		@include sizeRem(padding, 10, 2, 0);
+	}
+	#edit-group-btn{
+		float: left;
+		position: relative;
+        @include sizeRem(padding-left, 20);
+        @include sizeRem(padding-right, 20);
+		.form-submit{
+			padding:0;
+			background: transparent;
+			border: none;
+			
+			&:hover{
+				color: $title-color;
+			}
+		}
+		&:before,&:after{
+			content: "<<";
+			left: 0;
+			top: 50%;
+			position: absolute;
+			color: $title-color;
+			@include translateY(-50%);
+		}
+		&:after{
+			content: ">>";
+			left: auto;
+			right: 0;
+			top: 50%;
+		}
+	}
+}
+/*.....................administration...................*/
+.pane-govcms-engagement-govcms-engagement-exist-notice{
+	legend{
+		float: left;
+		@include sizeRem(margin-bottom, 30);
+	}
+	.govcms-form-add-new #edit-label{
+		float: none;
+		width: 100%;
+	}
+}
+//#edit-existing-notice
+.form-apsjobs-create-outcome{
+	@include background-vacy;
+	@include form-ite;
+	@include sizeRem(margin-top, -30);
+	@include sizeRem(padding-top, 10);
+	@include sizeRem(padding-left, 25);
+	@include sizeRem(padding-right, 25);
+	border: none;
+	.form-item > label{
+		@include sizeRem(min-width, 190);
+		@include wp-font(font-bold);
+	}
+	.form-item{
+		width: 60%;
+	}
+	.btn-find{
+		float: right;
+		line-height: 1.48;
+        letter-spacing: 0.3px;
+		@include sizeRem(font-size, 18);
+		@include wp-font(font-bold);
+    	color: $title-color;
+    	&:hover,&:focus{
+    		text-decoration: underline;
+    	}
+	}
+	.form-required{
+		color: $title-color;
+	}
+	#edit-cancel{
+		background: #f5f5f5;
+		border-color: #dddfe2;
+		background-color: #f5f5f5; 
+		&:hover,&:focus{
+			background: #dddfe2;
+			border-color: #dddfe2 ;
+			background-color: #dddfe2 ;
+		}
+	}
+}
+
+.pane-apsjobs-alerts-apsjobs-alerts-manage-alerts{
+	table{
+		th,td{
+			padding: 12px !important;
+			vertical-align: middle !important;
+		}
+		th{
+			&:last-child{
+				text-align: right;
+			}
+			@include wp-font(font-medium);
+		}
+		td{
+			a{
+				color: $title-color;
+				&:hover,&:focus{
+					color: $blue-color;
+				}
+			}
+			&:last-child{
+				text-align: right;
+			}
+		}
+		input[type="checkbox"]:checked + label::before{
+			top: -10px;
+		}
+		input[type="checkbox"] + label::before{
+			top: -10px;
+		}
+	}
+	
+	.btn{ 
+			border-color: #dddfe2 ;
+			background-color: #dddfe2;
+			color: $title-color;
+			min-width: 80px;
+			@include sizeRem(font-size, 12);
+			&:hover,&:focus{
+				border-color: #ccc;
+				background-color: #ccc;
+			}
+		}
+	.btn-success{
+		&:hover,&:focus{
+			color: $title-color;
+			background-color: #5cb85c;
+			border-color: #5cb85c;
+		}
+	}
+	.btn-danger{
+		&:hover,&:focus{
+			color: $title-color;
+			background-color: #d9534f;
+			border-color: #d9534f;
+		}
+	}
+	.btn-info{
+		&:hover,&:focus{
+			color: $title-color;
+			background-color: #5bc0de;
+			border-color: #5bc0de;
+		}
+	}
+	.btn-primary{
+		&:hover,&:focus{
+			color: $title-color;
+			background-color: #337ab7;
+			border-color: #337ab7;
+		}
+	}
+	.btn-warning{
+		&:hover,&:focus{
+			color: $title-color;
+			border-color: #ccc;
+			background-color: #ccc;
+		}
+	}
+	.all-cancel,.all-delete{
+		background-color: $blue-color;
+		border-color: $blue-color;
+		&:hover,&:focus{
+			color: $title-color;
+			border-color: $hover-color;
+			background-color: $hover-color;
+		}
+	}
+	.all-delete{
+		margin-left: 10px;
+	}
+	.form-required{
+		color: $title-color;
+	}
+	.modal-body{
+		.form-submit{
+			margin-left: 15px;
+			&:first-child{
+				margin-left: 0px;
+			}
+		}
+		ul{
+			padding: 0 20px;
+			margin: 0;
+			max-height: 350px;
+			overflow-y: scroll;
+			li{
+				list-style: none;
+				padding: 6px 0;
+				border-bottom: 1px solid $border-color-streght;
+			}
+		}
+	}
+}
+#edit-cancel{
+    	border-color: #dddfe2;
+		background-color: #f5f5f5;
+		background: #f5f5f5;
+	&:hover,&:focus{
+		border-color: #dddfe2;
+		background-color: #dddfe2;
+		background: #f5f5f5;
+	}
+}
+//.......................................................\\
+#term{
+	display: none;
+	@include sizeRem(width, 955);
+	margin: 0 auto;
+	.pane-title,.pane-content{
+    	display: none;
+    }
+    .ui-accordion-content,.ui-accordion-header{
+    	display: block;
+    }
+    .ui-accordion-content{
+    	padding-top: 0;
+    }
+    .item-list{
+    	margin-top: 0;
+    	@include sizeRem(margin-bottom, 30);
+    	ul{
+    		@include sizeRem(padding-bottom, 28);
+    		border-bottom: 1px solid $border-color-streght;
+    	}
+    }
+    &.ui-accordion{
+    	display: block;
+    }
+    .views-field-name{
+    	@include sizeRem(font-size, 20);
+    }
+}
+.ui-accordion {
+	.view-header{
+		@include sizeRem(font-size, 28);
+		@include wp-font(font-title-med);
+		color: $title-color;
+		@include sizeRem(margin-bottom, 35);
+	}
+	.ui-accordion-header-icon{
+		display: none;
+	}
+	.ui-accordion-header{
+		@include sizeRem(padding-left, 154);
+		&:after{
+	        content: "";
+	        position:absolute;
+	        color: $blue-color;
+	        right: 47px;
+	        text-align: center;
+	        border-bottom: 1.5px solid $blue-color;
+	        border-left: 1.5px solid $blue-color;
+	        @include sizeRem(width, 20);
+	        @include sizeRem(height, 20);
+	        @include rotate(315deg);
+	    }
+	    &.ui-accordion-header-active{
+            &:after{
+            	@include rotate(-225deg);
+            }
+	    }
+	}
+	.views-field-description{
+       @include wp-font(font-body);
+       @include sizeRem(font-size, 14);
+       line-height: 1.43;
+       color: $color-descrition;
+       p{
+       	//line-height: 20;
+       }
+	}
+	.views-field-name{
+		//@include sizeRem(font-size, 28);
+	}
+	.views-row {
+		@include sizeRem(margin-bottom, 30);
+	}
+	.item-list{
+		padding-left:0 ;
+		ul{
+
+		}
+		li{
+			&:first-child{
+				margin-left: 0;
+			}
+			a{
+				@include sizeRem(font-size, 16);
+				@include wp-font(font-medium);
+				color: rgba($blue-color1, .5);
+				text-decoration: underline;
+				text-transform: capitalize;
+			}
+			&.active a{
+				color: $blue-color1;
+			}
+		}
+	}
+	.panel-pane{
+		.pane-title{
+			position: relative;
+			@include bg-icon;
+			&:before{
+				background: url('../images/icon/general.svg') 0 0 no-repeat;
+				height: 83px;
+				width:83px;
+				background-size:83px 83px;
+				left: 39px;
+	            @include translate(0,-50%);
+			}
+		}
+	}
+	.pane-job-category-panel-pane-6{}
+	.pane-quicktabs-job-level{
+		.pane-title{
+			&:before{
+				background: url('../images/icon/level.svg') 0 0 no-repeat;
+				height: 70px;
+				width:63px;
+				background-size: 63px 70px;
+			}
+		}
+	}
+	.pane-job-category-panel-pane-7{
+		.pane-title{
+			&:before{
+				background: url('../images/icon/types.svg') 0 0 no-repeat;
+				height: 58px;
+				width:77px;
+				background-size:77px 58px;
+			}
+		}
+	}
+	.pane-job-category-panel-pane-8{
+		.pane-title{
+			&:before{
+				background: url('../images/icon/clearance.svg') 0 0 no-repeat;
+				height: 83px;
+				width:60px;
+				background-size:60px 83px;
+			}
+		}
+	}
+}
+/*..................dashboar.....................*/
+.page-aps-agency .view-aps-vacancy .view-header{
+	background-color: $blue-color !important;
+}
+.views-aps-block-govcms-agency-count{
+	@include sizeRem(margin-top, 20);
+	@include sizeRem(margin-bottom, 55);
+	.view-row{
+		color: $blue-color1;
+		text-align: center;
+		width: 25%;
+		@include sizeRem(padding-left, 20);
+		@include sizeRem(padding-right, 20);
+	}
+	.au-grey{
+		.views-field-value,.views-field-title a{
+			color: #9b9b9b;
+		}
+	}
+	.views-field-value{
+		@include sizeRem(font-size, 75);
+		@include wp-font(font-medium);
+		text-align: center;
+	}
+	.views-field-title{
+		a{
+			@include sizeRem(font-size, 24);
+		    @include wp-font(font-title);
+		    text-decoration: underline;
+		    color: $blue-color1;
+		    &:hover,&:focus{
+		    	text-decoration: none;
+		    }
+		}
+		
+	}
+}
+/*............page-agencies...................*/
+.page-agencies{
+	.view-agency{
+		.view-header{
+			@include wp-font(font-title-med);
+		    @include sizeRem(font-size, 16);
+		    color: $black;
+		    @include sizeRem(margin-top, -40);
+		    @include sizeRem(margin-bottom, 15);
+		    @include sizeRem(padding-left, 40);
+		}
+	}
+	.view-banner-basic{
+		.view-inner{
+			@include sizeRem(padding-top,70);
+		}
+	}
+	.pane-banner-basic{
+		.inside{
+			@include sizeRem(padding-bottom,60);
+		}
+	}
+	
+	.item-list{
+		//@include sizeRem(margin-bottom,10);
+		.pager{
+			//margin-left:-50px;
+		}
+	}
+	.view-aps-job-baner .view-inner {
+		.views-field-title{
+			@include sizeRem(max-width, 620);
+			@include sizeRem(margin-bottom, 23);
+		}
+		.views-field-body{
+			@include sizeRem(max-width, 565);
+			p{
+				@include sizeRem(margin-bottom, 20);
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.view-aps-job-baner .view-inner .views-field-body a{
+		@include ico-auto;
+	    &:before{
+	    	content: "\f08e";
+	    	color: $title-color;
+	    	right: 28px;
+	    }
+	}
+	.content-main{
+		margin-top: 35px;
+		.container-fluid{
+			@include container;
+		}
+	}
+}
+
+.paner-aps-govcms-agencies-search-form{
+	select{
+		top: auto; 
+		bottom: 100%;
+	}
+	select,input{
+		border: 1px solid transparent;
+	}
+	.form-aps-job-search {
+		div:first-child{
+	        @include display-flex;
+			@include justify-content(space-between);
+		}
+		div:last-child{
+            float: right;
+            @include border-radius(4px);
+            .success{
+				@include sizeRem(width, 186);
+				@include sizeRem(font-size, 16);
+				@include wp-font(font-title-med);
+				@include sizeRem(margin-top, 20);
+				color: $title-color;
+			}
+		}
+	}
+	.success{
+		position: relative;
+		background: $white-color;
+		z-index: 22;
+		&:before{
+			content: "";
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			top: 15px;
+			right: 24px;
+			color: $blue-color;
+			border-left: 1px solid $blue-color;
+			border-bottom: 1px solid $blue-color;
+			@include rotate(315deg);
+			z-index: 3;
+		}
+		.form-select{
+			background-color: transparent;
+			@include sizeRem(padding-right, 45);
+			z-index: 6;
+		}
+	}
+	.search-classify{
+		@include sizeRem(padding-right, 18);
+	}
+	ul{
+		@include display-flex;
+		@include sizeRem(width, 467);
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			@include sizeRem(width, 233);
+			@include sizeRem(height, 45);
+		    @include border-radius(4px);
+		    background-color: $white;
+		    text-align: center;
+		    @include sizeRem(padding-top, 13);
+		    @include sizeRem(padding-bottom, 13);
+		    @include sizeRem(font-size, 16);
+		    color: $white;
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
+			border: 1.5px solid  $blue-color1;
+			line-height: 1;
+			cursor: pointer;
+			@include wp-font(font-medium);
+			a{
+		    	color: $place-color;
+		    }
+		    &:last-child{
+		    	color: $place-color;
+		    	background-color: $white;
+		    	border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+			    @include border-bottom-right-radius(4px);
+			    @include border-top-right-radius(4px);
+			    line-height: 1;
+		    }
+		    &.active {
+		    	background-color: $blue-color1;
+				a {
+					color: $white
+				}
+		    }
+		}
+	}
+	.dropdown{
+		@include sizeRem(padding-right, 55);
+	}
+	form{
+		position: relative;
+		&:before{
+			content: url("../images/icon/ico-search.svg");
+			@include sizeRem(width, 54);
+			@include sizeRem(height, 45);
+			@include border-radius(4px);
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+			position: absolute;
+			top:0;
+			right: 0;
+		    text-align: center;
+		    background-color: $blue-color;
+    		//pointer-events: none;
+    		z-index: 1;
+    		line-height: 50px;
+		}
+		input{
+			@include sizeRem(width, 300);
+			@include sizeRem(height, 45);
+			@include border-radius(4px);
+			border: 1px solid transparent;
+		    display: block;
+		    border: 0;
+			&:last-child{
+				@include sizeRem(width, 54);
+				@include sizeRem(height, 45);
+				@include border-radius(4px);
+				@include border-top-left-radius(0);
+				@include border-bottom-left-radius(0);
+	    		position: absolute;
+	    		right: 0;
+	    		top: 0;
+	    		display: block;
+			    background-color: transparent;
+			    font-size: 0;
+			    z-index: 3;
+			    &:hover,&:focus{
+			    	&:before{
+			    		background-color: $hover-color;
+			    	}
+			    }
+			}	
+		}
+	}
+}
+/*......view-agency...............*/
+.view-agency{
+	.views-row{
+		background-color: $white;
+		position: relative;
+		@include sizeRem(padding, 40 , 1);
+		@include sizeRem(padding-top, 35);
+		@include sizeRem(margin-bottom, 13);
+		> *:not(.group-agency){
+            @include sizeRem(max-width, 640);
+		}
+	}
+	
+	.views-field-title{
+		@include sizeRem(font-size, 28);
+		@include sizeRem(margin-bottom, 17);
+		a{
+			color: $black;
+		}
+	}
+	.views-field-body{
+		@include sizeRem(padding-bottom, 0);
+		margin-bottom: 0;
+		p{
+			margin-bottom: 0;
+		}
+	}
+	.group-agency{
+		@include display-flex;
+		@include justify-content(flex-end);
+		position: absolute;
+		bottom: 40px;
+		right: 40px;
+		.views-field{
+			margin-bottom: 0;
+		}
+		a{
+		    display: block;
+		    background-color: $blue-color;
+		    color: $black;
+    		text-transform: capitalize;
+    		position: relative;
+    		@include border-radius(4px);
+    		@include sizeRem(width, 110);
+			@include sizeRem(height, 34);
+			@include wp-font(font-medium);
+    		@include sizeRem(font-size, 12);
+			@include sizeRem(padding, 10, 2, 10);
+    		&:hover,&:focus{
+				background-color: $hover-color;
+				border-color: $hover-color;
+			}
+		}
+		span{
+			text-align: center;
+			@include sizeRem(padding-top, 10);
+			@include sizeRem(padding-bottom, 10);
+		}
+	}
+	.views-field-field-link-to{
+		@include sizeRem(margin-right, 14);
+		a{
+			padding-right: 27px;
+			&:after{
+				content: "?";
+			    color: $black;
+			    right: 10px;
+		        position:absolute;
+		        top: 50%;
+		        text-align: center;
+		        // @include fontawesome;
+		        @include translate(0,-50%);
+				padding: 3px;
+			    border: 1px solid $black;
+			    padding-top: 1px;
+			    padding-bottom: 1px;
+			    border-right: 2px solid $black;
+			    font-size: 11px;
+			    font-weight: 600;
+			    line-height: 1;
+			}
+		}	
+	}
+}
+
+/*...................gazzate................*/
+.paner-aps-gazatte-govcms-sort-date{
+	.form-item-sort-order{
+		@include sizeRem(width, 247);
+		float: right;
+		position: relative;
+		z-index: 22;
+		background: $white-color;
+		@include border-radius(4px);
+		&:before{
+			content: "";
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			top: 15px;
+			right: 24px;
+			color: $blue-color;
+			border-left: 1px solid $blue-color;
+			border-bottom: 1px solid $blue-color;
+			@include rotate(315deg);
+		}
+		.form-select{
+			background-color: transparent;
+			border: 1px solid transparent;
+		}
+	}
+}
+
+.view-apsjobs-gazette{
+	.view-header{
+		position: relative;
+		top: 40px;
+		@include sizeRem(font-size, 16);
+		@include sizeRem(padding-left, 37);
+		@include wp-font(font-title-med);
+	}
+    .views-row{
+		@include border-radius(4px);
+		background-color:$white;
+		@include sizeRem(margin-top, 55);
+		@include sizeRem(padding, 40);
+		@include sizeRem(padding-top, 35);
+		position: relative;
+		.views-field-created{
+			position: absolute;
+			@include sizeRem(top, -40);
+			@include sizeRem(right, 40);
+			color: $place-color;
+		}
+	}
+	.views-field{
+		@include wp-font(font-title-med);
+	    @include sizeRem(font-size, 16);
+	    color: $place-color;
+	}
+	.views-field-field-aps-job-categories{
+        color: $title-color;
+        a{
+	    	color: $title-color;
+	    	//text-decoration: underline;
+	    	&:hover,&:focus{
+	    		color: $blue-color1;
+	    	}
+	    } 
+	}
+	.views-field-field-aps-level{
+        .field-content{
+         	display: inline-block;
+			@include sizeRem(margin-left, 2);
+        }
+	}
+	.views-label-field-aps-level{
+       display: inline-block;
+	}
+	.views-field-title{
+		color: $blue-color1 ;
+	    @include sizeRem(font-size, 20);  
+	    @include wp-font(font-title);
+	    a{
+	    	color: $blue-color1 ;
+	    	//text-decoration: underline;
+	    	&:hover,&:focus{
+	    		color: $title-color;
+	    	}
+	    }  
+	}
+	.views-field-field-agency-name{
+        a{
+	    	color: $place-color;
+	    	text-decoration: underline;
+	    	&:hover,&:focus{
+	    		color: $blue-color1;
+	    		text-decoration: none;
+	    	}
+	    }
+	}
+	.views-field-field-phone-contact{
+        // color: $place-color;
+	}
+	.views-field-field-name-hr,.views-field-field-phone-contact{
+		display: inline-block;
+	}
+	.views-field-nothing{
+		@include sizeRem(font-size, 15);
+	    @include sizeRem(width, 120);
+	    cursor:pointer;
+	    color: $black;
+	    //@include sizeRem(margin-top, 50);
+	    margin-bottom: 0;
+	    .field-content{
+	    	p{
+	    		position: relative;
+	    		display: inline-block;
+	    		&:before{
+					content: "\f107";
+			        position:absolute;
+			        color: #00a886;
+			        @include sizeRem(right, -25);
+			        text-align: center;
+			        @include fontawesome;
+			        @include translate(0,-50%);
+			        @include sizeRem(font-size, 24);
+			        transform: rotate(180deg);
+			        top:-3px;
+				}
+	    	}
+	    	p.show-more{
+	    		text-transform: capitalize;
+	    		cursor:pointer;
+	    		margin-bottom: 0;
+	    		&:before{
+	    			transform: rotate(0deg);
+	    		}
+	    	}
+	    }    
+	}
+	.views-field-body{
+		//@include sizeRem(margin-top, 10);
+		@include sizeRem(font-size, 14);
+		color: $color-descrition;
+		margin-bottom: 0;
+		p{
+			margin-bottom: 0;
+		}
+		a{
+			@include button-btn;
+			text-align: center;
+			line-height: 25px;
+			padding: 5px 25px;
+			min-height: 40px;
+			text-transform: capitalize;
+			@include sizeRem(font-size, 12);
+			@include wp-font(font-medium);
+			@include sizeRem(width, 121);
+  			@include sizeRem(height, 34);
+  			@include sizeRem(margin-top, 35);
+  			min-height: auto;
+		}
+	}
+}
+
+.group-gazette-left{
+	width: 65%;
+	float: left;
+	@include sizeRem(padding-right, 15);
+	@include sizeRem(margin-bottom, 42);
+}
+.group-gazette-right{
+	width: 35%;
+	display: inline-block;
+	text-align: right;
+}
+//.....................................remove.............
+.page-aps-agency {
+	.view-footer{
+		a{
+			padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+		}
+	}
+	.create-outcome{
+		@include sizeRem(padding, 12.5, 2, 15);
+        background: $blue-color;
+        border-color: $blue-color;
+        color: $title-color;
+       	width: 100%;
+       	cursor: pointer;
+        margin-left: 0px;
+        border-radius: 4px;
+        display: inline-block;
+        text-align: center;
+        @include sizeRem(font-size, 12);
+        @include wp-font(font-medium);
+        position: relative;
+        &:hover,&:focus{
+            background: $hover-color;
+        	border-color: $hover-color;
+        	color: $title-color;
+        }
+        &:after{
+	        content: "";
+	        position:absolute;
+	        color: $blue-color;
+	        right: 12px;
+	        top: 14px;
+	        text-align: center;
+	        border-bottom: 2px solid $title-color;
+	        border-left: 2px solid $title-color;
+	        @include sizeRem(width, 8);
+	        @include sizeRem(height, 8);
+	        @include rotate(315deg);
+	    }
+	}
+}
+
+.page-aps-gazette{
+    .views-exposed-widgets .views-widget-sort-order{
+    	@include sizeRem(margin-top, 20);
+    }
+    .banner{
+    	@include sizeRem(padding-bottom, 22);
+    }
+}
+
+.paner-apsjobs-block-agency-welcome{
+    .pane-content{
+    	@include display-flex;
+    	@include align-items(center);
+    	@include justify-content(space-between);
+    }
+}
+
+.welcome-back{
+	@include sizeRem(font-size, 26);
+}
+
+.paner-aps-dasboard-govcms-sort-date{
+	.sort-date{
+    	position: relative;
+    	.chosen-container{
+    		width: 218px !important;
+    		text-align: left;
+    	}
+    }
+}
+
+.node-type-aps-agencies{
+    .content-second .container{
+    	position: relative;
+    }
+    .pane-views-exp-aps-vacancy-panel-pane-8{
+    	margin: 0;
+    }
+	.paner-aps-dasboard-govcms-sort-date{
+		text-align: right;
+		position: relative;
+		right: 0;
+		bottom: -30px;
+		margin: 0;
+	}
+	form{
+		.views-exposed-form .views-exposed-widget{
+			width: 50%;
+			float: right;
+		}
+		.form-item-sort-order{
+			display: none;
+		}
+		.form-item-title{
+			text-align: right;
+			input{
+				//width: 50%;
+			}
+		}
+	}
+}
+
+.page-aps-agency-my-job-vacancies{
+	.pane-views-exp-aps-vacancy-panel-pane-11{
+		display: none;
+	}
+	#subnav{
+		@include sizeRem(margin-top, 42 ,$important: true);
+		@include sizeRem(margin-bottom, 20 ,$important: true);
+		//margin-bottom: 0;
+		background: transparent;
+		.container{
+			@include flex(1);
+			@include display-flex;
+			@include justify-content(space-between);
+			@include align-items(center);
+			&:before,&:after{
+				display: none;
+			}
+		}
+		.panel-pane{
+			@include flex-width-col-xs(30%);
+		}
+		.paner-menu-dashbord-vacancy-state{
+			@include flex-width-col-xs(70%);
+			@include sizeRem(padding-right, 20);
+		}
+	}
+	.content-first{
+		h2.pane-title{
+			@include sizeRem(font-size, 16);
+			@include sizeRem(padding-left, 45);
+	    	@include wp-font(font-title-med);
+	    	position: absolute;
+		    top: -60px;
+		    left: 0;
+		}
+		.container{
+			padding-top: 0;
+			position: relative;
+		}
+		.view-aps-vacancy {
+			padding-top: 25px;
+		}
+		.panel-pane{
+			margin-top: 0;
+		}
+	}
+	.paner-aps-dasboard-govcms-sort-date{
+		text-align: right;
+		position: absolute;
+		right: 15px;
+		.sort-date{
+	    	.chosen-container{
+	    		.chosen-single{
+					border: 1px solid transparent;
+	    		}
+	    	}
+	    	.chosen-container-active.chosen-with-drop .chosen-single{
+	    		border: 1px solid #aaa;
+	    	}
+	    }
+	}
+	.main-inner {
+		.panel-pane{
+			margin: 0;
+		}
+	}
+	.view-aps-job-baner .view-inner {
+		.views-field-title{
+			max-width: 70%;
+			@include sizeRem(margin-bottom, 10);
+		}
+		.views-field-field-link{
+			display: inline-block;
+			float: right;
+			@include sizeRem(margin-top, -28);
+			a{
+				@include sizeRem(padding, 11, 2, 25);
+				@include sizeRem(min-width, 235);
+			} 
+		}
+		.views-field-body{
+			max-width: 100%;
+			display: inline-block;
+			@include sizeRem(max-width, 565);
+			.field-content{
+			
+				p,div{
+				 	display: inline-block;
+				}
+			}
+		}
+	}
+	.view-aps-vacancy .view-header{
+		position: static !important;
+	    left:auto;
+	    background-color: transparent !important;
+	    @include sizeRem(top, 0);
+	    @include sizeRem(right, 0, $important : true);
+	    @include display-flex;
+	    @include justify-content(space-between);
+	    @include align-items(flex-end);
+	    @include sizeRem(padding,0,1 ,$important :true );
+		@include sizeRem(padding,0,1 ,$important :true );
+		@include sizeRem(padding-right, 0 ,$important :true );
+		@include sizeRem(margin-bottom, 20);
+		padding-left: 37px !important;
+	    .sort-date{
+	    	position: relative;
+	    }
+	    h2{
+	    	@include sizeRem(padding, 14, 2,20);
+	    	@include sizeRem(padding-right, 40);
+	    	@include sizeRem(font-size, 14);
+	    	@include wp-font(font-body);
+	    	background: $white-color;
+		    cursor: pointer;
+		    position: relative;
+		    border: 1px solid rgba($boder-bottom, .2);
+	    	@include border-radius(4px);
+	    	margin: 0;
+	    	min-width: 186px;
+	    	&:hover,&:focus{
+	    		color: $blue-color1;
+	    	}
+	    	&:before{
+		        content: "\f107";
+		        position:absolute;
+		        color: #00a886;
+		        top: 50%;
+		        right: 10px;
+		        text-align: center;
+		        @include fontawesome;
+		        @include translate(0,-50%);
+		        @include sizeRem(font-size, 24);
+		    }
+	    }
+	    h3{
+		    @include sizeRem(font-size, 16);
+	    	@include wp-font(font-title-med);
+	    	@include sizeRem(padding-left, 40);
+	    	margin: 0;
+		}
+	}
+	.view-header ul.drop-menu {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		z-index: 33;
+		top: 47px;
+		left: 0;
+		background: $white-color;
+		display: none;
+		height: 0;
+		overflow: hidden;
+		//@include sizeRem(padding, 15, 2,20);
+		border: 1px solid rgba($boder-bottom, .2);
+		//border-top: none;
+		@include border-radius(4px);
+		@include transition (all .3s ease-out);
+		&.expand-sort-date{
+			display: block;
+			height: 55px;
+		}
+		li{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: block;
+			background: $white-color;
+			color: $title-color;
+			text-transform: capitalize;
+			@include sizeRem(padding, 5, 2,20);
+			@include sizeRem(font-size, 12);
+			@include wp-font(font-medium);
+			border-bottom: 1px solid rgba($boder-bottom, .2);
+			&:hover,&:focus{
+				color: $title-color;
+				text-decoration: none;
+				background: $white-color;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+.page-aps-agency-my-outcomes{
+	#subnav{
+		@include sizeRem(margin-top, 42 ,$important: true);
+		@include sizeRem(margin-bottom, 20 ,$important: true);
+		//margin-bottom: 0;
+		background: transparent;
+		.container{
+			@include flex(1);
+			@include display-flex;
+			@include justify-content(space-between);
+			@include align-items(center);
+			&:before,&:after{
+				display: none;
+			}
+		}
+		.panel-pane{
+			@include flex-width-col-xs(30%);
+		}
+		.paner-menu-dashbord-vacancy-state{
+			@include flex-width-col-xs(70%);
+			@include sizeRem(padding-right, 20);
+		}
+	}
+
+	.paner-aps-dasboard-govcms-sort-date{
+		text-align: right;
+		position: absolute;
+		right: 15px;
+		.sort-date{
+	    	.chosen-container{
+	    		.chosen-single{
+					border: 1px solid transparent;
+	    		}
+	    	}
+	    	.chosen-container-active.chosen-with-drop .chosen-single{
+	    		border: 1px solid #aaa;
+	    	}
+	    }
+	}
+	.content-first{
+		h2.pane-title{
+			@include sizeRem(font-size, 16);
+			@include sizeRem(padding-left, 45);
+	    	@include wp-font(font-title-med);
+	    	position: absolute;
+		    top: -60px;
+		    left: 0;
+		}
+		.container{
+			padding-top: 0;
+			position: relative;
+		}
+		.view-aps-outcomes {
+			padding-top: 25px;
+		}
+		.panel-pane{
+			margin-top: 0;
+		}
+	}
+	.view-aps-outcomes .view-header{
+		position: static !important;
+	    left:auto;
+	    background-color: transparent !important;
+	    @include sizeRem(top, 0);
+	    @include sizeRem(right, 0, $important : true);
+	    @include display-flex;
+	    @include justify-content(space-between);
+	    @include align-items(flex-end);
+	    @include sizeRem(padding,0,1 ,$important :true );
+		@include sizeRem(padding,0,1 ,$important :true );
+		@include sizeRem(padding-right, 0 ,$important :true );
+		@include sizeRem(margin-bottom, 20);
+		padding-left: 37px !important;
+		@include wp-font(font-title-med);
+		color: $title-color;
+	    .sort-date{
+	    	position: relative;
+	    }
+	    h2{
+	    	@include sizeRem(padding, 14, 2,20);
+	    	@include sizeRem(padding-right, 40);
+	    	@include sizeRem(font-size, 14);
+	    	@include wp-font(font-body);
+	    	background: $white-color;
+		    cursor: pointer;
+		    position: relative;
+		    border: 1px solid rgba($boder-bottom, .2);
+	    	@include border-radius(4px);
+	    	margin: 0;
+	    	min-width: 186px;
+	    	&:hover,&:focus{
+	    		color: $blue-color1;
+	    	}
+	    	&:before{
+		        content: "\f107";
+		        position:absolute;
+		        color: #00a886;
+		        top: 50%;
+		        right: 10px;
+		        text-align: center;
+		        @include fontawesome;
+		        @include translate(0,-50%);
+		        @include sizeRem(font-size, 24);
+		    }
+	    }
+	    h3{
+		    @include sizeRem(font-size, 16);
+	    	@include wp-font(font-title-med);
+	    	@include sizeRem(padding-left, 40);
+	    	margin: 0;
+		}
+	}
+}
+
+.view-aps-vacancy-search{
+	.view-header{
+		//h3{
+		    @include sizeRem(font-size, 16);
+	    	@include wp-font(font-title-med);
+	    	//@include sizeRem(padding-left, 40);
+	    	margin: 0;
+	    	position: relative;
+	    	top: 20px;
+	    	left: 37px;
+		//}
+	}
+}
+
+.views-exposed-form .views-exposed-widget{
+	padding: 0;
+	width: 100%;
+}
+.views-exposed-widgets{
+	margin-bottom: 0;
+}
+.paner-aps-govcms-blocks-search-form-vacancy{
+	display: none;
+}
+.paner-aps-dashboard-govcms-search-form-vacancy{
+	position: relative;
+	.form-text{
+		margin-top: 0;
+	}
+	label{
+		display: none;
+	}
+	.views-widget-sort-by,.form-item-sort-order{
+		display: none;
+	}
+	.form-text{
+		@include sizeRem(height, 45);
+	}
+	.form-control,.form-text{
+		//background: $background-body;
+		border: 1px solid transparent;
+		border-bottom-color: none;
+		white-space: normal;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		//@include sizeRem(font-size, 12);
+		//@include wp-font(font-bold);
+		@include sizeRem(padding-right, 50);
+		@include sizeRem(height, 45);
+		@include border-radius(4px);
+		margin-top: 0 !important;
+	}
+	.views-submit-button,.btn-submit{
+		position: absolute;
+		width: 55px;
+		height: 45px;
+		right: 0;
+		top: 0;
+		//position: relative;
+		background-color: $blue-color;
+		@include border-radius(4px);
+		@include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+		&:before{
+        	//content: "\f002";
+        	content: url("../images/icon/ico-search.svg");
+        	position: absolute;
+        	left: 50%;
+        	top:50%;
+        	z-index: 2;
+        	color: $title-color;
+        	font-size: 18px !important;
+        	@include fontawesome;
+        	@include translate(-50%,-50%);
+        }
+	}
+	.form-submit,.apply-search{
+        font-size: 0;
+        background-color: transparent;
+        border: 0 none;
+        position: absolute;
+        z-index: 4;
+        right: 0px;
+        top: 0px;
+        padding: 10px;
+        @include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+        @include sizeRem(width, 55);
+        @include sizeRem(height, 45);
+    }
+}
+.pane-search-vacancies{
+	display: none;
+}
+.pane-search-vacancies form{
+	position: relative;
+	display: none;
+	label{
+		display: none;
+	}
+	.views-widget-sort-by,.form-item-sort-order{
+		display: none;
+	}
+	.form-text{
+		@include sizeRem(height, 45);
+	}
+	.form-control{
+		//background: $background-body;
+		border: 1px solid transparent;
+		border-bottom-color: none;
+		white-space: normal;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include sizeRem(font-size, 12);
+		@include wp-font(font-bold);
+		@include sizeRem(padding-right, 50);
+		@include sizeRem(height, 45);
+		@include border-radius(4px);
+	}
+	.views-submit-button{
+		position: absolute;
+		width: 55px;
+		height: 45px;
+		right: 0;
+		top: 0;
+		//position: relative;
+		background-color: $blue-color;
+		@include border-radius(4px);
+		@include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+		&:before{
+        	//content: "\f002";
+        	content: url("../images/icon/ico-search.svg");
+        	position: absolute;
+        	left: 50%;
+        	top:50%;
+        	z-index: 2;
+        	color: $title-color;
+        	font-size: 18px !important;
+        	@include fontawesome;
+        	@include translate(-50%,-50%);
+        }
+	}
+	.form-submit{
+        font-size: 0;
+        background-color: transparent;
+        border: 0 none;
+        position: absolute;
+        z-index: 4;
+        right: 0px;
+        top: 0px;
+        padding: 10px;
+        @include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+        @include sizeRem(width, 55);
+        @include sizeRem(height, 45);
+    }
+}
+// move
+.block-menu-view-public {
+	p{
+		margin-bottom: 0;
+	}
+	a{
+		@include button-btn;
+		text-align: center;
+		width: 160px;
+		line-height: 1.1;
+		padding: 5px 25px;
+		min-height: 40px;
+		text-transform: capitalize;
+		@include sizeRem(font-size, 12);
+		@include wp-font(font-medium);
+	}
+}
+.block-menu-jop-agency-name{
+	padding-right: 0;
+	margin-left: 15px;
+	position: relative;
+	h2{
+		margin: 0;
+		cursor: pointer;
+	}
+	h2 a{
+		@include button-btn;
+		text-align: center;
+		cursor: pointer;
+		//min-width: auto;
+		min-height: 40px;
+		min-width: 160px;
+		margin: 0;
+		position: relative;
+		text-transform: capitalize;
+		overflow: hidden;
+	    white-space: normal;
+	    text-overflow: ellipsis;
+	    display: block;
+	    pointer-events: none;
+		@include sizeRem(padding, 9.5, 4, 40, 9.5, 15);
+		@include sizeRem(font-size, 12);
+		@include wp-font(font-medium);
+		&:after{
+	        content: "";
+	        position:absolute;
+	        color: $blue-color;
+	        right: 12px;
+	        top: 9px;
+	        text-align: center;
+	        border-bottom: 2px solid $title-color;
+	        border-left: 2px solid $title-color;
+	        @include sizeRem(width, 12);
+	        @include sizeRem(height, 12);
+	        @include rotate(315deg);
+	    }
+	}
+	ul.menu {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		top: 41px;
+		left: 0;
+		background: $blue-color;
+		display: none;
+		//height: 0;
+		//overflow: hidden;
+		z-index: 33;
+		@include border-radius(4px);
+		@include transition (all .3s ease-out);
+		&.show-expand{
+			display: block;
+			//height: 68px;
+		}
+		li{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		a{
+			display: block;
+			background: $blue-color;
+			color: $title-color;
+			text-transform: capitalize;
+			@include sizeRem(padding, 12.5, 2, 15);
+			@include sizeRem(font-size, 12);
+			@include wp-font(font-medium);
+			@include border-radius(4px);
+			&:hover,&:focus{
+				color: $title-color;
+				text-decoration: none;
+				background: $hover-color;
+			}
+		}
+	}
+}
+//move
+
+.page-aps-work{
+	.item-list{
+		margin-top: 40px;
+		li{
+			list-style: none;
+		}
+	}
+	.pager li > a{
+		&:hover,&:focus{
+			background: transparent;
+		}
+	}
+	.pager-next a, .pager-first a{
+		&:before{
+			display: none;
+		}
+		@include sizeRem(font-size, 12, $important: true);
+		color: $title-color !important;
+		@include wp-font(font-medium);
+		&:hover{
+			color: $blue-color1;
+			&:after{
+				color: $blue-color1;
+			}
+		}
+		&:after{
+	        content: "\f107";
+	        position:absolute;
+	        text-align: center;
+	        @include fontawesome;
+			right: -20px;
+			color: $blue-color;
+			top: -2px;
+			font-size: 20px;
+		}
+	}
+	.pane-custom{
+		text-align: center;
+		margin: 25px 0;
+	}
+    .banner{
+	  	overflow:hidden;
+	}
+
+	.content-main{
+		.panel-pane{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	.content-second{
+		.container{
+			@include sizeRem(padding-top, 0);
+			@include sizeRem(padding-bottom, 68);
+			.panel-pane:first-child{
+				margin-top: 10px;
+			}
+		}
+	}
+	.content-first{
+		.panel-pane{
+			margin: 0;
+		}
+	}
+	.content-fifth{
+		background: $white-color;
+		//@include sizeRem(margin-bottom, 40);
+	}
+	.view-aps-job-baner:before{
+		display: none;
+	}
+	.view-aps-job-baner .views-field-title{
+		@include sizeRem(max-width, 365);
+	}
+	.content-feature{
+		@include sizeRem(padding-top, 50);
+	}
+	.view-type-aps{
+		position: relative;
+      	&:before{
+         	content: "";
+          	background: rgba(16, 34, 111, 0.6);
+          	display: block;
+          	width: 100%;
+          	height: 100%;
+         	position: absolute;
+          	z-index: 11;
+         	bottom: 0;
+          	left: 0;
+      	}
+	}
+	.back-to-top{
+		margin-top: 15px;
+	}
+}
+
+.page-sign-up{
+	.btn-rm-form{
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		top: 6px;
+		@include sizeRem(font-size, 18);
+	}
+	.form-required{
+		color: $title-color;
+	}
+	#edit-header{
+		text-align: center;
+		margin-top: 0;
+		// @include sizeRem(padding, 0 , 2, 30);
+		a{
+			color: $title-color;
+			&:hover,&:focus{
+				color: $blue-color;
+				text-decoration: underline;
+			}
+		}
+	}
+    #edit-term .toc-filter-processed{
+    	position: relative;
+    	@include ico-auto;
+    	line-height: 1.33;
+    	color: $title-color;
+    	display: inline-block;
+    	border-bottom: 1px solid $blue-color;
+	    &:before{
+	    	content: "\f08e";
+	    	color: $blue-color;
+	    	right: -15px;
+	    	top: 0;
+	    }
+    }
+	.form-item-authorise,#edit-term{
+		background: $white-color;
+		margin: 0 !important;
+        @include sizeRem(padding, 15,1);
+        @include border-radius(4px);
+		.form-radios{
+			//padding-left: 30px;
+		}
+	}
+	.form-item-authorise{
+		padding-bottom: 0;
+		input[type="checkbox"] + label{
+			display: inline-block;
+		}
+	}
+	
+    input[type="radio"] + label{
+    	display: inline-block;
+    }
+	.content-first h2{
+		text-align: center;
+		background: $bg-menu-color;
+		color: $white-color;
+		@include sizeRem(margin-bottom, 30);
+		@include sizeRem(font-size, 20);
+		@include wp-font(font-bold);
+		@include sizeRem(width, 500);
+		@include border-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
+        @include sizeRem(padding, 20, 2, 40);
+        margin: 0 auto;
+	}
+
+	.pane-custom{
+		text-align: center;
+		background: $bg-menu-color;
+		color: $white-color;
+		@include sizeRem(margin-bottom, 30);
+		@include sizeRem(font-size, 18);
+		@include wp-font(font-bold);
+		@include sizeRem(width, 750);
+		@include border-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
+        @include sizeRem(padding, 20, 2, 40);
+        margin: 0 auto;
+		
+		p{
+			&:first-child{
+			   @include sizeRem(font-size, 30);
+			   @include wp-font(font-bold);
+			}
+		}
+	}
+
+	#edit-submit{
+		margin-top: 20px;
+		width: 50%;
+		@include sizeRem(padding, 9, 2, 25);
+		@include border-radius(4px);
+		background: $bg-menu-color;
+		color: $white-color;
+		&:hover,&:focus{
+			color: $white-color;
+			background: $blue-color;
+		}
+	}
+	.footer-copyright{
+		margin-top: 0;
+	} 
+	button[disabled],
+	html input[disabled] {
+	  cursor: default;
+	  @include opacity(.5);
+	}
+}
+.page-sign-up-account:not(.page-comment-reply) form{
+	width:750px !important;
+}
+.page-user-register:not(.page-comment-reply) form{
+	padding-top: 0 !important;
+}
+.page-sign-up-account:not(.page-comment-reply){
+	#edit-header{
+		@include sizeRem(padding, 0 , 2, 30);
+	}
+    .content-first h2{
+    	@include sizeRem(width, 750);
+    }
+    form{
+    	@include sizeRem(width, 750);
+    }
+}
+.page-create-password{
+	#edit-submit{
+		margin-top: 0; 
+	}
+	
+	#edit-message{
+		float: right;
+		margin: 0;
+		//color: $title-color !important;
+		text-decoration: underline;
+	}
+}
+
+.page-agency-account-details{
+	@include flex-wrap(wrap);
+    #edit-agency-info{
+    	text-align:  center;
+    	.form-item{
+    		margin: 0;
+    	}
+    }
+
+    legend{
+    	width: 100%;
+    	background: $bg-menu-color;
+		color: $white-color;
+    	text-align: center;
+		@include sizeRem(padding, 9, 2, 25);
+		@include sizeRem(font-size, 14);
+		@include wp-font(font-body);
+		position: relative;
+		&:hover{
+			color: $white-color;
+		}
+    }
+
+    form{
+    	position: relative;
+    	#edit-submit{
+			margin-top: 0px;
+			width: auto;
+		}
+    }
+    #edit-btn-group{
+    	@include display-flex;
+    	@include justify-content(space-between);
+    	@include align-items(center);
+    }
+    .link-add{
+    	// @include sizeRem(margin-top, 10);
+    	// display: inline-block;
+    	text-decoration: underline;
+    	&:hover,&:focus{
+    		color: $title-color;
+    	}
+    }
+
+    #edit-agency-detail {
+	   	@include sizeRem(margin, 0, 2, -20);
+	   	label{
+	   		display: inline-block;
+	   		min-width: auto;
+	   	}
+   	    .fieldset-wrapper{
+   	    	@include sizeRem(padding, 20, 1);
+   	    	@include sizeRem(margin, 0, 2, -5);
+   	    }
+   	    //:not(.form-item-email)
+   	    .form-item{
+	        width: 50%;
+	        float: left;
+	        @include sizeRem(margin-top, 10);
+	        @include sizeRem(margin-bottom, 10);
+	        @include sizeRem(padding, 0, 2, 5);
+	    }
+	    .form-item-nominate-approver-,.form-item-email-{
+      	    float: none;
+      	    width: 100%;
+      	    clear: left;
+      	    display: inline-block;
+        }
+        .form-type-select{
+			position: relative;
+			z-index: 22;
+			&:before{
+				content: "";
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				top: 40px;
+				right: 20px;
+				color: $blue-color;
+				border-left: 1px solid $blue-color;
+				border-bottom: 1px solid $blue-color;
+				@include rotate(315deg);
+				z-index: 3;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				background: $white-color;
+				width: 225px;
+				height: 45px;
+				top: auto;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				z-index: -1;
+				margin: 0 auto;
+				@include border-radius(4px);
+			}
+			.form-select{
+				background-color: transparent;
+				@include sizeRem(padding-right, 35);
+				z-index: 6;
+				position: relative;
+			}
+		}
+		.form-item-nominate-approver-{
+			&:after{
+				width: 460px;
+			}
+		}
+    }   
+}
+
+.page-user{
+	.pane-page-title h1{
+		@include sizeRem(font-size, 40);
+		@include sizeRem(margin-bottom, 30);
+		@include wp-font(font-title);
+		color: $blue-color1;
+		text-transform: capitalize;
+	}
+	.footer-copyright{
+		margin-top: 0;
+	}
+	.pane-user-login-form{
+		margin: 0;
+	}
+	.form-required{
+		color: $title-color;
+	}
+	form{
+		position: relative;
+	}
+	.menu-name-menu-login-menu {
+		ul.menu{
+			padding: 0;
+			margin: 0;
+			text-align: right;
+		}
+		li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			&:last-child{
+				a{
+					//right: auto;
+					//left: 20px;
+				}
+			}
+			a{
+				position: absolute;
+				bottom: -50px;
+				right: 20px;
+				background: $bg-menu-color;
+				color: $white-color;
+				@include sizeRem(padding, 5, 2, 15);
+				@include border-radius(4px);
+				z-index: 22;
+				display: inline-block;
+				&:hover{
+					color: $white-color;
+					background: $blue-color;
+				}
+			}
+		}
+	}
+	.link-group{
+		ul{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			&:last-child{
+				a{
+					right: auto;
+					left: 30px;
+				}
+			}
+		}
+	}
+	.sign-up{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: $bg-menu-color;
+		color: $white-color;
+		@include sizeRem(padding, 5, 2, 15);
+		@include border-radius(4px);
+		&:hover{
+			color: $white-color;
+			background: $blue-color;
+		}
+	}
+	.forget-password{
+		text-decoration: underline;
+	}
+	.pane-menu-login-menu{
+		@include sizeRem(width, 500);
+		margin: 0 auto;
+		position: relative;
+	}
+	.content-first h2{
+		text-align: center;
+		background: $bg-menu-color;
+		color: $white-color;
+		@include sizeRem(margin-bottom, 30);
+		@include sizeRem(font-size, 20);
+		@include wp-font(font-bold);
+		@include sizeRem(width, 500);
+		@include border-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
+        @include sizeRem(padding, 20, 2, 40);
+        margin: 0 auto;
+	}
+	.pane-custom{
+		text-align: left;
+		@include sizeRem(margin-bottom, 30);
+		@include sizeRem(width, 500);
+		@include border-radius(4px);
+		@include border-bottom-right-radius(0);
+		@include border-bottom-left-radius(0);
+        @include sizeRem(padding, 20, 2, 0);
+        margin: 0 auto;
+		
+		p{
+			&:first-child{
+			   @include sizeRem(font-size, 18);
+			   @include wp-font(font-bold);
+			}
+		}
+	}
+
+	#edit-submit{
+		margin-top: 0px;
+		width: 100%;
+		@include sizeRem(padding, 9, 2, 25);
+		@include border-radius(4px);
+		background: $bg-menu-color;
+		color: $white-color;
+		text-transform: uppercase;
+		&:hover{
+			color: $white-color;
+			background: $blue-color;
+		}
+	}
+	.pane-user-detail{
+		@include sizeRem(margin-bottom, 120);
+	}
+	.btn-show{
+		a{
+			@include btn-show;
+			@include sizeRem(font-size, 14);
+			position: relative !important;
+		}
+	}
+	.pane-govcms-blocks-govcms-email-alerts ,.pane-email-alert-panel-pane-1{
+		h2{
+			@include sizeRem(font-size, 28);
+			@include wp-font(font-title-med);
+			background: transparent;
+			padding: 0;
+			text-align: left;
+			width: auto;
+			margin: 0;
+			color: $title-color;
+			@include sizeRem(margin-bottom, 15);
+		}
+		a.btn-a{
+			position: absolute;
+			right: 0;
+			top: -70px;
+			@include button-btn;
+			background-color: transparent;
+			@include sizeRem(padding, 13.5,2, 15);
+			@include sizeRem(min-width, 172);
+			text-align: center;
+			@include sizeRem(font-size, 16);
+			border: 1.5px solid #00d1a7;
+			&.active{
+				background: $blue-color;
+			}
+		}
+	}
+	.content-second{
+		h2{
+			position: absolute;
+			top: -10px;
+			margin: 0;
+		}
+	}
+}
+
+.page-user-password{
+	form{
+		padding-top: 0 !important;
+	}
+}
+
+.page-user-detail-admin{
+	.main-content{
+		padding-top: 25px !important;
+		padding-bottom: 0 !important;
+	}
+	.tabs{
+		margin-bottom: 0 !important;
+	}
+	.footer-copyright{
+		margin-top: 6px !important;
+	}
+}
+
+.view-jobs .views-row:first-child{
+	.views-field-created{
+		margin-top: 0;
+	}
+}
+
+.content-feature{
+	background: $white-color;
+}
+.banner .panel-pane{
+	margin-bottom: 0;
+}
+
+.view-owlcarouse-testimornial{
+	@include sizeRem(padding-top, 28);
+    .view-content{
+		position: relative;
+		@include sizeRem(padding-left, 55);
+		@include sizeRem(padding-right, 55);
+		margin-left: 125px;
+		&:before,&:after{
+			// content: url("../images/icon/ico-openquote.svg");
+			background: url("../images/icon/ico-openquote.svg");
+			content: "";
+	        position:absolute;
+	        color: $blue-color1;
+	        top: 0;
+	        left:0;
+	        text-align: center;
+	        @include fontawesome;
+	        width: 45.5px;
+	        height: 38px;
+	        background-size: 45.5px 38px; 
+		}
+		&:after{
+			background: url("../images/icon/ico-closequotes.svg");
+			left: auto;
+			right:0;
+			top: auto;
+			bottom: 0;
+		}
+	}
+	.views-field-body{
+		@include sizeRem(font-size, 18);
+		@include wp-font(font-body);
+		color: $title-color;
+		font-style: italic;
+		line-height: 1.5;
+	}
+	div[class*="item-"]{
+		display: none;
+	}
+	div[class*="item-0"]{
+   		display: block;
+   }
+   .owl-carousel{
+   		div[class*="item-"]{
+			display: block;
+		}
+   }
+}
+.paner-views-gocm-aps-banner-skew{
+	position: relative;
+	background: $white-color;
+	z-index: 1;
+	&:before{
+    	content: "";
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	    background: $white-color;
+	    position: absolute;
+	    top: 0;
+	    right: -4%;
+	    @include skewX(-6deg);
+	    z-index: -1;
+    }
+}
+
+.front{
+	.btn-btt{
+		display: none !important;
+	}
+	.banner{
+		margin-top: 0;
+	}
+	.view-banner-basic{
+		padding-top: 0;
+	}
+	.view-banner .views-field-field-image .field-content{
+		margin-top: 0;
+	}
+	
+	.content-feature{
+		overflow: hidden;
+		.container-fluid{
+			@include display-flex;
+			@include sizeRem(min-height, 328);
+		}
+		.panel-pane{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.views-field-title{
+			color: $blue-color1;
+			@include sizeRem(font-size, 28);
+	        @include wp-font(font-title-med);
+	        @include sizeRem(margin-bottom, 18);
+	        text-transform: none;
+		}
+		.pane-views-panes{
+			@include sizeRem(padding, 50, 2,0);
+			width: 48%;
+		    float: left;
+		    color: #FFF;
+		    @include display-flex;
+		    @include justify-content(flex-end);
+		    .view-content{
+		    	width: 520px;
+			    @include sizeRem(padding, 30, 4, 0 ,30 , 15);
+			    margin-right: 65px;
+		    }
+		}
+		.pane-view-banner-panel-pane-2{
+			position: relative;
+			background: $white-color;
+			z-index: 1;
+			&:before{
+		    	content: "";
+			    display: block;
+			    width: 100%;
+			    height: 100%;
+			    background: $white-color;
+			    position: absolute;
+			    top: 0;
+			    right: -4%;
+			    @include skewX(-4deg);
+			    z-index: -1;
+		    }
+		}
+		.view-owlcarouse-testimornial .view-content{
+			@include sizeRem(padding-left, 55);
+		    @include sizeRem(padding-right, 55);
+		    @include sizeRem(padding-top, 15);
+		    width: 450px;
+		}
+		.pane-view-testimornial-panel-pane-1{  
+			background: #f6f6f6;
+			@include justify-content(flex-start);
+			width: 52%;
+			.owl-wrapper-outer{
+				overflow: hidden;
+			}
+		}
+	}
+	.content-main{
+		overflow: hidden;
+		.view-banner-basic{
+			padding-top: 0;
+		}
+		.main-inner{
+			@include display-flex;
+			@include sizeRem(min-height, 412);
+		}
+		
+		.views-field-title{
+			color: $white-color;
+			line-height: 1.4;
+			@include sizeRem(font-size, 28);
+			@include wp-font(font-title-med);
+			@include sizeRem(margin-bottom, 20);
+			text-transform: none;
+		}
+		.views-field-body {
+			color: $white-color;
+			@include sizeRem(margin-bottom, 30);
+			@include sizeRem(padding-right, 10);
+			@include sizeRem(font-size, 14);
+			@include wp-font(font-body);
+			p{
+				@include sizeRem(margin-bottom, 15);
+			}
+		}
+		.container{
+			display: flex;
+		}
+		.panel-pane{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.pane-views-panes{
+			display: inline-block;
+			width: 53.9%;
+		    float: left;
+		    color: #FFF;
+		    @include display-flex;
+	        @include justify-content(flex-end);
+		    .pane-content{
+		    	width: 542px;
+			    @include sizeRem(padding, 20, 2,0);
+		    }
+		}
+		.view-banner-basic {
+			.views-field-title{
+				@include sizeRem(max-width, 370);
+			}
+		}
+		.pane-view-banner-panel-pane-4{
+		    background: #1b6c97;
+		    @include sizeRem(padding, 50, 2,0);
+		    @include justify-content(flex-start);
+		    .pane-content{
+		    	margin-left: 115px;
+		    	@include sizeRem(padding-left, 50);
+		    	@include sizeRem(padding-right, 15);
+		    }
+		}
+	}
+	.blocks-aps-home-static-carouse{
+		display: none;
+	}
+	.paner-apsjobs-blocks-homepage-carousel{
+		display: none;
+	}
+	.paner-govcms-aps-blocks-homepage-statistics{
+		position: relative;
+		&:before{
+	    	content: "";
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    background: #3991bf;
+		    position: absolute;
+		    top: 0;
+		    right: -4%;
+		    @include skewX(-4.5deg);
+		    z-index: -1;
+	    }
+	    width: 46.1%;
+	    float: left;
+	    color: #FFF;
+	    background: #3991bf;
+	    z-index: 1;
+	    @include sizeRem(padding, 50, 2,0);
+	}
+	.content-first{
+		background:  #f6f6f6;
+		.pane-view-job-panel-pane-1{
+			@include sizeRem(margin-bottom, 20);//30
+		}
+	}
+	.content-fifth{
+		h2{
+			text-align: center;
+			@include sizeRem(font-size, 28);
+			color: $blue-color1;
+			@include wp-font(font-title-med);
+			@include sizeRem(margin, 25, 4, 0,55 ,0);
+		}
+		.item-list{
+			margin-top: 40px;
+			li{
+				list-style: none;
+			}
+		}
+		.pager li > a{
+			&:hover,&:focus{
+				background: transparent;
+			}
+		}
+		.pager-next a, .pager-first a{
+			&:before{
+				display: none;
+			}
+			@include sizeRem(font-size, 12);
+			color: $title-color;
+			@include wp-font(font-medium);
+			&:hover{
+				color: $blue-color1;
+			}
+			&:after{
+		        content: "\f107";
+		        position:absolute;
+		        text-align: center;
+		        @include fontawesome;
+				right: -20px;
+				color: $blue-color;
+				top: -2px;
+				font-size: 20px;
+			}
+		}
+		.pane-custom{
+			text-align: center;
+			margin: 25px 0;
+		}
+	}
+	.content-sixth{
+		position: relative;
+		&:before{
+	    	content: '';
+	    	position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 5;
+		    background: rgba(#2d3b7a , .5);
+	    }
+	    &:after {
+			content: '';
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    background-image: linear-gradient(to right, rgba(16, 34, 111, 0.81), rgba(16, 34, 111, 0));
+		}
+		.panel-pane{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	.footer-copyright{
+		margin-top: 0;
+	}
+}
+
+.page-aps-agency-dashboard{
+	.content-third .container-fluid{
+		@include sizeRem(padding-bottom, 35);
+	}
+}
+
+.page-aps-agency-dashboard-up{
+	.pane-banner-basic.pane-banner-300 .inside{
+		min-height: auto;
+		padding-top: 0;
+		overflow: visible;
+		// .admin-menu &{
+		//     min-height: 300px;
+		//     overflow: hidden;
+		//     padding-top: 150px;
+		// }
+	}
+	.pane-banner-basic .inside::before{
+		display: none;
+		// .admin-menu &{
+		//    display: block;
+		// }
+	}
+	.pane-banner-basic.pane-banner-300 .view-inner{
+		@include sizeRem(padding-top, 150);
+		// .admin-menu &{
+		//     padding-top: 0;
+		// }
+	}
+	.view-aps-job-baner .views-field-field-image{
+		position: absolute;
+		width: 100%;
+		overflow: hidden;
+		height: 300px;
+		//padding-top: 150px;
+		// .admin-menu &{
+		//     position: static;
+		//     height: auto;
+		//     overflow: visible;
+		// }
+		&:before{
+         	content: "";
+          	background: rgba(16, 34, 111, 0.6);
+          	display: block;
+          	width: 100%;
+          	height: 100%;
+         	position: absolute;
+          	z-index: 11;
+         	bottom: 0;
+          	left: 0;
+      	}
+		
+		.field-content{
+			height: 300px;
+			overflow: hidden;
+		}
+	}
+	&.admin-menu{
+		.view-aps-job-baner .views-field-field-image{
+			position: static;
+		    height: auto;
+		    overflow: visible;
+		    &:before{
+		    	display: none;
+		    }
+		    .field-content{
+		    	height: auto;
+		    	overflow: visible;
+		    }
+		}
+		.pane-banner-basic.pane-banner-300 .view-inner{
+			padding-top: 0;
+		}
+		.pane-banner-basic .inside::before{
+			display: block;
+		}
+		.pane-banner-basic.pane-banner-300 .inside{
+		    min-height: 300px;
+		    overflow: hidden;
+		    padding-top: 150px;
+		}
+	}
+}
+@media(min-width: 1400px){
+	.front{
+		.content-main .pane-views-panes{
+			width: 53.9%;
+		}
+		.paner-govcms-aps-blocks-homepage-statistics{
+			width: 46.1%;
+		}
+	}
+	 
+	.header .block-menu ul.menu li, .header .menu-name-main-menu ul.menu li{
+		@include sizeRem(padding-left, 24);
+		@include sizeRem(padding-right, 24);
+	}
+}
+@media(min-width: 1920px){
+	.front{
+		.content-main .pane-views-panes{
+			width: 52.4%;
+		}
+		.paner-govcms-aps-blocks-homepage-statistics{
+			width: 46.6%;
+		}
+	}
+}
+.view-aps-vacancy{
+	.views-field-field-agency{
+		@include sizeRem(font-size, 16);
+		@include wp-font(font-body);
+		color: $title-color;
+	}
+	.views-field-field-location-raw{
+		@include sizeRem(font-size, 16);
+		@include wp-font(font-body);
+		color: $boder-bottom;
+	}
+}
+
+.page-panel-form-basic{
+	&.modal-open{
+		.paner-apsjobs-vacancies-new-vacancy{
+			z-index: inherit;
+		}
+	}
+	input{
+		@include placeholder( $place-color);
+	}
+	.content-first .container{
+		padding-top: 0;
+	}
+	.paner-apsjobs-vacancies-new-vacancy{
+		background: $white-color;
+		position: relative;
+		@include sizeRem(margin-top, -50);
+		//margin-bottom: 0;
+		z-index: 25;
+		@include border-radius(4px);
+	}
+	.form-item-legal{
+		input[type="checkbox"] + label{
+			display: block;
+			padding-left: 30px;
+		}
+	}
+	
+	a.toc-filter-processed{
+		display: block;
+	}
+	
+	.form-item-position-number,
+	.form-item-job-category,
+	.form-item-job-level,
+	.form-item-clearance-level,
+	.form-item-job-title{
+		position: relative;
+		.description{	
+			a{
+				position: absolute;
+				color: $title-color;
+				background: $blue-color;
+				display: block;
+				text-align: center;
+				@include sizeRem(top, 0);
+				@include sizeRem(right, 10);
+				@include border-radius(50%);
+				@include sizeRem(width, 15);
+				@include sizeRem(height, 15);
+				line-height: 15px;
+			}
+		}
+		.clear-text{
+			position: absolute;
+			color: $title-color;
+			cursor: pointer;
+			display: block;
+			text-align: center;
+			@include sizeRem(top, 35);
+			@include sizeRem(right, 10);
+			@include border-radius(50%);
+			@include sizeRem(width, 15);
+			@include sizeRem(height, 15);
+		}
+	}
+	.form-item-apply-url{
+		.description{	
+			padding-right: 20px;
+			a{
+				position: absolute;
+				color: $title-color;
+				background: $blue-color;
+				display: block;
+				text-align: center;
+				@include sizeRem(top, 0);
+				@include sizeRem(right, 0);
+				@include border-radius(50%);
+				@include sizeRem(width, 15);
+				@include sizeRem(height, 15);
+				line-height: 15px;
+			}
+		}
+	}
+}
+
+.node-type-aps-vacancies{
+	.unpublish a{
+		@include button-btn;
+		@include sizeRem(font-size, 12);
+	    @include wp-font(font-medium);
+	    text-align: center;
+	}
+	.pane-node-content{
+        background: $white-color;
+		@include sizeRem(padding, 40, 1);
+		@include sizeRem(padding-top, 35);
+		margin: 0;
+	}
+	.node-aps-vacancies{
+        padding: 0;
+	}
+	h2.pane-title {
+		@include wp-font(font-bold);
+		@include sizeRem(margin-bottom, 20);
+		margin-top: 0;
+		a{
+			color: $title-color;
+			text-transform: capitalize;
+		}
+	}
+	.pane-node-field-job-description{
+		margin: 0;
+	}
+	.field-name-field-job-description{
+		background: $white-color;
+		@include sizeRem(padding, 45, 2, 0);
+		margin-top: 45px !important;
+		border-top: 1.5px solid $border-color-streght;
+		padding-bottom: 0;
+		.field-label{
+			display: block;
+			width: 100%;
+			@include wp-font(font-bold);
+			@include sizeRem(font-size, 20);
+			@include sizeRem(margin-bottom, 25, $important: true);
+		}
+	}
+	.content-main{
+		.container{
+			@include container;
+		}
+	}
+	.content-first{
+		@include sizeRem(margin-top, 40);
+		.container{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.pane-node-content{
+			padding-bottom: 0;
+		}
+	}
+	.content-second {
+		.container{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	.content-fifth{
+		.container{
+			background: $white-color;
+			//@include sizeRem(width, 1140);
+			padding-right: 40px;
+			padding-left: 40px;
+			//padding-top: 0;
+			//padding-bottom: 0;
+			//@include justify-content(flex-end);
+			//margin-bottom: 25px;
+            @include display-flex;
+            @include align-items(center);
+            position: relative;
+            @include flex-wrap(wrap);
+            &:before,&:after{
+				background: #f6f6f6 ;
+				top: 0;
+				left: 0;
+				width: 15px;
+				height: 100%;
+				position: absolute;
+				display: block;
+		    }
+		    &:after{
+		    	left: auto;
+		    	right: 0;
+		    }
+			.pane-custom.pane-1{
+				span{
+					color: $title-color;
+			    	@include sizeRem(font-size, 14);
+			    	@include wp-font(font-medium);
+			    	margin-right: 5px;
+				}
+			}
+		}
+		
+		.panel-separator{
+			display: none;
+		}
+		.panel-pane{
+			margin: 0;
+			width: 30%;
+		}
+		.panel-pane-ap-online{
+			@include display-flex;
+			@include flex-width-col-xs(70%);
+			@include justify-content(flex-end);
+			a{
+				padding: 10.5px 15px;
+			}
+			.view-aps-vacancies-detail-page{
+				padding-bottom: 0;
+			}
+		}
+		.view-aps-vacancies-detail-page{
+			padding-bottom: 0;
+		}
+		.views-field-field-outcome{
+			width: 160px;
+			.caret{
+				display: none;
+			}
+			a{
+				@include sizeRem(padding, 12.5, 2, 15);
+		        background: $blue-color;
+		        border-color: $blue-color;
+		        color: $title-color;
+		       	width: 100%;
+		       	cursor: pointer;
+		        margin-left: 0px;
+		        border-radius: 4px;
+		        display: inline-block;
+		        text-align: center;
+		        @include sizeRem(font-size, 12);
+		        @include wp-font(font-medium);
+		        position: relative;
+		        text-transform: capitalize;
+		        &:hover,&:focus{
+		            background: $hover-color;
+		        	border-color: $hover-color;
+		        	color: $title-color;
+		        }
+			}
+			.dropdown-menu {
+				margin:2px 0 0;
+				padding: 0;
+				> li {
+					> a{
+						border-bottom: 1px solid $border-color-streght;
+						@include border-radius(0);
+						&:hover,&:focus{
+						}
+					}
+					&:last-child{
+						> a{
+							border-bottom: none;
+							@include border-bottom-left-radius(4px);
+							@include border-bottom-right-radius(4px);
+						}
+					}
+				}
+			}
+		}
+	}
+	.content-sixth{
+	 	.container{
+    		@include justify-content(flex-end);
+            @include display-flex;
+            @include align-items(center);
+            //@include sizeRem(width, 1140);
+            @include flex-wrap(wrap);
+			padding-right: 40px;
+			padding-left: 40px;
+			background: $white-color;
+			position: relative;
+			//margin-bottom: 25px;
+			&:before,&:after{
+				background: #f6f6f6 ;
+				top: 0;
+				left: 0;
+				width: 15px;
+				height: 100%;
+				position: absolute;
+				display: block;
+		    }
+		    &:after{
+		    	left: auto;
+		    	right: 0;
+		    }
+			.pane-custom.pane-2{
+				span{
+					color: $title-color;
+			    	@include sizeRem(font-size, 14);
+			    	@include wp-font(font-medium);
+			    	margin-right: 5px;
+				}
+			}
+    	}
+	}
+	.pane-apsjobs-job-approval-apsjobs-vacancy-approval-form{
+		@include flex-width-col-xs(100%);
+	}
+	.create-outcome{
+		@include sizeRem(padding, 12.5, 2, 15);
+        background: $blue-color;
+        border-color: $blue-color;
+        color: $title-color;
+       	width: 100%;
+       	cursor: pointer;
+        margin-left: 0px;
+        border-radius: 4px;
+        display: inline-block;
+        text-align: center;
+        @include sizeRem(font-size, 12);
+        @include wp-font(font-medium);
+        position: relative;
+        &:hover,&:focus{
+            background: $hover-color;
+        	border-color: $hover-color;
+        	color: $title-color;
+        }
+        &:after{
+	        content: "";
+	        position:absolute;
+	        color: $blue-color;
+	        right: 12px;
+	        top: 14px;
+	        text-align: center;
+	        border-bottom: 2px solid $title-color;
+	        border-left: 2px solid $title-color;
+	        @include sizeRem(width, 8);
+	        @include sizeRem(height, 8);
+	        @include rotate(315deg);
+	    }
+	}
+	form#apsjobs-vacancy-approval-form{
+		text-align: right;
+		input[type="radio"] + label:before{
+			//top: 2px;
+		}
+		input[type="radio"] + label{
+			padding-left: 30px;
+		}
+		.form-required{
+			color: $title-color;
+		}
+		.form-item{
+			@include display-flex;
+			@include align-items(center);
+			@include justify-content(flex-end);
+			label{
+				margin-bottom: 0;
+				min-width: 205px;
+				padding-right: 25px;
+			}
+		}
+		.form-item-approval-date-comment,
+		.form-item-approval-detail-comment,
+		.form-item-approval-comment{
+			.form-text{
+				width: 50%;
+			}
+			display: inline-block;
+			text-align: left;
+			label{
+				margin-bottom: 15px;
+			}
+		}
+		.form-radios{
+			.form-item{
+				display: inline-block;
+				margin-right: 20px;
+				&:last-child{
+					margin-right: 0;
+					label{
+						padding-right: 0 !important;
+					}
+				}
+			}
+		}
+		#edit-btn-group{
+			padding-bottom: 40px;
+			a{
+				padding: 10px 15px;
+	            background: $blue-color;
+	            border-color: $blue-color;
+	            color: $title-color;
+	            min-width: 100px;
+	            margin-left: 15px;
+	            border-radius: 4px;
+	            display: inline-block;
+	            text-align: center;
+	            @include sizeRem(font-size, 12);
+	            @include wp-font(font-medium);
+	            &:hover,&:focus{
+	                background: $hover-color;
+	            	border-color: $hover-color;
+	            	color: $title-color;
+	            }
+			}
+			input,button{
+	            padding: 10px 15px !important;
+	            background: $blue-color;
+	            border-color: $blue-color;
+	            color: $title-color;
+	            min-width: 100px;
+	            margin-left: 15px;
+	            border-radius: 4px !important;
+	            margin-left: 15px;
+	            @include sizeRem(font-size, 12);
+	            &:hover,&:focus{
+	                background: $hover-color;
+	            	border-color: $hover-color;
+	            	color: $title-color;
+	            }
+			}
+		}
+		#edit-submit,#edit-cancel{
+            padding: 10px 15px !important;
+            background: $blue-color;
+            border-color: $blue-color;
+            color: $title-color;
+            min-width: 100px;
+            margin-left: 15px;
+            border-radius: 4px !important;
+            &:hover,&:focus{
+                background: $hover-color;
+            	border-color: $hover-color;
+            	color: $title-color;
+            }
+		}
+	}
+	
+	.pane-flag-link{
+			margin: 0;
+			display: inline-block;
+		    padding-top: 0;
+		    text-align: right;
+			a{
+		        @include button-btn;
+				text-align: center;
+				cursor: pointer;
+				min-width: auto;
+				min-height: 40px;
+				width: 160px;
+				margin: 0;
+				position: relative;
+				text-transform: capitalize;
+				@include sizeRem(padding, 9.5, 4, 25, 9.5, 25);
+				@include sizeRem(font-size, 12);
+				@include wp-font(font-medium);
+				margin-left: 10px;
+				&.unflag-action{
+					background: #d0011b;
+					border-color: #d0011b;
+					color: $white-color;
+					pointer-events: none;
+					// cursor:no-drop;
+				}
+			}
+			&:first-child a{
+				background: #d0011b;
+				border-color: #d0011b;
+				color: $white-color;
+			}
+	}
+
+	.footer-copyright{
+		margin-top: 15px;
+	}
+	.back-to-top{
+		padding-bottom: 0;
+		margin-top: 15px;
+	}
+}
+
+.modal-body{
+	.form-item-approval-comment{
+		display: block !important;
+	}
+	#edit-popup{
+		button{
+			margin-right: 15px;
+			background: #f5f5f5;
+			border-color: #dddfe2 !important;
+			background-color: #f5f5f5 !important; 
+			&:hover,&:focus{
+				background: #dddfe2;
+				border-color: #dddfe2 !important;
+				background-color: #dddfe2 !important;
+			}
+		}
+	}
+}
+.approval-reject,.approval-approve,.approval-result{
+	@include button-btn;
+	text-align: center;
+	cursor: pointer;
+	min-width: auto;
+	min-height: 40px;
+	width: 160px;
+	margin: 0;
+	position: relative;
+	text-transform: capitalize;
+	@include sizeRem(padding, 9.5, 4, 25, 9.5, 25);
+	@include sizeRem(font-size, 12);
+	@include wp-font(font-medium);
+	margin-left: 10px;
+}
+.approval-reject,.approval-result{
+    background: #d0011b;
+	border-color: #d0011b;
+	color: $white-color;
+	&:hover{
+		border-color: #d0011b;
+		background: #d0011b;
+		color: $white-color; 
+	}
+}
+.approval-reset{
+	background-color: transparent !important;
+	width: auto;
+	min-height: auto;
+	@include sizeRem(font-size, 12);
+	@include wp-font(font-medium);
+	text-decoration: underline;
+	color: $blue-color1;
+	padding-left: 5px;
+}
+.approved{
+	background: $blue-color;
+	border-color: $blue-color;
+	color: $title-color;
+	&:hover{
+		background: $blue-color;
+		border-color: $blue-color;
+		color: $title-color;
+	}
+}
+.approval-date,.approval-detail{
+	margin-bottom: 20px;
+	text-align: right;
+}
+.approval-detail{
+	margin-bottom: 40px;
+}
+
+//detail.................
+@mixin background-detial{
+	background-color:$white-color;
+	@include sizeRem(padding, 35, 4, 40 , 30, 40);
+	@include sizeRem(margin-top, 15);
+	@include border-radius(4px);
+	.field {
+		@include wp-font(font-body);
+		@include sizeRem(font-size, 15);
+		@include sizeRem(margin, 13, 2, 0);
+		.field-label{
+			@include sizeRem(min-width, 285);
+			@include wp-font(font-medium);
+			float: left;
+			display: inline-block;
+		}
+		.field-items{
+			float: none;
+			display: inline-block;
+            .field-item{
+            	display: inline-block;
+            	a{
+            		color: $title-color;
+            		@include wp-font(font-body);
+            	}
+            }
+		}
+		&:last-child{
+			margin-bottom: 8px;
+		}
+	}
+}
+.node-aps-vacancies{
+	@include background-detial;
+	.field-type-entityreference {
+		@include sizeRem(margin-bottom, 35);
+		@include wp-font(font-medium);
+	}
+}
+.view-aps-vacancies-detail-page {
+	background: $white-color;
+	//border-bottom: 1px solid $boder-bottom;
+	@include sizeRem(padding-bottom, 40);
+	.field {
+		@include wp-font(font-body);
+		@include sizeRem(font-size, 15);
+		@include sizeRem(margin, 13, 2, 0);
+		.field-label{
+			@include sizeRem(min-width, 285);
+			@include wp-font(font-medium);
+			float: left;
+		}
+		.field-items{
+			float: none;
+            .field-item{
+            	display: inline-block;
+            	a{
+            		color: $title-color;
+            		@include wp-font(font-body);
+            	}
+            }
+		}
+		&:last-child{
+			margin-bottom: 8px;
+		}
+	}
+	.field-type-entityreference {
+		@include sizeRem(margin-bottom, 35);
+		@include wp-font(font-medium);
+	}
+}
+.node-aps-outcomes{
+	@include background-detial;
+}
+.node-aps-gazettes{
+	@include background-detial;
+}
+.node-aps-agencies{
+	@include background-detial;
+	.node-readmore{
+		a{
+            @include button-btn;
+		}
+	}
+	.comment-add {
+		a{
+			@include button-btn;
+		}
+	}
+}
+
+.node-type-aps-outcomes{
+	.content-first{
+		margin-top: 50px;
+		.container{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.pane-content{
+			@include display-flex;
+			@include sizeRem(padding,20, 2, 40);
+			padding-bottom: 0;
+			div:last-child{
+				margin-left: 15px;
+			}
+			a{
+				@include button-btn;
+				text-align: center;
+				cursor: pointer;
+				//min-width: auto;
+				min-height: 40px;
+				//width: 100px;
+				margin: 0;
+				position: relative;
+				text-transform: capitalize;
+				@include sizeRem(padding, 9.5, 4, 25, 9.5, 25);
+				@include sizeRem(font-size, 12);
+				@include wp-font(font-medium);
+			}
+		}
+		.panel-pane{
+			background: $white-color;
+			margin: 0;
+		}
+	}
+    .pane-page-title {
+    	margin: 0;
+    	//padding-top: 20px;
+    	h2{
+	        @include sizeRem(font-size, 30);
+	        @include wp-font(font-title-med);
+	        margin: 0;
+	        text-transform: capitalize;
+	    }
+    }
+	.content-second{
+		.container{
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+		.panel-pane{
+			background: $white-color;
+			margin: 0;
+			&:first-child{
+				h2.pane-title{
+					@include sizeRem(padding-top, 25);
+				}
+			}
+		}
+		.view-aps-outcomes .views-row{
+			margin-top: 0;
+			@include sizeRem(padding-top, 10);
+			@include sizeRem(padding-bottom, 10);
+		}
+		.view-aps-vacancy{
+			.views-label{
+				float: none;
+				min-width: auto;
+				margin-right: 15px;
+			}
+		}
+		h2.pane-title{
+			border-bottom:2px solid #eee !important;
+			@include sizeRem(font-size,28);
+			@include sizeRem(padding-top,10);
+			@include sizeRem(padding-left, 20);
+			@include sizeRem(padding-right, 20);
+			@include sizeRem(margin, 0 , 2, 20);
+		}
+
+		.views-field{
+			@include display-flex;
+			@include align-items(center); 
+			@include sizeRem(font-size, 15);
+			@include sizeRem(margin, 13, 2, 0);
+		}
+		.views-field-title{
+			@include sizeRem(font-size, 28);
+		}
+		.views-field-field-position-number{
+			text-align: right;
+			display: block;
+		}
+		.views-label{
+			@include sizeRem(min-width, 285);
+			@include wp-font(font-medium);
+			@include sizeRem(font-size, 15);
+		}
+		input[type="checkbox"] + label{
+			color: transparent;
+			cursor: inherit;
+			display: none;
+		}
+		input[type="checkbox"]{
+			display: block;
+		}
+	}
+	.content-third{
+		.container-fluid{
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+		}
+		.pane-content{
+			@include display-flex;
+			@include sizeRem(padding, 40);
+			padding-top: 0;
+			div:last-child{
+				margin-left: 15px;
+			}
+			a{
+				@include button-btn;
+				text-align: center;
+				cursor: pointer;
+				//min-width: auto;
+				min-height: 40px;
+				//width: 100px;
+				margin: 0;
+				position: relative;
+				text-transform: capitalize;
+				@include sizeRem(padding, 9.5, 4, 25, 9.5, 25);
+				@include sizeRem(font-size, 12);
+				@include wp-font(font-medium);
+			}
+		}
+		.panel-pane{
+			background: $white-color;
+			margin: 0;
+		}
+	}
+	.create-outcome{
+		@include sizeRem(padding, 12.5, 2, 15);
+        background: $blue-color;
+        border-color: $blue-color;
+        color: $title-color;
+       	width: 100%;
+       	cursor: pointer;
+        margin-left: 0px;
+        border-radius: 4px;
+        display: inline-block;
+        text-align: center;
+        @include sizeRem(font-size, 12);
+        @include wp-font(font-medium);
+        position: relative;
+        &:hover,&:focus{
+            background: $hover-color;
+        	border-color: $hover-color;
+        	color: $title-color;
+        }
+        &:after{
+	        content: "";
+	        position:absolute;
+	        color: $blue-color;
+	        right: 12px;
+	        top: 14px;
+	        text-align: center;
+	        border-bottom: 2px solid $title-color;
+	        border-left: 2px solid $title-color;
+	        @include sizeRem(width, 8);
+	        @include sizeRem(height, 8);
+	        @include rotate(315deg);
+	    }
+	}
+	.views-field-field-outcome{
+		width: 160px;
+		.field-content{
+			margin-left: 0 !important;
+		}
+		.dropdown{
+			margin-left: 0 !important;
+		}
+		.caret{
+			display: none;
+		}
+		a{
+			@include sizeRem(padding, 12.5, 2, 15);
+	        background: $blue-color;
+	        border-color: $blue-color;
+	        color: $title-color;
+	       	width: 100%;
+	       	cursor: pointer;
+	        margin-left: 0px;
+	        border-radius: 4px;
+	        display: inline-block;
+	        text-align: center;
+	        @include sizeRem(font-size, 12);
+	        @include wp-font(font-medium);
+	        position: relative;
+	        text-transform: capitalize;
+	        &:hover,&:focus{
+	            background: $hover-color;
+	        	border-color: $hover-color;
+	        	color: $title-color;
+	        }
+		}
+		.dropdown-menu {
+			margin:2px 0 0;
+			padding: 0;
+			border: none;
+			> li {
+				> a{
+					border-bottom: 1px solid $border-color-streght;
+					@include border-radius(0);
+					&:hover,&:focus{
+					}
+				}
+				&:last-child{
+					> a{
+						border-bottom: none;
+						@include border-bottom-left-radius(4px);
+						@include border-bottom-right-radius(4px);
+					}
+				}
+			}
+		}
+	}
+	.dropdown-menu{
+		z-index: 50;
+	}
+}
+
+.page-aps-agency-dashboard h2.pane-title{
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+//move  reponsive........//
+@media(max-width: 1199px){
+	
+}
+
+@media (min-width: 768px) and (max-width: 1199px){
+	
+}
+@media(max-width: 991px){
+	
+}
+// @media(max-width: 700px){
+// 	.pane-apsjobs-alerts-apsjobs-alerts-manage-alerts table td:last-child{
+// 		.btn{
+// 			margin-bottom: 4px;
+// 		}
+// 	}
+// }
+@media (max-width: $tablet-ht){
+	.block-menu,.menu-name-main-menu{
+		ul.menu{
+			@include display-flex;
+			padding: 0;
+			margin: 0;
+			li{
+				margin: 0;
+				padding: 0;
+				@include sizeRem(padding-left, 16);
+				@include sizeRem(padding-right, 16);
+				list-style: none;
+				a{
+					color: rgba(  $title-color,.75);
+					@include sizeRem(font-size, 16);
+					@include wp-font(font-body);
+					text-transform: capitalize;
+					line-height: 1.25;
+					display: block;
+					&:hover, &:focus{
+						text-decoration: underline;
+						color: $blue-color1;
+					}
+					&.active{
+						color: $blue-color1;	
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 767px){
+	// .form-aps-job-secrh .form-item-salary-range label{
+	// 	top: -32px;
+	// }
+	// .form-aps-job-secrh .classification label{
+	// 	top: -32px;
+	// }
+
+	// .front .form-aps-job-secrh .form-item-find-button .item-add-jobs{
+	// 	margin-top: 15px;
+	// }
+
+	
+}
+@media(max-width: 640px){
+	
+}
+
+@media(max-width: 550px){
+}
+@media(max-width: 480px){
+    
+}
+//480
+@media (max-width: 420px){
+	
+}
+
+
+
+.form-item-sort-order{
+    .chosen-container{
+    	text-align: left;
+    	width: 251px !important;
+    }
+}
+// fix-ie//
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+selector { property:value; }
+	.header .container{
+		position: relative;
+	}
+    .header .navbar-collapse{
+    	width: auto;
+    	position: absolute;
+    	right: 15px;
+    	top: 50%;
+    	@include translateY(-50%);
+    }
+
+    .front .main{
+   		overflow: hidden;
+    }
+    .aps-left-block .job-vacancies .views-field-number{
+   	    margin: 0;
+   	    margin-right: 50px;
+    }
+    .front .content-feature .container-fluid{
+    	min-height: auto;
+    }
+    .page-aps-agency .view-notifications .views-field-noid:first-child:before{
+    	top: auto !important;
+    } 
+    .page-panel-form-basic .form-item-job-title .clear-text{
+    	display: none;
+    }
+    .page-panel-banner section.message{
+    	//margin-bottom: 20px;
+    }
+    .node-aps-agencies .field .field-items{
+    	display: block;
+    }
+    .node-aps-agencies .field .field-items .field-item{
+    	display: block;
+    }
+}
+// safari//
+@media \\0 screen {
+    .front{
+		.content-main .pane-views-panes{
+			width: 53%;
+		}
+		.paner-govcms-aps-blocks-homepage-statistics{
+			width: 47%;
+		}
+	}
+}
+@supports (-webkit-appearance:none) {
+	@media (min-width: 1920px){
+		.front{
+			.content-main .pane-views-panes{
+				width: 53.4%;
+			}
+			.paner-govcms-aps-blocks-homepage-statistics{
+				width: 46.6%;
+			}
+		}
+	}
+}
+/*...................Nam 10/11/17.......................*/
+.banner{
+  	.view-banner-basic{
+  		ul{
+  			padding: 0;
+  			margin: 0;
+  		}
+  		li{
+  			list-style: none;
+  			padding: 0;
+  			margin: 0;
+  		}
+  		.item-list{
+  			padding: 0;
+  			margin: 0;
+  		}
+  	}
+ //  	.owl-wrapper{
+	// 	width: 100% !important;
+	// 	.owl-item{
+	// 		width: 100% !important;
+	// 	}
+	// }
+	.owl-origin{
+
+	}
+}
+.view-banner-basic .owl-wrapper-outer{
+	overflow: hidden;
+}
+[class*="owl-carousel-panel"]{
+	&:not(.owl-carousel){
+		[class*="item-"]{
+			//display: none;
+		}
+		.item-0{
+			display: block;
+		}		
+	}
+}
+.view-less{
+	display: none;
+}

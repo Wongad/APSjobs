@@ -1,0 +1,224 @@
+<?php
+include_once dirname(__FILE__) . '/apsjobs_assignments_movements.admin.inc';
+
+  /**
+ * Implements hook_entity_info().
+ */
+function apsjobs_assignments_movements_entity_info() {
+  $info = array();
+  $info['apsjobs_assignments_movements'] = array(
+    'label' => t('APS Assignments Movements'),
+    'base table' => 'apsjobs_assignments_movements',
+    'entity keys' => array(
+      'id' => 'assignment_id',
+      'label' => 'summary',
+    ),
+    'entity class' => 'APSAssignmentsMovementsEntity',
+    'controller class' => 'EntityAPIController',
+    'access callback' => 'apsjobs_assignments_movements_access_callback',
+    'uri callback' => 'entity_class_uri',
+    'admin ui' => array(
+      'path' =>  'admin/structure/apsjobs-entities/apsjobs-assignments-movements',
+      'controller class' => 'EntityDefaultUIController',
+    ),
+    'fieldable' => TRUE,
+    'bundles' => array(
+      'apsjobs_assignments_movements' => array(
+        'label' => t('APS Assignments Movements'),
+        'admin' => array(
+          'path' =>  'admin/structure/apsjobs-entities/apsjobs-assignments-movements',
+        ),
+      ),
+    ),
+    'views controller class' => 'EntityDefaultViewsController',
+  );
+
+  return $info;
+}
+
+/**
+ * Access callback for apsjobs_assignments_movements entities.
+ */
+function apsjobs_assignments_movements_access_callback($op, $project = NULL, $account = NULL) {
+  if ($op == 'view' || $op == 'update' || $op == 'create' || $op == 'delete') {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * apsjobs_assignments_movements entity class extending the Entity class
+ */
+class APSAssignmentsMovementsEntity extends Entity {
+  /**
+   * Change the default URI from default/id to project/id
+   */
+  protected function defaultUri() {
+    return array('path' => 'apsjobs-assignments-movements/' . $this->identifier());
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_assignments_movements_menu() {
+  $items = array();
+  $items['admin/structure/apsjobs-entities/apsjobs-assignments-movements'] = array(
+    'title' => 'APS Assignments Movements',
+    'description' => 'Manage APS Assignments Movements Entities',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['apsjobs-assignments-movements/create'] = array(
+    'page callback' => 'apsjobs_assignments_movements_create',
+    'access callback' => 'apsjobs_assignments_movements_access',
+  );
+  $items['apsjobs-assignments-movements/delete'] = array(
+    'page callback' => 'apsjobs_assignments_movements_delete',
+    'access callback' => 'apsjobs_assignments_movements_access',
+  );
+  return $items;
+}
+
+function apsjobs_assignments_movements_access() {
+  return TRUE;
+}
+
+function apsjobs_assignments_movements_create($data = NULL) {
+  global $user;
+  $uid = $user->uid;
+  if ($data == NULL) {
+    $params = drupal_get_query_parameters();
+    if (empty($params)) return;
+    $salary_from = $params['key_salary'] * 1000;
+    $salary_to = $salary_from != 0 ? $salary_from + 1000 : NULL;
+    $data = array(
+      'key_word' => $params['key_word'],
+      'key_location' => $params['key_location'],
+      'key_salary_from' => $salary_from,
+      'key_salary_to' => $salary_to,
+    );
+  }
+  $entity_data = array(
+    'type' => 'apsjobs_assignments_movements',
+    'uid' => $uid,
+    'created' => time(),
+    'changed' => time(),
+    'data' => drupal_json_encode($data),
+  );
+  $entity_data = $entity_data + $data;
+  $entity = entity_create('apsjobs_assignments_movements', $entity_data);
+  $entity->save();
+}
+
+function apsjobs_assignments_movements_load($uid = NULL) {
+  if ($uid == NULL) {
+    global $user;
+    $uid = $user->uid;
+  }
+
+  $query = new EntityFieldQuery();
+  $ids = $query->entityCondition('entity_type', 'apsjobs_assignments_movements')
+    ->propertyCondition('uid', $uid)
+    ->execute();
+  if (empty($ids)) return $ids;
+
+  $result = entity_load('apsjobs_assignments_movements', array_keys($ids['apsjobs_assignments_movements']));
+
+  return $result;
+}
+
+function apsjobs_assignments_movements_delete() {
+  global $user;
+  $params = drupal_get_query_parameters();
+  $id = $params['entity_id'];
+  $num_deleted = db_delete('apsjobs_assignments_movements')
+    ->condition('assignment_id', $id)
+    ->condition('uid', $user->uid)
+    ->execute();
+  if ($num_deleted) {
+    print 'Success';
+  }
+  else {
+    print 'Fail';
+  }
+}
+
+/**
+ * Implements hook_init()
+ */
+/*function apsjobs_saved_searches_init() {
+  $options = array(
+    'scope' => 'footer'
+  );
+  drupal_add_js(drupal_get_path('module', 'apsjobs_notifications') .'/js/apsjobs_saved_searches.js', $options);
+}*/
+
+/**
+ * Implements hook_block_info().
+ */
+function apsjobs_assignments_movements_block_info() {
+  $blocks = array();
+  $blocks['apsjobs_assignments_movements_list'] = array(
+    'info' => t('APSJobs Assignments Movements'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function apsjobs_assignments_movements_field_extra_fields() {
+  $return = array();
+  $info = entity_get_info('apsjobs_assignments_movements');
+  foreach (array_keys($info['bundles']) as $bundle) {
+    $return['apsjobs_assignments_movements'][$bundle] = array(
+      'form' => array(
+        'summary' => array(
+          'label' => t('Summary'),
+          'description' => t('Summary'),
+          'weight' => 10,
+        ),
+        'body' => array(
+          'label' => t('Body'),
+          'description' => t('Body'),
+          'weight' => 20,
+        ),
+      ),
+    );
+  }
+  return $return;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+/*function apsjobs_notifications_block_view($delta = '') {
+  $blocks = array();
+  $path_tpl = drupal_get_path('module', 'apsjobs_notifications').'/templates/apsjobs_saved_searches_list.tpl.php';
+  $saved_searches = apsjobs_saved_searches_load();
+  $content = array('result' => $saved_searches);
+  switch ($delta) {
+    case 'apsjobs_saved_searches_list':
+      //$blocks['content'] = theme('apsjobs_saved_searches_list', array());
+      $blocks['content'] = theme_render_template($path_tpl, $content);
+
+      break;
+  }
+
+  return $blocks;
+}*/
+
+/**
+ * Implements hook_block_theme().
+ */
+/*function apsjobs_notifications_block_theme() {
+  $result = array();
+  $result['apsjobs_notifications_list'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_saved_searches_list',
+    'path' => drupal_get_path('module', 'apsjobs_saved_searches') . '/templates',
+  );
+  return $result;
+}*/

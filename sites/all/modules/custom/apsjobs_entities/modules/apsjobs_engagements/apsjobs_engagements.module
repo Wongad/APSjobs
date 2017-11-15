@@ -1,0 +1,226 @@
+<?php
+include_once dirname(__FILE__) . '/apsjobs_engagements.admin.inc';
+
+  /**
+ * Implements hook_entity_info().
+ */
+function apsjobs_engagements_entity_info() {
+  $info = array();
+  $info['apsjobs_engagements'] = array(
+    'label' => t('APS Engagements'),
+    'base table' => 'apsjobs_engagements',
+    'entity keys' => array(
+      'id' => 'engagement_id',
+      'label' => 'summary',
+    ),
+    'entity class' => 'APSEngagementsEntity',
+    'controller class' => 'EntityAPIController',
+    'access callback' => 'apsjobs_engagements_access_callback',
+    'uri callback' => 'entity_class_uri',
+    'admin ui' => array(
+      'path' =>  'admin/structure/apsjobs-entities/apsjobs-engagements',
+      'controller class' => 'EntityDefaultUIController',
+    ),
+    'fieldable' => TRUE,
+    'bundles' => array(
+      'apsjobs_engagements' => array(
+        'label' => t('APS Engagements'),
+        'admin' => array(
+          'path' =>  'admin/structure/apsjobs-entities/apsjobs-engagements',
+        ),
+      ),
+    ),
+    'views controller class' => 'EntityDefaultViewsController',
+  );
+
+  return $info;
+}
+
+/**
+ * Access callback for apsjobs_engagements entities.
+ */
+function apsjobs_engagements_access_callback($op, $project = NULL, $account = NULL) {
+  if ($op == 'view' || $op == 'update' || $op == 'create' || $op == 'delete') {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * apsjobs_engagements entity class extending the Entity class
+ */
+class APSEngagementsEntity extends Entity {
+  /**
+   * Change the default URI from default/id to project/id
+   */
+  protected function defaultUri() {
+    return array('path' => 'apsjobs-engagements/' . $this->identifier());
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_engagements_menu() {
+  $item = array();
+  
+  $items['admin/structure/apsjobs-entities/apsjobs-engagements'] = array(
+    'title' => 'APS Engagements',
+    'description' => 'Manage APS Engagements Entities',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['apsjobs-engagements/create'] = array(
+    'page callback' => 'apsjobs_engagements_create',
+    'access callback' => 'apsjobs_engagements_access',
+  );
+  $items['apsjobs-employees/delete'] = array(
+    'page callback' => 'apsjobs_engagements_delete',
+    'access callback' => 'apsjobs_engagements_access',
+  );
+  return $items;
+}
+
+function apsjobs_engagements_access() {
+  return TRUE;
+}
+
+function apsjobs_engagements_create($data = NULL) {
+  global $user;
+  $uid = $user->uid;
+  if ($data == NULL) {
+    $params = drupal_get_query_parameters();
+    if (empty($params)) return;
+    $salary_from = $params['key_salary'] * 1000;
+    $salary_to = $salary_from != 0 ? $salary_from + 1000 : NULL;
+    $data = array(
+      'key_word' => $params['key_word'],
+      'key_location' => $params['key_location'],
+      'key_salary_from' => $salary_from,
+      'key_salary_to' => $salary_to,
+    );
+  }
+  $entity_data = array(
+    'type' => 'apsjobs_engagements',
+    'uid' => $uid,
+    'created' => time(),
+    'changed' => time(),
+    'data' => drupal_json_encode($data),
+  );
+  $entity_data = $entity_data + $data;
+  $entity = entity_create('apsjobs_engagements', $entity_data);
+  $entity->save();
+}
+
+function apsjobs_engagements_load($uid = NULL) {
+  if ($uid == NULL) {
+    global $user;
+    $uid = $user->uid;
+  }
+
+  $query = new EntityFieldQuery();
+  $ids = $query->entityCondition('entity_type', 'apsjobs_engagements')
+    ->propertyCondition('uid', $uid)
+    ->execute();
+  if (empty($ids)) return $ids;
+
+  $result = entity_load('apsjobs_engagements', array_keys($ids['apsjobs_engagements']));
+
+  return $result;
+}
+
+function apsjobs_engagements_delete() {
+  global $user;
+  $params = drupal_get_query_parameters();
+  $id = $params['entity_id'];
+  $num_deleted = db_delete('apsjobs_engagements')
+    ->condition('engagement_id', $id)
+    ->condition('uid', $user->uid)
+    ->execute();
+  if ($num_deleted) {
+    print 'Success';
+  }
+  else {
+    print 'Fail';
+  }
+}
+
+/**
+ * Implements hook_init()
+ */
+/*function apsjobs_saved_searches_init() {
+  $options = array(
+    'scope' => 'footer'
+  );
+  drupal_add_js(drupal_get_path('module', 'apsjobs_notifications') .'/js/apsjobs_saved_searches.js', $options);
+}*/
+
+/**
+ * Implements hook_block_info().
+ */
+function apsjobs_engagements_block_info() {
+  $blocks = array();
+  $blocks['apsjobs_engagements_list'] = array(
+    'info' => t('APSJobs Engagements'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function apsjobs_engagements_field_extra_fields() {
+  $return = array();
+  $info = entity_get_info('apsjobs_engagements');
+  foreach (array_keys($info['bundles']) as $bundle) {
+    $return['apsjobs_engagements'][$bundle] = array(
+      'form' => array(
+        'summary' => array(
+          'label' => t('Summary'),
+          'description' => t('Summary'),
+          'weight' => 10,
+        ),
+        'body' => array(
+          'label' => t('Body'),
+          'description' => t('Body'),
+          'weight' => 20,
+        ),
+      ),
+    );
+  }
+  return $return;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+/*function apsjobs_notifications_block_view($delta = '') {
+  $blocks = array();
+  $path_tpl = drupal_get_path('module', 'apsjobs_notifications').'/templates/apsjobs_saved_searches_list.tpl.php';
+  $saved_searches = apsjobs_saved_searches_load();
+  $content = array('result' => $saved_searches);
+  switch ($delta) {
+    case 'apsjobs_saved_searches_list':
+      //$blocks['content'] = theme('apsjobs_saved_searches_list', array());
+      $blocks['content'] = theme_render_template($path_tpl, $content);
+
+      break;
+  }
+
+  return $blocks;
+}*/
+
+/**
+ * Implements hook_block_theme().
+ */
+/*function apsjobs_notifications_block_theme() {
+  $result = array();
+  $result['apsjobs_notifications_list'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_saved_searches_list',
+    'path' => drupal_get_path('module', 'apsjobs_saved_searches') . '/templates',
+  );
+  return $result;
+}*/

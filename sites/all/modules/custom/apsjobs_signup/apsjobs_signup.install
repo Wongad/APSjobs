@@ -1,0 +1,68 @@
+<?php
+
+/**
+* Implements hook_uninstall()
+*/
+function apsjobs_signup_uninstall(){
+  drupal_uninstall_schema('apsjobs_agency_user_validate');
+}
+  
+  /**
+   * Implements hook_schema().
+   */
+  function apsjobs_signup_schema() {
+    $schema = array();
+    $schema['apsjobs_agency_user_validate'] = array(
+      'description' => 'Storage infos of agency user validate email',
+      'fields' => array(
+        'id' => array(
+          'description' => 'The primary identifier for a aps agency user validate.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'username' => array(
+          'description' => 'Email of user account.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ),
+        'gov_agency_id' => array(
+					'description' => 'Agency Id.',
+					'type' => 'int',
+					'not null' => TRUE,
+				),
+        'code' => array(
+          'description' => 'Code to validate user account.',
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ),
+        'created' => array(
+          'description' => 'Created',
+          'type' => 'int',
+          'not null' => TRUE,
+        ),
+        'active_status' => array(
+          'description' => 'Status of user account',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'uid' => array(
+          'description' => 'User account created',
+          'type' => 'int',
+          'default' => NULL,
+        ),
+      ),
+      'indexes' => array(
+        'gau_id' => array('id'),
+        'gau_username' => array('username'),
+        'gau_code' => array('code'),
+        'gau_created' => array('created'),
+        'gau_activestatus' => array('active_status'),
+      ),
+      'primary key' => array('id'),
+    );
+    return $schema;
+  }

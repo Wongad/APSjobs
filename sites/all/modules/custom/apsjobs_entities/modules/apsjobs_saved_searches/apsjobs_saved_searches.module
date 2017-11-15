@@ -1,0 +1,326 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+/**
+ * Implements hook_init()
+ */
+function apsjobs_saved_searches_init() {
+  $options = array(
+    'scope' => 'footer'
+  );
+  drupal_add_js(drupal_get_path('module', 'apsjobs_saved_searches') .'/js/apsjobs_saved_searches.js', $options);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_saved_searches_menu() {
+  $items = array();
+
+  $items['admin/structure/apsjobs-entities/apsjobs-saved-searches'] = array(
+    'title' => 'APS Saved Searches',
+    'description' => 'Manage APS Saved Searches Entities',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['apsjobs-saved-searches/create'] = array(
+    'page callback' => 'apsjobs_saved_searches_create',
+    'access callback' => TRUE,
+  );
+  $items['apsjobs-saved-searches/delete'] = array(
+    'page callback' => 'apsjobs_saved_searches_delete',
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function apsjobs_saved_searches_entity_info() {
+  $info = array();
+	$info['apsjobs_saved_searches'] = array(
+    'label' => t('APS Saved Searches'),
+    'base table' => 'apsjobs_saved_searches',
+    'entity keys' => array(
+      'id' => 'ssid',
+      'label' => 'Saved Searches Id',
+    ),
+    'entity class' => 'APSSavedSearchesEntity',
+    'controller class' => 'EntityAPIController',
+    'access callback' => 'apsjobs_saved_searches_access_callback',
+    'uri callback' => 'entity_class_uri',
+    'admin ui' => array(
+      'path' => 'admin/structure/apsjobs-entities/apsjobs-saved-searches',
+      'controller class' => 'EntityDefaultUIController',
+    ),
+    'fieldable' => TRUE,
+    'bundles' => array(
+      'apsjobs_saved_searches' => array(
+        'label' => t('APS Saved Searches'),
+        'admin' => array(
+          'path' => 'admin/structure/apsjobs-entities/apsjobs-saved-searches',
+        ),
+      ),
+    ),
+    'views controller class' => 'EntityDefaultViewsController',
+  );
+
+  return $info;
+}
+
+/**
+ * Access callback for apsjobs_saved_searches entities.
+ */
+function apsjobs_saved_searches_access_callback($op, $project = NULL, $account = NULL) {
+  if ($op == 'view' || $op == 'update' || $op == 'create' || $op == 'delete') {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * apsjobs_saved_searches entity class extending the Entity class
+ */
+class APSSavedSearchesEntity extends Entity {
+  /**
+   * Change the default URI from default/id to project/id
+   */
+  protected function defaultUri() {
+    return array('path' => 'apsjobs-saved-searches/' . $this->identifier());
+  }
+}
+
+function apsjobs_saved_searches_create() {
+  global $user;
+  $params = drupal_get_query_parameters();
+  $data = array();
+  #TODO Extract value from params to data
+
+  $entity_data = array(
+    'type' => 'apsjobs_saved_searches',
+    'uid' => $user->uid,
+    'mail' => $user->uid ? $user->mail : $data['mail'],
+    'key_word' => $params['key_word'],
+    'key_location' => $params['key_location'],
+    'key_salary_from' => $salary_from,
+    'key_salary_to' => $salary_to,
+    'data' => drupal_json_encode($data),
+    'status' => $user->uid ? 1 : 0,
+    'created' => time(),
+    'changed' => time(),
+  );
+  $entity = entity_create('apsjobs_saved_searches', $entity_data);
+  $entity->save();
+}
+
+function apsjobs_saved_searches_delete() {
+  global $user;
+  $params = drupal_get_query_parameters();
+  $id = $params['ssid'];
+  $num_deleted = db_delete('apsjobs_saved_searches')
+    ->condition('ssid', $id)
+    ->condition('uid', $user->uid)
+    ->execute();
+  if ($num_deleted) {
+    print 'Success';
+  }
+  else {
+    print 'Fail';
+  }
+}
+
+function apsjobs_saved_searches_load() {
+  global $user;
+
+  $query = new EntityFieldQuery();
+  $ids = $query->entityCondition('entity_type', 'apsjobs_saved_searches')
+    ->propertyCondition('uid', $user->uid)
+    ->execute();
+  if (empty($ids)) return $ids;
+
+  $result = entity_load('apsjobs_saved_searches', array_keys($ids['apsjobs_saved_searches']));
+
+  return $result;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function apsjobs_saved_searches_block_info() {
+  $blocks = array();
+  $blocks['apsjobs_saved_searches_list'] = array(
+    'info' => t('APSJobs Saved Searches'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function apsjobs_saved_searches_block_view($delta = '') {
+  $blocks = array();
+  // $path_tpl = drupal_get_path('module', 'apsjobs_saved_searches').'/templates/apsjobs_saved_searches_list.tpl.php';
+  // $saved_searches = apsjobs_saved_searches_load();
+  // $content = array('result' => $saved_searches);
+  // switch ($delta) {
+  //   case 'apsjobs_saved_searches_list':
+  //     //$blocks['content'] = theme('apsjobs_saved_searches_list', array());
+  //     $blocks['content'] = theme_render_template($path_tpl, $content);
+
+  //     break;
+  // }
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function apsjobs_saved_searches_theme() {
+  $result = array();
+  // $result['apsjobs_saved_searches_list'] = array(
+  //   'variables' => array('block' => array()),
+  //   'template' => 'apsjobs_saved_searches_list',
+  //   'path' => drupal_get_path('module', 'apsjobs_saved_searches') . '/templates',
+  // );
+  return $result;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function apsjobs_saved_searches_cron() {
+  $now = time();
+  $last_day = variable_get('apsjobs_saved_searches_cron_last_day', $now - 24*3600);
+  $last_week = variable_get('apsjobs_saved_searches_cron_last_week', $now - 7*24*3600);
+  $last_month = variable_get('apsjobs_saved_searches_cron_last_month', $now - 30*24*3600);
+
+  $daily = $weekly = $monthly = array();
+  if (($now - 24*3600) >= $last_day) {
+    $daily = apsjobs_saved_searches_load_saved_searches('daily');
+    variable_set('apsjobs_saved_searches_cron_last_day', $now);
+  }
+  if (($now - 7*24*3600) >= $last_week) {
+    $weekly = apsjobs_saved_searches_load_saved_searches('weekly');
+    variable_set('apsjobs_saved_searches_cron_last_week', $now);
+  }
+  if (($now - 30*24*3600) >= $last_month) {
+    $monthly = apsjobs_saved_searches_load_saved_searches('monthly');
+    variable_set('apsjobs_saved_searches_cron_last_month', $now);
+  }
+  $saved_searches = array_merge($daily, $weekly, $monthly);
+
+  $jobs_per_saved_search = array();
+
+  foreach ($saved_searches as $key => $saved_search) {
+    $search_criteria = drupal_json_decode($saved_search->data);
+    $jobs_per_save_search[$key] = apsjobs_saved_searches_find_jobs($search_criteria);
+  }
+
+  foreach ($jobs_per_save_search as $key => $jobs) {
+    if (!empty($jobs)) {
+      apsjobs_saved_searches_send_mail($saved_searches[$key]->mail, $jobs);
+    }
+  }
+}
+
+function apsjobs_saved_searches_load_saved_searches($frequency) {
+  $query = db_select('apsjobs_saved_searches', 'ss');
+  $query->fields('ss');
+  $query->condition('ss.frequency', $frequency, '=');
+  return $query->execute()->fetchAll();
+}
+
+function apsjobs_saved_searches_find_jobs($search_criteria) {
+    $query = db_select('node', 'n');
+    $query->join('field_data_field_agency', 'a', 'n.nid = a.entity_id');
+    $query->join('field_data_field_location_raw', 'l', 'n.nid = l.entity_id');
+    $query->join('field_data_field_salary_from', 'sf', 'n.nid = sf.entity_id');
+    $query->join('field_data_field_salary_to', 'st', 'n.nid = st.entity_id');
+    $query->join('field_data_field_working_hours', 'wh', 'n.nid = wh.entity_id');
+    $query->join('field_data_field_engagement_types', 'et', 'n.nid = et.entity_id');
+    $query->join('field_data_field_specific_considerations', 'sc', 'n.nid = sc.entity_id');
+    $query->join('field_data_field_job_category', 'jc', 'n.nid = jc.entity_id');
+    $query->join('field_data_field_job_level', 'jl', 'n.nid = jl.entity_id');
+    $query->join('field_data_field_clearance_level', 'cl', 'n.nid = cl.entity_id');
+    $query->fields('n', array('nid'));
+    $query->condition('n.status', 1, '=');
+
+    if (!empty($search_criteria['keyword'])) {
+      $query->condition('n.title', $search_criteria['keyword'], 'LIKE%');
+    }
+
+    if (!empty($search_criteria['location'])) {
+      $query->condition('l.field_location_raw_value', $search_criteria['location'], 'LIKE%');
+    }
+
+    if (!empty($search_criteria['field_salary_to'])) {
+      $query->condition('sf.field_salary_from_value', $search_criteria['field_salary_to'], '<=');
+      }
+
+    if (!empty($search_criteria['field_salary_from'])) {
+      $query->condition('st.field_salary_to_value', $search_criteria['field_salary_from'], '>=');
+    }
+
+    if (!empty($search_criteria['job_level'])) {
+      $query->condition('jl.field_job_level_tid', $search_criteria['job_level'], 'IN');
+    }
+
+    if (!empty($search_criteria['job_category'])) {
+      $query->condition('jc.field_job_category_tid', $search_criteria['job_category'], 'IN');
+    }
+
+    if (!empty($search_criteria['agency_id'])) {
+      $query->condition('a.field_agency_target_id', $search_criteria['agency_id'], 'IN');
+    }
+
+    if (!empty($search_criteria['working_hours'])) {
+      $query->condition('wh.field_working_hours_tid', $search_criteria['working_hours'], 'IN');
+    }
+
+    if (!empty($search_criteria['engagement_types'])) {
+      $query->condition('et.field_engagement_types_tid', $search_criteria['engagement_types'], 'IN');
+    }
+
+    if (!empty($search_criteria['specific_considerations'])) {
+      $query->condition('sc.field_specific_considerations_tid', $search_criteria['specific_considerations'], 'IN');
+    }
+
+    if (!empty($search_criteria['clearance_level'])) {
+      $query->condition('cl.field_clearance_level_tid', $search_criteria['clearance_level'], 'IN');
+    }
+
+    return $query->execute()->fetchAll();
+}
+
+function apsjobs_saved_searches_send_mail($to_mail, $jobs) {
+  $variables = array(
+    'jobs' => $jobs,
+  );
+  $content = theme_render_template(
+    drupal_get_path('module', 'apsjobs_saved_searches') . '/templates/apsjobs_saved_searches_mail.tpl.php', $variables);
+
+  $params = array('subject' => 'APSJobs Notification', 'body' => $content);
+
+  drupal_mail('apsjobs_saved_searches', 'apsjobs_saved_searches', $to_mail, language_default(), $params);
+  watchdog('apsjobs_saved_searches', 'Send alert to ' . $to_mail);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function apsjobs_saved_searches_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'apsjobs_saved_searches':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
+}

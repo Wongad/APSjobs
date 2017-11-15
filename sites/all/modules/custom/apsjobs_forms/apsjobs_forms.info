@@ -1,0 +1,4 @@
+name = APSJobs Forms
+description = Module is used to create custom forms
+package = "APSJobs"
+core = 7.x

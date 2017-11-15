@@ -1,0 +1,4 @@
+name = APS Jobs Email Subscriptions
+description = APS Jobs Email Subscriptions Entity.
+package = APSJobs
+core = 7.x 

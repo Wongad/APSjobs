@@ -1,0 +1,4 @@
+name = APSJobs Job Approval
+description = APSJobs Job Approval
+package = APSJobs
+core = 7.x

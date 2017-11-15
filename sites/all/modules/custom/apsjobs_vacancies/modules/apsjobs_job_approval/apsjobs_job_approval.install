@@ -1,0 +1,130 @@
+<?php
+
+function apsjobs_job_approval_schema() {
+  $schema['apsjobs_vacancy_approval'] = array(
+    'description' => 'APSJobs Vacancy',
+    'fields' => array(
+      'id' => array(
+        'description' => t('Primary key'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'nid' => array(
+        'description' => 'NID',
+        'type' => 'int',
+        'length' => 11
+      ),
+      'vid' => array(
+        'description' => 'VID',
+        'type' => 'int',
+        'length' => 11
+      ),
+      'approval_date' => array(
+        'description' => 'Approved or Rejected',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'approval_detail' => array(
+        'description' => 'Approved or Rejected',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'approval_comment' => array(
+        'description' => 'Approval comment',
+        'type' => 'text',
+        'size' => 'big',
+      ),
+      'created' => array(
+        'status' => 'Created',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'changed' => array(
+        'status' => 'Changed',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array('nid'),
+      'vid' => array('vid'),
+      'approval_date' => array('approval_date'),
+      'approval_detail' => array('approval_detail'),
+      'created' => array('created'),
+      'changed' => array('changed'),
+    ),
+    'primary key' => array('id'),
+  );
+  $schema['apsjobs_approval_states'] = array(
+    'description' => 'APSJobs Approval States',
+    'fields' => array(
+      'id' => array(
+        'description' => t('Primary key'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'entity_type' => array(
+        'description' => 'Entity type',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'bundle' => array(
+        'description' => 'Bundle',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'entity_id' => array(
+        'description' => 'Entity id',
+        'type' => 'int',
+        'length' => 11
+      ),
+      'revision_id' => array(
+        'description' => 'Revision id',
+        'type' => 'int',
+        'length' => 11
+      ),
+      'approval_type' => array(
+        'description' => 'Date or Detail',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'approval_value' => array(
+        'description' => 'Approved or Rejected',
+        'type' => 'varchar',
+        'length' => 32
+      ),
+      'created' => array(
+        'status' => 'Created',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'changed' => array(
+        'status' => 'Changed',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+    ),
+    'indexes' => array(
+      'entity_type' => array('entity_type'),
+      'bundle' => array('bundle'),
+      'entity_id' => array('entity_id'),
+      'revision_id' => array('revision_id'),
+      'approval_type' => array('approval_type'),
+      'approval_value' => array('approval_value'),
+      'created' => array('created'),
+      'changed' => array('changed'),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

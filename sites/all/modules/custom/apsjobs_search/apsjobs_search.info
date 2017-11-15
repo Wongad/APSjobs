@@ -1,0 +1,4 @@
+name = APSJobs Search
+description = Module is used to implement search feature
+package = "APSJobs"
+core = 7.x

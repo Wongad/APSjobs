@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * Implement hook_node_presave($node)
+ */
+function apsjobs_agencies_node_presave($node) {
+  if ($node->type == 'aps_agencies') {
+    if (empty($node->field_agency_ref)) {
+      $voc = taxonomy_vocabulary_machine_name_load('aps_agency');
+      $tid = apsjobs_agencies_create_taxonomy_term($node->title, $voc->vid);
+      $node->field_agency_ref[LANGUAGE_NONE][0] = array('tid' => $tid);
+    } else {
+      $tid = $node->field_agency_ref[LANGUAGE_NONE][0]['tid'];
+      $term = taxonomy_term_load($tid);
+      $term->name = $node->title;
+      taxonomy_term_save($term);
+    }
+  }
+}
+
+function apsjobs_agencies_create_taxonomy_term($name, $vid) {
+  $term = new stdClass();
+  $term->name = $name;
+  $term->vid = $vid;
+  taxonomy_term_save($term);
+  return $term->tid;
+}
+
+/**
+ * Implement hook_menu()
+ */
+function apsjobs_agencies_menu() {
+  $item = array();
+  $items['apsjobs-agency/term-update'] = array(
+    'title'            => 'Custom page',
+    'page callback'    => 'apsjobs_agencies_update_node_terms_ref',
+    'access arguments' => array('access content'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function apsjobs_agencies_update_node_terms_ref() {
+  //load node
+  $nodes = node_load_multiple(array(), array('type' => 'aps_agencies'));
+  foreach ($nodes as $node) {
+    node_save($node);
+  }
+  echo "Update completed!";
+}
+
+function apsjobs_agencies_load_all() {
+  $entities = entity_load('node', FALSE, array('type'=>'aps_agencies', 'status' => 1));
+  return $entities;
+}
+
+/**
+ * Implement hook_node_delete($node)
+ */
+function apsjobs_agencies_node_delete($node) {
+  if ($node->type == 'aps_agencies') {
+    $tid = $node->field_agency_ref[LANGUAGE_NONE][0]['tid'];
+    taxonomy_term_delete($tid);
+  }
+}

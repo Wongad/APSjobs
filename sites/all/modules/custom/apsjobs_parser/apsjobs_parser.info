@@ -1,0 +1,4 @@
+name = APSJobs Parser
+description = Module is used to parse jobs from old system
+package = "APSJobs"
+core = 7.x

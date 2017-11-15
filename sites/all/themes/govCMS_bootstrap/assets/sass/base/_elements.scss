@@ -1,0 +1,929 @@
+// ====================
+// View grid Drupal: field, panel-pane, view-field, ....
+// ---
+.views-view-grid {
+	.views-col {
+		float: left;
+		padding:{
+			@include sizeRem(left, 15);
+			@include sizeRem(right, 15);
+		}
+	}
+	&.cols-1 .views-col {
+		width: 100%;
+	}
+	&.cols-2 .views-col {
+		width: 50%;
+	}
+	&.cols-3 .views-col {
+		width: 33.33333333%;
+	}
+	&.cols-4 .views-col {
+		width: 25%;
+	}
+	&.cols-5 .views-col {
+		width: 20%;
+	}
+	.views-row {
+		margin:{
+			@include sizeRem(left, -15);
+			@include sizeRem(right, -15);
+		}
+		@include clearfix;
+		>* {
+			@include sizeRem(margin-bottom, 30);
+		}
+	}
+}
+
+// ====================
+// View grid Custom
+// ---
+@include views-grid;
+
+.container-fluid{
+    padding: 0;
+}
+
+.container{
+    padding:{
+        @include sizeRem(top, 25);
+        @include sizeRem(bottom, 25);
+    }
+}
+
+// ====================
+// Reset From
+// ---
+// Fixed Background input when complete 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+input,
+select {
+    @include form-default-input;
+    outline: none;
+    @include box-shadow(initial);
+    border: 1px solid transparent;
+    &:focus {
+        border-color: $border-color;
+        border-bottom-color: darken(#cbd2da, 5%);
+    }
+}
+
+select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: $title-color;
+}
+textarea {
+    @include form-default-input;
+}
+
+input[type="file"] {
+    @include sizeRem(height, 45);
+    @include sizeRem(padding, 11, 2, 20);
+    line-height: 1.42857143;
+}
+
+.form-item,
+.form-actions {
+    margin:{
+        @include sizeRem(top, 20);
+        @include sizeRem(bottom, 20);
+    }
+}
+
+.form-select {
+    @include sizeRem(height, 45);
+    width: 100%;
+    @include form-default-input;
+    cursor: pointer;
+    color: $title-color;
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-body);
+    //border: 1px solid transparent;
+}
+// .form-select {
+//     @include sizeRem(height, 35);
+//     @include sizeRem(padding, 11, 2, 20);
+//     line-height: 1.42857143;
+//     @include border-radius(3px);
+//     @include input-placeholder{
+//         color: $border-color;
+//     }
+//     border-color: $border-color;
+//     width: 100%;
+// }
+select::-ms-expand {
+    display: none;
+}
+.form-text {
+    @include form-default-input;
+    @include sizeRem(height, 45);
+    width: 100%;
+    color: $place-color;
+    @include placeholder($place-color);
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-body);
+   
+}
+input{
+	@include placeholder($place-color);
+	color: $place-color;
+}
+.form-submit {
+    @include btn;
+    @include sizeRem(font-size, 12);
+    &:hover,&:focus{
+    	color: $title-color;
+    }
+}
+.form-select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.field-type-text,
+.form-type-textfield {
+    @include form-default-label;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    position: relative;
+    @include sizeRem(top, -3);
+    @include sizeRem(width, 18);
+    @include sizeRem(height, 18);
+    @include sizeRem(margin-right, 13);
+}
+
+
+// ====================
+// Reset Flex
+// ---
+.flexslider {
+    border: 0 none;
+}
+
+// ====================
+// Styling for Language dropdown
+// ---
+.ddsDefault {
+	.dd-container {
+		width: auto !important;
+		@include sizeRem(min-width, 125);
+	}
+	.dd-select {
+		width: auto !important;
+		border: 0 none;
+		background: transparent !important;
+		@include border-radius(0);
+		label {
+			margin: 0;
+		}
+	}
+	.dd-option{
+		@include display-flex;
+		@include align-items(baseline);
+	}
+	.dd-selected {
+		@include sizeRem(padding, 7, 4, 10, 5, 10);
+		position: relative;
+		@include sizeRem(padding-left, 34);
+		color: $link-color;
+		&:before {
+			content: '';
+			@include sizeRem(width, 14);
+			@include sizeRem(height, 14);
+			@include sizeRem(left, 10);
+			@include sizeRem(margin-top, -7);
+			position: absolute;
+			top: 50%;
+			background: url('../images/ico-globe.svg') no-repeat transparent;
+			background-size: contain;
+		}
+		img {
+			display: none;
+		}
+		&:hover,
+		&:focus {
+			color: darken($link-color, 8%);
+		}
+	}
+	li {
+		display: block !important;
+		label {
+			line-height: 1.4 !important;
+			margin: 0;
+		}
+	}
+	.dd-pointer-down {
+		border-top-color: $link-color;
+	}
+	.dd-options {
+		background: $bg-color;
+		border: 1px solid $bg-color;
+		@include box-shadow(0 1px 5px rgba($black-color, 0.6));
+	}
+	.dd-option {
+		cursor: pointer;
+	}
+	.dd-option-selected {
+		label {
+			color: $link-color;
+		}
+	}
+	.dd-pointer-up {
+		border-bottom-color: $link-color !important;
+	}
+}
+
+// ====================
+// Reset Flex
+// ---
+.flexslider {
+	margin-bottom: 0;
+	&:hover,
+	&:focus {
+		.flex-direction-nav {
+			.flex-prev,
+			.flex-next {
+				@include opacity(0.5);
+				display: block;
+			}
+			.flex-prev {
+				left: 0;
+			}
+			.flex-next {
+				right: 0;
+			}
+		}
+	}
+	.flex-direction-nav a {
+		display: block;
+	}
+}
+
+.flex-direction-nav {
+	@include container;
+	position: absolute;
+	top: 50%;
+	@include translate(-50%,
+	-50%);
+	left: 50%;
+	z-index: 5;
+	a {
+		@include sizeRem(width, 30);
+		@include sizeRem(height, 30);
+		margin-top: -15px;
+		border-left: 3px solid $white-color;
+		border-top: 3px solid $white-color;
+		font-size: 0;
+		@include opacity(0.5);
+		display: block;
+		&:before {
+			display: none;
+		}
+		&:hover,
+		&:focus {
+			@include opacity(1);
+		}
+	}
+	.flex-prev {
+		@include rotate(-45deg);
+		left: 0;
+	}
+	.flex-next {
+		@include rotate(135deg);
+		right: 0;
+	}
+}
+
+.flex-control-nav {
+	@include sizeRem(bottom, 30);
+	z-index: 6;
+}
+
+.flex-control-paging li {
+	margin: {
+		@include sizeRem(left, 5);
+		@include sizeRem(right, 5);
+	}
+	a {
+		@include sizeRem(width, 8);
+		@include sizeRem(height, 8);
+		background: $white-color;
+		@include box-shadow(initial);
+		&:hover,
+		&:focus {
+			background: $link-color;
+		}
+		&.flex-active {
+			margin-left: 2px;
+			margin-right: 2px;
+			background: $link-color;
+			@include box-shadow(0 0 0 2px $link-color);
+		}
+	}
+}
+
+// ====================
+// Styling for Tabs
+// ---
+ul.primary {
+	padding: 0;
+	// margin: 0;
+	@include display-flex;
+	@include justify-content(center);
+	border-bottom: 0;
+	@include sizeRem(padding, 20, 2, 15);
+	>li {
+		display: inline-block;
+		padding:{
+			@include sizeRem(left, 5);
+			@include sizeRem(right, 5);
+		}
+		a {
+			@include btn;
+			text-align: center;
+			margin: 0;
+			&:hover,
+			&:focus {
+				border-color: $white-color;
+				background-color: $white-color;
+				color: $body-color;
+			}
+		}
+		&.active a {
+			border-color: $link-color;
+			background-color: $link-color;
+			color: $white-color;
+		}
+	}
+}
+/*........tab.....*/
+.item-list {
+	padding: 0 15px;
+	@include sizeRem(margin, 40 , 2 , 0);
+	@include sizeRem(margin-bottom, -15);
+    @include sizeRem(padding, 0, 2 , 15);
+	.pager {
+			margin-bottom: 0;
+		    @include display-flex;
+			@include align-items(center);
+			@include justify-content(center);
+		li{
+			padding: 0;
+			display: inline-block;
+		}
+	}
+	
+}
+.pager-next,.pager-first{
+   a{
+        font-size: 0;
+        padding:0 !important;
+        border: none !important;
+        background: transparent;
+        position:relative;
+        &:before{
+            position:absolute;
+            content: "\f105";
+            @include fontawesome;
+            top:-20px;
+            right:-15px;
+            font-size:20px;
+            color:$title-color;
+        }
+    }
+}
+.pager-last{
+	a{
+        &:before{
+            content: "\f105";
+        }
+    }
+}
+.pager-last{
+    display: none !important;
+}
+.pager-previous{
+    display: none !important;
+}
+.pager-first{
+       a{
+        &:before{
+            content: "\f104";
+            left:0;
+            right:auto;
+        }   
+    } 
+}
+.pager-first a,.pager-next a{
+        &:before{
+           background: $blue-color;
+           @include border-radius(4px);
+           border:1px solid $border-color;
+           width: 50px;
+           height: 45px;
+           line-height: 45px;
+           top:-28px;
+           right:-67px;
+           text-align: center;
+           color:$border-color;
+        }   
+    }
+    .pager-first a::before{
+        left: -67px;
+        right:0 !important;
+    } 
+    .pager-first{
+        margin-left: 34px !important;
+    }
+    .item-list ul.pager li.pager-current,.pager-item a{
+        background:  transparent !important;
+        color:#767575  !important;
+        @include border-radius(4px);
+        padding: 0 !important;
+       // border-radius:4px  !important;
+        width: 36px;
+        height: 45px;
+        border:1px solid  transparent !important;//$border-color
+        line-height: 45px;
+        text-align: center;
+        display: inline-block;
+        @include sizeRem(font-size, 14);
+    }
+    .item-list ul.pager li.pager-current {
+        color:$title-color  !important;
+        background: $blue-color1  !important;
+        border:none !important;
+       @include sizeRem(font-size, 14);
+       @include wp-font(font-title-med);
+    }
+    .item-list ul.pager li {
+        @include sizeRem(margin, 3, 2 , 2);
+    }
+
+.view-empty{
+	@include sizeRem(font-size, 20);
+	@include wp-font(font-bold);
+	@include sizeRem(margin-top, 50);
+	@include sizeRem(margin-bottom, 50);
+	@include border-radius(4px);
+	@include sizeRem(padding, 15, 1);
+	background: $white-color;
+	border: 1px solid $border-color-streght;
+	text-align: center;
+	text-transform: uppercase;
+	p{
+		margin-bottom: 0;
+	}
+}
+
+.owl-theme .owl-controls .owl-page {
+	span{
+		width: 8px;
+		height: 8px;
+	}
+	&.active,&:hover{
+		span{
+			background: $blue-color1;
+		}
+	}
+}
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	background: $blue-color1;
+}
+.view-owlcarouse-testimornial{
+	.owl-theme .owl-controls{
+		position: absolute;
+		bottom: -65px;
+		left: 50%;
+		@include translateX(-50%);
+	}
+}
+//move..
+
+/*.............checkbox......................*/
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    position: relative !important;
+    cursor: pointer;
+    padding-left: 40px;
+    &:before {
+        content: "";
+        background: $white-color;
+        cursor: pointer;
+        display: inline-block;
+        height: 18px;
+        position: absolute;
+        vertical-align: middle;
+        width: 18px;
+        left: 0px;
+        top: 0;
+        border: 1px solid $title-color;
+    }
+}
+
+input[type="checkbox"]:checked + label {
+    &:before {
+        color: none;
+        content: "\f00c";
+        display: inline-block;
+        left: 0px;
+        line-height: 1;
+        position: absolute;
+        top: 0;
+        color:$blue-color;
+        font-size: 13px;
+        text-align: center;
+        transform: translate(0, 0);
+        @include fontawesome;
+    }
+    &:after {
+        content: "";
+        cursor: pointer;
+        display: inline-block;
+        height: 18px;
+        position: absolute;
+        vertical-align: middle;
+        width: 18px;
+        left: 0px;
+        top: 0;
+        border: none;
+    }
+}
+
+/*............. radio..............*/
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    position: relative !important;
+    cursor: pointer;
+    @include sizeRem(padding-left, 40);
+    &:before {
+        content: "";
+        background: $white-color;
+        @include border-radius(50%);
+        cursor: pointer;
+        display: inline-block;
+        height: 18px;
+        position: absolute;
+        vertical-align: middle;
+        width: 18px;
+        left: 0px;
+        top: 0;
+        border: 1px solid $title-color;
+    }
+}
+
+input[type="radio"]:checked + label {
+    &:before {
+        color: none;
+        content: "";
+        display: inline-block;
+        left: 5px;
+        line-height: 1;
+        position: absolute;
+        top: 5px;
+        background: $blue-color;
+        @include border-radius(50%);
+        width: 8px;
+        height: 8px;
+        //@include translate(0, -50%);
+    }
+    &:after {
+        content: "";
+        @include border-radius(50%);
+        cursor: pointer;
+        display: inline-block;
+        height: 18px;
+        position: absolute;
+        vertical-align: middle;
+        width: 18px;
+        left: 0px;
+        top: 0;
+        border: 1px solid $title-color;
+    }
+}
+
+.scrolled{}
+.back-to-top{
+	@include container;
+	text-align: center;
+	padding-bottom: 15px;
+	margin-top: -15px;
+	background: transparent;
+	.front &{
+		display: none;
+	}
+}
+.btn-btt{
+	@include sizeRem(font-size, 12);
+	color: $title-color;
+	@include wp-font(font-medium);
+	position: relative;
+	//bottom: 4px;
+	//left:50%;
+	z-index: 14;
+	width: 67px;
+	margin: 0 auto;
+	//@include translate(-50%, 0);
+	//display: block !important;
+	&:hover,&:focus{
+		color: $blue-color1;
+		&:before{
+			color: $blue-color1;
+		}
+	}
+	&:before{
+        content: "\f107";
+        position:absolute;
+        text-align: center;
+        @include fontawesome;
+        @include rotate(-180deg);
+		right: -20px;
+		color: $blue-color;
+		top: -1px;
+		font-size: 20px;
+    }
+}
+
+.view-more{
+	list-style: none;
+	text-align: center;
+	padding-left: 0 !important;
+	a{
+		@include sizeRem(font-size, 12);
+		color: $title-color;
+		@include wp-font(font-medium);
+		text-transform: none;
+		&:hover{
+			color: $blue-color1;
+			&:after{
+				color: $blue-color1;
+			}
+		}
+		&:after{
+	        content: "\f107";
+	        position: relative;
+	        text-align: center;
+	        @include fontawesome;
+			margin-left: 8px;
+			color: $blue-color;
+			top: 4px;
+			font-size: 20px;
+		}
+		&.view-less-custom{
+			&:after{
+				@include rotate(-180deg);
+			}
+		}
+	}
+
+}
+.view-less{
+	margin: 0 auto;
+	max-width: 67px;
+	@include sizeRem(font-size, 12);
+	color: $title-color;
+	position: relative;
+	@include wp-font(font-medium);
+	cursor:pointer;
+	&:hover{
+		color: $blue-color1;
+		&:before{
+			color: $blue-color1;
+		}
+	}
+	&:before{
+        content: "\f107";
+        position:absolute;
+        text-align: center;
+        @include fontawesome;
+        @include rotate(-180deg);
+		right: -20px;
+		color: $blue-color;
+		top: -1px;
+		font-size: 20px;
+    }
+}
+
+#edit-job-description-format{
+	.fieldset-wrapper > *{
+		display: none;
+		
+	}
+	.fieldset-wrapper{
+		padding: 0;
+	}
+	.wysiwyg-toggle-wrapper{
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+}
+
+.pane-govcms-blocks-govcms-agencies-search-form ul li {
+	a.by-portfolio{
+       color: $title-color;
+	}
+	a.all-departments{
+		color: $white-color;
+	}
+}
+
+.front .message{
+	@include sizeRem(padding-top, 111);
+}
+
+button[disabled], html input[disabled],html select [disabled],select[disabled]{
+	@include opacity(.4);
+}
+
+.chosen-container-single {
+	.chosen-single{
+		@include sizeRem(height, 45);
+		@include border-radius(4px);
+		border: 1px solid $border-color-streght;
+		box-shadow: none;
+		background: $white-color;
+		line-height: 45px;
+		padding: 0;
+		margin: 0;
+		padding-left: 15px;
+		z-index: 18;
+		span{
+			line-height: 45px !important;
+		}
+		> div b{
+			display: none;
+		}
+		@include ico-auto;
+        &:before{
+        	color: $blue-color;
+        	z-index: 3;
+        	right: 20px;
+        	font-size: 20px;
+        }
+        .front &{
+        	&:before{
+	        	right: 45px;
+	        }
+	        border: none;
+        }
+        .page-search-jobs &{
+        	&:before{
+	        	right: 45px;
+	        }
+	        border: none;
+        }
+	}
+}
+.chosen-container{
+	width: 100% !important;
+	height: auto;
+	padding: 0;
+	border: none;
+}
+
+ul.ui-autocomplete{
+	// opacity: 1 !important;
+	width: 215px;
+	// display: block !important;
+	padding: 0;
+	background: $white-color;
+	border: 1px solid $border-color-streght;
+	border-top: none;
+	z-index: 55;
+	@include border-top-right-radius(0);
+	@include border-top-left-radius(0);
+	li.ui-menu-item{
+		list-style: none;
+		border-bottom: 1px solid $border-color-streght;
+		cursor: pointer;
+		&:last-child{
+            border-bottom: none;
+		}
+		a{
+            @include sizeRem(font-size, 14);
+            @include wp-font(font-body);
+            color: $title-color;
+            display: block;
+            padding: 5px 15px;
+            &.ui-state-focus{
+            	background: none;
+            	border: none;
+                box-shadow: none;
+            }
+		}
+	}
+}
+.tooltip-arrow{
+	//width: 300px !important;
+}
+.tooltip{
+	z-index: 99;
+}
+.tooltip-inner{
+	width: 500px !important;
+	z-index: 100;
+}
+
+//.....modal
+.modal-body{
+	.form-select{
+		//border: 1px solid $border-color-streght;
+	}
+	.form-item-notify-interval,.form-item-name{
+		margin-top: 0;
+	}
+	.form-submit{
+		@include button-btn;
+		padding: 10px 15px !important;
+		border-radius: 4px !important;
+		color: $title-color;
+        background: $blue-color !important;
+        border-color: $blue-color !important;
+        &:hover, &:focus{
+            background: $hover-color !important;
+            border-color: $hover-color !important;
+            color: $title-color;
+        }
+	}
+}
+
+.ui-slider-float .ui-slider-tip, .ui-slider-float .ui-slider-tip-label{
+	max-width: 120px;
+	width: auto;
+	line-height: 15px;
+	padding: 2px;
+	margin-left: -22px;
+}
+
+.ui-slider-pips [class*=ui-slider-pip-initial]{
+	@include wp-font(font-medium);
+}
+//move
+.advanced-search {
+	.dropdown-menu{}
+	.dropdown-block::-webkit-scrollbar{
+	    width: 10px;
+	    background-color: #f6f6f6;
+	}
+	.dropdown-block::-webkit-scrollbar-thumb {
+	    border-radius: 10px;
+	    background: $border-color-streght;
+	}
+	.dropdown-block::-webkit-scrollbar-track{
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	    background-color: #f6f6f6;
+	    border-radius: 10px;
+	}
+}
+.front{
+	.page-aps-agency-my-outcomes #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar{
+	    width: 10px;
+	    background-color: #f6f6f6;
+	}
+	.page-aps-agency-my-outcomes #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar-thumb {
+	    border-radius: 10px;
+	    background: $border-color-streght;
+	}
+	.page-aps-agency-my-outcomes #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar-track{
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	    background-color: #f6f6f6;
+	    border-radius: 10px;
+	}
+
+	.page-aps-agency-my-job-vacancies #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar{
+	    width: 10px;
+	    background-color: #f6f6f6;
+	}
+	.page-aps-agency-my-job-vacancies #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar-thumb {
+	    border-radius: 10px;
+	    background: $border-color-streght;
+	}
+	.page-aps-agency-my-job-vacancies #subnav .paner-menu-dashbord-vacancy-state::-webkit-scrollbar-track{
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	    background-color: #f6f6f6;
+	    border-radius: 10px;
+	}
+}
+
+.form-required{
+	color: $title-color;
+}

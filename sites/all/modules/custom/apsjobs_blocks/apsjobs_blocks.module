@@ -1,0 +1,195 @@
+<?php
+
+require_once drupal_get_path("module", "apsjobs_blocks") . "/includes/apsjobs_blocks.agency_statistic.inc";
+require_once drupal_get_path("module", "apsjobs_blocks") . "/includes/apsjobs_blocks.home_statistic.inc";
+
+function apsjobs_blocks_init() {
+  $options = array(
+    'scope' => 'footer'
+  );
+  drupal_add_js(drupal_get_path('module', 'apsjobs_blocks') .'/js/apsjobs_blocks.js', $options);
+}
+
+function apsjobs_blocks_block_info() {
+  $blocks = array();
+
+  $blocks['homepage_statistics'] = array(
+    'info' => t('Homepage statistics'),
+  );
+  $blocks['homepage_statistics_carousel'] = array(
+    'info' => t('Homepage statistics owlcarosel'),
+  );
+
+  $blocks['apsjobs_email_alerts'] = array(
+		'info' => t('APSJobs Email Alerts'),
+		'visibility' => 1,
+		'status' => FALSE,
+	);
+
+  $blocks['apsjobs_agency_home'] = array(
+    'info' => t('APSJobs Agency Homepage'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  $blocks['apsjobs_agency_count'] = array(
+    'info' => t('APSJobs Agency Count'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  $blocks['apsjobs_agency_header'] = array(
+    'info' => t('APSJobs Agency Header'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  $blocks['apsjobs_agency_welcome'] = array(
+    'info' => t('APSJobs Agency Welcome'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  $blocks['apsjobs_user_menu'] = array(
+    'info' => t('APSJobs User Menu'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  $blocks['apsjobs_sort_date'] = array(
+    'info' => t('APSJobs Sort Date'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  return $blocks;
+}
+
+function apsjobs_blocks_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'homepage_statistics':
+      $statistics =  apsjobs_home_statistics();
+      $block['content'] = theme('homepage_statistics', array('statistics' => $statistics));
+      break;
+
+    case 'homepage_statistics_carousel':
+      $statistics =  apsjobs_home_statistics();
+      $block['content'] = theme('homepage_statistics_carousel', array('statistics' => $statistics));
+      break;
+
+    case 'apsjobs_agency_home':
+      $block['content'] = theme('apsjobs_agency_home', array());
+      break;
+    
+    case 'apsjobs_agency_header':
+      $block['content'] = theme('apsjobs_agency_header', array());
+      break;
+
+    case 'apsjobs_user_menu':
+      $block1 = block_load('block', 1);
+      $block2 = block_load('system', 'user-menu');
+      $render_block = _block_render_blocks(array($block1));
+      $render_array = _block_get_renderable_array($render_block);
+      $out1 = drupal_render($render_array);
+      $render_block = _block_render_blocks(array($block2));
+      $render_array = _block_get_renderable_array($render_block);
+      $out2 = drupal_render($render_array);
+      $block['content'] = theme('apsjobs_user_menu', array('block1' => $out1, 'block2' => $out2));
+      break;
+
+    case 'apsjobs_agency_count':
+      $items = apsjobs_count_agency();
+
+      $block['content'] = theme('apsjobs_agency_count', array('items' => $items));
+      break;
+
+    case 'apsjobs_email_alerts':
+      $items = array(
+        array(
+          'title' => 'Marketing Roles',
+          'type' => 'Weekly email',
+        ),
+        array(
+          'title' => 'Managment Positions',
+          'type' => 'Monthly email',
+        ),
+        array(
+          'title' => 'Jobs for Stacy',
+          'type' => 'Weekly email',
+        ),
+      );
+      $block['content'] = theme('apsjobs_email_alerts', array('items' => $items));
+      break;
+
+    case 'apsjobs_agency_welcome':
+      $block['content'] = theme('apsjobs_agency_welcome', array());
+      break;
+
+    case 'apsjobs_sort_date':
+      $block['content'] = theme('apsjobs_sort_date', array());
+      break;
+  }
+  return $block;
+}
+
+function apsjobs_blocks_theme() {
+  $result = array();
+
+  $result['homepage_statistics'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'homepage_statistics',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['homepage_statistics_carousel'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'homepage_statistics_carousel',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_email_alerts'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_email_alerts',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_agency_home'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_agency_home',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_agency_count'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_agency_count',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_agency_header'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_agencies_header',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_user_menu'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_user_menu',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_agency_welcome'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_agency_welcome',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  $result['apsjobs_sort_date'] = array(
+    'variables' => array('block' => array()),
+    'template' => 'apsjobs_blocks_sort_date_vacancy',
+    'path' => drupal_get_path('module', 'apsjobs_blocks') . '/templates',
+  );
+
+  return $result;
+}
+

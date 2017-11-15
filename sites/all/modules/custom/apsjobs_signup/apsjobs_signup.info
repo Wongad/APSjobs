@@ -1,0 +1,4 @@
+name = APSJobs APS Agencies Sign up
+description = APSJobs APS Agencies Sign up.
+package = APSJobs
+core = 7.x

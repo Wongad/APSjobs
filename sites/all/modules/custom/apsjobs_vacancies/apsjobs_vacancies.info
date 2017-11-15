@@ -1,0 +1,4 @@
+name = APSJobs Vacancies
+description = Handle create/edit Vacancies
+package = APSJobs
+core = 7.x

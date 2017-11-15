@@ -1,0 +1,10 @@
+name = Shield
+description = Creates a general PHP Authentication shield for the site.
+core = 7.x
+
+configure = admin/config/system/shield
+
+; Information added by drush on 2014-09-11
+version = "7.x-1.2+28-dev"
+project = "shield"
+datestamp = "1410440388"

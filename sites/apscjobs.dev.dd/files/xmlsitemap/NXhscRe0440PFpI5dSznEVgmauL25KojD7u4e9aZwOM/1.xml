@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="//apsjobs.senuamedia.com/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://apsjobs.senuamedia.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://apsjobs.senuamedia.com/agencies</loc></url>
+<url><loc>http://apsjobs.senuamedia.com/aps-gazette</loc></url>
+<url><loc>http://apsjobs.senuamedia.com/aps-work</loc></url>
+<url><loc>http://apsjobs.senuamedia.com/contact</loc></url>
+<url><loc>http://apsjobs.senuamedia.com/sitemap</loc></url>
+</urlset>

@@ -1,0 +1,1093 @@
+// ====================
+// Fonts Family
+// Input: $type (font-family)
+// Output: Font-family
+// Ex: @include wp-font(font-body)
+// ==> font-family: $font-body; font-weight: $font-weight-bold;
+// ---
+@mixin wp-font($type){
+    @if $type == font-body{
+        font-family: $font-body;
+        font-weight: $font-weight-body;
+    }
+    @else if $type == font-black{
+        font-family: $font-black;
+        font-weight: $font-weight-black;
+    }
+    @else if $type == font-bold{
+        font-family: $font-bold;
+        font-weight: $font-weight-bold;
+    }
+    @else if $type == font-medium{
+        font-family: $font-medium;
+        font-weight: $font-weight-medium;
+    }
+    @else if $type == font-light{
+        font-family: $font-light;
+        font-weight: $font-weight-light;
+    }
+
+    @else if $type == font-title{
+        font-family: $font-second-bold;
+        font-weight: $font-weight-second-bold;
+    }
+    @else if $type == font-title-med{
+        font-family: $font-second-medium;
+        font-weight: $font-weight-medium;
+    }
+    @else if $type == font-title-nor{
+        font-family: $font-second-body;
+        font-weight: $font-weight-second-body;
+    }
+    @else if $type == font-title-ligt{
+        font-family: $font-second-light;
+        font-weight: $font-weight-light;
+    }
+}
+
+// ====================
+// Fonts Size Rem
+// Input: $type (Property css), $size (Value Px)
+// Output: $type: convert to $rem
+// ---
+@function calculateRem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+// Ex: @include sizeRem(font-size, 10);
+// ==> font-size: 0.625rem;
+// Ex: @include sizeRem(padding-top, 10,$important: true);
+// ==> padding-top: 0.625rem !important;
+// Ex: @include sizeRem(margin, 25, 1);
+// ==> margin: 25px 25px 25px 25px;
+// Ex: @include sizeRem(margin, 25, 1, !important);
+// ==> margin: 25px 25px 25px 25px !important;
+// Ex: @include sizeRem(margin, 25, 2, 30);
+// ==> margin: 25px 30px 25px 30px;
+// Ex: @include sizeRem(margin, 25, 2, 30, $important: true);
+// ==> margin: 25px 30px 25px 30px !important;
+// Ex: @include sizeRem(margin, 25, 4, 30, 35, 40);
+// ==> margin: 25px 30px 35px 40px;
+// Ex: @include sizeRem(margin, 25, 4, 30, 35, 40, $important: true);
+// ==> margin: 25px 30px 35px 40px !important;
+// Note: 0 => 0px
+@mixin sizeRem($type, $size, $side: 0, $sizeright: false, $sizebottom: false, $sizeleft: false, $important:false) {
+    @if $important{
+        @if $side == 0 {
+            #{$type}: calculateRem($size) !important;  
+        }
+       @if $side == 1 {
+        #{$type}: calculateRem($size) calculateRem($size) calculateRem($size) calculateRem($size) !important;  
+      }
+      @else if $side == 2 {
+        #{$type}: calculateRem($size) calculateRem($sizeright) calculateRem($size) calculateRem($sizeright) !important;  
+      }
+      @else if $side == 4{
+        #{$type}: calculateRem($size) calculateRem($sizeright) calculateRem($sizebottom) calculateRem($sizeleft) !important;  
+      } 
+    }
+    @else {
+        @if $side == 0 {
+            #{$type}: calculateRem($size);  
+        }
+       @if $side == 1 {
+        #{$type}: calculateRem($size) calculateRem($size) calculateRem($size) calculateRem($size);  
+      }
+      @else if $side == 2 {
+        #{$type}: calculateRem($size) calculateRem($sizeright) calculateRem($size) calculateRem($sizeright);  
+      }
+      @else if $side == 4{
+        #{$type}: calculateRem($size) calculateRem($sizeright) calculateRem($sizebottom) calculateRem($sizeleft);  
+      }  
+    }
+  
+}
+
+// ====================
+// Read Icon List
+// ----
+@mixin icons($name, $width, $height, $type: true){
+    .#{$name}{
+        @include sizeRem(width, $width);
+        @include sizeRem(height, $height);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+    @if $type {
+        .#{$name}{
+            background-image: url('../images/icons/#{$name}.svg');
+        }
+    }
+    @else {
+        .#{$name}{
+            background-image: url('../images/icons/#{$name}.png');
+        }
+    }
+}
+
+
+// ====================
+// Mixins
+// ---
+@mixin clearfix {
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin border-radius-rem($size) {
+    -webkit-border-radius: calculateRem($size);
+    border-radius: calculateRem($size);
+}
+
+@mixin fontawesome {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ====================
+// Mixins Form
+// ---
+@mixin form-default-label {
+    label {
+        display: block;
+        @include sizeRem(margin-bottom, 5);
+    }
+}
+
+@mixin form-default-input {
+    border: 1px solid rgba($title-color, .3);
+    @include border-radius-rem(3);
+    background-color: $white-color;
+    color: $title-color;
+    &:focus {
+        border: 1px solid rgba($title-color, .6);
+        outline: none;
+    }
+}
+
+// ====================
+// Mixins Buttons
+// ---
+@mixin btn($bg: $link-color, $color: $title-color, $border-color: $link-color) {
+    display: inline-block;
+    @include border-radius-rem(4);
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-medium);
+    @include sizeRem(padding, 9, 2, 25);
+    border: 1px solid $blue-color;
+    background-color: $bg;
+    color: $color;
+    @include transition(0.3s all);
+    line-height: $line-height-default;
+    &:hover,
+    &:focus {
+        background-color: $hover-color;
+        color: $white-color;
+        border-color: $hover-color;
+    }
+}
+
+// ====================
+// Mixins Container bootstrap
+// ---
+@mixin container {
+    padding:{
+        @include sizeRem(left, 15);
+        @include sizeRem(right, 15);
+    }
+    margin: 0 auto;
+    @media (min-width: $desktop) {
+        width: 1170px;
+    }
+    @media (min-width: $tablet-ht) and (max-width: $desktop - 1) {
+        width: 970px;
+    }
+    @media (min-width: $tablet-vt) and (max-width: $tablet-ht - 1) {
+        width: 750px;
+    }
+}
+
+@mixin placeholder($val...) {
+    &::-webkit-input-placeholder {
+        color: $val;
+    }
+    &:-moz-placeholder {
+        color: $val;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        color: $val;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $val;
+    }
+    &:placeholder {
+        color: $val;
+    }
+}
+// ====================
+// Mixins Flex
+// ---
+@mixin flex-row{
+    @include display-flex;
+    @include flex-wrap(wrap);
+}
+
+@mixin flex-col-xs {
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+@mixin flex-width-col-xs($val){
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 $val;
+    -ms-flex: 0 0 $val;
+    flex: 0 0 $val;
+    max-width: $val;
+}
+
+
+// ====================
+// View grid Custom
+// Using class: view-grid-1-cols, .... , view-grid-10-cols
+// ---
+
+$item-start: 1;
+$item-end: 10;
+$class-grid : view-grid;
+$flex-parent: view-content;
+$flex-item: views-row;
+$percent: 1;
+@function calculateView($size) {
+  $remSize: percentage($size / 1140);
+  @return $remSize;
+}
+
+@mixin margin-parent{
+    margin:{
+        left: calculateView(-20) / 2;
+        right: calculateView(-20) / 2;
+    }
+}
+@mixin padding-parent{
+    margin:{
+        left: calculateView(20) / 2;
+        right: calculateView(20) / 2;
+    }
+    @include sizeRem(margin-bottom, 20);
+}
+
+@mixin views-grid($type: true){
+    @for $i from $item-start through $item-end {
+        .#{$class-grid}-#{$i}-cols{
+            .#{$flex-parent}{
+                @include margin-parent;
+                @if $type == true{
+                    @include display-flex;
+                    @include flex-wrap(wrap);
+                }
+            }
+            .#{$flex-item}{
+                @include padding-parent;
+                @if $type == true{
+                    @include flex-width-col-xs(percentage($percent / $i) - calculateView(20));
+                    @include display-flex;
+                    @include flex-direction(column);
+                }
+                @else if $type == false{
+                    width: percentage($percent / $i) - calculateView(20);
+                }
+            }
+        }
+    }
+}
+
+// ====================
+// Layout Header
+// ---
+@mixin flex-header($item-left, $item-right, $item-left-width, $item-right-width){
+    @include display-flex;
+    @include align-items(center);
+    .#{$item-left}{
+        @include flex-width-col-xs($item-left-width);
+    }
+    .#{$item-right}{
+        @include flex-width-col-xs($item-right-width);
+        @include display-flex;
+        @include justify-content(flex-end);
+        @include align-items(center);
+    }
+}
+
+
+// ====================
+// Mixins Effect
+// ---
+@-webkit-keyframes fadeInFromNone {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@mixin animated{
+    @include animation-fill-mode(both);
+    @include animation-duration(0.5s);
+    @include animation-timing-function(cubic-bezier(0.0,
+    0.0,
+    1.0,
+    1.0));
+}
+
+@mixin show-fade($class-show){
+    display: none;
+    &.#{$class-show} {
+        display: block;
+        @include animated;
+        @include animation-name(fadeInFromNone);
+    }
+}
+
+// ====================
+// Mixins Effect
+// $beta True = Drupal 8 Kmagic menu
+// False = Drupal 7 tbmega menu
+// ---
+@mixin master-menu-reset($beta: true){
+    @if $beta {
+        .kmagic-menu-ul{
+            position: static;
+            .dropdown-menu{
+                &:hover, &:focus{
+                    position: relative;
+                    > a{
+                        color: #fd7e2d;
+                        &:after{
+                            border-top-color: #fd7e2d ;
+                        }
+                    }
+                    > .kmagic-menu-submenu{
+                        display: block; 
+                        @include animated;
+                        @include animation-name(fadeInFromNone);
+                    }
+                }
+                .dropdown-menu{
+                    > a:after{
+                        border-top-color: #000000;
+                        right: 0;
+                    }
+                }
+            }
+            > .dropdown-menu{
+                &:hover, &:focus{
+                    position: static;
+                    > a.kmagic-menu-li{
+                        background: #fd7e2d;
+                        color: $white-color;
+                    }
+                    > .kmagic-menu-submenu{
+                        top: 99%;   
+                    }
+                }
+                > .kmagic-menu-submenu{
+                    width: 100% !important;
+                    > .kmagic-menu-submenu-inner{
+                        @include container;
+                        min-height: 180px;
+                    }
+                }
+            }
+            > .kmagic-menu-li{
+                padding-bottom: 0;
+                margin: 0;
+                > a.kmagic-menu-li{
+                    background-color: #013ca6;
+                    border: 0 none;
+                    @include sizeRem(padding, 18, 2, 10);
+                    @include border-radius(0);
+                    color: $white-color;
+                    @include sizeRem(font-size, 14);
+                    font-weight: bold;
+                    &:after{
+                        display: none;
+                    }
+                    &:hover, &:focus{
+                        background: #fd7e2d;
+                        border: 0 none;
+                        color: $white-color;
+                        text-decoration: none;
+                        @include text-shadow(initial);
+                    }
+                }
+                &:first-child{
+                    > a{
+                        font-size: 0;   
+                        i{
+                            margin-right: 0;
+                        }
+                    }
+                }
+                & + .kmagic-menu-li{
+                    margin: 0; 
+                }
+            }
+        }   
+        .navbar-kmagic_menu{
+            background-color: #013ca6;
+            @include border-radius(0);
+            @include sizeRem(padding-bottom, 1);
+            .container-fluid{
+                @include container;
+            }
+            .kmagic-menu-group > .kmagic-menu-submenu{
+                @include animation-name(initial !important);
+            }
+            a i{
+                @include sizeRem(font-size, 20);
+            }
+            .kmagic-menu-col > *{
+                padding: 0;
+            }
+
+        }
+        .kmagic-menu-col{
+            border: 0 none;
+        }
+        .kmagic-menu-submenu{
+            @include border-radius(0);
+            background-color: $white-color;
+            li.kmagic-menu-li{
+                border-bottom: 0 none;
+                @include border-radius(0);
+                margin-bottom: 0;
+                a{
+                    @include border-radius(0);
+                    color: $black-color;
+                    font-weight: bold;
+                    border: 0 none;
+                    border-bottom: 1px solid #d8d8d8;
+                    padding:{
+                        left: 0;
+                        right: 0;
+                        @include sizeRem(top, 8);
+                        @include sizeRem(bottom, 8);
+                    }
+                    @include sizeRem(margin-right, 10);
+                    &:hover, &:focus{
+                        background-color: transparent;
+                        color: #fd7e2d;
+                        border-bottom: 1px solid #d8d8d8;
+                        &:after{
+                            border-top-color: #fd7e2d;
+                        }
+                    }
+                }
+                &:last-child{
+                    border-bottom: 0 none;
+                }
+            }
+        }
+        .nav-tabs .dropdown-menu{
+            margin: 0;
+        }
+    }
+    @else {
+        background-color: transparent;
+        .nav > li > a{
+            border-right: 0 none;
+            &:hover, &:focus{
+                background-color: transparent;
+            }
+        }
+        .nav .open {
+            > a, a:hover, a:focus{
+                background-color: transparent;
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+
+// ====================
+// List for space around: padding, margin 
+// ---
+// List 1 side
+@each $item in $list-item {
+    .mt-#{$item} { @include sizeRem(margin-top, $item, $important: true); }
+    .mr-#{$item} { @include sizeRem(margin-right, $item, $important: true); }
+    .mb-#{$item} { @include sizeRem(margin-bottom, $item, $important: true); }
+    .ml-#{$item} { @include sizeRem(margin-left, $item, $important: true); }
+    .pt-#{$item} { @include sizeRem(padding-top, $item, $important: true); }
+    .pr-#{$item} { @include sizeRem(padding-right, $item, $important: true); }
+    .pb-#{$item} { @include sizeRem(padding-bottom, $item, $important: true); }
+    .pl-#{$item} { @include sizeRem(padding-left, $item, $important: true); }
+}
+
+// List 2 side left, right or top, bottom
+@each $item in $list-item{
+    .my-#{$item} { 
+        @include sizeRem(margin-top, $item, $important: true);
+        @include sizeRem(margin-bottom, $item, $important: true);
+    }
+    .mx-#{$item} { 
+        @include sizeRem(margin-left, $item, $important: true);
+        @include sizeRem(margin-right, $item, $important: true);
+    }
+    .py-#{$item} { 
+        @include sizeRem(padding-top, $item, $important: true);
+        @include sizeRem(padding-bottom, $item, $important: true);
+    }
+    .px-#{$item} { 
+        @include sizeRem(padding-left, $item, $important: true);
+        @include sizeRem(padding-right, $item, $important: true);
+    }
+}
+
+// List 1 for All Side
+@each $item in $list-item{
+    .m-#{$item} { 
+        @include sizeRem(margin, $item, 1, $important: true);
+    }
+    .p-#{$item} { 
+        @include sizeRem(padding, $item, 1, $important: true);
+    }
+}
+ 
+ //.........in,se................
+@mixin form-default-input {
+    border: 1px solid $border-color;
+    @include border-radius-rem(3);
+    background-color: $white-color;
+    color: $body-color;
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-body);
+    line-height: $line-height-default;
+    @include box-shadow(none);
+    @include sizeRem(padding, 8, 2, 15);
+    @include input-placeholder{
+        color: $border-color;
+    }
+    &:focus {
+        border: 1px solid darken($border-color, 10%);
+        outline: none;
+    }
+}
+
+
+@mixin hov-block-border{
+    border: 1px solid $border-color;
+    background: $white-color;
+    @include border-radius(3px);
+    @include sizeRem(margin-bottom, 20);
+    &:hover, &:focus{
+        border-color: #dddddd;
+        @include box-shadow(0 0 1px 2px rgba($border-color-un-title,0.2));
+        //box-shadow:0 0px 7px  rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*......PAGE.............*/
+@mixin btn-a{
+    display: inline-block;
+    @include border-radius-rem(3);
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-bold);
+    @include sizeRem(padding, 0, 2, 25);
+    background-color: $blue-color-read-more;
+    color: $white-color;
+    min-width: 200px;
+    @include transition(0.3s all);
+    line-height: $line-height-default;
+    text-transform: uppercase;
+    border: none;
+    height:50px;
+    line-height:50px;
+    &:hover,
+    &:focus {
+        background: darken($link-color, 8%);
+        color: $white-color;
+    }
+}
+
+@mixin placeholder($val...) {
+    &::-webkit-input-placeholder {
+        color: $val;
+    }
+    &:-moz-placeholder {
+        color: $val;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        color: $val;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        color: $val;
+    }
+    &:placeholder {
+        color: $val;
+    }
+}
+
+// ====================
+$page-class: page-sign-up;
+$setion-class : main-content;
+@mixin page-sign-up{
+    .#{$page-class}:not(.page-comment-reply){
+        .#{$setion-class}{
+            background-color: #fafafa;
+            @include sizeRem(padding-top, 40);
+            @include sizeRem(padding-bottom, 65);
+        }
+        div.tabs{
+           // @include sizeRem(margin-bottom, 40);
+            
+        }
+        form{
+            border: 0 none;
+            background-color: #ecedf2;
+            @include container;
+            @include sizeRem(padding, 20, 1);
+            margin: 0 auto;
+            //border: 1px solid $border-color-streght;
+            //@include box-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+            @include border-radius(3px);
+            .form-item{
+                @include sizeRem(margin-top, 15);
+                @include sizeRem(margin-bottom, 20);
+            }
+            .form-actions{
+                @include sizeRem(margin-top, 30);
+                margin-bottom: 0;
+                // margin-left: -5px;
+                // margin-right: -5px;
+                // > *{
+                //     margin-left: 5px;
+                //     margin-right: 5px;
+                // }
+            }
+            .description {
+                @include sizeRem(margin-top, 5);
+                @include sizeRem(font-size, 14);
+            }
+        }
+    }
+    
+    
+    @media (min-width: $tablet-vt){
+        .#{$page-class}:not(.page-comment-reply){
+            form{
+                @include sizeRem(width, 500);
+            }
+        }
+    }
+    @media (max-width: $tablet-vt - 1){
+        .#{$page-class}:not(.page-comment-reply){
+            .#{$setion-class}{
+                @include sizeRem(padding-top, 20);
+                @include sizeRem(padding-bottom, 45);
+            }
+            div.tabs{
+               // @include sizeRem(margin-bottom, 20);
+                
+            }
+            form{
+                @include sizeRem(margin-right, 15);
+                @include sizeRem(margin-left, 15);
+                @include sizeRem(width, 500);
+                margin: 0 auto;
+            }
+        }
+      
+
+    }
+    @media (max-width: $mobile){
+        .#{$page-class}:not(.page-comment-reply){
+            form{
+                //@include sizeRem(padding, 25, 4, 40, 30, 40);
+            }   
+        }
+    }
+}
+
+@include page-sign-up;
+// Page User basic
+// ---
+// $page-class: page-comment;
+// $setion-class : main;
+$page-class: page-user;
+$setion-class : main-content;
+
+@mixin page-comment{
+    .#{$page-class}:not(.page-comment-reply){
+        .#{$setion-class}{
+            background-color: #fafafa;
+            @include sizeRem(padding-top, 40);
+            @include sizeRem(padding-bottom, 65);
+        }
+        div.tabs{
+            //@include sizeRem(margin-bottom, 40);   
+        }
+        form{
+            border: 0 none;
+            background-color: #ecedf2;
+            @include container;
+            @include sizeRem(padding, 20, 1);
+            @include sizeRem(padding-top, 40);
+            margin: 0 auto;
+            border: 1px solid $border-color-streght;
+            //@include box-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+            @include border-radius(4px);
+            .form-item{
+                @include sizeRem(margin-top, 25);
+                @include sizeRem(margin-bottom, 25);
+            }
+            .form-actions{
+                @include sizeRem(margin-top, 30);
+                margin-bottom: 0;
+                // margin-left: -5px;
+                // margin-right: -5px;
+                > *{
+                    // margin-left: 5px;
+                    // margin-right: 5px;
+                }
+            }
+            .description {
+                @include sizeRem(margin-top, 5);
+                @include sizeRem(font-size, 14);
+            }
+        }
+    }
+    
+    
+    @media (min-width: $tablet-vt){
+        .#{$page-class}:not(.page-comment-reply){
+            form{
+                @include sizeRem(width, 500);
+            }
+        }
+    }
+    @media (max-width: $tablet-vt - 1){
+        .#{$page-class}:not(.page-comment-reply){
+            .#{$setion-class}{
+                @include sizeRem(padding-top, 20);
+                @include sizeRem(padding-bottom, 45);
+            }
+            div.tabs{
+                //@include sizeRem(margin-bottom, 20);
+                
+            }
+            form{
+                @include sizeRem(margin-right, 15);
+                @include sizeRem(margin-left, 15);
+                @include sizeRem(width, 500);
+                margin: 0 auto;
+            }
+        }
+      
+
+    }
+    @media (max-width: $mobile){
+        .#{$page-class}:not(.page-comment-reply){
+            form{
+                //@include sizeRem(padding, 25, 4, 40, 30, 40);
+            }   
+        }
+    }
+}
+@include page-comment;
+
+
+@mixin page-batch{
+    .page-batch{
+        .main{
+            background-color: #fafafa;
+            @include sizeRem(padding-top, 40);
+            @include sizeRem(padding-bottom, 65);
+            .block-system {
+                border: 0 none;
+                background-color: $white-color;
+                // @include container;
+                // @include sizeRem(padding, 50, 2, 100);
+                // margin: 0 auto;
+                @include sizeRem(padding, 50, 2, 40);
+                @include sizeRem(margin, 0, 2, 75);
+                @include box-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+                @include border-radius(3px);
+            }
+        }
+        &.not-front{
+            .footer-top{
+                margin-top: 0;    
+            }
+        }
+        
+        @media (min-width: $tablet-vt){
+            .main .block-system{
+                //@include sizeRem(width, 720);
+            }
+        }
+        @media (max-width: $tablet-vt - 1){
+            .main{
+                @include sizeRem(padding-top, 20);
+                @include sizeRem(padding-bottom, 45);
+                .block-system{
+                    @include sizeRem(margin-right, 15);
+                    @include sizeRem(margin-left, 15);
+                }
+            }
+            
+        }
+        @media (max-width: $mobile){
+            .main .block-system{
+                @include sizeRem(padding, 25, 4, 40, 30, 40);
+            }   
+        }
+    }
+}
+
+@include page-batch;
+
+dl {
+    a{
+        color: $title-color;
+        &:hover, &:focus{
+            color: $link-color;
+        }
+    }   
+    dt {
+        border-top: 1px dashed $border-color;
+        padding-top: 10px;
+        @include sizeRem(font-size, 14);
+        @include wp-font(font-bold);
+        &:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        + dt {
+            margin-top: 10px;
+        }
+        &:empty {
+            display: none;
+        }
+    }
+    dd {
+        @include sizeRem(font-size, 13);
+        @include wp-font(font-medium);
+        margin-left: 0;
+        padding-bottom: 10px;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@mixin button-btn{
+    @include btn;
+    @include sizeRem(padding, 6.5, 2, 25);
+    min-width: 100px;
+    &:hover, &:focus{
+        background-color: $hover-color;
+        border-color: $hover-color;
+        color: $title-color;
+    }
+}
+@mixin ico-font{
+    &:before{
+        content: "\f041";
+        position:absolute;
+        color: $border-color-un-title;
+        top: 50%;
+        left:50%;
+        text-align: center;
+        @include fontawesome;
+        @include translate(-50%,-50%);
+    }
+}
+
+@mixin ico-auto{
+    &:before{
+        content: "\f107";
+        position:absolute;
+        color: $white-color;
+        top: 50%;
+        right: 0;
+        text-align: center;
+        @include fontawesome;
+        @include translate(0,-50%);
+    }
+}
+@mixin bg-icon{
+    &:before {
+        content: "";
+        background: url('../images/icon/placeholder.svg') 0 0 no-repeat;
+        display: inline-block;
+        height: 131px;//146px;
+        width:131px;//148px;
+        top: 50%;
+        left:50%;
+        z-index: 5;
+        position: absolute;
+        background-size: 131px 131px;//146px 148px;
+        background-position:center;
+        @include translate(-50%,-50%);
+    }
+}
+
+@mixin hov-block-border{
+    // border: 1px solid $border-color-streght;
+    // background: $white-color;
+    // @include border-radius(4px);
+    // @include sizeRem(margin-bottom, 20);
+    &:hover, &:focus{
+        border-color: #dddddd;
+        @include box-shadow(0 0 1px 2px rgba($border-color-un-title,0.2));
+    }
+}
+
+@mixin background-vacy{
+    background: $white-color;
+    @include sizeRem(padding, 40);
+    @include border-radius(4px);
+    @include border-top-right-radius(0);
+    @include border-top-left-radius(0);
+    border: 1px solid $border-color-streght;
+}
+
+@mixin form-ite{
+    .form-item{
+        @include display-flex;
+        @include align-items(center);
+        > label{
+            margin: 0;
+            @include sizeRem(min-width, 145);
+            @include wp-font(font-body);
+            position: static;
+        }
+    }
+    legend{
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+}
+
+@mixin menu-add{
+    .form-item-new-notice-in{
+        width: 30%;
+        display: inline-block;
+        label{
+            @include sizeRem(font-size, 15);
+        }
+    }
+    .form-item-submitted-notice-in{
+        width: 30%;
+        display: inline-block;
+        label{
+            @include sizeRem(font-size, 15);
+        }
+    }
+    #edit-label{
+        float: left;
+        width: 70%;
+        label{
+            @include sizeRem(font-size, 30);
+            @include wp-font(font-bold);
+            @include sizeRem(margin-bottom, 10);
+            margin-top: 0;
+        }
+        p{
+            @include sizeRem(max-width, 650);
+            span{
+                @include sizeRem(padding-left, 60);
+            }
+        }
+    }
+    legend{
+        border-bottom: none;
+        margin-bottom: 0;
+        @include sizeRem(font-size, 20);
+        @include wp-font(font-bold);
+    }
+}
+
+@mixin btn-show{
+    @include sizeRem(font-size, 12);
+    color: $title-color;
+    @include wp-font(font-medium);
+    position: relative;
+    // position: absolute;
+    // bottom: 222px;
+    bottom: 0;
+    left:50%;
+    z-index: 44;
+    @include translate(-50%, 0);
+    &:before{
+        content: "\f107";
+        position:absolute;
+        text-align: center;
+        @include fontawesome;
+        @include rotate(-180deg);
+        right: -20px;
+        color: $blue-color;
+        top: -1px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="38px" viewBox="0 0 46 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.0-APS-Home-v14.0" transform="translate(-1197.000000, -958.000000)" fill="#3A98CA">
+            <g id="If-not-now,-when?" transform="translate(125.000000, 768.000000)">
+                <path d="M1117.46429,228 L1117.46429,209.869281 L1108.37143,209.869281 C1108.37143,203.660131 1110.03632,200.30719 1116.69588,197.202614 L1112.59769,190 C1101.96801,194.346405 1099.02243,201.176471 1099.02243,211.235294 L1099.02243,228 L1117.46429,228 Z M1090.31378,228 L1090.31378,209.869281 L1081.09286,209.869281 C1081.09286,203.660131 1082.75775,200.30719 1089.4173,197.202614 L1085.31911,190 C1074.68944,194.346405 1072,201.176471 1072,211.235294 L1072,228 L1090.31378,228 Z" id="Quote" transform="translate(1094.732143, 209.000000) scale(-1, -1) translate(-1094.732143, -209.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

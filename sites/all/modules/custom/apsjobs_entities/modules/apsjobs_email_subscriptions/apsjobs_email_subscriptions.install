@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function aps_email_subscriptions_schema() {
+  $schema['aps_email_subscriptions'] = array(
+    'description' => 'GOVCMS Email Subscriptions Entity Schema',
+    'fields' => array(
+      'esid' => array(
+        'description' => t('Private Key'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'status' => 'Config Name',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+      'data' => array(
+        'status' => 'Data config',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+      'status' => array(
+        'status' => 'Status',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+      'created' => array(
+        'status' => 'Created',
+        'type' => 'int',
+        'size' => 11,
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+      'changed' => array(
+        'status' => 'Changed',
+        'type' => 'int',
+        'size' => 11,
+        'not null' => FALSE,
+        'default' => NULL
+      ),
+    ),
+    'primary key' => array('esid'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function aps_email_subscriptions_uninstall() {
+  drupal_uninstall_schema('aps_email_subscriptions');
+}

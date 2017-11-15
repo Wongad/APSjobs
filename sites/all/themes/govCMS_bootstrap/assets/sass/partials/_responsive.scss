@@ -1,0 +1,8396 @@
+.page-aps-work{
+	.view-aps-job-baner{
+		.view-info{
+			@include sizeRem(padding-left,28);
+		}
+	}
+	.view-aps-job-icon{
+		.views-row{
+			@include sizeRem(margin-bottom,10);
+		}
+	}
+	.view-abs-job-new-list{
+		.views-field-field-image{
+			img{
+				height:100%;
+			}
+		}
+	}
+}
+/////////////agencies-02/10/2017//////////////////
+// .page-agencies{
+// 	.view-banner-basic{
+// 		.view-inner{
+// 			@include sizeRem(padding-top,70);
+// 		}
+// 	}
+// 	.pane-banner-basic{
+// 		.inside{
+// 			@include sizeRem(padding-bottom,60);
+// 		}
+// 	}
+// 	.footer-copyright{
+// 		@include sizeRem(margin-top,10);
+// 	}
+// 	.item-list{
+// 		@include sizeRem(margin-bottom,10);
+// 		.pager{
+// 			margin-left:-50px;
+// 		}
+// 	}
+
+// }
+/////////////////////////////////////////////////////
+////////////aps-gazette-02/10/2017///////////////////
+.page-aps-gazette{
+	.banner{
+		.paner-apsjobs--gazette-search-form{
+			.aps-gazette{
+				@include sizeRem(margin-bottom,25);
+			}
+		}
+		.views-field-body{
+			p{
+				&:first-child{
+					@include sizeRem(margin-bottom,25);
+				}
+			}
+		}
+	}
+}
+/////////////////////////////////////////////////////
+
+
+@media (min-width: 1250px) and (max-width: 1300px){
+   .header .block-menu ul.menu li, .header .menu-name-main-menu ul.menu li{
+
+    	@include sizeRem(padding-right, 22);
+      	padding-left: 0;
+      	&:last-child{
+        	padding-right: 0;
+      	}
+   	}
+   .block-menu-view-public a{
+      @include sizeRem(width, 150);
+   	}
+   .block-menu-jop-agency-name h2{
+      @include sizeRem(width, 150);
+   	}
+}
+
+
+
+//////////////////banner//////////////////////
+
+.page-aps-work{
+	.banner{
+		overflow:hidden;
+	}
+}
+
+//////////////////////////////////////////////
+
+// 1200
+@media (min-width: $desktop) {}
+
+
+//.................Hằng.....................//
+// 1199
+@media (max-width: $desktop - 1) {
+	//////////////////11/10/2017///////////////////////
+	//------------page agencies--------------//
+	.front .content-first .pane-view-job-panel-pane-1{
+		margin-bottom: 30px;
+	}
+	.form-aps-job-secrh .classification .dropdown-menu{
+	   width: 100%;
+	}
+	.view-apsjobs-gazette .views-field-nothing{
+		@include sizeRem(font-size, 14);
+	}
+	.page-agencies{
+		.view-agency{
+			.views-row{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+	}
+	.ui-slider-horizontal .ui-slider-range{
+		//top: 1px;
+	}
+	//----------page aps-work------------//
+	.page-aps-work{
+		.block-abs-find-job{
+			.views-field-body{
+				a{
+					@include wp-font(font-medium);
+				}
+			}
+		}
+
+	}
+
+	//------------- page gazette --------------//
+	.view-apsjobs-gazette{
+		.views-field-body{
+			p{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+	}
+	
+
+	
+	.not-front{
+		.header + * {
+	    	@include sizeRem(padding-top,130);
+		}
+		.banner{
+			margin-top:-130px;
+		}
+	}
+	 
+	///////////////////END - 11/10/2017 ///////////////
+
+	.page-user,.page-sign-up{
+		&:not(.page-comment-reply){
+			.back-to-top{
+				@include sizeRem(margin-top,25);
+			}
+		}
+	}
+	////////////////////////
+	.logged-in{
+		#block-menu-menu-agency-home-page{
+			padding-left:0;
+			padding-right:0;
+		}
+		.header{
+			.block-menu{
+				ul{
+					&.menu{
+						@include display-flex;
+						@include justify-content(center);
+					}
+				}
+			}
+		}
+	}
+	
+	/////////////header/////////////////
+	#block-menu-block-govcms-menu-block-footer{
+		@include sizeRem(padding-left,0);
+		@include sizeRem(padding-right,0);
+	}
+	.menu-name-main-menu{
+		ul{
+			&.menu{
+				@include display-flex;
+				@include justify-content(center);
+
+			}
+		}
+	}
+	////////////////////////////////////
+	////////////////header////////////////////////
+	#site-slogan{
+		@include sizeRem(font-size,12);
+	}
+	#site-name{
+		@include sizeRem(font-size,16);
+	}
+	#name-and-slogan{
+		a{
+			span{
+				&.home-title{
+					@include sizeRem(font-size,18);
+				}
+			}
+		}
+	}
+
+	//////////////////////////////////////////////
+
+	////worktray/////////
+	.menu-name-menu-secondary-menu{
+		ul{
+			li{
+				padding:0;
+			}
+		}
+	}
+	//////////////////banner////////////////////////
+	.pane-banner-basic{
+		&.pane-banner-468{
+			.inside{
+				@include sizeRem(padding-bottom,35);
+				@include sizeRem(min-height,390);
+
+			}
+			.view-banner-basic{
+				.view-inner{
+					@include sizeRem(padding-top,30);//18/10
+				}
+			}
+		}
+	}
+	
+
+	
+	////////////////////////////////////////////////
+	///////////////banner-aps-work///////////////////
+	.view-banner-basic{
+		&.view-type-aps{
+			.view-inner{
+				@include sizeRem(padding-top,40);
+			}
+		}
+	}
+	.view-banner-basic{
+		&.view-type-aps{
+			@include sizeRem(min-height,430);
+		}
+	}
+	/////////////////////////////////////////////////
+	//////////////aps-work///////////////
+	.page-aps-work{
+		.pane-job-category-panel-pane-6,.pane-quicktabs-job-level,
+		.pane-job-category-panel-pane-7,.pane-job-category-panel-pane-8{
+			border:1px solid $border-color;
+			@include border-radius(4px);
+		}
+		.view-abs-job-new-list{
+			.group-aps-job-inner{
+				padding-left:0;
+				@include sizeRem(padding-top,20);
+				@include sizeRem(padding-bottom,25);
+			}
+			.view-aps-job-list-inner{
+				@include sizeRem(padding,25);
+			}
+			.view-field-title{
+				@include sizeRem(margin-bottom,20);
+			}
+			.views-row{
+				&:nth-child(2n+1){
+					.group-aps-job-inner{
+						@include sizeRem(padding-top,20);
+						@include sizeRem(padding-bottom,25);
+					}
+				}
+
+			}
+			.views-row-2{
+				.view-aps-job-list-inner{
+					@include sizeRem(padding-left,10);
+					padding-bottom:0;
+					@include sizeRem(padding-right,20); 
+				}
+			}
+			.views-row-3{
+				.group-aps-job-inner{
+					.views-field-field-link{
+						margin-bottom:-10px;
+					}
+				}
+			}
+		}
+	}
+	.page-aps-work{
+		.content-first{
+			.panel-pane {
+			    border: none;
+			}
+		}
+	}
+	#content-fifth-wrapper{
+		.panel-pane{
+			border:none;
+		}
+	}
+	/////////////////////////////////////
+	////////////////////////////Home-aps/////////////////////////////////
+	.front{
+		.content-feature{
+			.container-fluid{
+				min-height:auto;
+			}
+			.pane-views-panes{
+				@include sizeRem(padding,45,2,0);
+				.view-content{
+					width:auto;
+					@include sizeRem(padding,0,4,25,0,25);
+					margin-right:0;
+				}
+			}
+			.view-owlcarouse-testimornial{
+				padding-top:0;
+				.view-content{
+					@include sizeRem(width,439);
+					@include sizeRem(padding,40,4,35,5,30);
+					@include sizeRem(margin-left,70);
+				}
+			}
+		}
+		.content-main{
+			.pane-view-banner-panel-pane-4{
+				@include sizeRem(padding,45,2,0);
+				.pane-content{
+					@include sizeRem(margin-left,30);
+					@include sizeRem(padding-left,35);
+				}
+			}
+			.pane-views-panes{
+				.pane-content{
+					padding-top:0;
+					padding-bottom:0;
+					@include sizeRem(width,467);
+				}
+			}
+			.views-field{
+				margin-bottom:0;
+			}
+			.views-field-title{
+				@include sizeRem(margin-bottom,15);
+			}
+			.views-field-body{
+				@include sizeRem(margin-bottom,25);
+			}
+		}
+		.content-fifth{
+			.item-list{
+				@include sizeRem(margin-top,5);
+				@include sizeRem(margin-bottom,10);
+			}
+		}
+		.item-list{
+			
+			@include sizeRem(margin-bottom,20);
+		}
+	}
+	
+
+
+	
+
+	.view-owlcarouse-testimornial{
+		.view-content{
+			&:before,&:after{
+				@include sizeRem(width,35);
+				@include sizeRem(height,29);
+				@include background-size(35px 29px);
+			}
+			&:after{
+				right:10px;
+			}
+		}
+	}
+	.aps-left-block{
+		.info{
+			&:before{
+				@include sizeRem(width,100);
+				@include sizeRem(height,100);
+				@include background-size(100px 100px);
+			}
+		}
+		.locations{
+			.views-field-title{
+				@include sizeRem(font-size,14,$important:true);
+			}
+		}
+		.job-vacancies{
+			.views-field-title{
+				@include sizeRem(font-size,14,$important:true);
+			}
+		}
+		.govemment{
+			.views-field-title{
+				@include sizeRem(font-size,14,$important:true);
+			}
+		}
+	}
+	.views-field-number{
+		@include sizeRem(font-size,28);
+	}
+	.view-abs-job-relation{
+		.views-field-field-image{
+			min-width:auto;
+			@include sizeRem(max-width,445);
+			@include sizeRem(max-height,265);
+			overflow:hidden;
+			@include border-radius(4px);
+			.field-content{
+				img{
+					max-width:inherit;
+					transform: translate(-15%,-19%);
+					@include border-radius(4px);
+				}
+			}	
+		}
+
+		.group-abs-job-relation{
+			@include sizeRem(padding-left,30);
+			padding-top:0;
+			@include flex-width-col-xs(50%);
+		}
+	}
+	.view-abs-job-agency{
+		.views-row-1{
+			display:none;
+		}
+	}
+	.view-abs-job-agency{
+		.view-content{
+			margin:{
+		        left: calculateView(-45) / 2;
+		        right: calculateView(-45) / 2;
+		    }
+		}
+		.views-row{
+			@include flex-width-col-xs(50% - calculateView(45));
+			margin:{
+		        left: calculateView(45) / 2;
+		        right: calculateView(45) / 2;
+		    }
+			@include border-radius(4px);
+			border: 1px solid $border-color;
+		}
+	}
+
+	.view-abs-job-list{
+		margin-left:-15px;
+		margin-right:-15px;
+		.views-row{
+			@include flex-width-col-xs(285px);
+		 	@include sizeRem(margin-left,15);
+		 	@include sizeRem(margin-right,15);
+		}
+		.view-content{
+			@include justify-content(center);
+			margin:0;
+		}
+	}
+
+	#views-inner-future{
+		@include sizeRem(padding-left,180);
+	}
+	/////////////////////////////////////////////////////////////////////
+	/////////////vacancy-position////////////////
+	#edit-group-right{
+		.form-item-postcode{
+			.form-text{
+				width:35%;
+			}
+		}
+		.form-submit{
+			@include sizeRem(width,120);
+		}
+	}
+	// Nam..................................................//
+
+	.header{
+		.container{
+            @include flex-wrap(wrap);
+            @include justify-content(stretch);
+            @include sizeRem(padding-bottom, 10);
+            position: relative;
+		}
+		.navbar-collapse{
+			width: 50%;
+			display: block;
+		}
+		.menu-name-main-menu ul.menu li{
+			@include sizeRem(padding-left, 35);
+			@include sizeRem(padding-right, 35);
+		}
+		.navbar-collapse{
+			@include sizeRem(padding-left,15);
+			@include sizeRem(padding-right,15);
+		}
+	}
+	#bs-example-navbar-collapse-1{
+		position: absolute;
+		@include sizeRem(right,15);
+		@include sizeRem(top,28);
+	}
+	.region-header, .region-main-menu{
+		@include justify-content(flex-end);
+	}
+	#block-menu-block-govcms-menu-block-footer{
+		width: 100%;
+		@include sizeRem(padding,24, 4 , 15 , 0 , 35);
+	}
+	#block-menu-menu-agency-home-page{
+		width: 100%;
+		@include sizeRem(padding,18, 4 , 15 , 0 , 35);
+	}
+	#name-and-slogan{
+		width: auto;
+	}
+	.page-aps-work{
+		.view-abs-job-new-list{
+			.views-field-field-image{
+				width:54%;//18/10
+			}
+			.view-aps-job-list-inner{
+				width:46%;//18/10
+			}
+		}
+		.content-feature{
+			padding-top:0;
+		}
+		.pane-view-banner-panel-pane-6{
+			margin-bottom:0;
+			.views-row{
+				margin-bottom:0;
+				.views-field-body{
+					margin-bottom:0;
+				}
+			}
+		}
+
+	}
+	.view-abs-job-new-list .view-aps-job-list-inner:before{
+        left: -5%;
+        @include transform(skewX(-6deg));
+	}
+	.view-abs-job-new-list .views-row:nth-child(2n+1) .view-aps-job-list-inner:before{
+		right: -5%;
+		@include transform(skewX(-3deg));
+	}
+
+	.view-abs-job-list .views-row{
+		&.desktop-show{
+			display: none;
+		}
+		&.tablet-show{
+			display: block;
+		}
+	}
+
+	//////////////////vacancy--step=notice-details/////////
+	.page-employment-vacancy{
+		#edit-agency-detail{
+			#edit-aps-class{
+				label{
+					@include sizeRem(padding-right,20);
+				}
+			}
+		}
+		#edit-detail{
+			.form-type-textfield{
+				input{
+					@include sizeRem(margin-left,200);
+					@include sizeRem(max-width,610);
+				}
+			}
+			.form-type-textarea{
+				.form-textarea-wrapper{
+					@include sizeRem(padding-left,200);
+				}
+			}
+			.form-item-publish-to-my-notices{
+				@include sizeRem(margin-left,200);
+			}
+			.form-type-item{
+				label{
+					@include sizeRem(max-width,200);
+				}
+			}
+		}
+		#edit-selection-contact{
+			.form-item-contact{
+				input{
+					@include sizeRem(max-width,250);
+				}
+			}
+			.form-item-ph{
+				input{
+					@include sizeRem(max-width,250);
+					@include sizeRem(margin-left,120);
+				}
+			}
+		}
+		#edit-selection-email{
+			.form-item-email{
+				input{
+					@include sizeRem(max-width,250);
+				}
+			}
+			.form-item-ph{
+				input{
+					@include sizeRem(max-width,250);
+					@include sizeRem(margin-left,120);
+				}
+			}
+		}
+		#edit-admin-info{
+			#edit-notice-number{
+				label{
+					@include sizeRem(margin-right,90);
+				}
+			}
+			.form-type-textarea{
+				.form-textarea-wrapper{
+					@include sizeRem(padding-left,200);
+				}
+			}
+		}
+	}
+	///////////////////////////////////////////////////////
+
+	////////test-index-search/////////////
+	// .node-type-aps-vacancies{
+	// 	.content-fifth{
+	// 		.container{
+	// 			@include sizeRem(width,940);
+	// 		}
+	// 	}
+	// }
+	// .node-type-aps-vacancies{
+	// 	.content-six{
+	// 		.container{
+	// 			@include sizeRem(width,940);
+	// 		}
+	// 	}
+	// }
+
+	//////////////////.tai.............
+
+	//
+	//view-agency
+	.view-agency{
+		.group-agency{
+			.views-field-field-link-to{
+				a{
+					@include sizeRem(padding-right, 27);
+					&::after{
+						content: "\f08e";
+					    color: $black;
+					    @include sizeRem(right,10);
+				        position:absolute;
+				        top: 50%;
+				        text-align: center;
+				        @include fontawesome;
+				        @include translate(0,-50%);
+						
+					}
+				}	
+			}
+		}
+	}
+	.view-view-gazette .view-header{
+		left: 0;
+	}
+	
+	.page-aps-agency{
+		.pane-apsjobs-blocks-apsjobs-agency-count.view-grid-4-cols{
+			.view-row{
+				width: 48%;
+				background-color: #eee;
+				@include sizeRem(margin, 5, 1);
+			    @include sizeRem(padding-left, 50);
+				@include sizeRem(padding-right, 50);
+				.views-field-value{
+					@include sizeRem(margin-top, 20);
+				}
+				.views-field-title{
+					@include sizeRem(margin-bottom, 40);
+				}
+			}
+		}
+	}
+	////////agencies-2/10/2017////////////
+	.page-agencies{
+		.view-agency{
+			.views-field-field-link-to{
+				a{
+					&:after{
+						border:none;
+					}
+				}
+			}
+			.views-row{
+				@include sizeRem(padding,40,2,25);
+				border:1px solid $border-color;
+				@include border-radius(4px);
+			}
+			.group-agency{
+				position: static;
+				@include sizeRem(margin-top,30);
+			}
+			.view-header{
+				@include sizeRem(padding-left,0);
+			}
+			
+		}
+		.paner-aps-govcms-agencies-search-form{
+			.form-aps-job-search{
+				div{
+					&:first-child{
+						@include flex-wrap(wrap);
+						div{
+							&:last-child{
+								width:50%;
+								@include sizeRem(padding-left,15);
+							}	
+							.success{
+								width:100%;
+								padding-left:0;
+							}
+						}
+					}
+					&:last-child{
+						.success{
+							@include sizeRem(margin-top,15);
+						}
+					}
+
+				}
+			}
+			
+				
+			.dropdown{
+				width:50%;
+				@include sizeRem(padding-right,15);
+			}
+			
+			.search-classify{
+				@include order(3);
+				width:100%;
+				padding-right:0;
+				@include sizeRem(margin-top,15);
+			}
+			ul{
+				width:100%;
+				li{
+					width:50%;
+				}
+			}
+			form{
+				input{
+					width:100%;
+					&.title-text-search{
+						border:1px solid $border-color;
+					}
+				}
+			}
+			select{
+				border:1px solid $border-color;
+			}
+		}
+	}
+	//////////////////////////////////////
+	////////aps-gazette-02/10/2017//////////////
+	.page-aps-gazette{
+		.banner{
+			@include sizeRem(padding-bottom,0);
+			.paner-apsjobs--gazette-search-form{
+				.aps-gazette{
+					@include sizeRem(margin-bottom,32);
+				}
+			}
+		}
+		.view-apsjobs-gazette{
+			.views-row{
+				@include sizeRem(padding,35,2,25);
+				border:1px solid $border-color;
+				.views-field-created{
+					@include sizeRem(right,25);
+				}
+			}
+			.views-field-body{
+				@include sizeRem(max-width,600);
+				margin-bottom:0;
+				a{
+					@include sizeRem(margin-top,10);
+				}
+				p{
+					&:last-child{
+						margin-bottom:0;
+					}
+				}
+			}
+		}
+		.paner-aps-gazatte-govcms-sort-date{
+			@include sizeRem(margin-top,25);
+		}
+		.views-exposed-widgets{
+			.views-widget-sort-order{
+				// @include sizeRem(margin-top,25);
+				margin-top:0;
+				#edit-sort-order{
+					border:1px solid $border-color;
+				}
+			}
+		}
+		.view-view-gazette{
+			.view-header{
+				padding-left:0;
+			}
+		}
+	}
+	////////////////////////////////////////////
+	/////search-job-03/10/2017//////////
+	.page-search-jobs{
+		.view-aps-vacancy-search{
+			.view-header{
+				left:0;
+				top:-10px;//16.10
+			}
+		}
+		.view-aps-job-search-list{
+			.group-info{
+				@include sizeRem(padding,30,4,25,20,25); 
+			}
+			.views-field-field-location-raw{
+				@include sizeRem(margin-top,10);
+			}
+		}
+		.views-field-title{
+			@include sizeRem(margin-bottom,25);
+		}
+	}
+	////////////////////////////////////
+
+	/////////////public-account-06/10/2017////////
+	.page-user-detail-admin{
+
+		.pane-jobs-panel-pane-2{
+			margin-top:0;
+		}
+		.content-second{
+			h2{
+				top:-25px;
+			}
+		}
+		.pane-user-detail{
+			@include sizeRem(margin-bottom,65);
+		}
+		.pane-page-title{
+			h1{
+				@include sizeRem(margin-bottom,35);
+			}
+		}
+		#content-first-wrapper{
+			margin-top:-11px;
+		}
+		.view-aps-govcms-email-alerts{
+			.views-row{
+				border:1px solid $border-color;
+				@include sizeRem(padding,30,4,25,35,25);
+				@include sizeRem(margin-bottom,15);
+
+			}
+			.views-field-nothing{
+				span{
+					@include sizeRem(margin-top,11);
+					display:inline-block;
+				}
+			}
+			.item-list{
+				@include sizeRem(margin-top,25);
+			}
+		}
+		.view-id-jobs{
+			.group-info{
+				border:1px solid $border-color;
+				@include sizeRem(padding,25,4,25,30,25);
+			}
+		}
+		.pane-email-alert-panel-pane-1{
+			h2{
+				@include sizeRem(margin-bottom,25);
+			}
+			a{
+				&.btn-a{
+					top:-76px;
+				}
+			}
+		}
+		.view-jobs{
+			.views-row{
+				&:first-child{
+					.views-field-created{
+						@include sizeRem(margin-bottom,7);
+					}
+				}
+			}
+		}
+	}
+	.view-aps-user-admin{
+		border:1px solid $border-color;
+		@include sizeRem(padding,40,2,25);
+		.views-label-nothing-1{
+			span{
+				&:last-child{
+					@include sizeRem(margin-top,10);
+				}
+			}
+		}
+		.views-row{
+			.group-detail{
+				@include flex-width-col-xs(45%);
+			}
+			.btn-group{
+				@include flex-width-col-xs(55%);
+			}
+		}
+		.views-field-edit-node{
+			
+			a{
+				margin-left:0;
+			}
+		}
+		.views-field-nothing-2{
+			a{
+				@include sizeRem(margin-left,10);
+			}
+		}
+	}
+	//////////////////////////////////////////////
+	//////////////10/10/2017--user-page//////////////
+	.page-user{
+		&:not(.page-comment-reply){
+			.main-content{
+				padding-top:0;
+			}
+		}
+	}
+	.page-user-detail-admin{
+		.main-content{
+			padding-top:0!important;
+		}
+	}
+	///......Move........///
+    /*...................Nam 10/11/17.......................*/
+	.owl-carousel {
+		.owl-item{
+			&:nth-child(3),&:last-child{
+				.panel-title-home h2{
+					max-width: 570px;
+					br{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+//////////////////12/10/2017///////////////////////
+	.view-banner-basic{
+		@include sizeRem(padding-top,130);
+	}
+	//------------Home page--------------//
+	// .banner{
+	// 	.paner-apsjobs-blocks-search-form{
+	// 		@include sizeRem(padding-top,385);
+	// 	}
+	// }
+	
+	.form-aps-job-secrh{
+		.find-under{
+			@include sizeRem(left,24);
+		}
+	}
+	.front{
+		.content-fifth{
+			.pane-custom{
+				@include sizeRem(margin-bottom,15);
+				@include sizeRem(margin-top,15);
+			}
+		}
+	}
+	///-------------Search page--------------------//
+	.pager-first{
+		@include sizeRem(margin-left,66,$important:true);
+	}
+	.pager-next{
+		@include sizeRem(margin-right,66,$important:true);
+	}
+
+	///////////////////END - 12/10/2017 ///////////////
+	//.............Tai............13-10-07............//
+	//.............end.......tai......................//
+	.page-panel-form-basic {
+		.paner-apsjobs-vacancies-new-vacancy{
+			@include sizeRem(margin-top,20);
+
+		}
+		.form-item-closing-date > label{
+			@include sizeRem(min-width,100);
+		}
+		.form-item-publication-date > label{
+			@include sizeRem(min-width,125);
+		}
+	}
+	.page-outcomes-create-outcome-promotion{
+		.view-aps-vacancy{
+			.views-row{
+				border: 0;
+			}
+		}
+	}
+	.node-type-aps-outcomes{
+		#content-second-wrapper .container{
+			padding-bottom: 0;
+		}
+		.view-aps-vacancy{
+			.views-row{
+				border:0;
+			}
+		}
+		.view-aps-outcomes{
+			.views-row{
+				border:0;
+			}
+		}	
+	}
+	.page-aps-agency{
+		.view-aps-vacancy{
+			.views-row{
+				border:0;
+			}
+		}
+	}
+	//..end........Tai..................//
+	//////////////////13/10/2017///////////////////////
+	.item-list{
+		.pager{
+			@include sizeRem(margin-bottom,13);
+		}
+	}
+	////--------------page agencies-----------////
+	.page-agencies{
+		#content-first-wrapper{
+			.container{
+				@include sizeRem(padding-top,20);
+			}
+		}
+	}
+
+	///---------------Hom page----------------///
+	.front{
+		.content-feature{
+			.pane-views-panes{
+				//@include sizeRem(margin-top,2);
+			}
+		}
+	}
+	.aps-left-block{
+		.govemment{
+			&:before{
+				@include sizeRem(width,57);
+				@include sizeRem(height,106);
+				@include background-size(57px 106px);
+			}
+		}
+		.job-vacancies{
+			&:before{
+				@include sizeRem(width,92);
+				@include sizeRem(height,92);
+				@include background-size(92px 92px);
+			}
+		}
+	}
+	.view-abs-job-agency{
+		.views-field-field-image{
+			min-height:auto;
+		}
+		.views-field-view-node{
+			@include sizeRem(bottom,34);
+		}
+	}
+
+
+	///////////////////END - 13/10/2017 ///////////////
+//////////////////16/10/2017///////////////////////
+	.item-list{
+		@include sizeRem(margin-bottom,25);
+	}
+
+	////-------------page Agencies --------///
+
+	.page-agencies{
+		.view-agency{
+			.views-field-title{
+				@include sizeRem(margin-bottom,17);
+			}
+		}
+	}
+	////--------------page Home-----------////
+	.aps-left-block{
+		.views-field-title{
+			@include sizeRem(padding-bottom,30,$important:true);
+		}
+	}
+	////----------page Search-------------////
+	.page-search-jobs{
+		.banner{
+			@include sizeRem(padding-bottom,14);
+		}
+		#content-first-wrapper{
+			@include sizeRem(margin-top,15);
+		}
+		.group-info{
+			@include sizeRem(margin-bottom,15);
+		}
+		.views-field-title{
+			@include wp-font(font-bold);
+		}
+
+	}
+	.view-aps-job-search-list{
+		.views-field-created{
+			@include sizeRem(margin-bottom,7);
+			@include sizeRem(padding-right,25);
+		}
+		.views-field-field-agency{
+			@include sizeRem(margin-bottom,15);
+		}
+		.views-field-field-location-raw{
+			@include sizeRem(margin-bottom,18);
+		}
+	}
+	#create-alert-open-popup-save-job{
+		@include sizeRem(margin-bottom,10);
+	}
+	//-----aps-work-----------//
+	.page-aps-work{
+		.pane-view-banner-panel-pane-6{
+			@include sizeRem(margin-top,5);
+		}
+		@include sizeRem(font-size,14);
+		.view-abs-job-new-list{
+			.views-field-field-image{
+				img{
+					width:auto;
+					height:100%;
+					max-width:inherit;
+					@include transform(translateX(-20%));
+				}
+			}
+		}
+		
+	}
+	.item-list{
+		ul{
+			li{
+				@include sizeRem(margin-left,52);//18/10
+			}
+		}
+	}
+	.view-abs-job-new-list{
+		.views-row-first{
+			.views-field-field-image{
+				@include sizeRem(height,428);
+			}
+		}
+		.views-row-even{
+			.views-field-field-image{
+				@include sizeRem(height,306);
+			}
+		}
+		.views-row-last{
+			.views-field-field-image{
+				@include sizeRem(height,308);
+			}
+		}
+	}
+
+	
+	///////////////////END - 16/10/2017 ///////////////
+//////////////////18/10/2017///////////////////////
+	////--------------page Gazette-----------////
+	.page-aps-gazette{
+		.view-apsjobs-gazette{
+			.views-row{
+				.views-field-created{
+					@include sizeRem(top,-37);
+				}
+			}
+		}
+	}
+	.views-exposed-widgets{
+		.views-widget-sort-order{
+			margin-bottom:-45px;
+		}
+	}
+	///---------page Aps work---------////
+	.view-abs-job-new-list{
+		.views-row:nth-child(2n+1){
+			.views-field-field-image{
+				width:51%;
+			}
+			.view-aps-job-list-inner{
+				width:49%;
+			}
+		}
+	}
+	.view-aps-job-baner{
+		.views-field-title{
+			@include sizeRem(margin-bottom,30);
+		}
+	}
+
+	///--page user admin--------///
+	.page-user{
+		.pane-email-alert-panel-pane-1{
+			a{
+				&.btn-a{
+					border: 1.5px solid $link-color;
+				}
+			}
+		}
+		.views-field-ops{
+			a{
+				border-width:1.5px;
+			}
+		}
+	}
+
+	///////////////////END - 18/10/2017 ///////////////
+	.front{
+		.view-banner .views-field-field-image-slide .owlcarousel-fields-250 {
+			height: 590px;
+			overflow: hidden;
+			&.owl-carousel{
+				height: auto;
+				overflow: visible
+			}
+		}
+	}
+
+	.banner .paner-apsjobs--gazette-search-form .aps-gazette div:nth-child(2) input{
+		padding-right: 80px;
+		text-overflow: ellipsis;
+		white-space: normal;
+	}
+
+	.page-aps-agency-my-job-vacancies #subnav .paner-menu-dashbord-vacancy-state{
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+	.page-aps-agency-my-outcomes #subnav .paner-menu-dashbord-vacancy-state{
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+	.page-panel-form-basic .banner{
+		margin-bottom: 40px;
+	}
+
+	.front .content-main .main-inner{
+		@include sizeRem(min-height, 394);
+	}
+
+	.form-aps-job-secrh .classification{
+		width: 100%;
+	}
+	#block-menu-block-govcms-menu-block-footer{
+		display: none;
+		&.menu-moved{
+			display: block;
+		}
+	}
+	#block-menu-menu-agency-home-page{
+		display: none;
+		&.menu-moved{
+			display: block;
+		}
+	}
+}
+//1199
+
+// 992 - 1199
+@media (min-width: $tablet-ht) and (max-width: $desktop - 1) {
+}
+//1024
+@media (max-width:1024px){
+	
+	
+	// .view-banner-basic{
+	// 	@include sizeRem(padding-top,125);
+	// }
+	
+	.view-aps-govcms-email-alerts{
+		.group-info{
+			border:none;
+		}
+	}
+	///......Move........///
+/*...................Nam 10/11/17.......................*/
+.form-submit{
+		border: 1px solid #d3d3d3;
+	}
+	.chosen-container-single .chosen-single{
+		border: 1px solid #d3d3d3;
+	}
+	.group-info{
+		border: 1px solid #d3d3d3;
+	}
+	.page-search-jobs .chosen-container-single .chosen-single{
+		border: 1px solid #d3d3d3;
+	}
+	.form-aps-job-secrh .form-item-find-button .item-add-jobs{
+		border: none;
+	}
+	.page-aps-agency .view-view-gazette .views-row{
+		border: 1px solid #d3d3d3;
+	}
+	.view-aps-vacancy .views-row{
+		border: 1px solid #d3d3d3;
+	}
+	.view-aps-outcomes .views-row{
+		border: 1px solid #d3d3d3;
+	}
+	.paner-aps-dashboard-govcms-search-form-vacancy .form-control, 
+	.paner-aps-dashboard-govcms-search-form-vacancy .form-text{
+		border: 1px solid #d3d3d3;
+	}
+	.page-aps-agency-my-job-vacancies {
+		.paner-aps-dasboard-govcms-sort-date {
+			.sort-date .chosen-container .chosen-single{
+				border: 1px solid #d3d3d3;
+			}
+		}
+	}
+}
+// 991
+
+@media (max-width: $tablet-ht - 1) {
+	//////////////////11/10/2017///////////////////////
+	.not-front{
+		.header{
+			&+ *{
+				@include sizeRem(padding-top,119);//16/10/2017
+			}
+		}
+	}
+
+	///////////////////END - 11/10/2017 ///////////////	
+	#logo{
+		@include sizeRem(padding-right,15);
+		a{
+			@include sizeRem(width,80);
+			@include sizeRem(height,40);
+			@include background-size(80px 40px);
+		}
+	}
+	#name-and-slogan{
+		@include sizeRem(padding-left,10);
+	}
+	#site-slogan{
+		@include sizeRem(font-size,10);
+	}
+	
+	///////////footer//////////////////////////
+	.footer-copyright{
+		.row{
+			@include display-flex;
+			.col-md-8{
+				@include flex-width-col-xs(70%);
+				@include sizeRem(padding-right,7.5);
+			}	
+			.col-md-4{
+				@include flex-width-col-xs(30%);
+				@include sizeRem(padding-left,7.5);
+			}
+		}
+		.block-menu{
+			@include flex-basis(40%);
+			max-width:none;
+			ul{
+				&.menu{
+					li{
+						@include sizeRem(margin,0);
+						a{
+							&.active{
+								color:$link-color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	///////////////////////////////////////////
+	#edit-duties{
+		label{
+			text-decoration:none;
+		}
+		span{
+			width:auto;
+		}
+	}
+	#edit-review{
+		#edit-duties{
+			li{
+				p{
+					@include sizeRem(padding-left,100);
+				}
+			} 
+		}
+	}
+	//////////////worktray/////////////
+	.menu-name-menu-secondary-menu{
+		li{
+			a{
+				@include sizeRem(padding-left,5);
+				@include sizeRem(padding-right,5);
+
+			}
+		}
+		ul{
+			@include sizeRem(padding-left,10);
+		}
+	}
+	///////////engagement/////////////////
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			@include sizeRem(padding-right,15);
+		}
+	}
+	////////////////baner//////////////////////
+	.banner{
+		.pane-govcms-blocks-govcms-gazette-search-form{
+			.aps-gazette{
+				@include sizeRem(width,565);
+			}
+		}
+	}
+	/////////////////////////////////////////////////
+	//////////////////banner-agencies////////////////
+	
+
+	///////////////////banner-my-job////////////////
+	.page-my-job-vacancies{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-title{
+					max-width:none;
+				}
+				.views-field-field-link{
+					float:none;
+					display:block;
+					@include sizeRem(padding-top,10);
+				}
+			}
+		}
+	}
+	/////////////////////////////////////////////////
+
+
+	////////////////////aps-work////////////
+	.page-aps-work{
+		.view-aps-job-icon{
+			.views-field-field-image{
+				@include sizeRem(min-height,60);
+				@include sizeRem(margin-top,10);
+				&:before{
+					@include sizeRem(width,60);
+					@include sizeRem(height,60);
+					@include background-size(60px 60px);
+				}
+			}
+			.views-row{
+				&:nth-child(2),&:nth-child(3),&:nth-child(4){
+					.views-field-field-image{
+						&:before{
+							@include sizeRem(width,60);
+							@include sizeRem(height,60);
+							@include background-size(60px 60px);
+						}
+					}
+				}
+			}
+			.views-field-body{
+				@include sizeRem(padding-right,8.5);
+				@include sizeRem(padding-left,8.5);
+			}
+		}
+		.pane-view-banner-panel-pane-8{
+			.views-field-body{
+				@include sizeRem(max-width,560);
+				margin-left:auto;
+				margin-right:auto;
+			}
+		}
+	}
+	.view-aps-job-icon{
+		.views-field-title{
+			@include sizeRem(font-size,20);
+		}
+	}
+	#term{
+		width:auto;
+	}
+	.ui-accordion{
+		.ui-accordion-header{
+			@include sizeRem(font-size,24);
+			height:auto;
+			@include sizeRem(padding,35,4,12,35,131);
+		}
+		.panel-pane{
+			.pane-title{
+				&:before{
+					@include sizeRem(width,50);
+					@include sizeRem(height,50);
+					@include background-size(50px 50px);
+				}
+				&:after{
+					@include sizeRem(width,16);
+					@include sizeRem(height,16);
+				}
+			}
+		}
+	}
+	#content-second-wrapper{
+		.container{
+			@include sizeRem(padding-bottom,30);
+		}
+	}
+	.block-abs-find-job{
+		@include sizeRem(padding,5,2,0);
+	}
+	.page-aps-work{
+		.pane-view-banner-panel-pane-9{
+			@include sizeRem(margin-bottom,5);
+		}
+	}
+
+	/////////////////////////////////////////	
+	////////APS-Public-Account/////////////////////
+	.page-user:not(.page-comment-reply){
+		.main-content{
+			padding-top:0!important;
+		}
+		div{
+			&.tabs{
+				margin-bottom:0!important;
+			}
+		}
+	}
+	.page-user-detail-admin{
+		.views-field-body{
+			@include sizeRem(max-width,382);
+		}
+		.view-id-jobs{
+			.views-field-title{
+				@include sizeRem(margin-bottom,20);
+			}
+		}
+	}
+	// .view-aps-user-admin{
+	// 	@include sizeRem(padding-left,25);
+	// 	@include sizeRem(padding-right,25);
+	// 	border: 1px solid $border-color;
+	// }
+	// .page-user{
+	// 	.pane-page-title{
+	// 		h1{
+	// 			@include sizeRem(margin-bottom,30);
+	// 			@include sizeRem(margin-top,10);
+	// 		}
+	// 	}
+	// 	.pane-email-alert-panel-pane-1{
+	// 		.views-row{
+	// 			@include sizeRem(padding,30,2,25);
+	// 			border: 1px solid $border-color;
+	// 			@include sizeRem(margin-bottom,15);
+	// 		}
+	// 		h2{
+	// 			@include sizeRem(margin-bottom,25);
+	// 		}
+	// 		a{
+	// 			&.btn-a{
+	// 				top:-75px;
+	// 			}
+	// 		}
+	// 	}
+	// 	.pane-user-detail{
+	// 		@include sizeRem(margin-bottom,55);
+	// 	}
+	// 	.content-second{
+	// 		h2{
+	// 			top:-28px;
+	// 		}
+	// 	}
+	// 	.view-jobs{
+	// 		.views-field-body{
+	// 			max-width:380px;
+	// 		}
+	// 	}
+	// }
+	// .view-jobs{
+	// 	.views-field-created{
+	// 		@include sizeRem(margin-bottom,10);
+	// 	}
+	// 	.group-info{
+	// 		@include sizeRem(padding-left,25);
+	// 		@include sizeRem(padding-right,25);
+	// 		border:1px solid $border-color;
+	// 	}
+	// }
+	// .view-aps-govcms-email-alerts{
+	// 	.item-list{
+	// 		@include sizeRem(margin,25,4,0,20,0);
+	// 	}
+	// }
+
+	///////////////////////////////////////////////
+	/////////////////Home/////////////////////////////
+	.front{
+		.content-feature{
+			.view-owlcarouse-testimornial{
+				.view-content{
+					@include sizeRem(width,345);
+					@include sizeRem(margin-left,20);
+				}
+			}
+		}
+		.content-fifth{
+			h2{
+				@include sizeRem(margin-bottom,45);
+				@include sizeRem(margin-top,15);
+			}
+		}
+		.content-main{
+			.pane-views-panes{
+				.pane-content{
+					@include sizeRem(width,367);
+				}
+			}
+		}
+	}
+	.view-owlcarouse-testimornial{
+		.view-content{
+			&:after{
+				@include sizeRem(right,5);
+			}
+		}
+	}
+	.view-abs-job-relation{
+		@include sizeRem(margin-top,25);//
+		.views-field-field-image{
+			@include sizeRem(max-width,345);
+			.field-content{
+				img{
+					
+					@include transform(translate(-21%, -19%));
+				}
+			}	
+		}
+	}
+	.view-abs-job-agency{
+		.views-row{
+			@include sizeRem(margin-bottom,5);
+		}
+	}
+	// #views-inner-future{
+	// 	@include sizeRem(padding-left,80);
+	// }
+	//////////////////////////////////////////////////
+	//////////vacancy-position//////////////
+	#edit-location{
+		.form-item{
+			&.form-item-postcode{
+				@include sizeRem(margin-bottom,54);
+			}
+			&>label{
+				@include sizeRem(min-width,170);
+			}
+		}
+	}
+	#edit-group-right{
+		.form-submit{
+			@include sizeRem(top, 52);
+			@include sizeRem(width,139);
+		}
+		.form-item-postcode{
+			.form-text{
+				width:100%;
+			}
+		}
+	}
+	#edit-position{
+		#edit-detail{
+			.form-item{
+				&> label{
+					@include sizeRem(min-width,170);
+				}
+				width:100%;
+				padding-right:0;
+			}
+			.form-item-expected-vacancy{
+				@include sizeRem(padding-left,170);
+			}
+		}
+		#edit-salary{
+			width:100%;
+			legend{
+				@include sizeRem(min-width,170);
+			}
+		}
+		.form-item-initialtives{
+			.form-item{
+				width:50%;
+			}
+		}
+	}
+
+	// Nam......................................//
+
+	.header .navbar-collapse{
+		width: auto;
+	}
+	.page-sign-up-account:not(.page-comment-reply) {
+		.content-first h2{
+			width: 100%;
+		}
+		form{
+			width: 100% !important;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+		}
+	}
+	.page-aps-agency-my-job-vacancies {
+		#subnav .pane-menu-vacancy-state{
+			@include sizeRem(padding-right,25);
+		}
+	}
+	//...................Hằng.......................//
+	//////////////////////vacancy--step=agency////////////
+	#edit-aps-class{
+		.fieldset-wrapper{
+			@include flex-wrap(wrap);
+		}
+		.form-checkboxes{
+			&>*{
+				width:50%;
+			}
+		}
+		#edit-standard,#edit-ses,#edit-training{
+			@include display-flex;
+			@include flex-wrap(wrap);
+		}
+	}
+	#edit-training{
+		width:100%;
+	}
+	//////////////////////////////////////////////////////
+	//////vacancy--step=duties////////
+	#edit-detail{
+		.form-type-textarea{
+			.form-textarea-wrapper{
+				@include sizeRem(padding-left,150);	
+			}
+		}
+	}
+	//////////////////////////////////
+	//////////////////vacancy--step=notice-details/////////
+	.page-employment-vacancy{
+		#edit-detail{
+			.form-type-textfield{
+				input{
+					
+					@include sizeRem(max-width,390);
+				}
+			}
+			.form-item-publish-to-my-notices{
+				span{
+					a{
+						&:last-child{
+							display:inline-block;
+							width:100%;
+							@include sizeRem(padding-left,40);
+						}
+					}
+				}
+			}	
+		}
+		#edit-selection-contact{
+			.form-item-contact{
+				input{
+					@include sizeRem(max-width,160);
+				}
+			}
+			.form-item-ph{
+				input{
+					@include sizeRem(max-width,160);
+					@include sizeRem(margin-left,100);
+				}
+			}
+		}
+		#edit-selection-email{
+			.form-item-email{
+				input{
+					@include sizeRem(max-width,160);
+				}
+			}
+			.form-item-ph{
+				input{
+					@include sizeRem(max-width,160);
+					@include sizeRem(margin-left,100);
+				}
+			}
+		}
+	}
+	///////////////////////////////////////////////////////
+	//////////////////administration-continue-1/////////////////
+	#govcms-engagement-action-existing-notice-form{
+		.form-item-notify-outcome{
+			.form-item-notify-outcome-group{
+				.form-item{
+					width:49%;
+				}
+			}
+		}
+	}
+	////////////////////////////////////////////////////////////
+	////////test-index-search/////////////
+	.page-node{
+		&.node-type-aps-vacancies{
+			
+			.content-first{
+				#node-460{
+					padding-bottom:0;
+				
+				}
+			}
+			.pane-node-content{
+				padding-bottom:0;
+			}
+			.field{
+				.field-label{
+					@include sizeRem(min-width,200);
+				}
+				.field-items{
+					@include sizeRem(max-width,400);
+					display:inline-block;
+				}
+
+			}
+			.field-name-field-job-description{
+				.field-items{
+					max-width:100%;
+				}
+			}
+		}
+	}
+	// .node-type-aps-vacancies{
+	// 	.content-fifth{
+	// 		.container{
+	// 			@include sizeRem(width,720);
+	// 		}
+	// 	}
+	// 	.content-six{
+	// 		.container{
+	// 			@include sizeRem(width,720);
+	// 		}
+	// 	}
+	// }
+	//////////////////////////////////////
+	/////////agencies////////////////////
+	.view-agency{
+		.views-row{
+			&> *:not(.group-agency){
+				@include sizeRem(max-width,640);
+			}
+		}
+	}
+	//////////////////12/10/2017///////////////////////
+	.view-banner-basic{
+		@include sizeRem(padding-top,119);//16/10
+	}
+	.not-front{
+		.banner{
+			margin-top:-119px;///16/10
+		}
+	}
+	.page-aps-work{
+		.view-aps-job-baner{
+			.view-info{
+				padding-left:0; 
+			}
+		}
+	}
+
+	///////////////////END - 12/10/2017 ///////////////
+	//////////////////13/10/2017///////////////////////
+	////--------------page agencies-----------////
+	#views-inner-future{
+		@include sizeRem(padding-left,75);
+	}
+
+	///////////////////END - 13/10/2017 ///////////////
+//////////////////16/10/2017///////////////////////
+	////--------------page Home-----------////
+	.front{
+		.view-abs-job-agency{
+			// .views-field-field-image{
+			// 	margin-bottom: 0;
+			// }
+			.views-field-view-node{
+				@include sizeRem(bottom,33);
+			}
+			
+		}
+		.group-abs-job-relation{
+			.views-field-title{
+				// @include wp-font(font-body);
+				font-weight: 400;
+			}
+		}
+		#content-feature-wrapper{
+			.pane-view-testimornial-panel-pane-1{
+				.pane-content{
+					margin-left:auto;
+					margin-right:auto;
+				}
+			}
+		}
+	}
+	///---------page Search---////
+	.page-search-jobs{
+		.views-field-field-job-description{
+			@include sizeRem(max-width,385);
+		}
+	}
+	///----page aps work--//
+	.page-aps-work{
+		.pane-view-banner-panel-pane-6{
+			.views-row{
+				&:first-child{
+					margin-left:0;
+					.views-field-body{	//17/10
+						padding-left:0;
+					}
+				}
+				&:last-child{
+					margin-right:0;
+					.views-field-body{ //17/10
+						padding-right:0;
+					}
+				}
+			}
+		}
+		.content-second{
+			.container{
+				.panel-pane{
+					&:first-child{
+						margin-top:0;//17/10
+					}
+					@include sizeRem(margin-top,10);
+					@include sizeRem(margin-bottom,10);
+				}
+			}
+		}
+		
+	}
+	.ui-accordion{
+		.pane-job-category-panel-pane-7{
+			.pane-title{
+				&:before{
+					@include sizeRem(width,50);
+					@include sizeRem(height,38);
+					@include background-size(50px 38px);
+				}
+			}
+		}
+	}
+	.ui-accordion{
+		.pane-job-category-panel-pane-8{
+			.pane-title{
+				&:before{
+					@include sizeRem(width,37);
+					@include sizeRem(height,50);
+					@include background-size(37px 50px);
+				}
+			}
+		}
+	}
+
+	///////////////////END - 16/10/2017 ///////////////
+	.page-aps-agency-dashboard .view-inner .views-field{
+		width: 100%;
+	}
+	.page-aps-agency-dashboard .view-inner .views-field-field-link{
+		margin-top: -48px;
+	}
+
+	.pane-apsjobs-alerts-apsjobs-alerts-manage-alerts table td:last-child{
+		.btn{
+			&:first-child,&:nth-child(2){
+				margin-bottom: 4px;
+			}
+		}
+	}
+}
+//991
+
+
+// 768 - 1991
+@media (min-width: $tablet-vt) and (max-width: $desktop - 1) {
+	///......Move........///
+    /*...................Nam 10/11/17.......................*/  
+	.front {
+		.inside{
+			min-height: auto;
+			padding-bottom: 1px;
+		}
+		.paner-apsjobs-blocks-search-form .ad-location{
+			bottom: 30px;
+		}
+		.advanced-search .togled{
+			bottom: 40px;
+		}
+		.content-feature .views-field-body{
+			padding-right: 3px;
+		}
+		.content-main .pane-views-panes .pane-content{
+			padding-right: 0;
+		}
+	}
+    
+	.view-banner {
+		.views-field-field-image-slide .owl-item div[class*="item-"]{
+			@include sizeRem(height,590);
+		}
+		
+		.views-field-field-image {
+			.field-content{
+				@include sizeRem(height,590);	
+			}
+		}
+		.views-field-body{
+			margin-top: -40px;
+			@include sizeRem(padding-left,24);
+			@include sizeRem(padding-right,24);
+			width: auto;
+		    left: 0;
+		    @include translate(0, -50%);
+		}
+	}
+	.form-search-jobs{
+		@include sizeRem(padding-left,24);
+		@include sizeRem(padding-right,24);
+		@include sizeRem(margin-top, 65);
+	}
+	.advanced-search{
+		margin-top: -9px;
+	}
+    .page-search-jobs{
+    	.view-banner-basic .views-field-field-image img{
+    		@include sizeRem(min-height,398);
+    	}
+    	.banner .paner-apsjobs-blocks-search-form{
+    		@include sizeRem(padding-top, 200);
+    	}
+    	.advanced-search{
+    		@include sizeRem(margin-top, -9);
+    	}
+    	.pane-banner-basic.pane-banner-300 .inside{
+    		@include sizeRem(min-height,398);
+    	}
+    }
+    .advanced-search ul.nav-tabs > li:last-child > a:after{
+    	position: absolute;
+    	@include sizeRem(top,10);
+    	right: 0;
+    }
+    // .form-aps-job-secrh .form-item-button-save-search{
+    // 	display: none;
+    // }
+	.form-search-jobs{
+		@include flex-wrap(wrap);
+		width: 100%;
+		@include sizeRem(padding-right,60);
+	    // max-width: 768px;
+	    left: 0;
+	    @include translate(0, -50%);
+	}
+	.form-aps-job-secrh {
+		.find-under{
+			@include sizeRem(bottom,55);
+		}
+		.form-item-key-word{
+			@include flex(0 0 40%);
+			width: auto;
+		}
+		.form-item-key-location{
+			@include flex(0 0 27%);
+			width: auto;	
+		}
+		.salary{
+			@include flex(0 0 33%);
+			//width: auto;
+		}
+		.form-item-key-salary{
+			//@include flex(0 0 33%);
+			width: auto;
+			select{
+				@include border-top-right-radius(4px);
+				@include border-bottom-right-radius(4px);
+			}
+		}
+		.form-item-salary-range{
+			min-width: 100%;
+			@include border-top-right-radius(4px);
+			@include border-bottom-right-radius(4px);
+		}
+		.form-item-find-button{
+			@include display-flexbox;
+			width: 100%;
+			@include sizeRem(margin-top,30);
+			@include justify-content(flex-end);
+			.form-submit{
+				@include sizeRem(max-width,290);
+				@include border-radius(4px);
+			}
+		}
+	}
+	.front .content-feature .pane-view-banner-panel-pane-2{
+		&:before{
+			@include skewX(-4deg);
+			right: -4%;
+		}
+	}
+	
+	.front .paner-govcms-aps-blocks-homepage-statistics{
+		//width: 45.4%;
+		&:before{
+			@include skewX(-4deg);
+			right: -4%;
+		}
+	}
+	.view-owlcarouse-testimornial .view-content:after{
+		bottom: -10px;
+	}
+	.front .content-feature .pane-views-panes{
+		@include sizeRem(padding-bottom,25);
+		// @include sizeRem(margin-top,4);
+	}
+	.view-owlcarouse-testimornial .owl-theme .owl-controls{
+		display: none !important;
+	}
+	.front .content-main .pane-views-panes .pane-content{
+		@include sizeRem(padding-left,20);
+	}
+
+	.advanced-search .adv-search-wrapper{
+		margin-top: -9px;
+	}
+
+	.aps-left-block {
+		.locations::before{
+			margin-left: 15px;
+		}
+		.locations{
+			padding-left: 35px;
+		}
+	}
+	.aps-left-block .job-vacancies {
+		&:before{
+			margin-left: 15px;
+		}
+		.views-field-number{
+			padding-left: 30px;
+		}
+	}
+
+	.aps-left-block .govemment .views-field-title{
+    	padding-left: 25px;
+    }
+
+    //header
+	.header #block-system-user-menu ul.menu li a{
+		@include sizeRem(padding, 9.5, 2 , 15);
+	}
+	//........header
+	.form-aps-job-secrh .form-item-find-button .form-submit{
+		.front &{
+			width: 290px;
+		}
+	}
+	.banner .paner-apsjobs-blocks-search-form{
+		@include sizeRem(padding-top, 368);
+	}
+	.advanced-search .dropdown-menu, .advanced-search .dropdown-block{
+		width: 261px;
+	}
+	.form-aps-job-secrh .form-item-key-salary a.chosen-single{
+		border: none;
+	}
+	// .advanced-search .adv-search-wrapper{
+	// 	margin-top: -10px;
+	// }
+	.paner-apsjobs-blocks-search-form .ad-location{
+		bottom: 15px;
+	}
+	.front .content-feature{
+		padding-top: 2px;
+	}
+}
+
+//11999
+///......Move........///
+/*...................Nam 10/11/17.......................*/
+@media (min-width: 1024px)and (max-width: $desktop - 1){
+	.front .paner-govcms-aps-blocks-homepage-statistics{
+		width: 46%;		
+	}
+	.front .content-main .pane-views-panes{
+		width: 54%;
+	}
+}
+@media (min-width: $tablet-vt)and (max-width: 1023px){
+	.front .paner-govcms-aps-blocks-homepage-statistics{
+		width: 45%;
+		@include sizeRem(padding-bottom,50);
+	}
+	.front .content-main .pane-views-panes{
+		width: 55%;
+		@include sizeRem(padding-bottom,50);
+	}
+	.front .content-sixth{
+		overflow:hidden;
+		.views-row{
+			.views-field-field-image{
+				@include sizeRem(height,363);
+				.field-content{
+					img{
+						// height:100%;
+						max-width: inherit;
+						width:auto;
+						@include transform(translate(-35%, -10%));
+						@include sizeRem(height,405);
+					}
+				}
+			}
+		}	
+	}
+	.view-abs-job-relation .views-field-body{
+    	max-width: 310px
+	}
+}
+@media (min-width: 768px) and (max-width: 780px){
+	.front .content-sixth .views-row .views-field-field-image .field-content img{
+		@include translate(-40%, -10%);
+	}
+}
+/*................end...................................*/
+@media(max-width: 768px){
+}
+// 767
+@media (max-width: $tablet-vt - 1) {
+	//////////////////11/10/2017/////////////
+	//----page aps-work-------------//
+	.page-aps-work{
+		.block-abs-find-job{
+			.views-field-title{
+				@include sizeRem(font-size,26);
+			}
+			.views-field-body{
+				a{
+					@include sizeRem(font-size,15);
+					// @include wp-font(font-medium);
+				}
+			}
+		}
+
+	}
+
+	//------page agencies---------------//
+	.page-agencies{
+		.paner-aps-govcms-agencies-search-form{
+			ul{
+				li{
+					@include wp-font(font-medium);
+				}
+			}
+		}
+		.view-agency{
+			.views-row{
+				@include sizeRem(margin-bottom,20);
+			}
+		}
+	}
+
+	//-----------page APS-gazette---------------//
+	.page-aps-gazette{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-title{
+					@include sizeRem(margin-bottom,15);
+				}
+			}
+		}
+	}
+
+	/////////////////////////END --- 11/10/2017 //////////////////////////
+	.page-aps-work{
+		.back-to-top{
+			@include sizeRem(margin-top,30);
+		}
+	}
+
+	.back-to-top{
+		@include sizeRem(padding-bottom,50);
+		// @include sizeRem(margin-top,25);
+	}
+	.page-user,.page-sign-up{
+		&:not(.page-comment-reply){
+			.main-content{
+				@include sizeRem(padding-bottom,20);
+			}
+		}
+	}
+	//////////////////////////////////////////
+	.view-aps-job-search-list .group-info{
+		@include sizeRem(padding,15);
+	}
+	.menu-name-main-menu{
+		ul{
+			&.menu{
+				li{
+					a{
+						&.active{
+							color:$black-color;
+							@include wp-font(font-medium);
+							
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-name-main-menu{
+		ul{
+			&.menu{
+				li{
+					a{
+						&:hover,&:focus{
+							text-decoration:none;
+							color:$black-color;
+							@include wp-font(font-medium);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//////////////login or header or menu //////////////
+	.logged-in{
+		.block-menu{
+			ul.menu{
+				li{
+					a{
+						@include sizeRem(font-size,14);
+					}
+				}
+			}
+		}
+	}
+	.menu-name-main-menu{
+		ul{
+			&.menu{
+				li{
+					a{
+						@include sizeRem(font-size,12);
+					}
+				}
+			}
+		}
+	}
+	//////////////////////////////////////////////
+	.item-list{
+		padding-left:0;
+		padding-right:0;
+	}
+	#edit-header{
+		ul{
+			display:block;
+		}
+		li{
+			a{
+				@include sizeRem(padding,15,4,0,15,15);
+			}
+		}
+	}
+	#edit-review{
+		@include sizeRem(padding,20);
+		#edit-detail{
+			@include sizeRem(margin-left,-20);
+			@include sizeRem(margin-right,-20);
+		}
+		#edit-detail>div{
+			@include sizeRem(padding,20);
+		}
+	}
+	/////////worktray////////////
+	.menu-name-menu-secondary-menu{
+		ul{
+			display:block;
+		}
+		li{
+			@include sizeRem(min-height,45);
+			a{
+				@include sizeRem(font-size,15);
+			}
+		}
+	}
+	.views-aps-work-tray{
+		.view-row{
+			@include sizeRem(padding,20);
+			@include sizeRem(margin-bottom,15);
+		}
+	}
+	///////engagement//////////////
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			width:100%;
+			label{
+				@include sizeRem(font-size,26);
+			}
+			@include sizeRem(padding-right,0);
+		}
+	}
+	#govcms-engagement-add-new-engagement-form{
+		.form-item-submitted-notice-in {
+			width: 95%;
+		}
+	}
+	#edit-header{
+		li{
+			@include sizeRem(min-height,45);
+			a{
+				@include sizeRem(font-size,15);
+			}
+		}
+	}
+	#edit-agency{
+		@include sizeRem(padding,20,4,15,15,20);
+	}
+	.form-item{
+		@include sizeRem(margin-top,15);
+		@include sizeRem(margin-bottom,15);
+	}
+	////////////////aps-gazette/////////////
+	.view-apsjobs-gazette{
+		.views-row{
+			.group-gazette-left{
+				float:left;
+			}
+		}
+	}
+	.page-aps-gazette{
+		.view-apsjobs-gazette{
+			.views-row{
+				.views-field-created{
+					top:-29px;///18/10
+					right:0;
+				}
+			}
+		}
+	}
+	.view-view-gazette{
+		.views-field-field-aps-job-categories{
+			a{
+				@include sizeRem(font-size,18);
+			}
+		}
+		.view-header{
+			@include sizeRem(top,28);
+		}
+		.views-row{
+			// @include sizeRem(padding,15,2,20);//18/10
+			@include sizeRem(margin-top,45);
+		}
+		// .views-field-nothing{
+		// 	@include sizeRem(margin-top,10);//18/10
+		// }
+		.views-fieldset{
+			@include sizeRem(font-size,15);
+		}
+		// .views-field-title{
+		// 	@include sizeRem(font-size,15);//18/10
+		// }
+		.views-field-field-name-hr{
+			@include sizeRem(font-size,15);
+		}
+		.views-field-field-phone-contact{
+			@include sizeRem(font-size,15);
+		}
+		// .views-field-created{
+		// 	@include sizeRem(font-size,15);
+		// }
+	}
+	
+	////////////////////////////////////////
+	//////////////banner////////////////////
+	.view-aps-job-baner{
+		.view-inner{
+			.views-field-title{
+				@include sizeRem(font-size,32);
+			}
+		}
+	}
+	.view-aps-job-baner{
+		.view-inner{
+			.views-field-title{
+				@include sizeRem(padding-bottom,15);
+			}
+		}
+	}
+	.banner{
+		.paner-apsjobs--gazette-search-form{
+			@include sizeRem(margin-top,20,$important:true);
+			// @include sizeRem(padding-bottom,50);
+			.aps-gazette{
+				width:90%;
+			}
+		}
+	}
+	.aps-gazette{
+		label{
+			@include wp-font(font-medium);
+		}
+	}
+	.view-aps-job-baner-gazette{
+		.view-inner{
+			.views-field-body{
+				a{
+					@include wp-font(font-medium);
+				}
+			}
+		}
+	}
+	.pane-banner-basic{
+		&.pane-banner-468{
+			.view-banner-basic{
+				.view-inner{
+					@include sizeRem(padding-top,40);//18/10
+				}
+			}
+		}
+	}
+	
+	.pane-banner-basic{
+	   .inside{
+	      @include sizeRem(padding-bottom,50);
+	  	}
+	}
+	////////////////////////////////////////
+	//////////////////banner-my-job///////////////
+	.page-my-job-vacancies{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-title{
+					@include sizeRem(margin-bottom,0);
+				}
+			}
+		}
+	}
+	///////////////banner-aps-work///////////////////
+	.view-banner-basic{
+		&.view-type-aps{
+			@include sizeRem(min-height,310);
+		}
+	}
+	.view-type-aps{
+		.view-inner{
+			.views-field-title{
+				padding-bottom: 0;
+			}
+		}
+	}
+	// .pane-banner-aps{
+	// 	.view-banner-basic{
+	// 		.view-inner{
+	// 			@include sizeRem(padding-top,45,$important:true);
+	// 			@include sizeRem(padding-bottom,40);
+	// 		}
+	// 	}
+	// }
+	//////////////////////////////////////////////
+	////////////////banner-agencies///////////////
+	.page-agencies{
+		.inside{
+			@include sizeRem(padding-bottom,40);
+		}
+	}
+	////////////////////aps-work////////////
+	.page-aps-work{
+		.content-feature{
+			@include sizeRem(padding-top,10);
+		}
+		.view-abs-job-new-list{
+			// .views-field-field-image{
+			// 	@include sizeRem(height,306);
+			// }
+			.view-aps-job-list-inner{
+				@include sizeRem(padding-left,15);
+				@include sizeRem(padding-right,15);
+			}
+			.views-row{
+				&:nth-child(2n+1){
+					
+					.group-aps-job-inner{
+						@include sizeRem(padding-bottom,10);
+						@include sizeRem(padding-top,30);
+					}
+					// .views-field-field-image{
+					// 	@include sizeRem(height,306);
+					// }
+				}
+			}
+			.views-row-2{
+				.view-aps-job-list-inner{
+					@include sizeRem(padding-left,15);
+				}
+				.group-aps-job-inner{
+					@include sizeRem(padding-bottom,20);
+				}
+			}
+			.views-row-3{
+				.group-aps-job-inner{
+					.views-field-field-link{
+						@include sizeRem(margin-bottom,10);
+					}
+					
+				}
+			}
+		}
+		.block-abs-find-job{
+			.views-field-title{
+				@include sizeRem(margin-bottom,20);
+			}
+		}
+		.pane-job-category-panel-pane-6,.pane-quicktabs-job-level,
+		.pane-job-category-panel-pane-7,.pane-job-category-panel-pane-8{
+			@include sizeRem(margin-top,10);
+			@include sizeRem(margin-bottom,10);
+		}
+		.pane-view-banner-panel-pane-6{
+			@include sizeRem(margin-bottom,15);
+		}
+	}
+	
+	.view-grid-4-cols{
+		.views-row{
+			@include sizeRem(margin-bottom,0);
+			.views-field-body{
+				p{
+					margin-bottom:0;
+				}
+			}
+		}
+	}
+
+	.views-field{
+		@include sizeRem(margin-bottom,10);
+	}
+	.block-aps-public-server{
+		.views-field-title{
+			@include sizeRem(margin-bottom,20);
+		}
+	}
+	.page-aps-work{
+		.view-type-aps{
+			.view-inner{
+				@include sizeRem(padding-bottom,50);
+			}
+		}
+		.content-second{
+			.container{
+				.panel-pane{
+					&:first-child{
+						margin-top:0;
+					}
+				}
+			}
+		}
+		.view-aps-job-icon{
+			.views-row{
+				// flex: 0 0 48.24%;
+				// max-width:48.24%;
+				@include flex-width-col-xs(48.24%);
+			}
+			.views-field-body{
+				@include sizeRem(padding,0,2,33);
+			}
+		}
+		.view-abs-job-new-list{
+			.views-row{
+				@include flex-wrap(wrap);
+			}
+		}
+		.view-abs-job-new-list{
+			.views-row{
+				&:nth-child(2n+1){
+					// .group-aps-job-inner{
+					// 	@include sizeRem(padding-top,30);
+					// 	@include sizeRem(padding-bottom,25);
+					// }
+					.views-field-field-image{
+						width:100%;
+					}
+					.view-aps-job-list-inner{
+						width:100%;
+						@include justify-content(flex-start);
+					}
+				}
+				&:first-child{
+					.views-field-title{
+						max-width:none;
+					}
+				}
+			}
+		}
+
+		.view-abs-job-new-list{
+			.view-aps-job-list-inner{
+				width:100%;
+			}
+			.views-field-field-image{
+				width:100%;
+				@include order(2);
+			}
+			.group-aps-job-inner{
+				padding-left:0;
+				max-width:none;
+				@include sizeRem(padding-top,30);
+			}
+			.views-field-title{
+				max-width:none;
+				@include sizeRem(margin-bottom,20);
+			}
+			.views-field-body{
+				max-width:none;
+			}
+		}
+	}
+	.ui-accordion{
+		.panel-pane{
+			.pane-title{
+				&:before{
+					@include sizeRem(left,20);
+				}
+				&:after{
+					@include sizeRem(width,12);
+					@include sizeRem(height,12);
+					@include sizeRem(right,20);
+				}
+			}
+		}
+		.ui-accordion-header{
+			@include sizeRem(font-size,18);
+			@include sizeRem(padding,30,4,10,30,90);
+		}
+		.ui-accordion-content{
+			@include sizeRem(padding, 0,2,20);
+		}
+		.views-row{
+			@include sizeRem(margin-bottom,20);
+		}
+	}
+	/////////////////////////////////////////
+	/////////////aps-public-account//////////////////
+	.page-user-detail-admin{
+		#content-first-wrapper{
+			.container{
+				padding-top:0;
+			}
+		}
+		.pane-page-title{
+			@include sizeRem(margin-top,10);
+			@include sizeRem(margin-bottom,25);
+		}
+		#content-first-wrapper{
+			margin-top:0;
+		}
+		.view-id-jobs{
+			.group-info{
+				@include sizeRem(padding,25,4,20,30,20);
+			}
+		}
+	}
+	
+	.view-aps-user-admin{
+		@include sizeRem(padding,25,4,20,30,20);
+		.views-row{
+			@include flex-wrap(wrap);
+			.group-detail,.btn-group{
+				@include flex-width-col-xs(100%);
+			}
+		}
+		.btn-group{
+			@include sizeRem(margin-top,35);
+			.views-field{
+				width:50% - calculateView(8);
+			}
+		}
+		.views-field{
+			a{
+				display:block;
+			}
+		}
+		.views-field-edit-node{
+			a{
+				@include sizeRem(margin-right,7.5);
+				margin-left:-5px;
+			}
+		}
+		.views-field-nothing-2{
+			a{
+				@include sizeRem(margin-left,7.5);
+			}
+		}
+	}
+	.page-user{
+		.content-second{
+			h2{
+				@include sizeRem(font-size,25);
+			}
+		}
+		.pane-page-title{
+			h1{
+				@include sizeRem(font-size,32);
+				@include sizeRem(margin-bottom,25);
+				@include sizeRem(margin-top,10);
+			}
+		}
+		.pane-email-alert-panel-pane-1{
+			h2{
+				@include sizeRem(margin-bottom,45);
+				@include sizeRem(font-size,25);
+			}
+			a{
+				&.btn-a{
+					top:-80px;
+					@include sizeRem(min-width,130);
+					@include sizeRem(padding,10.5,2,10);
+				}
+			}
+
+			.views-row{
+				@include sizeRem(padding,25,4,20,30,20);
+				@include sizeRem(margin-bottom,10);
+			}
+		}
+		.pane-user-detail{
+			@include sizeRem(margin-bottom,47);
+		}
+	}
+	.page-user-detail-admin{
+		.view-aps-govcms-email-alerts{
+			.views-field-nothing{
+				span{
+					display:block;
+					margin-left:-4px;
+					@include sizeRem(margin-top,25);
+				}
+			}
+			.item-list{
+				@include sizeRem(margin-top,15);
+				@include sizeRem(margin-bottom,25);
+			}
+		}
+		.view-jobs{
+			.views-row{
+				&:first-child{
+					.views-field-created{
+						margin-right:0;
+					}
+				}
+			}
+			// .views-field-ops{
+			// 	@include sizeRem(margin-top,25);
+			// }
+		}
+	}
+	.view-aps-govcms-email-alerts{
+		.item-list{
+			@include sizeRem(margin-top,15);
+		}
+		.views-row{
+			@include flex-wrap(wrap);
+			&>*{
+				@include flex-width-col-xs(100%);
+			}
+		}
+		.views-field-nothing{
+			a{
+				width:49% - calculateView(15);
+				@include sizeRem(padding,13,2,30);
+				&:first-child{
+					margin-left:0;
+					@include sizeRem(margin-right,7.5);
+				}
+				&:last-child{
+					@include sizeRem(margin-left,7.5);
+				}
+			}
+		}
+	}
+	.view-jobs{
+		.views-field-created{
+			@include sizeRem(margin-bottom,6.5);
+		}
+		.group-info{
+			@include sizeRem(padding,30,4,15,30,20);
+		}
+		.views-field-title{
+			a{
+				@include sizeRem(font-size,25);
+			}
+		}
+	}
+	.view-aps-user-admin{
+		legend{
+		
+			@include sizeRem(font-size,25);
+		}
+		.views-field{
+			span{
+				@include sizeRem(font-size,16);
+				&:last-child{
+					@include sizeRem(font-size,16);
+				}
+			}
+		}
+	}
+	
+	/////////////////////////////////////////////////
+
+	//////////////Home//////////////////////
+	.front{
+		.content-feature{
+			.views-field-title{
+				@include sizeRem(margin-bottom,22);
+			}
+			.pane-view-testimornial-panel-pane-1{
+				@include sizeRem(padding-bottom,80);
+			}
+			.view-owlcarouse-testimornial{
+				.view-content{
+					width:100% - calculateView(40);
+					display:block;
+					@include sizeRem(padding-right,20);
+					margin:{
+				        left: calculateView(40) / 2;
+				        right: calculateView(40) / 2;
+				    }
+					// &:after{
+					// 	right:20px;
+					// }
+				}
+			}
+		}
+
+		.view-aps-job-when{
+			.views-field-body{
+				p{
+					@include sizeRem(margin-bottom,5);
+				}
+			}
+		}
+		.content-main{
+			.pane-views-panes{
+				width:auto;
+				.pane-content{
+					width:100%;
+				}
+			}
+			.main-inner{
+				@include flex-direction(column);
+			}
+			.pane-view-banner-panel-pane-4{
+				.pane-content{
+					margin-left:0;
+					@include sizeRem(padding-left,30);
+					@include sizeRem(padding-right,30);
+				}
+			}
+			.view-banner-basic{
+				.views-field-title{
+					max-width:none;
+				}
+			}
+		}
+		.paner-govcms-aps-blocks-homepage-statistics{
+			width:auto;
+			order:2;
+			&:before{
+				display:none;
+			}
+		}	
+	}
+
+	.aps-left-block{
+		.info{
+			&:before{
+				@include sizeRem(width,144);
+				@include sizeRem(height,144);
+				@include background-size(144px 144px);
+			}
+		}
+	}
+	.view-abs-job-agency{
+		@include sizeRem(margin-bottom,0);
+		.views-field-field-image{
+			min-height:auto;
+		}
+	}
+	#views-inner-future{
+		left:0;
+		top:42%;
+		transform:none;
+		// @include sizeRem(padding-left,15);
+	}
+	.view-abs-job-list{
+		.views-row{
+			@include sizeRem(margin-bottom,20);
+		}
+	}
+	// #content-sixth-wrapper{
+	// 	.views-row .views-field-field-image{
+	// 		.field-content {
+	// 			img{
+	// 				transform: translateX(-45%);
+	// 				max-height:none;
+	// 				@include sizeRem(min-height,363);
+	// 			}
+	// 		}
+	// 	}
+	// }
+	.view-abs-job-relation{
+		@include sizeRem(margin-top,15);
+	}
+	////////////////////login-footer//////////////
+	.logged-in{
+		.footer-copyright{
+			.row{
+				.col-md-4{
+					@include flex-width-col-xs(55%);
+				}
+				.col-md-8{
+					@include flex-width-col-xs(45%);
+				}
+			}
+			.block-menu{
+				@include flex-width-col-xs(100%);
+			}
+		}
+	}
+	///////////////////////////////////////////////
+	.page-panel-form-basic{
+		#edit-job-type{
+			.fieldset-wrapper{
+				padding-left:0;
+				padding-right:0;
+			}
+		}
+	}
+    ////////////vacancy-position//////////////
+    #edit-group-left{
+    	float:none;
+    	padding-right:0;
+    	width:100%;
+    }
+    #edit-group-right{
+    	.form-item{
+    		&:first-child{
+	    		margin-top:0;
+	    	}
+    	}	
+    	&>*{
+    		padding-left:0;
+    	}
+    	.form-item-postcode{
+    		.form-text{
+    			width:47.5%;
+    		}
+    	}
+    	.form-submit{
+    		@include sizeRem(top,2.5);
+    		width:20%;
+    		right:0;
+    		@include sizeRem(padding-left,25);
+    	}
+    }
+    #edit-location{
+    	.form-item.form-item-postcode{
+    		@include sizeRem(margin-bottom,5);
+    	}
+    }
+    #edit-position{
+    	@include sizeRem(padding,20,2,15);
+    	#edit-detail{
+    		#edit-working-arrangements{
+    			label{
+    				@include sizeRem(min-width,140);
+    			}
+    		}
+    		#edit-emloyment-status{
+    			label{
+    				@include sizeRem(min-width,140);
+    			}
+    		}
+    	}
+    }
+
+    // Nam...........................................//
+    .page-aps-agency-my-job-vacancies{
+	   	#subnav .container{
+            @include flex-wrap(wrap);
+	   	}
+	   	#subnav{
+	   		//@include sizeRem(margin-bottom, 65, $important: true);
+	   		.panel-pane{
+	   			@include flex-width-col-xs(100%);
+	   		}
+	   		.paner-menu-dashbord-vacancy-state{
+	   			@include flex-width-col-xs(100%);
+	   			@include sizeRem(margin-bottom, 20);
+	   			padding-right: 0;
+	   		}
+	   	}
+    } 
+    .paner-menu-dashbord-vacancy-state li a{
+    	@include display-flex;
+    	@include align-items(center);
+    	@include sizeRem(min-height,55);
+    	&:before{
+    		bottom: -4px;
+    	}
+    }
+    .page-search-jobs{
+    //     .view-banner-basic {
+    //     	.field-content{
+    //     		@include display-flex;
+    //     		@include align-items(center);
+    //     		@include justify-content(center);
+    //     		@include sizeRem(height, 821);
+    //     	}
+    //     	.views-field-field-image img{
+				// bottom: 0;
+			 //    min-width: 100%;
+			 //    min-height: 100%;
+    //     	}
+    //     }
+        .form-search-jobs {
+		    margin-top: 0px;
+		    @include sizeRem(top,135);
+		    transform: translate(0,0);
+		}
+    } 
+    // .not-front {
+    // 	.advanced-search{
+    // 		top: 50%;
+    // 		transform: translate(0,0);
+    // 		background: transparent;
+    // 		.advanced{
+    // 			background: transparent;
+    // 			display: block !important;
+    // 			height: 100%;
+    // 		}
+    // 	}
+    //     .advanced-search .dropdown-menu, 
+    //     .advanced-search .dropdown-block{
+    //     	width: 100%;
+    //     	.form-filter input{
+    //     		width: 100%;
+    //     	}
+    //     }
+    // 	.advanced-search ul.nav-tabs{
+    // 		flex-wrap: wrap;
+    // 		> li{
+    // 			width: 100%;
+    // 			background: $white-color;
+    // 			margin-bottom: 15px;
+    // 			@include border-radius(4px);
+    // 			a{
+    // 				color: $title-color;
+    // 				text-align: left;
+    // 				&:after{
+    // 					color: $blue-color;
+    // 					position: absolute;
+    // 					right: 15px;
+    // 					top: 10px;
+    // 				}
+    // 			}
+    // 		}
+    // 	}
+    // }
+    .view-aps-outcomes{
+    	.views-field-body{
+    		width: 100% !important;
+    	}
+    }
+
+    .view-aps-gazettes-detail{
+    	.views-row{
+	    	@include sizeRem(padding, 15 , 1);
+	    }
+	}
+    //........................Hằng......................//
+
+    ///////////vacancy--step=agency/////////
+    #edit-agency{
+    	@include sizeRem(padding,20,2,15);
+    }
+    ////////////////////////////////////////
+    /////////vacancy--step=duties///////////
+    #edit-duties{
+    	@include sizeRem(padding,20,2,15);
+    }
+    ////////////////////////////////////////
+
+	///////////vacancy--step=submit///////////////
+	#edit-submit{
+		@include sizeRem(padding,20,4,15,0,15);
+		#edit-approver{
+			
+			@include sizeRem(margin,0,2,-15);
+			&>*{
+				@include sizeRem(padding,20,2,15);
+			}
+			.form-item-user{
+				label{
+					@include sizeRem(min-width,150);
+				}
+				@include flex-wrap(wrap);
+			}
+		}
+	}
+	//////////////////////////////////////////////
+	//////vacancy--step=notice-detail////////
+	.page-employment-vacancy{
+		#edit-notice-details{
+			@include sizeRem(padding,20,2,15);
+		}
+		#edit-detail{
+			.form-type-textarea{
+				label{
+					position: static;
+					@include sizeRem(min-width,190);
+					vertical-align:top;
+				}
+				.form-textarea-wrapper {
+				    padding-right:0;
+				    padding-left:0;
+				    width:68%;
+				    display:inline-block;
+				}
+			}
+			.form-type-textfield{
+				label{
+					position: static;
+					display:inline-block;
+					@include sizeRem(min-width,190);
+				}
+				input{
+					margin-left:0;
+					max-width:68%;
+				}
+			}
+			.form-item-publish-to-my-notices{
+				margin-left:0;
+				span{
+					a:last-child{
+						width:auto;
+						padding-left:0;
+					}
+				}
+			}
+		}
+		#edit-selection-contact{
+			.form-item-contact{
+				width:100%;
+				input{
+					margin-left:0;
+					max-width:68%;
+				}
+			}
+			.form-item-ph{
+				width:100%;
+				input{
+					max-width:68%;
+					margin-left:0
+				}
+			}
+		}
+		#edit-selection-email{
+			.form-item-email{
+				width:100%;
+				input{
+					max-width:68%;
+				}
+			}
+			.form-item-ph{
+				width:100%;
+				input{
+					max-width:68%;
+				}
+			}
+		}
+		#edit-admin-info{
+			.form-type-textarea{
+				label{
+					position: static;
+					@include sizeRem(min-width,190);
+					vertical-align:top;
+				}
+				.form-textarea-wrapper{
+					padding-right:0;
+					padding-left:0;
+					width:68%;
+					display:inline-block;
+				}
+			}
+		}	
+	}
+	/////////////////////////////////////////
+	///////////////////administration-continue-1///////////////////
+	.page-administration{
+		#subnav{
+			@include sizeRem(margin-bottom,10)
+		}
+		.govcms-form-add-new{
+			#edit-label{
+				label{
+					@include sizeRem(font-size,26);
+				}
+			}
+		}
+
+		
+		#govcms-engagement-action-existing-notice-form{
+			.form-item-notify-outcome{
+				@include sizeRem(padding, 20, 4, 15, 10, 15);
+				label{
+					@include sizeRem(font-size,18);				
+				}
+			}
+			.form-item-gazette-issue{
+				@include sizeRem(padding, 0, 4, 15, 20, 15);
+				label{
+					@include sizeRem(font-size,18);
+				}
+			}
+			#edit-original-notice-summary,#edit-notice-summary{
+				@include sizeRem(padding,20,2,15,15,15);
+				label{
+					@include sizeRem(min-width,220);
+				}
+			}
+		}
+		.pane-govcms-engagement-govcms-engagement-exist-notice{
+			@include sizeRem(margin-bottom,20);
+		}
+		.form-apsjobs-create-outcome{
+			@include sizeRem(padding,20,2,15,20,15);
+		}
+		.govcms-form-add-new{
+			legend{
+				@include sizeRem(font-size,18);
+			}
+		}
+
+	}
+	///////////////////////////////////////////////////////////////
+
+	///////test-index-search//////////////////////
+	.page-node{
+		&.node-type-aps-vacancies{
+			// .content-fifth{
+			// 	@include sizeRem(padding-left,15);
+			// 	@include sizeRem(padding-right,15);
+			// 	.container{
+			// 		width:100%;
+			// 		@include sizeRem(padding-left,15);
+			// 		@include sizeRem(padding-right,15);
+			// 	}
+			// }
+			.pane-node-content{
+				@include sizeRem(padding,20,4,15,0,15);
+			}
+			h2{
+				&.pane-title{
+					@include sizeRem(margin-bottom,10);
+					@include sizeRem(font-size,26);
+				}
+			}
+			.field-name-field-job-description{
+				@include sizeRem(padding,20,2,0);
+				@include sizeRem(margin-top,20,$important:true);
+				.field-label{
+					@include sizeRem(margin-bottom,15,$important:true);
+					@include sizeRem(font-size,18);
+				}
+			}
+			.field-type-entityreference{
+			 	@include sizeRem(margin-bottom,20);
+			}
+			// .view-aps-vacancies-detail-page{
+			// 	@include sizeRem(padding,20,4,0,20,20);
+			// }
+		}
+	}
+	/////////////////////////.tai..................
+
+	.page-aps-gazette{
+		.view-view-gazette .view-header{
+			@include sizeRem(top, 20);
+		}
+		// .view-view-gazette .views-row .views-field-created{
+		// 	@include sizeRem(top, -37);
+		// }
+	}
+
+	.page-aps-agency-my-job-vacancies .view-aps-vacancy .view-header{
+		padding-left:0 !important;
+	}
+	.page-aps-agency .view-view-gazette .views-row{
+	    @include sizeRem(padding, 15);
+	    @include sizeRem(padding-bottom, 10);
+	}
+	.view-aps-vacancy .views-field-field-location-raw{
+		@include sizeRem(margin-bottom, 5);
+	}
+	.view-aps-outcomes .views-row{
+		@include sizeRem(padding, 15);
+	}
+	.view-notifications{
+		.views-table{
+			display: block;
+		}
+		
+		tbody{
+			display: block;
+			tr{
+				@include display-flex;
+				flex-wrap: wrap;
+			}
+			td.views-field-noid{
+				@include flex(0 0 20%);
+			}
+			td.views-field-body{
+				@include flex(0 0 80%);
+			}
+			td.views-field-nothing{
+				@include flex(0 0 100%);
+				a{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.page-aps-agency-my-job-vacancies .content-first h2.pane-title{
+		padding-left: 0;
+	}
+	.view-view-gazette .views-field-nothing, .view-view-gazette .views-field-nothing-2, .view-aps-vacancy .views-field-nothing, .view-aps-vacancy .views-field-nothing-2{
+		
+	 	// margin-top: 0;
+	}
+	.page-aps-agency{
+		.pane-apsjobs-blocks-apsjobs-agency-count.view-grid-4-cols{
+			h2.pane-title{
+				text-align: center;
+			}
+		}
+		.pane-govcms-blocks-govcms-agency-count{
+			margin-bottom: 0;
+		}
+	}
+	.view-aps-vacancy{
+		.views-field-field-salary-range{
+			
+		}
+		.views-row{
+			display: block;
+			position: relative;
+			.group-date{
+				display: block;
+				.views-field-created{
+				 width: 100%;
+				 text-align: left;
+				 margin-top: 0;
+				 @include sizeRem(margin-bottom, 5);
+				}
+				.views-field-title{
+					@include sizeRem(margin-bottom,5);
+					width: 100%;
+				}
+			}
+			
+		}
+		.group-left,.group-right{
+			width: 100%;
+			text-align: left;
+			position: static;
+		}
+		.views-field-created,.views-field-field-job-category,.views-field-field-job-level{
+			text-align: left;
+		}
+		
+		
+		.views-field-field-job-description{
+			@include sizeRem(margin-top, 5);
+			margin-bottom: 0;
+			p{
+				margin-bottom: 0;
+			}
+		}
+		.views-field-ops{
+			position: absolute;
+		    @include sizeRem(bottom, 25);
+		    @include sizeRem(left, 15);
+		}
+		.views-field-field-salary-from{
+			@include sizeRem(margin-bottom, 55);
+			@include sizeRem(min-height, 21);
+		}
+		.views-field-field-position-number{
+    		@include sizeRem(right, 15);
+    		@include sizeRem(bottom, 25);
+		}
+	}
+	// .view-view-gazette{
+	// 	.group-left{
+	// 		float: none;
+	// 	}
+	// 	.views-row{
+	// 		.views-fieldset,.views-field-title{
+	// 			float: none;
+	// 		}
+	// 		.views-field-created{
+	// 			text-align: left;
+	// 		}
+	// 	}
+
+	// } 
+	.page-aps-agency-dashboard,.page-dashboard,.page-aps-agency{
+		.view-view-gazette{
+			.views-row{
+				.views-fieldset,.views-field-title{
+					float: none;
+					text-align: left;
+				}
+				.views-field-created{
+					text-align: left;
+				}
+			}
+		}
+		
+	}
+	.view-aps-vacancy{
+
+		.views-row{
+			@include sizeRem(padding, 10, 2, 15);
+			.group-left{
+				.views-field-nothing{
+					margin-top: 0;
+				    position: absolute;
+				    @include sizeRem(bottom,10);
+				}
+			}
+		}
+	}
+	///view-aps-vacancy
+	.view-aps-vacancy{
+		.group-number{
+			// -webkit-flex-direction: column;
+   //  		flex-direction: column;
+   //  		-webkit-flex-direction: column-reverse;
+   //  		flex-direction: column-reverse;
+			// .views-field-nothing{
+			// 	width: auto;
+			// 	text-align: left;
+			// 	margin-top: 0;
+			// }
+			// .views-field-field-position-number{
+			// 	width:auto;
+			// 	text-align: left;
+			// }
+		}
+		.group-left{
+			padding-right: 0;
+			.views-field-title{
+				@include sizeRem(margin-bottom, 10);
+			}
+		}
+		.group-right{
+			.views-field-created{
+				@include sizeRem(margin-bottom, 10);
+			}
+		}
+	}
+	///////agencies-2/10/2017/////////////////
+	.page-agencies{
+		.view-agency{
+			// .group-agency{
+			// 	a{
+			// 		@include sizeRem(height,45);
+			// 		@include sizeRem(padding-top,16);
+			// 	}
+			// }
+			.views-row{
+				@include sizeRem(padding,25,4,20,25,20);
+			}
+			.views-field-title{
+				@include sizeRem(font-size,20);
+			}
+		}
+		.pane-agency-panel-pane-agencies{
+			@include sizeRem(margin-bottom,22);
+		}
+	}
+	// .pane-banner-basic{
+	// 	&.pane-banner-468{
+	// 		.view-banner-basic{
+	// 			.view-inner{
+	// 				@include sizeRem(padding-top,38);
+	// 			}
+	// 		}
+	// 	}
+	// }
+	//////////////////////////////////////////
+	//////search-job-03/10/2017//////////////////
+	.page-search-jobs{
+		.view-aps-job-search-list{
+			.group-info{
+				@include sizeRem(padding,25,4,20,20,20);
+			}
+		}
+	}
+	/////////////////////////////////////////////
+	#content-sixth-wrapper{
+		.views-row{
+			.views-field-field-image{
+				.field-content{
+					img{
+						@include transform(translateX(-46%));
+						max-width:inherit;
+						// height:100%;
+						// width:auto;
+					}
+				}
+			}
+		}
+	}
+
+	////////10/10/2017--sign-up page///////////////////
+	.page-sign-up{
+		.content-first{
+			h2{
+				@include sizeRem(font-size,16);
+			}
+		}
+	}
+	///////////////////////////////////////////////////
+	///......Move........///
+/*...................Nam 10/11/17.......................*/
+	.front .content-sixth{
+		overflow:hidden;
+	}
+	.owl-carousel {
+		.owl-item{
+			&:nth-child(3),&:last-child{
+				.panel-title-home h2{
+					@include sizeRem(max-width,400);
+				}
+			}
+		}
+	}
+	.view-banner {
+		.views-field-field-image-slide .owl-item div[class*="item-"]{
+			@include sizeRem(height,770);
+		}
+		.views-field-field-image {
+			.field-content{
+				@include sizeRem(height,770);	
+			}
+		}
+	}
+	
+	.view-banner {
+		.views-field-body{
+			width: auto;
+		    left: 0;
+		    @include sizeRem(margin-top,20);
+		    @include sizeRem(padding-left,15);
+		    @include sizeRem(padding-right,15);
+		    @include sizeRem(top,110);
+		    @include translate(0, 0);
+		    .panel-title-home h2{
+				@include sizeRem(font-size,26);
+				max-width: 100%;
+			}
+		}
+	}
+	.paner-apsjobs-blocks-search-form p.fitler-togled{
+		@include sizeRem(top,118);
+		display: block;
+		.front &{
+			display: none;
+		}
+	}
+	.form-search-jobs{
+		@include flex-wrap(wrap);
+		width: 100%;
+	    // max-width: 768px;
+	    left: 0;
+	    @include translate(0, -50%);
+	    @include sizeRem(margin-top,100);
+	}
+	.form-aps-job-secrh {
+		.form-item{
+			width: 100%;
+			margin-left: 0;
+			@include sizeRem(margin-top,8);
+			label{
+				@include sizeRem(margin-bottom,11);
+			}
+		}	
+	    .form-item-find-button {
+			@include sizeRem(margin-top,15);
+			position: relative;
+			z-index: 15;
+			button,.form-submit{
+				width: 100%;
+			}
+			.item-add-jobs{
+				@include sizeRem(margin-bottom,30);
+				@include sizeRem(margin-top,5);
+			}
+		}	
+		.form-item-button-save-search{
+			margin-top: 0;
+		}
+		.form-text{
+			@include border-radius(4px !important);
+		}
+		select{
+			@include border-radius(4px !important);	
+		}
+        
+        .salary {
+        	.ui-slider.ui-slider-horizontal.ui-slider-pips{
+        		//margin-top: 35px;
+        	}
+        	.form-item-salary-range{
+	        	
+	        	@include border-radius(4px);
+	        	min-width: auto;
+	        }
+        }
+		.form-submit{
+			@include border-radius(4px !important);	
+		}
+	}
+	.advanced-search{
+		@include sizeRem(margin-top, -15);
+	}
+	.advanced-search ul.nav-tabs > li.active > a:hover, 
+	.advanced-search ul.nav-tabs > li.active > a:focus,
+	.advanced-search .nav-tabs > li > a:hover{
+		background-color: $white-color;
+		border-color: $white-color; 
+	}
+	.advanced-search .dropdown-block, 
+	.advanced-search .dropdown-menu{
+		margin-left: 0;
+	}
+	.form-aps-job-secrh .salary .chosen-container-single .chosen-single{
+		@include border-radius(4px);
+	}
+    //
+    .form-aps-job-secrh .form-item-key-location input{
+    	border-left: none;
+    	border-right: none;
+    }
+    .form-aps-job-secrh .salary{
+    	@include sizeRem(margin-top,28);
+    }
+    .form-aps-job-secrh #switch-select-slider{
+    	top: -20px;
+    }
+    .not-front {
+    	.advanced-search{
+    		.advanced{
+    			background: transparent;
+    			display: block !important;
+    			height: 100%;
+    			overflow: visible;
+    		}
+    		.adv-search-wrapper{
+    			background: transparent;
+    		}
+    		.togled{
+    			display: none;
+    		}
+    	}
+    	.form-aps-job-secrh .find-job{
+    		display: none;
+    	}
+    	.form-aps-job-secrh .form-item-find-button{
+    		@include sizeRem(padding,0,2,15);
+    		@include sizeRem(margin-top,18);
+    		display: none;
+    		&.moved{
+    			display: block;
+    		}
+    	}
+    }
+    .form-aps-job-secrh .form-item-salary-range .type-rate{
+		bottom: -37px;
+	}
+    .front {
+    	.form-aps-job-secrh .form-item-find-button .item-add-jobs{
+    		margin-bottom: 0;
+    		margin-top: 14px;
+    	}
+    	.form-aps-job-secrh .form-item-button-save-search{
+	    	margin-top: 0;
+	    }
+    }
+    .form-aps-job-secrh .form-item-salary-range label{
+		top: -28px;
+	}
+	.form-aps-job-secrh .classification label{
+		top: -28px;
+	}
+    .page-search-jobs{
+    	.content-first{
+    		@include sizeRem(margin-top,30);
+    	}
+    }
+    .page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-title{
+		@include sizeRem(font-size, 26);
+	}
+    .logged-in.page-search-jobs {
+    	.banner {
+    		@include sizeRem(padding-bottom, 45);
+	    	.paner-apsjobs-blocks-search-form{
+		    	@include sizeRem(padding-top,10);
+		    }
+		    .pane-banner-basic.pane-banner-300 .inside{
+		    	//@include sizeRem(padding-bottom, 70);
+		    	//@include sizeRem(min-height, 1045);
+		    }
+		    height: 100%;
+		    overflow: visible;
+		    &.group-search-togle{
+				//@include sizeRem(height,176);
+		    	overflow: hidden;
+		    }
+	    }
+	    .advanced-search{
+	    	//@include sizeRem(margin-top, 150);
+	    }
+	    .view-banner-basic {
+        	.field-content{
+        		@include display-flex;
+        		@include align-items(center);
+        		@include justify-content(center);
+        		@include sizeRem(height, 780);
+        	}
+        	.views-field-field-image img{
+				bottom: 0;
+			    min-width: 100%;
+			    min-height: 100%;
+        	}
+        }
+        .form-search-jobs {
+		    //margin-top: 0.75rem;
+		    @include sizeRem(top,120);
+		    transform: translate(0,0);
+		}
+    }
+    //
+    .page-search-jobs {
+    	.banner {
+    		@include sizeRem(padding-bottom, 45);
+	    	.paner-apsjobs-blocks-search-form{
+		    	@include sizeRem(padding-top,10);
+		    }
+		   
+		    .pane-banner-basic.pane-banner-300 .inside{
+		    	//@include sizeRem(padding-bottom, 70);
+		    	@include sizeRem(min-height, 958);
+		    	padding-top: 0;
+		    }
+		    height: 100%;
+		    overflow: visible;
+		    &.group-search-togle{
+				@include sizeRem(height,161);
+		    	overflow: hidden;
+		    }
+	    }
+	    .advanced-search{
+	    	@include sizeRem(margin-top, 160);
+	    	z-index: 20;
+	    }
+	    .view-banner-basic {
+        	.field-content{
+        		@include display-flex;
+        		@include align-items(center);
+        		@include justify-content(center);
+        		@include sizeRem(height, 780);
+        	}
+        	.views-field-field-image img{
+				bottom: 0;
+			    min-width: 100%;
+			    min-height: 100%;
+        	}
+        }
+        .form-search-jobs {
+		    @include sizeRem(margin-top, 0);
+		    @include sizeRem(top,120);
+		    transform: translate(0,0);
+		}
+    }
+    //
+    .advanced-search.show .advanced{
+    	height: 100%;
+    }
+    .advanced-search ul.nav-tabs li .menu-label{
+    	display: block;
+    	@include sizeRem(margin-bottom,11);
+    }
+    .advanced-search ul.nav-tabs li a{
+    		.menu-label{
+    			color: $title-color;
+    			width: auto;
+    			margin-right: 3px;
+    			display: inline-block;
+    			margin-bottom: 0;
+    			.front &{
+    				//display: none;
+    			}
+    		}
+    	}
+    .advanced-search ul.nav-tabs > li.active > a, 
+    .advanced-search ul.nav-tabs > li.open > a{
+    	.menu-label{
+    		color: $white-color;
+    	}
+    }
+    .advanced-search .dropdown-menu, 
+    .advanced-search .dropdown-block{
+    	width: 100%;
+    	.form-filter input{
+    		width: 100%;
+    	}
+    }
+    .advanced-search .adv-search-wrapper{
+    	background: transparent;
+    	.front &{
+            background: rgba(16, 34, 111, 0.81);
+    	}
+    }
+	.advanced-search ul.nav-tabs{
+		flex-wrap: wrap;
+		.front &{
+			@include sizeRem(padding-top, 15);
+			@include sizeRem(padding-bottom, 15);
+		}
+		> li{
+			width: 100%;
+			background: transparent;
+			@include sizeRem(margin-bottom,9);
+			@include border-radius(4px);
+			> a{
+				color: $title-color;
+				background: $white-color;
+				text-align: left;
+				@include border-radius(4px);
+				&:after{
+					color: $blue-color;
+					position: absolute;
+					@include sizeRem(right,15);
+					@include sizeRem(top,10);
+				}
+			}
+		}
+	}
+    //
+	.pane-govcms-blocks-govcms-jobs-search-form {
+		.location-australia{
+			right: auto;
+			@include sizeRem(bottom,50);
+			@include translateX(-50%);
+			left: 50%;
+		}
+	}
+	.front .content-feature .container-fluid{
+		display: block;
+	}
+	.front .content-feature .pane-views-panes{
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	.front .content-feature .view-owlcarouse-testimornial .view-content{
+		max-width: inherit;
+		width:88%;
+	}
+	.front .content-feature .pane-views-panes .view-content{
+		@include sizeRem(padding,0,2,15);
+	}
+	.front .content-feature .pane-views-panes{
+		@include sizeRem(padding-top,42);
+		@include sizeRem(padding-bottom,45);
+	}
+	.front .content-feature .pane-view-banner-panel-pane-2:before{
+		display: none;
+	}
+	.front .content-feature .view-owlcarouse-testimornial .view-content{
+		@include sizeRem(margin-left,35);
+		@include sizeRem(margin-right,20);
+		@include sizeRem(padding-left,35);
+		@include sizeRem(padding-right,35);
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.view-owlcarouse-testimornial .view-content:after{
+		right: 0;
+	}
+	.view-owlcarouse-testimornial .owl-theme .owl-controls{
+		display: block !important;
+	}
+	.front .content-feature .pane-view-testimornial-panel-pane-1{
+   		@include sizeRem(padding-top,35);
+   		@include sizeRem(padding-bottom,95);
+	}
+	.view-owlcarouse-testimornial .owl-theme .owl-controls{
+		bottom: -65px;
+	}
+	.view-owlcarouse-testimornial .views-field-body{
+		@include sizeRem(margin-top,30);
+	}
+    .page-search-jobs .view-banner-basic .views-field-field-image{
+		&:before{
+			content: "";
+			position: absolute;
+			background: url('../images/bench-accounting-moible.jpg')0 0 no-repeat;
+			@include sizeRem(width,1488);
+			@include sizeRem(height,958);
+			@include background-size(1488px 958px);
+			@include translateX(-38%);
+		}
+		img{
+			display: none;
+		}
+	}
+	//////////////////12/10/2017///////////////////////
+	.not-front{
+		.header + * {
+	    	@include sizeRem(padding-top,111);
+		}
+		.banner{
+			margin-top:-111px;
+		}
+	}
+
+	///////////////////END - 12/10/2017 ///////////////
+	//.............Tai............13-10-07............//
+	.page-aps-agency-my-job-vacancies-archive{
+		.view-aps-vacancy{
+			.group-right{
+				margin-bottom: 20px;
+				@include sizeRem(margin-bottom,20);
+			}
+			.views-row{
+				padding-bottom: 10px !important;
+				.views-field-field-position-number{
+					// top:auto;
+					// @include sizeRem(left,15);
+					// @include sizeRem(bottom,45);
+				}
+			}
+		}
+	}
+	.node-type-aps-outcomes{
+		.view-aps-vacancy{
+			.views-row{
+				.group-right{
+					@include sizeRem(margin-bottom,20);
+				}
+				.views-field-field-position-number{
+				    // right: auto;
+				    // // @include sizeRem(left,15);
+				    // @include sizeRem(bottom,35);
+				}
+			}
+		}
+	}
+
+	.page-outcomes-create-outcome-promotion{
+		.view-aps-vacancy{
+			.group-right{
+				@include sizeRem(margin-bottom,20);
+			}
+			.views-row{
+				.views-field-field-position-number{
+				    right: auto;
+				    @include sizeRem(left,15);
+				    @include sizeRem(bottom,27);
+				}
+			}
+		}
+		.form-apsjobs-create-outcome{
+			@include sizeRem(padding-left,15);
+			@include sizeRem(padding-right,15);
+			.form-item{
+				display: block;
+			}
+			fieldset#edit-candidate{
+				clear: both;
+			}
+			.form-item-publication-date{
+				.date-padding{
+					float: none;
+				}
+			}
+			.form-item{
+				width: 70%;
+			}
+			#edit-actions{
+				text-align: left;
+				input{
+					margin-left: 0;
+					margin-right: 15px;
+					@include sizeRem(margin-right,15);
+				}
+			}
+		}
+
+	}
+	.page-aps-agency .view-aps-vacancy .views-row {
+    	padding-bottom: 0.625rem;
+	}
+	.node-type-aps-outcomes {
+		.content-second h2.pane-title{
+			padding-left: 0;
+		}
+		.content-first .pane-content{
+			@include sizeRem(padding-left, 15);
+			@include sizeRem(padding-right, 15);
+		}
+		.content-third .pane-content{
+			@include sizeRem(padding-left, 15);
+			@include sizeRem(padding-right, 15);
+		}
+		.view-aps-vacancy .view-header{
+			@include sizeRem(left, 15);
+		}
+	}
+	.page-aps-agency{
+		.view-aps-outcomes{
+			.group-date{
+				display: block;
+				.views-field-created{
+					text-align: left;
+				}
+			}
+			.group-right{
+				float: none;
+				width: 100%;
+				text-align: left;
+			}
+			.group-left{
+				float: none;
+				width: 100%;
+			}
+
+		}
+		.view-aps-vacancy{
+			.views-row{
+				//@include sizeRem(padding-bottom, 65);
+			}
+			.group-showmore{
+				// display: block;
+			 //    position: relative;
+			 //    padding-top: 20px;
+			}
+			.views-field-field-position-number{
+				// text-align: left;
+			 //    position: absolute;
+			 //    left: 0;
+			 //    top: -32px;
+			}
+		}	
+	}
+	.page-aps-agency.admin-menu{
+		.view-aps-vacancy{
+			.views-row{
+				@include sizeRem(padding-bottom, 10);
+			}
+		}
+	}
+	.node-aps-agencies {
+		@include sizeRem(padding, 15);
+    	padding-top: 0;
+		.field{
+			.field-label{
+				@include sizeRem(min-width, 200);
+			}
+		}
+	}
+	.node-type-aps-agencies{
+		.view-aps-vacancy .views-field-field-salary-from{
+			@include sizeRem(margin-bottom, 5);
+		}
+	}
+	.group-right .views-field-field-job-category{
+		margin-top: 0;
+	}
+	.group-right{
+		@include sizeRem(padding-bottom,15);
+	}
+	.group-date .views-field-title{
+		width: 100%;
+
+	}
+	.view-aps-outcomes .views-field-title{
+		@include sizeRem(margin-bottom,10);
+	}
+    .view-aps-outcomes .views-field-created{
+    	width: 100%;
+    	@include sizeRem(margin-bottom,5);
+    }
+    .group-showmore .views-field-nothing .field-content p.show-more{
+    	margin-bottom: 0;
+    }
+    //.............end.......tai......................//
+    //////////////////13/10/2017///////////////////////
+	////--------------page Home-----------////
+	#block-menu-block-govcms-menu-block-footer{
+		@include sizeRem(padding-top,5);
+	}
+	
+	///////////////////END - 13/10/2017 ///////////////
+//////////////////16/10/2017///////////////////////
+	////--------------page Home-----------////
+	.front{
+		.content-feature{
+			.pane-view-testimornial-panel-pane-1{
+				@include sizeRem(padding-bottom,80);
+			}
+		}
+		.content-main{
+			.view-banner-basic{
+				.views-field-title{
+					@include sizeRem(margin-bottom,20);
+				}
+			}
+			.views-field-body{
+				@include sizeRem(margin-bottom,20);
+				p{
+					&:first-child{
+						@include sizeRem(margin-bottom,20);
+					}
+				}
+			}
+		}
+	}
+	.aps-left-block{
+		.govemment{
+			&:before{
+				@include sizeRem(height,153);
+				@include sizeRem(width,82);
+				@include background-size(82px 153px);
+			}
+		}
+		.job-vacancies{
+			&:before{
+				@include sizeRem(height,132);
+				@include sizeRem(width,132);
+				@include background-size(132px 132px);
+			}
+		}
+		.views-field-number{
+			@include sizeRem(top,25);
+		}
+		.views-field-title{
+			@include sizeRem(padding-bottom,25,$important:true);
+		}
+
+	}
+	/////--------page- Search-job-----------//////
+	.page-search-jobs{
+		.view-agency{
+			.views-field-title{
+				@include sizeRem(margin-bottom,22);
+			}
+		}
+		.item-list{
+			@include sizeRem(margin-top,25);
+		}
+		.views-field-title{
+			@include sizeRem(font-size,20);
+			@include sizeRem(margin-bottom,15);
+		}
+	}
+	.view-aps-job-search-list{
+		.views-field-field-agency{
+			@include sizeRem(font-size,16);
+			@include sizeRem(margin-bottom,10);
+		}
+	}
+	///---page aps-work--------/////
+	.view-abs-job-new-list{
+		.views-row-last,.views-row-first,.views-row-even{
+			.views-field-field-image{
+				@include sizeRem(height,306);
+			}
+		}
+	}
+	.page-aps-work{
+		.view-abs-job-new-list{
+			.views-field-field-image{
+				img{
+					height:151%;
+					@include transform(translateX(-5%));
+				}
+			}
+			.views-row-last{
+				img{
+					@include transform(translate(-5%,-20%));
+				}
+			}
+		}
+		.pane-view-banner-panel-pane-8{
+			.views-field-body{
+				@include sizeRem(margin-bottom,20);
+			}
+		}
+	}
+	.block-aps-public-server{
+		@include sizeRem(margin-top,20);
+	}
+	
+
+	///////////////////END - 16/10/2017 ///////////////
+//////////////////18/10/2017///////////////////////
+	.view-banner-basic{
+		@include sizeRem(padding-top,111);
+	}
+	////--------------page Search-----------////
+	.view-aps-job-search-list{
+		.views-field-created{
+			padding-right:0;
+		}
+	}
+	///------page Agencies-----////
+	.page-agencies{
+		.view-agency{
+			.views-field-title{
+				@include sizeRem(margin-bottom,22);
+			}
+		}
+		.item-list{
+			@include sizeRem(margin-top,20);//19/10
+		}
+	}
+
+	//--------page Gazette--------///
+	.view-apsjobs-gazette{
+		.views-field-nothing{
+			margin-top:0;
+			@include sizeRem(margin-bottom,5);
+		}
+		.views-row{
+			.group-gazette-left{
+				@include sizeRem(margin-bottom,25);
+			}
+		}
+	}
+	.page-aps-gazette{
+		.view-apsjobs-gazette{
+			.views-row{
+				@include sizeRem(padding,30,4,20,30,20);
+			}
+		}
+	}
+	///-------page-user-admin-19----///
+	.page-user-detail-admin{
+		.view-aps-govcms-email-alerts{
+			.views-field-nothing{
+				a{
+					border-width:1.5px;
+				}
+			}
+		}
+	}
+	///////////////////END - 18/10/2017 ///////////////
+	.form-aps-job-secrh .form-item input, 
+	.form-aps-job-secrh .form-item select, 
+	.form-aps-job-secrh .form-item button{
+		@include border-radius(4px);
+	}
+	.form-aps-job-secrh .find-under{
+		left: 15px;
+	}
+	
+
+	.front{
+		.view-banner .views-field-field-image-slide .owlcarousel-fields-250 {
+			height: auto;
+			overflow: visible;
+			&.owl-carousel{
+				// height: auto;
+				// overflow: visible
+			}
+		}
+	}
+	.front {
+		.inside{
+			min-height: auto;
+		}
+	}
+	.page-user-detail-admin{
+		.main-content{
+			@include sizeRem(margin-top, 50);
+		}
+	}
+	.ui-slider-horizontal .ui-slider-range{
+		//top: -1px;
+	}
+
+	.form-aps-job-secrh .classification .dropdown-menu h3{
+		top: -20px;
+		margin-bottom: 10px;
+	}
+	.paner-apsjobs-blocks-search-form .ad-location{
+		bottom: 23px;
+	}
+	.page-aps-agency-my-outcomes #subnav {
+		.container{
+			@include flex-wrap(wrap);
+		}
+		.panel-pane{
+			@include flex-width-col-xs(100%);
+		}
+		.paner-menu-dashbord-vacancy-state{
+			padding-right: 0;
+			@include sizeRem(margin-bottom, 25);
+			@include flex-width-col-xs(100%);
+		}
+	}
+}
+//767
+@media(max-width: 700px){
+	.pane-apsjobs-alerts-apsjobs-alerts-manage-alerts table td:last-child{
+		.btn{
+			margin-bottom: 4px;
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+	.form-aps-job-secrh .salary .ui-slider-pip-last{
+		right: -3%;
+	}
+}
+
+@media (max-width: 700px){
+	////////////header-menu-admin///////////////
+	.admin-menu{
+		#name-and-slogan{
+			display:none;
+		}
+		#logo{
+			border:none;
+		}	
+	}
+	.page-agency-account-details #edit-agency-detail label{
+		text-decoration: none;
+	}
+	/////////////////
+	.govcms-form-add-new{
+		#edit-label{
+			width:100%;
+		}
+		.form-item-new-notice-in{
+			width:100%;
+		}
+	}
+	#edit-review{
+		#edit-duties{
+			li{
+				p{
+					@include sizeRem(padding-left,65);
+				}
+			} 
+		}
+	}
+	///////////////////
+	#edit-agency-detail{
+		label{
+			text-decoration:underline;
+			width:100%;
+		}
+		.form-type-item{
+			@include flex-wrap(wrap);
+		}
+	}
+	#edit-review{
+		#edit-detail{
+			label{
+				text-decoration:underline;
+				display:block;
+			}
+		}
+	}
+	///////engagement//////////////
+	#edit-agency{
+		.form-item > label{
+			width:auto;
+			text-decoration:none;
+		}
+	}
+	////public-account//////////
+	.admin-menu{
+		#name-and-slogan{
+			display:inline-block;
+		}
+	}
+	////////////////////////////
+	////////vacancy--step=notice_details////////
+	.page-employment-vacancy{
+		#edit-detail{
+			@include sizeRem(margin-top,15);
+			.form-type-textarea{
+				.form-textarea-wrapper {
+				   padding-top:0;
+				   width:100%;
+				}
+			}
+			.form-type-textfield{
+				input{
+					max-width:100%;
+				}
+			}
+		}
+		#edit-selection-contact{
+			.form-item-contact{
+				input{
+					max-width:100%;
+				}
+			}
+			.form-item-ph{
+				input{
+					max-width:100%;
+				}
+			}
+		}
+		#edit-selection-email{
+			.form-item-email{
+				input{
+					max-width:100%;
+				}
+			}
+			.form-item-ph{
+				input{
+					max-width:100%;
+				}
+			}
+		}
+		#edit-admin-info{
+			@include sizeRem(margin-top,15);
+			.form-type-textarea{
+				.form-textarea-wrapper{
+					width:100%;
+				}
+			}
+		}
+	}
+	////////////////////////////////////////////
+
+	////////////test-index-search//////////////
+	.page-node{
+		&.node-type-aps-vacancies{
+			.field{
+				.field-label{
+					// width:100%;
+					@include wp-font(font-body);
+					// text-decoration:underline;
+				}
+				.field-items{
+					max-width:100%;
+					@include wp-font(font-medium);
+				}
+			}
+			.field-name-field-job-description{
+				.field-label{
+					text-decoration:none;
+					@include wp-font(font-medium);
+				}
+				.field-items{
+					@include wp-font(font-body);
+				}
+			}
+	
+		}
+	}
+		///////////////////////////////////////////
+}
+// 640
+@media (max-width: $mobile) {
+	//////////////////11/10/2017///////////////////////
+	//------------page agencies--------------//
+	.page-user{
+		.item-list{
+			.pager{
+				@include justify-content(center);
+			}
+		}
+	}
+
+
+	///////////////////END - 11/10/2017 ///////////////
+	///////login or menu or header ////////////
+	.logged-in{
+		/////home////////////
+		
+		.main{
+			overflow:hidden;
+		}
+		.banner{
+			margin-top:-111px;
+		}
+	
+		//////////////////
+		
+		.view-banner-basic{
+			@include sizeRem(padding-top,0);
+		}
+		.header{
+			//position: static;
+		}
+		#logo{
+			// @include sizeRem(padding-left,15);
+			border-right:1px solid $border-color1;
+		}
+		#name-and-slogan{
+			display:inline-block;
+			// @include sizeRem(padding-left,10);
+		}
+		
+		.view-banner-basic{
+			.view-inner{
+				@include sizeRem(padding-top,113);
+			}
+		}
+	
+		.region-main-menu{
+			@include sizeRem(margin-top,20);
+			justify-content:center;
+		}
+		#bs-example-navbar-collapse-1{
+			position: static;
+			width:100%;
+			margin-left:0;
+			margin-right:0;
+		}
+		.block-menu-view-public{
+			@include sizeRem(margin-right,15);
+			a{
+				width:100%;
+				@include sizeRem(min-height,34);
+				@include sizeRem(padding-top,10);
+			}
+		}
+		.block-menu-jop-agency-name{
+			margin-left:0;
+			// @include sizeRem(margin-top,10);
+			a{
+				width:100%;
+				@include sizeRem(min-height,34);
+				@include sizeRem(padding-top,7.5);
+				@include sizeRem(padding-bottom,7.5);
+			}
+		}
+		.header{
+			#block-system-user-menu{
+				margin-left:0;
+				// @include sizeRem(padding-top,10);
+				ul{
+					&.menu{
+						@include sizeRem(min-height,34);
+						li{
+							a{
+								@include sizeRem(padding-top,9.5);
+								@include sizeRem(padding-bottom,9.5);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	///////////////////////////////////////////
+	body{
+		@include sizeRem(font-size,14);
+	}
+	.govcms-form-add-new{
+		#edit-label{
+			label{
+				@include sizeRem(font-size,26);
+			}
+		}
+		legend{
+			@include sizeRem(font-size,18);
+		}
+	}
+
+	#edit-review{
+		@include sizeRem(padding-top,25);
+		@include sizeRem(padding-bottom,25);
+		#edit-detail>div{
+			@include sizeRem(padding-top,25);
+			@include sizeRem(padding-bottom,25);
+		}
+	}
+	/////worktray//////////////////
+	.views-aps-work-tray{
+		.view-field-title{
+			@include sizeRem(font-size,18);
+		}
+	}
+	////////////////////////aps-work///////////////////////////
+	ul.quicktabs-tabs{
+		li{
+			display:block;
+		}
+	}
+	.item-list{
+		ul{
+			li{
+				margin-left:0;
+			}
+		}
+	}
+	////////////////////////////////////////////////////////////
+	/////////////Home//////////////
+	.page-home{
+		.pane-view-job-panel-pane-2{
+			margin-bottom:0;
+		}
+		.view-abs-job-agency{
+			.views-row{
+				border: none;
+			}
+		}
+	}
+	.view-abs-job-relation{
+		.views-field-body{
+			display:none;
+		}
+		.views-row{
+			@include flex-direction(column);
+		}
+		.views-field-field-image{
+			max-width:none;
+			max-height:none;
+			overflow:visible;
+			.field-content{
+				img{
+					transform:none;
+					max-width:100%;
+				}
+			}
+		}
+		.views-field-field-job-description{
+			display:none;
+		}
+		.group-abs-job-relation{
+			max-width:100%;
+			@include flex-width-col-xs(100%);
+			padding-left:0;
+			@include sizeRem(padding-top,20);
+		}
+		.views-field-title{
+			@include sizeRem(margin-bottom,25);
+		}
+	}
+	
+	.front{
+		.content-first{
+			.pane-view-job-panel-pane-1{
+				@include sizeRem(margin-bottom,50);
+			}
+		}
+	}
+	.view-abs-job-agency{
+		@include sizeRem(max-width,480);
+		margin-left:auto;
+		margin-right:auto;
+		.views-row{
+			@include flex-width-col-xs(100%);
+			@include sizeRem(max-width,480);
+			@include sizeRem(margin-bottom,30);
+		}
+		.views-field-body{
+			display:none;
+		}
+		.views-field-title{
+			@include sizeRem(margin-bottom,70); ///26/09
+		}
+		.views-field-view-node{
+			@include sizeRem(bottom,35);
+		}
+	}
+	.view-abs-job-list{
+		
+		.views-row{
+			
+			@include flex-width-col-xs(290px);
+			// @include sizeRem(max-width,480);
+		}
+	}
+	.view-abs-job-relation{
+		.views-field-view-node{
+			a{
+				display:block;
+				@include sizeRem(height,45);
+				@include sizeRem(font-size,15);
+				@include sizeRem(padding-top,10);
+			}
+		}
+	}
+	// 
+
+	#views-inner-future {
+		width:100%;
+	    @include sizeRem(padding-left,15);
+	    .field-content{
+	    	max-width:100%;
+	    }
+	}
+	#content-sixth-wrapper{
+		.views-row{
+			.views-field-field-image{
+				.field-content{
+					img{
+						@include transform(translateX(-55%));
+					}
+				}
+			}
+		}
+	}
+	.views-field-nothing{
+		a{
+			display:block;
+			@include sizeRem(height,45);
+			@include sizeRem(padding-top,10);
+			@include sizeRem(font-size,15);
+		}
+	}
+
+	.page-panel-form-basic {
+	    .form-item{
+		    width: 100% !important;
+		    float: none !important;
+		    padding: 0 !important;
+	    }
+	    .form-item-location {
+		    input{
+		    	width: 100%;
+		    }
+		    .description{
+		    	width: 100%;
+		       	float: none;
+		       	padding-left: 0;
+		       	@include sizeRem(margin-top,15);
+		    }
+     	}
+     	.form-item-salary-from label{
+     		position: static;
+     	}
+	    .form-item-apply-url .description{
+	     	position: static;
+	     	@include sizeRem(margin-top,15);
+	    }
+	    #edit-group-btn input{
+	      	width: 100%;
+	      	@include sizeRem(margin-bottom,15);
+	      	margin-left:0;
+	    }
+    }
+	.pane-govcms-vacancies-govcms-vacancies-new-vacancy{
+		.form-item-publication-date{
+     		@include flex-wrap(wrap);
+    	}
+    }
+	////////////////////////////////
+	////////////public-account////////
+
+	.page-user{
+		.pane-page-title{
+			h1{
+				@include sizeRem(font-size,26);
+			}
+		}
+		.pane-email-alert-panel-pane-1{
+			h2{
+				@include sizeRem(font-size,20);
+			}
+			a{
+				&.btn-a{
+					@include sizeRem(font-size,12);
+				}
+			}
+		}
+		.content-second{
+			h2{
+				@include sizeRem(font-size,20);
+			}
+		}
+	}
+	.view-jobs{
+		.views-field-title{
+			a{
+				@include sizeRem(font-size,20);
+			}
+		}
+		
+	}
+	.view-aps-user-admin{
+		legend{
+			@include sizeRem(font-size,20);
+			@include sizeRem(margin-bottom,20);
+		}
+		.views-field{
+			a{
+				@include sizeRem(font-size,12);
+			}
+			span{
+				@include sizeRem(font-size,14);
+				&:last-child{
+					@include sizeRem(font-size,14);
+				}
+			}
+		}
+	}
+	.page-user-detail-admin{
+		.view-aps-govcms-email-alerts{
+			.views-field-title{
+				a{
+					@include sizeRem(font-size,20);
+				}
+			}
+		}
+	}
+
+	.page-user-detail-admin{
+		
+		.view-jobs{
+			.views-field-ops{
+				@include sizeRem(margin-top,25);
+			}
+			.group-second{
+				@include sizeRem(margin-top,5);
+			}
+			.views-field-field-closing-date{
+				position: absolute;
+				@include sizeRem(top,55);
+			}
+		}
+		.views-field-body{
+			max-width:none;
+		}
+		.view-id-jobs{
+			.views-field-title{
+				@include sizeRem(margin-top,30);
+			}
+		}
+	}
+
+	// .logged-in{
+	// 	&.not-front{
+
+	// 	}
+	// }
+	// .view-aps-user-admin{
+	// 	// .views-row{
+	// 	// 	@include flex-direction(column);
+	// 	// 	&>*{
+	// 	// 		max-width:100%;
+	// 	// 	}
+	// 	// }
+	// 	// .btn-group{
+	// 	// 	text-align:center;
+	// 	// 	@include sizeRem(margin-top,35);
+	// 	// }
+	// 	.views-field{
+	// 		a{
+	// 			@include sizeRem(min-width,200);	
+	// 		}
+	// 	}
+	// 	.views-field-edit-node{
+	// 		a{
+	// 			margin-left:0;
+	// 		}
+	// 	}
+	// }
+	// // .page-user-detail-admin{
+	// // 	.not-front.logged-in{
+	// // 		.header{
+	// // 			&+*{
+	// // 				padding-top:0;
+	// // 			}
+	// // 		}
+	// // 	}
+	// // }
+	// .page-user{
+	// 	.view-jobs{
+	// 		.group-info{
+	// 			@include sizeRem(padding-top,55);
+	// 		}
+	// 	}
+	// 	.content-second{
+	// 		h2{
+	// 			top:-47px;
+	// 		}
+	// 	}
+	// 	.pane-email-alert-panel-pane-1{
+	// 		.views-row{
+	// 			@include flex-direction(column);
+	// 			&>*{
+	// 				max-width:100%;
+	// 			}
+	// 		}
+	// 		.views-field{
+	// 			&.views-field-field-frequently{
+	// 				margin-bottom:25px;
+	// 			}
+	// 			a{
+	// 				&:first-child{
+	// 					margin-left:0;
+	// 				}
+	// 				@include sizeRem(min-width,200);
+	// 			}
+	// 		}
+	// 	}
+
+	// 	.view-aps-govcms-email-alerts{
+	// 		.views-field-nothing{
+	// 			text-align:center;
+	// 		}
+	// 	}
+	// 	.view-jobs{
+	// 		.views-field-body{
+	// 			@include sizeRem(margin-top,16);
+	// 			max-width:none;
+	// 		}
+	// 		.views-field-ops{
+	// 			@include sizeRem(margin-top,25);
+	// 			a{
+	// 				@include sizeRem(min-height,45);
+	// 				width:100%;
+	// 			}
+	// 			.flag-throbber{
+	// 				display:none;
+	// 			}
+	// 		}
+	// 		.group-second{
+	// 			@include sizeRem(margin-top,5);
+	// 		}
+	// 	}
+	// 	.view-jobs{
+	// 		.views-field-field-closing-date{
+	// 			position: absolute;
+	// 			top: 54px;
+	// 		}
+	// 	}
+	// }
+
+
+	///////////////////////////////////
+	////////////vacancy-position/////////////////
+	#edit-location{
+		.form-item{
+			@include flex-wrap(wrap);
+			&.form-item-postcode{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+	}
+	#edit-group-right{
+		.form-item-postcode{
+			.form-text{
+				width:72%;
+			}
+		}
+		.form-submit{
+			width:25%;
+			@include sizeRem(top,20);
+		}
+	}
+	#edit-position{
+		#edit-detail{
+			#edit-working-arrangements{
+				label{
+					@include sizeRem(min-width,165);
+				}
+			}
+			#edit-emloyment-status{
+				label{
+					@include sizeRem(min-width,165);
+				}
+			}
+			.form-item{
+				@include flex-wrap(wrap);
+			}
+			.form-item-expected-vacancy{
+				padding-left:0;
+			}
+			.fieldset-legend{
+				display:inline-block;
+				@include sizeRem(margin-bottom,10);
+			}
+			.form-item-title{
+				label{
+					@include wp-font(font-body);
+				}
+			}
+			.form-item-category{
+				label{
+					@include wp-font(font-body);
+				}
+			}
+			.form-item-category,.form-item-reference,.form-item-number{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+		#edit-location{
+			.fieldset-legend{
+				@include sizeRem(margin-bottom,10);
+				display:inline-block;
+			}
+		}
+		#edit-salary{
+			@include sizeRem(margin-bottom,15);
+			.fieldset-wrapper{
+				width:100%;
+				.form-item-from{
+					width:40%;
+				}
+				.form-item-to{
+					width:40%;
+				}
+			}
+			.fieldset-legend{
+				@include wp-font(font-body);
+			}
+		}
+		.ui-slider-horizontal{
+			@include sizeRem(margin-left,15);
+			@include sizeRem(margin-right,15);
+		}
+		.form-item-division,.form-item-brach,.form-item-section,.form-item-suburb{
+			@include sizeRem(margin-bottom,15);
+		}
+	}
+	//////////banner-agencies/////////////////
+	.view-aps-job-baner{
+		.views-field-body{
+			a{
+				margin-left:0;
+				width:100%;
+				@include sizeRem(margin-top,15);
+				text-align:center;
+
+			}
+		}
+	}
+	.page-agencies{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-body{
+					a{
+						&:before{
+							position: relative;
+							top:0;
+							transform:none;
+							@include sizeRem(left,165);
+						}
+					}
+					p{
+						@include sizeRem(margin-bottom,30);//16/10/2017
+					}
+				}
+			}
+		}
+	}
+	.pane-banner-basic{
+	 	&.pane-banner-468{
+	 		.inside{
+				@include sizeRem(padding-bottom,43);
+	 		}
+	 	}
+	}
+
+	////////////////////////////////////////////////
+
+	///Nam.................................//
+	.header {
+		.menu-name-main-menu ul.menu li{
+			@include sizeRem(padding-right, 20);
+			@include sizeRem(padding-left, 20);
+		}
+	}
+	#block-menu-block-govcms-menu-block-footer{
+		@include sizeRem(padding-left, 15);
+	}
+	#block-menu-menu-agency-home-page{
+		@include sizeRem(padding-left, 15);
+	}
+	//login
+
+	.page-user:not(.page-comment-reply) {
+		.pane-custom{
+			width: 100% !important;
+		}
+		form{
+			width: 100% !important;
+			@include sizeRem(padding, 15, 1);
+			padding-top: 0 !important;
+		}
+		.content-first h2{
+	    	width: 100%;
+	    }
+	    .pane-menu-login-menu{
+	    	width: 100%;
+	    }
+	    .menu-name-menu-login-menu {
+	    	@include sizeRem(margin,0,4,0,20,0);
+	    	li a{
+		    	position: static;
+		    	@include sizeRem(margin-left,15);
+		    }
+	    }
+	}
+    .page-sign-up-account:not(.page-comment-reply) {
+    	#edit-header{
+    		padding: 0;
+    	}
+    }
+    .page-sign-up {
+        input[type="radio"] + label{
+        	@include sizeRem(padding-left,30);
+        }
+        #edit-term .toc-filter-processed{
+	    	@include sizeRem(margin,8,2,0);
+	    }
+    }
+    //search
+    .group-first{
+        @include flex-width-col-xs(100%);
+        padding-right: 0;
+    }
+    .group-second{
+		@include flex-width-col-xs(100%);
+		text-align: left;
+		padding-left: 0;
+    }
+    .group-info{
+    	@include flex-wrap(wrap);
+    }
+    .views-field-title, .views-field-name{
+    	@include sizeRem(font-size, 22);
+    }
+     
+    .item-list .pager{
+    	@include flex-wrap(wrap);
+    }
+    
+    div[id*="edit-group-btn-"], #edit-group-btn{
+    	@include sizeRem(padding-top,15);
+    	@include sizeRem(padding-bottom,15);
+    }
+    // move repon bo impo
+    .page-panel-form-basic {
+        .form-item-salary-from label{
+        	@include sizeRem(font-size,16);
+        }
+    	.form-item-salary-to, .form-item-salary-from{
+    	    input{
+    	    	margin-top: 0;// !important;
+    	    }
+    	}
+    }
+    .not-front .advanced-search{  
+    	// @include sizeRem(padding-top,60);
+    }
+
+	//................Hằng...........................//
+
+    ///////////vacancy--step=agency///////////////
+    #edit-aps-class{
+    	.form-checkboxes{
+    		&>*{
+    			width:100%;
+    		}
+    	}
+    	#edit-standard,#edit-ses,#edit-training{
+    		width:50%;
+    	}
+    	.form-item{
+    		@include align-items(flex-start);
+    	}
+    }
+    #edit-agency{
+    	.form-item-standard,.form-item-ses,.form-item-training{
+    		&>label{
+				width:50%;
+    		}
+    	}
+    }
+    //////////////////////////////////////////////
+    //////vacancy--step=duties////////
+	#edit-detail{
+		.form-type-textarea{
+			.form-textarea-wrapper{
+				padding-left:0;
+				padding-right:0;
+				@include sizeRem(padding-top,20);
+			}
+		}
+		input{
+			&#edit-save-draft{
+				margin-right:0;
+			}
+		}
+	}
+
+	//////////////////////////////////
+	//////////////administration-continue-1///////////////
+	.page-administration{
+		#govcms-engagement-action-existing-notice-form{
+			.form-item-gazette-issue{
+				select{
+					max-width:100%;
+				}
+			}
+			.form-item-notify-outcome{
+				.form-item-notify-outcome-group{
+					.form-item{
+						width:100%;
+					}
+				}
+				label{
+					@include sizeRem(margin-bottom,10);
+				}
+			}
+			#edit-original-notice-summary,#edit-notice-summary{
+				@include wp-font(font-medium);
+				label{
+					width:100%;
+					@include wp-font(font-body);
+					text-decoration:underline;
+				}
+				legend{
+					@include sizeRem(margin-bottom,15);
+				}
+			}
+			#edit-original-notice-summary{
+				@include sizeRem(padding-bottom,10);
+			}
+			#edit-notice-summary{
+				@include sizeRem(padding-top,10);
+				@include sizeRem(padding-bottom,10);
+			}
+			.btn-full-notice{
+				float:none;
+				@include sizeRem(margin-top,10);
+			}
+
+		}
+		.form-apsjobs-create-outcome{
+			.form-item{
+				@include flex-wrap(wrap);
+				label{
+					@include sizeRem(margin-bottom,10);
+					
+				}
+			}		
+		}
+	}
+	//////////////////////////////////////////////////////
+	.logged-in{
+		
+		.header{
+			&+*{
+				padding-top:0;
+			}
+		}
+		.banner{
+			margin-top:0;
+		}
+	
+	}
+ //    .not-front{
+	// 	&.page-user-detail-admin{
+	// 		.header{
+	// 			&+ *{
+	// 				@include sizeRem(padding-top,173);
+	// 			}
+	// 		}
+	// 	}
+	// 	&.page-sign-up {
+	// 		.header{
+	// 			&+ *{
+	// 				@include sizeRem(padding-top,150);
+	// 			}
+	// 		}
+	// 	}
+	// 	&.page-sign-up-account {
+	// 		.header{
+	// 			&+ *{
+	// 				@include sizeRem(padding-top,118);
+	// 			}
+	// 		}
+	// 	}
+	// }
+	.page-agency-account-details #edit-agency-detail {
+		.form-type-select:after{
+			width: 95%;
+		}
+		.form-item-nominate-approver-:after{
+			width: 97%;
+		}
+	}
+	
+	////////vacancy/job-test-23sept-5-abc2////////
+	.page-node-436{
+		&.node-type-aps-vacancies{
+			form{
+				text-align:left;
+				.form-item{
+					@include justify-content(flex-start);
+					
+				}
+			}
+			#edit-approval-date,#edit-approval-detail{
+				width:100%;
+				.form-item{
+					width:45%;
+				}
+			}
+			#apsjobs-vacancy-approval-form{
+				.form-item-approval-comment{
+					width:100%;
+				}
+			}
+			#edit-actions{
+				text-align:right;
+			}
+		}
+	}
+
+	//////////////.tai.....................
+	.page-aps-agency .pane-apsjobs-blocks-apsjobs-agency-count.view-grid-4-cols .view-row{
+		width: 47%;
+	}
+	.page-aps-agency{
+		.pane-aps-vacancy-panel-pane-3,.pane-view-gazette-panel-pane-2{
+			h2.pane-title{
+				width: 50%;
+			}
+		}
+	}
+	
+	.pane-govcms-blocks-govcms-agencies-search-form{
+		.dropdown{
+			width: 100%;
+    		padding-right: 0;
+		}
+    	ul{
+    		li{
+    			width: 100%;
+    			&:first-child{
+    				border-top-right-radius: 4px;
+    				border-bottom-left-radius: 0;
+    			}
+    			&:last-child{
+    				border-top-right-radius: 0;
+    				border-bottom-left-radius: 4px;
+
+    			}
+    		}
+    	}
+    	form{
+    		position: relative;
+    		width: 100%;
+    		padding-left: 0;
+    		@include sizeRem(margin-top, 20);
+    	}
+    	.pane-content > div > div:last-child div.dropdown{
+    		@include sizeRem(padding-bottom, 50);
+
+    	}
+    	.pane-content > div > div:last-child div.dropdown button.dropdown-toggle{
+    		width: 100%;
+    	}
+    	.pane-content > div > div:last-child > div:first-child{
+    		margin-top: 0;
+		    position: absolute;
+		    bottom: 0;
+		    left:0;
+    	}
+	}
+	.view-agency {
+    	.views-field-body{
+    		padding-right: 0;
+    	}
+    	.group-agency{
+    		.views-field{
+    			display: block;
+    			width: 100%;
+    			a,.field-content{
+    				width: 100%;
+    				text-align: center;
+    			}
+    		}
+    		.views-field-field-link-to{
+    			@include sizeRem(margin-bottom, 10);
+    		}
+    	}
+    }
+    .view-aps-vacancy{
+		.agency-list-archived.views-fieldset{
+			.views-field{
+				display: block;
+			}
+		}
+    }	
+    ////////aps-gazette-02/10/2017/////////////
+	
+    ///////////////////////////////////////////
+
+    .page-agencies{
+    	.view-agency{
+    		.group-agency{
+    			@include sizeRem(margin-top,20);
+				a{
+					@include sizeRem(height,45);
+					@include sizeRem(padding-top,16);
+				}
+				.views-field-field-link-to{
+					a{
+						&:after{
+							right:0;
+							top:0;
+							position: relative;
+							transform:none;
+
+						}
+					}
+				}
+			}
+    	}
+    	.paner-aps-govcms-agencies-search-form{
+    		.form-aps-job-search{
+    			div{
+    				&:first-child{
+    					&>div{
+    						&:last-child{
+    							// padding-left:0;
+    							@include sizeRem(padding-left,7.5);
+    						}
+    					}
+	    				.dropdown{
+	    					.success{
+	    						padding-left:0;
+	    					}
+	    				}
+    				}
+    				
+    			}
+    		}
+
+    		.dropdown{
+    			@include sizeRem(padding-right,7.5);
+    		}
+    	}
+    }
+    //////search-job--04/10/2017///////////
+    // .page-search-jobs{
+    // 	.view-aps-job-search-list{
+    // 		// .group-info{
+    // 		// 	@include sizeRem(padding,25,4,20,30,10);
+    // 		// }
+    // 		.views-field-field-location-raw{
+    // 			@include sizeRem(margin-bottom,19);
+    // 		}
+    // 		.views-field-created{
+    // 			padding-right:0;
+    // 			@include sizeRem(margin-bottom,7);
+    // 		}
+    // 	}
+    // 	.views-field-title{
+    // 		@include sizeRem(margin-bottom,15);
+    // 	}
+    // 	.group-second{
+    // 		@include sizeRem(padding-top,5);
+    // 		.views-field{
+	   //  		@include sizeRem(margin-bottom,6);
+	   //  	}
+    // 	}
+    // 	.view-aps-vacancy-search{
+    // 		.view-header{
+    // 			@include sizeRem(top,20);
+    // 		}
+    // 	}
+    	
+    // }
+    ///////////////////////////////////////
+	/////////10/10/2017--sign-up page //////////////
+	.page-sign-up{
+		input[type="radio"]{
+			+ label{
+				&:before{
+					@include sizeRem(width,13);
+					@include sizeRem(height,13);
+					@include sizeRem(top,3);
+				}
+				@include sizeRem(padding-left,30);
+			}
+		}
+		.form-item-authorise{
+			@include sizeRem(padding,10,4,10,0,10);
+		}
+		#edit-term{
+			@include sizeRem(padding-top,5);
+			p{
+				margin-bottom:0;
+			}
+		}
+	}
+	////////////////////////////////////////////////
+	///......Move........///
+/*...................Nam 10/11/17.......................*/
+	.header{
+		.logged-in &{
+			position: relative;
+		}
+	}
+
+	// .item-list .pager{
+	// 	@include justify-content(flex-start);
+	// }
+
+	.paner-apsjobs-blocks-search-form .ad-location{
+		position: relative;
+		@include sizeRem(bottom,72);
+		text-align: center;
+		right: auto;
+		.logged-in &{
+			@include sizeRem(bottom,65);
+		}
+	}
+	.page-search-jobs .view-banner-basic .views-field-field-image::before{
+		//@include sizeRem(height,923);
+		//@include background-size(1488px 923px);
+		.logged-in &{
+			//@include sizeRem(height,923);
+			//@include background-size(1488px 923px);
+		}
+	}
+	.logged-in.page-search-jobs {
+		.banner.group-search-togle{
+			@include sizeRem(height,50);
+		}
+		.banner .paner-apsjobs-blocks-search-form{
+			@include sizeRem(padding-top,15);
+		}
+		.banner .pane-banner-basic.pane-banner-300 .inside{
+			@include sizeRem(min-height, 849);
+		}
+		.form-search-jobs{
+			@include sizeRem(margin-top,5);
+			top: 0;
+		}
+		.advanced-search{
+			@include sizeRem(margin-top, 42);
+		}
+	}
+	.page-search-jobs.admin-menu{
+		.banner.group-search-togle{
+			@include sizeRem(height,50);
+		}
+		.banner .paner-apsjobs-blocks-search-form{
+			// padding-top: 134px;
+		}
+	}
+	//home
+	.page-agencies .view-aps-job-baner .view-inner .views-field-title{
+		@include sizeRem(padding-bottom,10);
+	}
+	.banner .paner-apsjobs-blocks-search-form{
+		@include sizeRem(padding-top, 340);
+	}
+	.advanced-search{
+		@include sizeRem(margin-top,-62);
+	}
+	.view-banner .views-field-field-image .field-content{
+		@include sizeRem(height,708);
+	}
+	.view-banner .views-field-field-image-slide .owl-item div[class*="item-"]{
+		@include sizeRem(height,715);
+	}
+	
+	.logged-in{
+		.paner-apsjobs-blocks-search-form p.fitler-togled{
+			top: 0;
+		}
+		&.front .inside{
+			@include sizeRem(height,637);
+		}
+		.view-banner .views-field-body{
+			top: 0;
+		}
+		.banner .paner-apsjobs-blocks-search-form{
+			@include sizeRem(padding-top, 230);
+		}
+		.view-banner .views-field-field-image .field-content{
+			@include sizeRem(height,695);
+		}
+		.view-banner .views-field-field-image-slide .owl-item div[class*="item-"]{
+			@include sizeRem(height,607);
+		}
+		.view-banner-basic .views-field-field-image img{
+			//min-height: 845px;
+		}
+		.paner-apsjobs-blocks-search-form .ad-location{
+			//@include sizeRem(bottom,72);
+		}
+		.advanced-search{
+			@include sizeRem(margin-top,-44);
+		}
+		//home................//
+		.page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-title{
+			max-width: 100%;
+		}
+		.paner-aps-dasboard-govcms-sort-date{
+			.sort-date{
+	 			//width: 100% !important;
+	 			.chosen-container{
+					width: 100% !important;
+				}
+			}
+		}
+		.pane-banner-basic.pane-banner-300 {
+			.view-inner{
+				@include sizeRem(padding-top, 50);
+			}
+			.inside{
+				min-height: auto;
+			}
+			.views-field-field-image img{
+				min-height: auto;
+			}
+		}
+		.pane-banner-basic.pane-banner-468 {
+			.view-inner{
+				//padding-top: 213px;
+			}
+			.inside{
+				//min-height: 443px;
+			}
+			.views-field-field-image img{
+				//min-height: 443px
+			}
+		}
+	}
+	//.............Tai............13-10-07............//
+	.page-panel-form-basic{
+		 #edit-group-btn button{
+			width: 100%;
+		    margin-bottom: 0.9375rem;
+		    margin-left: 0;
+		}
+	    .form-item-publication-date{
+	    	display: block;
+	    }
+	    .form-item-closing-date{
+	    	display: block;
+	    }
+	    #edit-vacancy{
+	    	.container-inline-date{
+		    	display: block;
+		    	.form-item-closing-date{
+		    		margin-left: 0;
+		    		@include sizeRem(padding-top,15,$important:true);
+		    	}
+		    }
+	    }
+	    #edit-job-type{
+	    	clear: both;
+			.fieldset-wrapper{
+		    	display: block;
+		    	.form-item{
+		    		width: 100%;
+		    	}
+		    	.form-wrapper{
+		    		width: 100%;
+		    	}
+	    	}
+	    }
+	    #edit-job-type .fieldset-wrapper .form-item-non-ongoing-duration{
+	    	min-height: auto;
+	    }
+	}
+
+	.node-type-aps-agencies{
+		.node-aps-agencies .field .field-label{
+			min-width: auto;
+		}
+		.node-aps-agencies .field .field-items{
+			display: inline-block;
+		}
+		.paner-aps-dashboard-govcms-search-form-vacancy{
+			width: 100%;
+			@include sizeRem(margin-bottom, 10);
+		}
+		.view-aps-vacancy .view-header{
+			left: 0;
+		}
+		.view-aps-vacancy .group-right .views-field-field-position-number{
+			text-align: left;
+			position: static;
+		}
+		.view-aps-vacancy .group-right .views-field-created{
+			margin: 0;
+		}
+	} 
+	
+	.page-aps-agency{
+		.view-aps-notificaitons{
+			.views-row{
+				flex-wrap: wrap;
+				.views-field-noid{
+					@include flex(0 0 20%);
+				}
+				.views-field-body{
+					@include flex(0 0 80%);
+				}
+				.views-field-nothing{
+					@include sizeRem(margin-top, 10);
+					@include flex(0 0 100%);
+					a{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.node-aps-agencies {
+		.field{
+			.field-label{
+				float: none;
+			}
+			.field-items{
+				display: block;
+			}
+		}
+	}
+	.views-field-nothing .unpublish a{
+		font-size: 0.75rem;
+		height: auto;
+		padding-top: 0.5625rem;
+	}
+	.page-aps-agency .view-aps-vacancy .views-field-field-position-number{
+		//margin-top: 0;
+	}
+	.view-aps-vacancy .views-field-nothing, 
+	.view-aps-vacancy .views-field-nothing-2, 
+	.view-aps-vacancy .views-field-nothing-1{
+		// margin-top: 0;
+		.field-content p.show-more{
+			margin-bottom: 0;
+		}
+	}
+    //.............end.......tai......................//
+//////////////////16/10/2017///////////////////////
+	////--------------page Home-----------////
+	.front{
+		.views-field-view-node{
+			margin-bottom:0;
+		}
+		.view-abs-job-agency{
+			.views-field-field-job-category{
+				@include sizeRem(margin-top,25);
+			}
+		}
+		.view-footer{
+			margin-top:-10px;
+		}
+		
+	}
+	//-----page Search-job-------//
+	.page-search-jobs{
+		.group-info{
+			@include sizeRem(margin-bottom,25);
+		}
+	}
+
+	///////////////////END - 16/10/2017 ///////////////
+//////////////////18/10/2017///////////////////////
+	.logged-in{
+		#block-menu-block-govcms-menu-block-footer{
+			@include sizeRem(padding-top,24);
+		}
+	}
+	////--------------page Aps work-----------////
+	.ui-accordion{
+		.view-header{
+			display:none;
+		}
+	}
+
+	.page-aps-gazette{
+		.banner{
+			.paner-apsjobs--gazette-search-form{
+				.aps-gazette{
+					@include sizeRem(margin-bottom,7);
+				}
+			}
+		}
+	}
+	
+    .pane-apsjobs-alerts-apsjobs-alerts-manage-alerts {
+		.pane-content{
+			width: 100%;
+			overflow-x: scroll;
+		}
+		table {
+			td,th{
+				&:first-child{
+					padding-left: 0 !important;
+				}
+				&:last-child{
+					padding-right: 0 !important;
+				}
+			}
+		}
+	}
+	.group-top {
+		@include flex-wrap(wrap);
+		.views-field-title{
+			order: 2;
+			@include flex-width-col-xs(100%);
+		}
+		.views-field-field-closing-date{
+			order: 1;
+			@include flex-width-col-xs(100%);
+		}
+	}
+	.page-outcomes-create-outcome-promotion .form-apsjobs-create-outcome{
+		padding-bottom: 40px;
+	}
+	.logged-in.front .paner-apsjobs-blocks-search-form .ad-location{
+		//@include sizeRem(bottom, 72);
+	}
+	.logged-in.front .advanced-search{
+		@include sizeRem(margin-top, -48);
+	}
+	.front {
+		.advanced-search{
+			@include sizeRem(margin-top, -49);
+			//padding-bottom: 1px;
+		}
+		.paner-apsjobs-blocks-search-form .ad-location{
+			@include sizeRem(bottom, 65);
+		}
+		.advanced-search .adv-search-wrapper{
+			margin-top: -13px;
+		}
+	}
+	.front .content-feature{
+		margin-top: -13px;
+	}
+	///////////////////END - 18/10/2017 ///////////////
+	.front{
+		.view-banner .views-field-field-image-slide .owlcarousel-fields-250 {
+			height: 730px;
+			overflow: hidden;
+			&.owl-carousel{
+				height: auto;
+				overflow: visible;
+			}
+		}
+	}
+
+	.page-aps-agency-dashboard-up .view-aps-job-baner .views-field-field-image{
+		height: 225px;
+	}
+	.page-aps-agency-dashboard-up.admin-menu .view-aps-job-baner .views-field-field-image{
+		height: auto;
+	}
+
+	.front.logged-in{
+		.view-banner .views-field-field-image-slide .owlcarousel-fields-250 {
+			height: 620px;
+			overflow: hidden;
+			&.owl-carousel{
+				height: auto;
+				overflow: visible
+			}
+		}
+	}
+    .advanced-search .togled{
+    	bottom: 27px;
+    }
+
+    .block-menu-jop-agency-name ul.menu{
+    	top: 36px;
+    }
+}
+//640
+
+//550
+@media (max-width: 550px){
+	///////////footer//////////////////////////
+	.footer-copyright{
+		.row{
+			.col-md-8{
+				@include flex-width-col-xs(70%);
+			}	
+			.col-md-4{
+				@include flex-width-col-xs(30%);
+			}
+		}
+		.block-menu{
+			flex-basis:45%;	
+		}
+	}
+	///////////////////////////////////////////
+	///////engagement////////////////////
+	
+	// Nam.....................................//
+	.page-panel-form-basic #edit-job-type .fieldset-wrapper{
+    	@include flex-wrap(wrap);
+    }
+    .page-sign-up{
+    	.content-first h2{
+    		width: 100%;
+    	}
+    	form{
+    		width: 100% !important;
+
+    	}
+    }
+	//.............. Hằng ....................//
+    
+    ////////////vacancy--step==position/////////
+    #edit-position{
+    	.form-item-initialtives{
+    		.form-item{
+    			width:100%;
+    		}
+    	}
+    	#edit-detail{
+    		.form-checkboxes{
+    			@include flex-wrap(wrap);
+    		}
+    	}
+    }
+    #edit-group-right{
+    	.form-submit{
+    		@include sizeRem(padding-left,20);
+    	}
+    }
+    /////////////////////////////////////////////
+    ////////////vacancy/job-test-23sept-5-abc02/////////////////
+    .page-node-436{
+    	&.node-type-aps-vacancies{
+    		form{
+    			.form-item{
+    				@include flex-wrap(wrap);
+    			}
+    		}
+    		.field-name-field-job-description{
+    			padding-bottom:0;
+    		}
+    		#apsjobs-vacancy-approval-form{
+    			.form-item-approval-comment{
+    				margin-top:0;
+    			}
+    		}
+    	}
+    }
+    ////////////////////////////////////////////////////////////
+}
+//550
+
+
+// 480
+@media (max-width: $mobile-md) {
+
+	//////////////////11/10/2017///////////////////////
+	//------------page agencies--------------//
+	.page-agencies{
+		.view-agency{
+			.group-agency{
+				@include sizeRem(margin-bottom,10);
+			}
+		}
+	}
+	///////////////////END - 11/10/2017 ///////////////
+
+
+	///////////login or menu or header ////////////
+	.logged-in{
+		.block-menu{
+			ul.menu{
+				li{
+					a{
+						@include sizeRem(font-size,12);
+					}
+				}
+			}
+		}
+		.block-govcms-blocks{
+			width:100%;
+		}
+		.block-menu-agency-right{
+			@include flex-direction(column);
+		}
+
+		.block-menu-view-public{
+			margin-right:0;
+		}
+		.block-menu-jop-agency-name{
+			// margin-left:0;
+			// @include sizeRem(margin-top,10);
+			h2{
+				padding-left:0;
+				padding-right:0;
+				padding-bottom: 0;
+			}
+		}
+		.header{
+			#block-system-user-menu{
+				// margin-left:0;
+				@include sizeRem(padding-top,10);
+			}
+			.navbar-collapse{
+				padding-left:0;
+				padding-right:0;
+			}
+		}
+
+		
+		.navbar-toggle{
+			display:none;
+		}
+	}
+	///////////////////////////////////////////////
+
+	////////////header-menu-admin///////////////
+	.admin-menu{
+		.block-menu-view-public a{
+			//@include sizeRem(font-size,10);
+			@include sizeRem(padding-right,7.5);
+			@include sizeRem(padding-left,7.5);
+			min-height:auto;
+		}
+		.header {
+			#block-system-user-menu {
+				ul{
+					&.menu{
+						li{
+							a {
+								@include sizeRem(font-size,10);
+								@include sizeRem(padding-right,7.5);
+								@include sizeRem(padding-left,7.5);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	/////////////////
+	/////////////////////header////////////////////
+	.header{
+		.menu-name-main-menu{
+			ul{
+				&.menu{
+					li{
+						@include sizeRem(padding-left,15);
+						@include sizeRem(padding-right,15);
+						&:first-child{
+							padding-left: 0;
+						}
+						&:last-child{
+							padding-right: 0;
+						}
+					}
+				}
+			}
+		}
+		.container{
+			min-height: 95px;
+			padding-top: 15px;
+			padding-bottom: 6px;
+		}
+	}
+	.logged-in #block-menu-block-govcms-menu-block-footer{
+		padding-top: 17px;
+	}
+	#bs-example-navbar-collapse-1{
+		top: 25px;
+	}
+	#logo{
+		border-right:none;
+		a {
+			@include background-size(73px 37px);
+			@include sizeRem(height,37);
+			@include sizeRem(width,73);
+		}
+	}
+	.page-agency-account-details #edit-agency-detail {
+		.form-type-select:after{
+			width: 96%;
+		}
+		.form-item-nominate-approver-:after{
+			width: 96%;
+		}
+	}
+	///////////////////////////////////////////////
+	////////////worktray///////////
+	.views-aps-work-tray{
+		.view-row{
+			@include display-flex;
+			@include flex-wrap(wrap);
+			p{
+				@include sizeRem(margin-bottom,0);
+			}
+		}
+	}
+	.group-field-inner {
+		width:100%;
+		padding-left:0;
+		@include sizeRem(padding-top,15);
+	}
+	.menu-name-menu-secondary-menu{
+		li{
+			@include sizeRem(min-height,35);
+			a{
+				@include sizeRem(padding-top,10);
+				@include sizeRem(padding-bottom,10);
+			}
+		}
+	}
+	.page-work-tray{
+		&.not-front{
+			.header{
+				&+*{
+					@include sizeRem(padding-top,118);
+				}
+			}
+		}
+	}
+	//////////engagement///////////////
+	.not-front input[type="checkbox"]{
+		&+ label{
+			@include sizeRem(padding-left,25);
+		}
+	}
+	//////////banner----/////////////
+	.header{
+		// position: relative;
+	}
+	.banner{
+		margin-top:0;
+	}
+	// .not-front{
+	// 	&.page-user,&.page-sign-up,&.page-sign-up-account,{
+	// 		.header{
+	// 			&+ *{
+	// 				@include sizeRem(padding-top, 0);
+	// 			}
+	// 		}
+	// 	}
+			
+	// }
+
+
+	// .view-banner-basic{
+	// 	padding-top:0;
+	// }
+	////////////banner-my-job///////////////
+	.pane-banner-basic{
+		&.pane-banner-300{
+			.inside{
+				@include sizeRem(min-height,190);
+			}
+		}
+	}
+	.page-my-job-vacancies{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-field-link{
+					@include sizeRem(padding-top,15);
+					a{
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+	/////////////////aps-gazette///////////////
+	.page-aps-gazette{
+		.paner-aps-gazatte-govcms-sort-date{
+			.form-item-sort-order{
+				width:100%;
+				text-align:left;
+			}
+		}
+		.views-exposed-widgets{
+			.views-widget-sort-order{
+				
+				#edit-sort-order{
+					border:none;
+				}
+				.form-item-sort-order{
+					border:1px solid $border-color;
+					@include border-radius(4px);
+					@include sizeRem(margin-bottom,15);
+				}
+			}
+		}
+		.view-apsjobs-gazette{
+			.view-header{
+				@include sizeRem(max-width,255);
+				top:0;
+				// padding-left:0;
+			}
+		}
+	}
+	.banner{
+		.paner-apsjobs--gazette-search-form{
+			.aps-gazette{
+				width:100%;
+				form{
+					@include flex-wrap(wrap);
+				}
+				div{
+					&:first-child{
+						width:100%;
+						@include sizeRem(padding-bottom,15);
+						select{
+							@include border-radius(4px);
+						}
+					}
+					&:nth-child(2){
+						width:100%;
+						margin-right:-50px;
+						input{
+							@include border-radius(4px);
+						}
+					}
+				}
+				.form-item-find-button{
+					@include sizeRem(width,50);
+				}
+			}
+		}
+	}
+	//////////////agency////////////////////////////
+	.page-agencies{
+		.view-aps-job-baner{
+			.view-inner{
+				.views-field-body{
+					a{
+						&:before{
+							right:20%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/////////////////////banner-aps-work///////////////
+	.view-banner-basic{
+		&.view-type-aps{
+			@include sizeRem(min-height,310);
+		}
+	}
+	.view-banner-basic{
+		&.view-type-aps{
+			.view-inner{
+				@include sizeRem(padding-top,50);
+			}
+		}
+	}
+
+	//////////////aps-work/////////////////
+	// .not-front{
+	// 	&.page-aps-work{
+	// 		.header{
+	// 			&+*{
+	// 				@include sizeRem(padding-top,118);
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.views-field-field-link{
+		a{
+			display:block;
+			@include sizeRem(padding-top,13);
+			@include sizeRem(padding-bottom,13);
+		}
+	}
+	.view-aps-job-list-inner{
+		.views-field-field-link{
+			width:100%;
+		}
+	}
+	.block-abs-find-job{
+		.views-field-body{
+			@include sizeRem(margin-bottom,20);
+			a{
+				display:block;
+			}
+		}
+	}
+
+
+	.page-aps-work{
+		.view-aps-job-icon{
+			.views-field-field-image{
+				@include sizeRem(min-height,95);
+				@include sizeRem(margin-top,45);
+				&:before{
+					@include background-size(95px 95px);
+					@include sizeRem(height,95);
+					@include sizeRem(width,95);
+				}
+			}
+			.views-row{
+				@include flex-width-col-xs(100%);
+				max-width:none;
+				&:nth-child(2),&:nth-child(3),&:nth-child(4){
+					.views-field-field-image{
+						&:before{
+							@include background-size(95px 95px);
+							@include sizeRem(height,95);
+							@include sizeRem(width,95);
+						}
+					}
+				}
+			}
+			.views-field-title{
+				@include sizeRem(font-size,28);
+			}
+			.views-field-body{
+				padding-left:0;
+				padding-right:0;
+			}
+		}
+		.pane-view-banner-panel-pane-6{
+			.views-row{
+				.views-field-body{
+					margin-left:auto;
+					margin-right:auto;
+					@include sizeRem(max-width,206);
+
+				}
+			}
+		}
+		#content-feature-wrapper{
+			padding-top:0;
+			.container{
+				padding-top:0;
+				.pane-view-banner-panel-pane-6{
+					margin-top:0;
+				}
+			}
+		}
+		.view-abs-job-new-list{
+			.views-row{
+				&:first-child{
+					.views-field-title{
+						@include sizeRem(max-width,255);
+					}
+				}
+			}
+			.views-field-field-image{
+				// @include sizeRem(height,306);//16/10
+				img{
+					max-width:none;
+					width:auto;
+					@include transform(translateX(-17%));//17/10
+					height:100%;//16/10
+				}
+			}
+		}
+	}
+
+
+	.view-aps-job-icon{
+		.views-field-body{
+			@include sizeRem(margin-bottom,40);
+		}
+	}
+	.page-aps-work{
+		.view-abs-job-new-list{
+			.views-row{
+				&:nth-child(2n+1){
+					.group-aps-job-inner{
+						max-height:none;
+					}
+				}
+			}
+			
+		}
+	}
+
+	/////////////Home/////////////////
+	.view-abs-job-agency {
+		.views-row{
+			margin-left:0;
+			margin-right:0;
+		}
+		.view-content{
+			margin-right:0;
+			margin-left:0;
+		}
+	}
+	.front{
+		.content-main{
+			.view-banner-basic{
+				.views-field-title{
+					@include sizeRem(max-width,200);
+				}
+			}
+		}
+		.paner-govcms-aps-blocks-homepage-statistics{
+			@include sizeRem(padding-bottom,35);
+
+		}
+		.content-fifth{
+			h2{
+				@include sizeRem(max-width,200);
+				margin-left:auto;
+				margin-right:auto;
+			}
+		}
+	}
+	#content-sixth-wrapper{
+		.views-row{
+			.views-field-field-image{
+				.field-content{
+					img{
+						@include transform(translateX(-60%));
+					}
+				}
+			}
+		}
+		#views-inner-future{
+			top:40%;
+			@include sizeRem(padding-left,15);			
+			.views-field-title{
+				@include sizeRem(margin-bottom,10);
+			}
+			.field-content{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+	}
+	
+	//careosoul- 16/10/2017//
+	.aps-left-block{
+		.owl-theme{
+			.owl-controls{
+				.owl-page{
+					&.active{
+						span{
+							background-color:#d3d3d3;
+						}
+					}
+					span{
+						background-color:#d8d8d8;
+					}
+				}
+			}
+		}
+	}
+	
+
+	//////////////////////////////////
+	//////////public-acount//////////////////
+	.view-aps-user-admin{
+		.views-field-edit-node{
+			a{
+				margin-right:0;
+				margin-left:0;
+			}
+		}
+	}
+	.page-user-detail-admin{
+		.view-aps-govcms-email-alerts{
+			.views-field-nothing{
+				span{
+					margin-left:0;
+				}
+			}
+		}
+		.view-aps-user-admin{
+			.btn-group{
+				.views-field{
+					width:100%;
+				}
+			}
+			.views-field{
+				a{
+					width:100%;
+				}
+			}
+			.views-field-nothing-2{
+				@include sizeRem(margin-top,10);
+				a{
+					margin-left:0;
+					width:100%;
+				}
+			}
+		}
+		.pane-email-alert-panel-pane-1{
+			.views-field{
+				a{
+					width:100%;
+					margin-left:0;
+					&:first-child{
+						@include sizeRem(margin-bottom,10);
+					}
+				}
+			}
+		}
+		.content-second{
+			h2{
+				top:-48px;
+			}
+		}
+		.views-field-ops{
+			a{
+				display:block;
+				@include sizeRem(padding,13,2,30);
+			}
+		}
+	}
+	//Nam........................................//
+	.view-abs-job-list .views-row{
+		&.tablet-show{
+			display: none;
+		}
+		&.desktop-show{
+			display: none;
+		}
+		&.mobile-show{
+			display: block;
+		}
+	}
+	
+	
+	#name-and-slogan{
+		display: none;
+	}
+	#block-menu-block-govcms-menu-block-footer{
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.block-menu ul.menu li a, .menu-name-main-menu ul.menu li a{
+		@include sizeRem(font-size, 12);
+	}
+    .header #block-system-user-menu ul.menu li a{
+    	@include sizeRem(padding, 7.5, 2,15);
+    }
+    #block-menu-menu-agency-home-page{
+    	padding-left: 0;
+    	padding-right: 0;
+		ul.menu li{
+			@include sizeRem(padding-right, 7);
+			@include sizeRem(padding-left, 7);
+		}
+	}
+
+    #block-block-1 p a{
+    	@include sizeRem(padding, 7.5, 2,15);
+    }
+    .block-menu-view-public a{
+    	@include sizeRem(padding, 7.5, 2,15);
+    }
+    .block-menu-jop-agency-name h2{
+    	@include sizeRem(padding, 7.5, 2,15);
+    }
+    //
+    .page-user{
+    	.menu-name-menu-login-menu li{
+    		display: block;
+    		@include sizeRem(margin-bottom,15);
+    		a{
+    			width: 80%;
+    			margin: 0;
+    			text-align: center;
+    		}
+    	}
+    }
+    .page-sign-up #edit-submit{
+    	width: 100%;
+    }
+    #views-inner-future{
+    	padding-left: 0;
+    	left: 20%;
+    	@include translateX(-20%);
+    }
+
+    //
+    // .not-front{
+    // 	.view-banner-basic .view-inner{
+    // 		@include sizeRem(padding-top,162);
+    // 	}
+    // }
+    .page-aps-agency {
+    	.advanced-search{
+	    	@include sizeRem(padding-top,60);
+	    }
+	    
+	    .view-banner-basic {
+	    	.views-field-field-image img{
+	    		@include sizeRem(min-height,425);
+	    	}
+	    }
+    }
+    .page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-field-link{
+    	float: none;
+    	margin-top: 0;
+    }
+    .block-apsjobs-blocks{
+    	width: 100%;
+    }
+    .blocks-aps-home-static-carouse{
+    	display: none;
+    }
+    .front{
+    	.paner-govcms-aps-blocks-homepage-statistics{
+    		display: none;
+    	}
+    	.paner-apsjobs-blocks-homepage-carousel{
+    		display: block;
+    	}
+    	.blocks-aps-home-static-carouse{ 
+    		display: block;
+    		.aps-left-block .owl-carousel{
+    			display: block !important;
+    			@include opacity(1);
+    		}
+    		.pane-content{
+    			overflow: hidden;
+    			margin: 0 auto;
+    			@include sizeRem(max-width,320);
+    		}
+    	}
+    }
+    .aps-left-block {
+    	.govemment,.job-vacancies{
+    		@include flex-width-col-xs(100%);
+    	}
+    }
+
+    .page-aps-agency-my-job-vacancies .view-aps-vacancy .view-header h2{
+    	@include sizeRem(min-width,80);
+    }
+    // .page-aps-agency-my-job-vacancies .view-aps-vacancy .view-header h3{
+    // 	padding-left: 0;
+    // }
+    
+    .logged-in.page-aps-agency .pane-banner-basic-stt-banner-300 .view-inner{
+    	// @include sizeRem(padding-top,80,$important:true);
+    }
+
+    .page-aps-agency-my-job-vacancies .view-aps-vacancy .view-header{
+    	@include sizeRem(font-size,14);
+    }
+    .page-aps-agency-my-job-vacancies .pane-govcms-blocks-govcms-sort-date .sort-date .chosen-container{
+    	@include sizeRem(width,135, $important:true);
+    }
+
+    //.................Hằng........................//
+    ////////employment-vacancy/////////
+    .not-front{
+    	&.page-employment-vacancy{
+    		.header{
+    			&+*{
+    				@include sizeRem(padding-top,118);
+    			}
+    		}
+    	}
+    }
+    ///////////////////////////////////////
+	///////vacancy--step=agency///////////
+	#edit-agency{
+    	.form-item-standard,.form-item-ses,.form-item-training{
+    		&>label{
+				width:100%;
+				@include wp-font(font-body);
+    		}
+    	}
+    }
+    #edit-aps-class{
+    	#edit-standard,#edit-ses, #edit-training{
+    		width:100%;
+    	}
+    	// .form-type-checkbox{
+    	// 	label{
+    	// 		@include wp-font(font-body);
+    	// 	}
+    	// }
+    	
+    }
+    #edit-agency{
+    	
+    	.form-item{
+    		@include flex-wrap(wrap);
+    	}
+    }
+	//////////////////////////////////////
+	///////vacancy--step=notice_details////////
+	.page-employment-vacancy{
+		#edit-detail{
+			.form-item-publish-to-my-notices{
+				span{
+					a:last-child{
+						width:100%;
+						@include sizeRem(padding-left,25);
+					}
+				}
+			}
+		}
+		#edit-admin-info{
+			#edit-notice-number{
+				label{
+					@include sizeRem(margin-right,25);
+				}
+			}
+		}
+	}
+	////////////////.tai.........................
+	
+	.view-aps-vacancy{
+		.views-field-title{
+			@include sizeRem(font-size, 18);
+		}
+		.views-row .views-field-created{
+			position: static;
+			@include sizeRem(margin-top, 5);
+			@include sizeRem(margin-bottom, 5);
+		}
+	}
+	.page-aps-agency .pane-apsjobs-blocks-apsjobs-agency-count.view-grid-4-cols .view-row{
+		width: 100%;
+	}
+	.page-aps-agency{
+		.pane-govcms-blocks-govcms-agency-welcome{
+		 	.pane-content {
+		 		.welcome-back{
+			 		@include sizeRem(font-size, 20);
+			 		@include sizeRem(margin-bottom, 10);
+			 		width: 100%;
+			 	}
+			 	.last-login{
+			 		position: static;
+			 	}
+		 	}
+		}
+		.pane-aps-vacancy-panel-pane-3,.pane-view-gazette-panel-pane-2{
+			h2.pane-title{
+				@include sizeRem(font-size, 20);
+				width: 100%;
+			}
+		}
+		h2.pane-title{
+			@include sizeRem(font-size, 20);
+			width: 100%;
+		}
+		.view-aps-vacancy,.view-view-gazette {
+			.view-header{
+				position: relative;
+				top:0;
+				max-width: 100%;
+			}	
+		}
+		
+	}
+	.view-aps-outcomes{
+		.views-field-title{
+			@include sizeRem(font-size, 20);
+			a{
+				@include sizeRem(font-size, 20);
+			}
+		}
+	}
+	///////agencies-2/10/2017/////////////////
+	.page-agencies{
+		.paner-aps-govcms-agencies-search-form{
+			.form-aps-job-search{
+				div:first-child{
+					>div:last-child{
+						order:3;
+						width:100%;
+						padding-left:0;
+						
+					}
+				}
+				div{
+					&:last-child{
+						width:100%;
+						.success{
+							@include sizeRem(margin-top,20);
+							// @include sizeRem(margin-bottom,30);//////17/10/2017
+							width:100%;
+							padding-left:0;
+							float:none;
+						}
+					}
+				}
+			}
+			.dropdown{
+				width:100%;
+				padding-right:0;
+			}
+			.search-classify{
+				@include sizeRem(margin-top,20);
+				@include sizeRem(margin-bottom,20);
+			}
+			ul{
+				@include flex-wrap(wrap);
+				li{
+					width:100%;
+					&.active{
+						@include border-top-right-radius(4px);
+						border-bottom-left-radius:0;
+					}
+					&:last-child{
+						@include border-bottom-left-radius(4px);
+						border-top-right-radius:0;
+					}
+				}
+
+			}
+		}
+		
+		.view-agency{
+			.view-header{
+				padding-left:0;
+				@include sizeRem(margin-bottom,26);
+				@include sizeRem(margin-top,10);//17/10
+			}
+			.views-field-body{
+				@include sizeRem(padding-bottom,5);
+			}
+			.group-agency{
+				@include flex-wrap(wrap);
+				.views-field-field-link-to{
+					@include sizeRem(margin-right,0);
+				}
+			}
+		}
+		.item-list{
+			ul.pager{
+				li{
+					&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8),&:nth-child(9){
+						display:none;
+					}
+				}
+			}
+		}
+	}
+	//////////////////////////////////////////
+	////////////10/10/2017--sign-up page ////////////////////////////
+	.page-sign-up{
+		&:not(.page-comment-reply){
+			.main-content{
+				padding-top:0;
+			}
+		}
+	}
+	///......Move........///
+/*...................Nam 10/11/17.......................*/
+	.page-search-jobs.admin-menu{
+		.banner.group-search-togle{
+			// height: 252px;
+		}
+		.banner .paner-apsjobs-blocks-search-form{
+			// padding-top: 85px;
+		}
+	}
+	.paner-aps-govcm-search-create{
+		display: block;
+		float: none;
+	}
+	.page-search-jobs .paner-aps-gazatte-govcms-sort-date{
+		width: 100%;
+		float: none;
+		.sort-date{
+			@include sizeRem(margin-top,20);
+		}
+	}
+	//home
+	.logged-in{
+		.pane-banner-basic.pane-banner-300 {
+			.view-inner{
+				@include sizeRem(padding-top, 40);
+				@include sizeRem(padding-bottom, 40);
+			}
+			.view-banner-basic{
+				padding-bottom: 0;
+			}
+		}
+	}
+	.owl-carousel {
+		.owl-item{
+			&:nth-child(3),&:last-child{
+				.panel-title-home h2{
+					@include sizeRem(font-size,24);
+				}
+			}
+		}
+	}
+	//home
+	// search
+	.views-exposed-widgets .views-widget-sort-order{
+		margin-bottom: 0;
+	}
+	.page-aps-gazette .view-apsjobs-gazette .views-row{
+		@include sizeRem(padding,20);
+	}
+	.paner-aps-govcm-search-create {
+		a{
+			width: 100%;
+		}
+		p:last-child{
+			@include sizeRem(margin-bottom,30);
+		}
+	}
+	.page-search-jobs .view-aps-vacancy-search .view-header{
+		top: -20px;
+	}
+	.page-search-jobs .paner-aps-gazatte-govcms-sort-date{
+		margin-bottom: 35px !important;//16/10
+		@include sizeRem(margin-bottom,40,$important:true);
+	}
+	
+	.page-agencies .view-aps-job-baner .view-inner .views-field-title{
+		@include sizeRem(max-width, 250);
+	}
+	.page-aps-work .view-aps-job-baner .views-field-title{
+		@include sizeRem(max-width, 300);
+	}
+	.logged-in .paner-aps-dasboard-govcms-sort-date .sort-date{
+		width: 100% !important;
+	}
+	//.............Tai............13-10-07............//
+	.page-outcomes-create-outcome-promotion{
+		.form-apsjobs-create-outcome{
+			.form-item{
+				width: 100%;
+			}
+			#edit-actions{
+				input{
+					display: block;
+				    width: 100%;
+				    @include sizeRem(margin-bottom,15);
+				}
+			}
+		}
+	}
+	.node-type-aps-outcomes{
+		.group-date{
+			.views-field-title{
+				@include sizeRem(font-size, 24);
+			}
+			
+		}
+		.content-first{
+			.pane-content{
+				padding-bottom: 0;
+				display: block;
+				a{
+					width: 100%;
+				}
+				.reject-outcome-detail{
+					margin-left: 0 !important;
+					@include sizeRem(margin-top, 15);
+				}
+				.views-field-field-outcome{
+					margin-left: 0 !important;
+					@include sizeRem(margin-top, 15);
+					width: 100%;
+				}
+			}
+		}
+		.content-third{
+			.pane-content{
+				display: block;
+				a{
+					width: 100%;
+				}
+				.reject-outcome-detail{
+					margin-left: 0 !important;
+					@include sizeRem(margin-top, 15);
+				}
+				.views-field-field-outcome{
+					margin-left: 0 !important;
+					@include sizeRem(margin-top, 15);
+					width: 100%;
+				}
+			}
+		} 
+	}
+	.paner-menu-dashbord-vacancy-state li{
+		width:100%;
+		overflow: hidden;
+	}
+	.page-aps-agency-my-job-vacancies .paner-aps-dasboard-govcms-sort-date{
+		position: static;
+		right: 0;
+		margin-bottom: 0;
+	}
+	.page-aps-agency-my-job-vacancies .content-first .view-aps-vacancy{
+		@include sizeRem(padding-top, 20);
+	}
+	.page-aps-agency{
+		.paner-apsjobs-block-agency-welcome .pane-content{
+			display: block;
+		}
+		p.welcome-back{
+			@include sizeRem(font-size, 20);
+		}
+	}
+	.page-aps-agency-my-outcomes .paner-aps-dasboard-govcms-sort-date{
+		position: static;
+    	right: 0;
+    	margin-bottom: 0;
+	}
+	.page-aps-agency-my-outcomes .view-aps-vacancy .view-header{
+		position: static !important;
+		padding-left: 0 !important;
+	}
+	.page-aps-agency .view-aps-outcomes .view-header{
+        top: 0;
+        max-width: 100%;
+	}
+    //.............end.......tai......................//
+//////////////////16/10/2017///////////////////////
+////--------------page Search-----------////
+	.page-aps-work{
+		.views-field-field-link{
+			a{
+				@include sizeRem(font-size,15);
+			}
+		}
+	}
+
+	///////////////////END - 16/10/2017 ///////////////
+//////////////////18/10/2017///////////////////////
+	.logged-in{
+		.header{
+			.container{
+				@include sizeRem(min-height,95);
+				@include sizeRem(padding-top,15);
+			}
+		}
+		#bs-example-navbar-collapse-1{
+			@include sizeRem(top,26);
+		}
+		&.not-front{
+			.header + *{
+				@include sizeRem(padding-top,95);
+			}
+			.banner{
+				margin-top:-95px;
+			}
+		}
+		.view-banner-basic{
+			//@include sizeRem(padding-top,95);
+		}
+	}
+	.menu-name-main-menu{
+	 	ul{
+	 		&.menu{
+	 			li{
+	 				a{
+	 					@include wp-font(font-medium);
+	 				}
+	 			}
+	 		}
+	 	}
+	}
+	
+   .front .advanced-search{
+   	  //margin-top: -41px;
+   }
+	////--------------page Home-----------////
+	
+	.page-aps-work .view-abs-job-new-list .views-field-title{
+		max-width: 280px;
+	}
+	///////////////////END - 18/10/2017 ///////////////
+    .page-user-detail-admin{
+		.header + *{
+			padding-top: 0 !important ;
+		}
+    }
+    .block-menu-jop-agency-name ul.menu{
+    	top: 44px;
+    }
+
+    .page-aps-gazette .view-aps-job-baner .view-inner .views-field-title{
+    	max-width: 257px;
+    	padding-right: 10px;
+    }
+    .node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group a{
+    	width: 100%;
+    	margin-left: 0;
+    	margin-bottom: 15px;
+    }
+    .node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group {
+    	input, button{
+    		width: 100%;
+    		margin-left: 0;
+    		margin-bottom: 15px;
+    	}
+    }
+    .node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group{
+    	padding-bottom: 0;
+    }
+
+    .view-banner .views-field-body{
+    	margin-top: 3px;
+    }
+    .banner .paner-apsjobs-blocks-search-form{
+    	padding-top: 320px;
+    }
+    .view-banner .views-field-field-image-slide .owl-item div[class*="item-"]{
+		@include sizeRem(height, 697);
+	}
+	.logged-in .view-banner .views-field-body{
+		top: 17px;
+	}
+	.logged-in{
+		.advanced-search .togled{
+			bottom: 22px;
+		}
+	}
+	.logged-in .banner .paner-apsjobs-blocks-search-form{
+		padding-top: 225px;
+	}
+	.front .paner-apsjobs-blocks-search-form .ad-location{
+		bottom: 62px;
+	}
+	.logged-in.front .inside{
+		@include sizeRem(height, 620);
+	}
+
+	///////////footer//////////////////////////
+	.footer-copyright{
+		.container{
+			@include sizeRem(padding,20,2,15);
+		}
+		.row{
+			@include flex-wrap(wrap);
+			@include sizeRem(padding-top,15);
+			.col-md-8{
+				@include flex-width-col-xs(100%);
+				ul{
+					&.menu{
+						text-align:left;
+					}
+				}
+			}
+			.region-footer-bottom-left{
+				@include sizeRem(padding-bottom,20);
+				@include sizeRem(margin-bottom,25);
+				// border-bottom: 1px solid $border-color;
+			}	
+			.col-md-4{
+				@include flex-width-col-xs(100%);
+				@include sizeRem(padding-left,15);
+
+				h2{
+					text-align:left;
+					margin-bottom: 15px;
+				}
+				ul{
+					text-align:left;
+				}
+			}
+		}
+		.region-footer-bottom-left{
+			@include flex-direction(column);
+			margin-left:-5px;
+		}
+		.block-menu{
+			flex-basis:auto;	
+		}
+		.block-privacy-menu ul{
+			@include justify-content(flex-start);
+			padding-left: 0;
+			margin-bottom: 0;
+			li{
+				padding-left: 0;
+			}
+		}
+	}
+	.block-icon-social{
+		@include sizeRem(padding-bottom,25);
+		ul{
+			li{
+				&:first-child{
+					margin-left:-10px;
+				}
+			}
+		}
+	}
+}
+//480
+//420
+@media (max-width: 420px){
+	
+	////////////header///////////////////////
+	.menu-name-main-menu{
+		ul{
+			&.menu{
+				li{
+					a{
+						@include sizeRem(font-size,12);
+					}
+				}
+			}
+		}
+	}
+	/////////////////////////////////////////
+
+	.page-agency-account-details {
+		#edit-btn-group{
+			@include flex-wrap(wrap);
+		}
+		form #edit-submit{
+			width: 100%;
+			@include sizeRem(margin-top,15);
+		}
+	}
+	///////////////////////////////////////////
+	#edit-review{
+		#edit-duties{
+			li{
+				p{
+					@include sizeRem(padding-left,30);
+					@include wp-font(font-body);
+				}
+			} 
+		}
+	}
+	.govcms-form-add-new{
+		#edit-label{
+			label{
+				@include sizeRem(font-size,22);
+			}
+		}
+		legend{
+			@include sizeRem(font-size,16);
+		}
+	}
+	#edit-header{
+		ul{
+			li{
+				@include sizeRem(min-height,35);
+			}
+			a{
+				@include sizeRem(padding-top,10);
+				@include sizeRem(padding-bottom,10);
+			}
+		}
+	}
+
+	///////////engagement///////////
+	#edit-aps-class{
+		.form-item{
+			// width:100%;
+			label{
+				@include wp-font(font-medium);
+			}
+		}
+	}
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			label{
+				@include sizeRem(font-size,22);
+			}
+			p{
+				span{
+					@include sizeRem(padding-left,40);
+				}
+			}
+		}
+	}
+	////////////////aps-gazette/////////////
+	
+	.page-aps-gazette{
+		.view-apsjobs-gazette{
+			.views-row{
+				@include sizeRem(padding,26,4,20,20,20);
+			}
+			.views-field-body{
+				a{
+					width:100%;
+					@include sizeRem(height,45);
+					@include sizeRem(margin-bottom,10);
+					@include sizeRem(padding-top,8.5);
+					@include sizeRem(padding-bottom,8.5);
+				}
+			}
+		}
+		.paner-aps-gazatte-govcms-sort-date{
+			.form-item-sort-order{
+				@include sizeRem(margin-bottom,15);
+			}
+		}
+	}
+	.view-apsjobs-gazette{
+		.views-row{
+			.group-gazette-right{
+				text-align:left;
+				width:100%;
+				@include sizeRem(padding-top,15);
+				@include sizeRem(margin-bottom,15);
+			}
+			.group-gazette-left{
+				float:none;
+				display:block;
+			}
+
+		}
+	}
+
+	
+	////////////////////////////////////////
+
+	//////////////login-footer////////////
+	.logged-in{
+		.footer-copyright{
+			.row{
+				@include flex-direction(column);
+				.col-md-8{
+					@include flex-width-col-xs(100%);
+				}
+				.col-md-4{
+					@include flex-width-col-xs(100%);
+				}
+			}
+			.contextual-links-region {
+				.region-footer-bottom-right {
+					.block-menu-menu-bottom{
+						text-align:left;
+					}
+				}
+			}
+		}
+	}
+	// Nam...............................................//
+	.footer-copyright .contextual-links-region .region-footer-bottom-right .panel-title a{
+		float: none !important;
+		display: inline-block;
+		@include sizeRem(margin-bottom,8);
+	}
+ 
+	.paner-menu-dashbord-vacancy-state li a{
+		@include sizeRem(padding-left,7);
+		@include sizeRem(padding-right,7);
+		@include sizeRem(font-size, 11);
+	}
+
+	.page-aps-agency{
+		.footer-copyright .block-menu{
+			flex-basis: 100%;
+		}
+		.footer-copyright .row .col-md-8{
+			@include sizeRem(padding-right,15);
+		}
+	}
+
+	
+	//....Hằng....................//
+	.page-node{
+		&.node-type-aps-vacancies{
+			
+			&.not-front{
+				.footer-copyright{
+					@include sizeRem(margin-top,45);
+				}
+			}
+		}
+	}
+	// .not-front{
+	// 	.footer-copyright{
+	// 		@include sizeRem(margin-top,22);
+	// 	}
+	// }
+//uêr
+	.page-agency-account-details #edit-agency-detail .form-item{
+		width: 100%;
+	}
+	///////////////3/10///////////////////////////////
+	.group-gazette-left{
+		width:100%;
+		padding-right:0;
+	}
+	.page-aps-gazette{
+		.view-apsjobs-gazette{
+			.views-field{
+				span{
+					@include sizeRem(padding-right,6);
+				}
+				.field-content{
+					display:inline-block;
+
+				}
+			}
+		}
+		
+	}
+	//////////////////12/10/2017///////////////////////
+	//------------Home page--------------//
+	.view-abs-job-relation{
+		.views-field-field-image{
+			@include sizeRem(height,220);
+			overflow:hidden;
+			.field-content{
+				img{
+					max-width: inherit;
+					@include transform(translate(-19%, -19%));
+				}
+			}
+		}
+	}
+
+	// ///////////////////END - 12/10/2017 ///////////////
+//////////////////18/10/2017///////////////////////
+	////--------------page Home-----------////
+	.view-apsjobs-gazette{
+		.views-row{
+			.group-gazette-left{
+				margin-bottom:0;
+			}
+		}
+		.views-field-nothing{
+			@include sizeRem(margin-top,10);
+		}
+	}
+	
+   	.logged-in.front .inside{
+		height: 620px;
+	}
+	///////////////////END - 18/10/2017 ///////////////
+	.container-inline-date .form-item, 
+	.container-inline-date .form-item input{
+		width: 100%;
+	}
+	.form-apsjobs-create-outcome .form-item > label{
+		min-width: auto;
+		margin-right: 15px;
+	}
+}
+//420
+
+@media (max-width: 375px){
+	///////////////////////header////////////////////
+	.header{
+		.menu-name-main-menu{
+			ul{
+				&.menu{
+					li{
+						@include sizeRem(padding-left,12);
+						@include sizeRem(padding-right,12);
+					}
+				}
+			}
+		}
+	}
+	/////////////////////////////////////////////////
+	#edit-review{
+		#edit-duties{
+			li{
+				p{
+					@include sizeRem(padding-left,20);
+					@include wp-font(font-body);
+				}
+			} 
+		}
+	}
+
+	///////////engagement///////////////////
+	
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			p{
+				span{
+					@include sizeRem(padding-left,20);
+				}
+			}
+		}
+	}
+}
+// 360
+@media (max-width: $mobile-sm) {
+	//////////////////11/10/2017///////////////////////
+	//------------page aps-work--------------//
+	.page-aps-work{
+		.view-abs-job-new-list{
+			.views-field-title{
+				@include sizeRem(max-width,275);
+			}
+		}
+	}
+	///////////////////END - 11/10/2017 ///////////////
+	// /////////////////////header////////////////////
+	// ///////////////////////////////////////////////
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			p{
+				span{
+					display:inline-block;
+					@include sizeRem(max-width,165);
+					vertical-align:top;
+				}
+			}
+		}
+	}
+	////////banner//////////////////////////
+	.view-aps-job-baner{
+		.view-inner{
+			.views-field-title{
+				@include sizeRem(font-size,26);
+			}
+		}
+	}
+
+	////////////////////////////////////////
+	///////public-account//////////////
+	.page-user{
+		.pane-page-title{
+			h1{
+				@include sizeRem(font-size,26);
+				word-break: break-all;
+			}
+		}
+		.view-aps-user-admin{
+			legend{
+				@include sizeRem(font-size,20);
+				@include sizeRem(margin-bottom,20);
+			}
+			.views-field{
+				span{
+					@include sizeRem(font-size,14);
+					line-height:1.43;
+					&.field-content{
+						line-height:2.13;
+					}
+				
+				a{
+					@include sizeRem(font-size,12);
+				}
+				}
+			}
+		}
+		.pane-email-alert-panel-pane-1{
+			a{
+				&.btn-a{
+					@include sizeRem(width,130);
+					min-width:auto;
+					@include sizeRem(height,45);
+				}
+			}
+			h2{
+				@include sizeRem(font-size,20);
+			}
+			.views-field{
+				&.views-field-nothing{
+					a{
+						@include sizeRem(font-size,12);
+					}
+				}
+				a{
+					@include sizeRem(font-size,20);
+				}
+			}
+		}
+		.content-second{
+			h2{
+				@include sizeRem(font-size,20);
+			}
+		}
+
+		.view-jobs{
+			.views-field-title{
+				a{
+					@include sizeRem(font-size,20);
+				}
+			}
+		}
+		.view-aps-govcms-email-alerts{
+			.group-info{
+				.views-field-title{
+					margin-bottom:0;
+				}
+			}
+		}
+	}
+	/////////////vacancy--//////////
+	.page-employment-vacancy{
+		#edit-group-btn{
+			.form-submit{
+				margin-left:0;
+				width:100%;
+				@include sizeRem(margin-top,10);
+			}
+		}
+	}
+	////////////////////////////////
+	/////////vacancy--step=position////////////
+	#edit-group-right{
+		.form-submit{
+			width:100%;
+			position:static;
+			@include sizeRem(margin-bottom,10);
+
+		}
+		.form-item-postcode{
+			.form-text{
+				width:100%;
+			}
+		}
+	}
+
+	#edit-location{
+		.form-item{
+			&.form-item-postcode{
+				@include sizeRem(margin-bottom,10);
+			}
+		}
+		#edit-group-btn-location{
+			input{
+				margin-left:0;
+				width:100%;
+				&:first-child{
+					@include sizeRem(margin-bottom,10);
+				}
+			}
+		}
+	}
+	#edit-position{
+		.ui-slider-horizontal{
+			@include sizeRem(margin-left,7.5);
+			@include sizeRem(margin-right,7.5);
+		}
+	}
+	///////////////////////////////////////////
+	////////////administration-continue-1/////////////
+	.page-administration{
+		#govcms-engagement-action-existing-notice-form{
+			#edit-group-btn{
+				input{
+					width:100%;
+					margin-left:0;
+					&:first-child{
+						@include sizeRem(margin-bottom,10);
+					}
+				}
+			}
+			.btn-full-notice{
+				width:100%;
+				text-align:center;
+			}
+		}
+	}
+	//////////////////////////////////////////////////
+
+	///////////////test-index-search///////////////
+	.page-node{
+		&.node-type-aps-vacancies{
+			#content-fifth-wrapper{
+				.panel-pane{
+					width:100%;
+				}
+			}
+			.view-aps-vacancies-detail-page{
+				padding-left:0;
+			}
+		}
+	}
+	///////////////////////////////////////////////
+	/////////////vacancy/job-test-23sept-5-abc02//////////
+	.page-node-436{
+		&.node-type-aps-vacancies{
+			form{
+				#edit-actions{
+					a{
+						display:block;
+						text-align:center;
+						margin-left:0;
+						@include sizeRem(margin-bottom,10);
+					}
+				}
+				#edit-submit{
+					width:100%;
+					margin-left:0;
+				}
+			}
+		}
+	}
+	///......Move........///
+/*...................Nam 10/11/17.......................*/.view-banner {
+		.views-field-body{
+		    .panel-title-home h2{
+				br{
+					display: none;
+				}
+			}
+		}
+	}
+	.page-aps-agency-my-job-vacancies {
+		#subnav .paner-menu-dashbord-vacancy-state{
+			display: inherit;
+			overflow-x: scroll;
+			padding-bottom: 10px;
+		}
+		&.admin-menu{
+			#subnav .paner-menu-dashbord-vacancy-state{
+				@include display-flex;
+				overflow-x: hidden;
+			}
+		}
+	}
+	//////////////////12/10/2017///////////////////////
+	//------------Home page--------------//
+	.view-abs-job-relation{
+		.views-field-field-image{
+			.field-content{
+				img{
+					@include transform(translate(-26%, -21%));
+				}
+			}
+		}
+	}
+    
+    .header{
+		.menu-name-main-menu{
+			ul{
+				&.menu{
+					@include justify-content(flex-start);
+					li{
+						@include sizeRem(padding-left, 7.5);
+						@include sizeRem(padding-right, 7.5);
+					}
+				}
+			}
+		}
+	}
+	///////////////////END - 12/10/2017 ///////////////
+}
+
+@media (max-width: 355px){
+	.view-banner .views-field-body{
+		//margin-top: 30px;
+		.panel-title-home h2{
+			//@include sizeRem(font-size,24);
+		}
+	}
+	.owl-carousel {
+		.owl-item{
+			&:nth-child(3),&:last-child{
+				.panel-title-home h2{
+					@include sizeRem(font-size,22);
+				}
+			}
+		}
+	}
+}
+
+// 320
+@media (max-width: $mobile-xs) {
+	#govcms-engagement-add-new-engagement-form{
+		#edit-label{
+			p{
+				@include wp-font(font-medium);
+				span{
+					@include wp-font(font-body);
+					max-width:none;
+					padding-left:0;
+					width:100%;
+				}
+			}
+		}
+	}
+	// Nam..............................//
+	// .header {
+	// 	.menu-name-main-menu ul.menu li{
+	// 		@include sizeRem(padding-right, 10);
+	// 		@include sizeRem(padding-left, 10);
+	// 		&:first-child{
+	// 			padding-left: 0;
+	// 		}
+	// 	}
+	// }
+	#block-menu-menu-agency-home-page{
+		ul.menu li{
+			@include sizeRem(padding-right, 0);
+			@include sizeRem(padding-left, 0);
+		}
+	}
+}
+//320
+
+
+// Hang
+.block-menu-second{
+	overflow:auto;
+	background-color:$bg-menu-color;
+	ul{
+		list-style-type: none;
+		@include sizeRem(margin-bottom,0);
+		@include sizeRem(padding,0);
+		text-align:center;
+		li{
+			display: inline-block;
+			@include sizeRem(margin-left,-5);
+			&:hover,&:focus{
+				background-color:#5161a7;
+			}
+			@include sizeRem(padding,15, 2, 20);
+			a{
+				
+				// @include sizeRem(padding-bottom,10);
+				text-transform:capitalize;
+				line-height:0.88;
+				color:$white-color;
+				letter-spacing: 0.2px;	
+			}
+		}
+		li.active{
+			background-color:lighten(#5161a7, 8%);
+		}
+	}
+}
+//
+
+.view-list-worktray{
+	@include sizeRem(padding,70,4,60,45,60);
+	@include sizeRem(font-size, 15);
+	.view-row{
+		background-color:$white-color;
+		@include sizeRem(margin-bottom, 35);
+		@include sizeRem(padding,35,4,0,35,35);
+		@include border-radius(5px);
+
+	}
+		
+	.media-left{
+		vertical-align:middle;
+	}
+	.field-img{
+		display: inline-block;
+		background-color: blue;
+		@include sizeRem(width, 57);
+		@include sizeRem(height, 77);
+	}
+
+	.field-title{
+		@include wp-font(font-bold);
+		@include sizeRem(font-size, 20);
+		@include sizeRem(margin-bottom, 3);
+		a{
+			color:$blue-color1;
+			border-bottom:1px solid $blue-color1;
+			&:hover{
+				border-bottom:none;
+			}
+		}
+	}
+	
+	.media-right{
+		@include sizeRem(padding-left, 20);
+		vertical-align:middle;
+		color:$body-color;
+	}
+
+}
+////////////////////////////////
+.list-items{
+	.list-item{
+		position: relative;
+	}
+	.label{
+		color:$body-color;
+		@include wp-font(font-body);
+		line-height:1.67;
+		@include sizeRem(padding,0);
+		// @include sizeRem(width,120);
+		@include sizeRem(font-size,15);
+		display:inline-block;
+		text-align:left;
+		position: absolute;
+		// top:0;
+		left:0;
+	}
+	.item-body{
+		display:inline-block;
+		@include wp-font(font-bold);
+		line-height:1.67;
+		@include sizeRem(font-size,15);
+		@include sizeRem(padding-left,235);
+		@include sizeRem(min-height,25);
+	}
+}
+.type-border{
+	.list-item{
+		@include sizeRem(padding,20,2,0);
+		border-bottom:1px solid $border-color;
+		&.last{
+			border-bottom:none;
+			@include sizeRem(padding-bottom,30);
+			@include sizeRem(margin-bottom,30);
+		}
+	}
+	.label{
+		width:auto;
+	}
+	.item-body{
+		display:inline-block;
+		// width:80%;
+		@include wp-font(font-medium);
+		@include sizeRem(padding-left,168);
+	}	
+	
+}
+.view-list-review{
+	.view-row{
+		&:nth-child(odd){
+			background-color:$white-color;
+			@include sizeRem(padding,35,4,40,30,40);
+		}
+		&:nth-child(even){
+			background-color:#ecedf2;
+			@include sizeRem(padding,35,4,40,45,40);
+			.view-header{
+				@include sizeRem(margin-bottom,40);
+			}
+		}
+	}
+	.view-row.row-last{
+		border-bottom-right-radius:5px;
+		border-bottom-left-radius:5px;
+	}
+	.view-header{
+		@include sizeRem(margin-bottom,20);
+		h3{
+			@include wp-font(font-bold);
+			display:inline-block;
+			margin:0;
+		}
+		.header-left{
+			display:inline-block;
+		}
+		.field-body{
+			@include sizeRem(margin-top,3);
+		}
+		.header-right{
+			display:inline-block;
+			float: right;
+		}
+		.field-date{
+			@include sizeRem(margin-top,3);
+		}
+
+	}
+	.view-content{
+	}
+	
+	.job-description{
+		.field-title{
+			@include sizeRem(margin-bottom,20);
+		}
+	}
+}
+////22///////////////////////22-all notice//////////////
+.view-waiting-list{
+	background-color:$white-color;
+	border-radius:5px;
+	@include sizeRem(padding,25,4,40,50,40);
+	@include sizeRem(font-size,15);
+	@include sizeRem(margin-bottom,50);
+	table{
+		empty-cells:show;
+		width:100%;
+		line-height:1.78;
+		tbody{
+			border-top:none;
+		}
+	}
+}
+.tb-heading{
+	line-height:1.33;
+	border-bottom:1px solid $border-color;
+	th{
+		@include sizeRem(padding-bottom,20);
+		border-bottom:none;
+	}
+}
+.tb-data-row{
+	border-bottom:1px solid $border-color;
+	td{
+		@include sizeRem(padding-bottom,15);
+		@include sizeRem(padding-top,30);
+		vertical-align:top;
+	}
+	.notice{
+		@include sizeRem(max-width,143);
+	}
+	.position{
+		max-width:60%;
+	}
+	.publication{
+		@include sizeRem(max-width,86);
+	}
+	.save-by{
+		@include sizeRem(max-width,255);
+	}
+	.action{
+		text-align:right;
+		a{
+			color:$body-color;
+			border-bottom:1px solid $border-color;
+			&:hover{
+				border-bottom:none;
+			}
+		}
+	}
+	.tb-col-1{
+		width: 22%;
+	}
+	.tb-col-2{
+		width: 20%;
+	}
+	.tb-col-3{
+		width: 22%;
+	}
+	.tb-col-4{
+		width: 30%;
+	}
+	.tb-col-5{
+		width: 6%;
+	}
+}
+/////////////////////////////////17-review////////////////////
+.panel-review-wrapper{
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	
+}
+.view-list-review-Engagement{
+	border:1px solid #aeaeae;
+	@include sizeRem(padding,30,4,25,0,25);
+	margin-left:-1px;
+	margin-right:-1px;
+	.view-row{
+		@include sizeRem(padding-bottom,35);
+		.list-items{
+			@include sizeRem(padding-left,25);
+			@include sizeRem(padding-right,25);
+		}
+		.list-item{
+			border-bottom:1px solid $black-color;
+			&.last{
+				border-bottom:none;
+			}
+		}
+		.label{
+			@include wp-font(font-medium);
+			line-height:2.33;
+			@include sizeRem(left,10);
+		}
+		.item-body{
+			@include wp-font(font-body);
+			line-height:2.33;
+			padding-left:26%;
+		}
+	}
+	.row-header{
+		border-bottom:2px solid #aeaeae;;
+		@include sizeRem(padding,0,4,15,2,15);
+	}
+	.header-left{
+		line-height:1.33;
+		@include sizeRem(font-size,20);
+		@include wp-font(font-bold);
+		display:inline-block;
+	}
+	.header-right{
+		line-height:1.48;
+		@include sizeRem(font-size,18);
+		display:inline-block;
+		float:right;
+	}
+	.field-description{
+		@include sizeRem(padding,3, 4,0, 10, 15);
+		line-height:1.78;
+	}
+	.field-title-null{
+		@include sizeRem(font-size,20);
+		@include wp-font(font-bold);
+		line-height:1.33;
+		@include sizeRem(padding-left,15);
+		p{
+			@include sizeRem(max-width,130);
+		}
+	}
+}
+
+.block-review-header{
+	@include sizeRem(padding,25,2,40);
+	.label{
+		@include wp-font(font-bold);
+		line-height:1.33;
+	}
+	.item-body{
+		line-height:1.33;
+		@include wp-font(font-body);
+		padding-left:37%;
+	}
+}
+
+.block-enagement-footer{
+	@include sizeRem(padding-top,20);
+	@include sizeRem(padding-bottom,15);
+	line-height:1.78;
+	font-style:italic;
+	text-align:center;
+	letter-spacing:0.2px;
+}
+
+///////////////////22-notice-waiting-list/////////////
+.view-notice-waiting-list{
+	background-color:$white-color;
+	@include border-radius(5px);
+	@include sizeRem(padding,50,4,30,70,40);
+	@include sizeRem(font-size,15);
+	@include sizeRem(margin-bottom,50);
+	table{
+		@include sizeRem(padding-top,10);
+		empty-cells:show;
+		width:100%;
+		line-height:1.78;
+		tbody{
+			border-top:none;
+		}
+	}
+}
+
+.block-form-waiting-list{
+	overflow:auto;
+	@include sizeRem(padding-bottom,5);
+	.item-form{
+		overflow:auto;
+	}
+	.label{
+		color:$body-color;
+		@include wp-font(font-bold);
+		line-height:1.33;
+		@include sizeRem(padding,0);
+		@include sizeRem(padding-top,8);
+		@include sizeRem(font-size,15);
+		display:inline-block;
+		text-align:left;
+
+	}
+	.input-text{
+		display:inline-block;
+		width:83%;
+		float:right;
+	}
+	input{
+		width:100%;
+		border-radius:0;
+		@include wp-font(font-medium);
+		line-height:1.33;
+		@include sizeRem(font-size,15);
+		@include placeholder($body-color...);
+	}
+	.button-item{
+		float:right;
+		@include sizeRem(padding-top,10);
+	}
+	button{
+		@include sizeRem(width,139);
+		@include sizeRem(height,42);
+		background-color:$blue-color;
+		color:$black-color;
+		line-height:1;
+		border-style:none;
+		@include wp-font(font-medium);
+		&:hover{
+			background-color:lighten($blue-color,5%);
+		}
+	}
+}
+.table-waiting-list{
+	.tb-data-row{
+		.assigned{
+			@include sizeRem(max-width,255);
+		}
+	}
+	.tb-waiting-col-1{
+		width:18%;
+	}
+	.tb-waiting-col-2{
+		width:16%;
+	}
+	.tb-waiting-col-3{
+		width:13%;
+	}
+	.tb-waiting-col-4{
+		width:30%;
+	}
+	.tb-waiting-col-5{
+		width:16%;
+	}
+	.tb-waiting-col-6{
+		width:7%;
+	}
+	.icon-required{
+		display: inline-block;
+		@include sizeRem(width,26);
+		@include sizeRem(height,26);
+	    // border: 1px solid;
+	    @include sizeRem(padding-left,7);
+	    @include sizeRem(margin-left,-35);
+	    @include sizeRem(margin-right,8);
+	    border-radius: 50%;
+	    background-color:$blue-color;
+	}
+}

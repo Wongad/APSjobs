@@ -1,0 +1,5 @@
+name = APSJobs Services
+description = APSJobs Services REST.
+package = APSJobs
+dependencies[] = services
+core = 7.x

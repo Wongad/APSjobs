@@ -1,0 +1,145 @@
+<?php
+
+require_once drupal_get_path('module', 'apsjobs_signup') . '/forms/apsjobs_signup.form.inc';
+require_once drupal_get_path('module', 'apsjobs_signup') . '/forms/apsjobs_signup.validate.inc';
+require_once drupal_get_path('module', 'apsjobs_signup') . '/forms/apsjobs_signup.submit.inc';
+require_once drupal_get_path('module', 'apsjobs_signup') . '/apsjobs_signup.mail.inc';
+
+/**
+ * Implements hook_init()
+ */
+function apsjobs_signup_init() {
+  drupal_add_js(drupal_get_path("module", "apsjobs_signup") . "/js/apsjobs_signup.js");
+}
+/**
+ * Implements hook_init()
+ */
+function apsjobs_signup_menu() {
+  $items = array();
+
+  $items['forms/testing'] = array(
+    'title' => 'APSJobs form testing',
+    'page callback' => 'apsjobs_forms_test',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['validate-account'] = array(
+    'title' => 'Validate account',
+    'page callback' => 'apsjobs_signup_validate_account',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['validate-approver-account'] = array(
+    'title' => 'Validate account',
+    'page callback' => 'apsjobs_signup_validate_approver_account',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['resend-email-validate-account'] = array(
+    'title' => 'Resend email validate account',
+    'page callback' => 'apsjobs_signup_resend_email_validate_account',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['test/mail'] = array(
+    'title' => 'APSJobs form testing',
+    'page callback' => 'apsjobs_forms_mail_test',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_block_info()
+ */
+function apsjobs_signup_block_info() {
+  $blocks = array();
+  
+  $blocks['apsjobs_signup_block'] = array(
+    'info' => t('APSJobs Sign Up Form Block'),
+  );
+  $blocks['apsjobs_signup_account_detail'] = array(
+    'info' => t('APSJobs Sign Up Agency Account Detail'),
+  );
+  $blocks['apsjobs_signup_create_password'] = array(
+    'info' => t('APSJobs Sign Up Agency Create Password'),
+  );
+  $blocks['apsjobs_signup_create_pass_appr'] = array(
+    'info' => t('APSJobs Sign Up Approver Create Password'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function apsjobs_signup_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'apsjobs_signup_block':
+      $block['subject'] = t('APSJobs Signup Form');
+      $form = drupal_get_form('apsjobs_signup_form');
+      $block['content'] = render($form);
+      break;
+
+    case 'apsjobs_signup_account_detail':
+      $block['subject'] = t('APSJobs Sign Up Agency Account Detail');
+      $form = drupal_get_form('apsjobs_signup_agency_account_detail_form');
+      $block['content'] = render($form);
+      break;
+
+    case 'apsjobs_signup_create_password':
+      $block['subject'] = t('APSJobs Sign Up Agency Create Password Form');
+      $form = drupal_get_form('apsjobs_signup_create_password_form');
+      $block['content'] = render($form);
+      break;
+
+    case 'apsjobs_signup_create_pass_appr':
+      $block['subject'] = t('APSJobs Sign Up Approver Create Password Form');
+      $form = drupal_get_form('apsjobs_signup_create_password_approver_form');
+      $block['content'] = render($form);
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function apsjobs_signup_form_alter(&$form, &$form_state, $form_id){
+  global $base_url;
+  if ($form_id == 'user_login') {
+    #array_unshift($form['#validate'],'apsjobs_signup_user_login_form_validate');
+    if (arg(0) == 'user') {
+      $form['forgot_pass_link'] = array(
+        '#markup' => '<a href="' . $base_url . '/user/password" class="forget-password">' . t('Forget password ?') . '</a>',
+      );
+      $form['name']['#title'] = t('Email Address');
+      $form['name']['#description'] = t('');
+      $form['pass']['#description'] = t('');
+    }
+  }   
+}
+
+/**
+ * Implementation of hook_mail().
+ */
+function apsjobs_signup_mail($key, &$message, $params){
+  switch ($key) {
+    case "apsjobs_mail":
+      // Set the mail content type to html to send an html e-mail (optional).
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+
+      // Grab the subject and body from params and add it to the message.
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body']; // Drupal 7
+      break;
+  }
+}

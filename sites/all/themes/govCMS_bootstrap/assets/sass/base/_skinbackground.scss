@@ -1,0 +1,25 @@
+/* background skin */
+.change-skin-menu-wrapper {
+    .bg-default a {
+        background: rgba(#000, 0.8) url('../images/bg-body.jpg') repeat-y center 0;
+    }
+
+    .bg-1 a {
+        background: url(../images/skins-menu/bg-1.png) 0 0 repeat;
+    }
+}
+
+/* change background */
+
+
+.bg-default {
+    background: rgba(#000, 0.8) url('../images/bg-body.jpg') repeat-y center 0;
+}
+
+$bg-list: bg-1, bg-2, bg-3, bg-4, bg-5, bg-6, bg-7;
+
+@each $bg-name in $bg-list {
+  .#{$bg-name}{
+    background: url("../images/skins-menu/#{$bg-name}.png") 0 0 repeat;
+  }
+}

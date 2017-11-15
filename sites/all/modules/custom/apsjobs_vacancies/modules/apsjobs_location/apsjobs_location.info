@@ -1,0 +1,4 @@
+name = APSJobs Job Location
+description = Search location auto complete
+package = APSJobs
+core = 7.x

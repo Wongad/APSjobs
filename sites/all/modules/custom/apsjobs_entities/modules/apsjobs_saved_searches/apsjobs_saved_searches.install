@@ -1,0 +1,108 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function apsjobs_saved_searches_uninstall() {
+  drupal_uninstall_schema('apsjobs_saved_searches');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function apsjobs_saved_searches_schema() {
+  $schema['apsjobs_saved_searches'] = array(
+    'description' => 'Saved Searches entity',
+    'fields' => array(
+      'ssid' => array(
+        'description' => t('Private Key'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'status' => 'User ID',
+        'type' => 'int',
+        'size' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'mail' => array(
+        'status' => 'Mail of user',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'key_word' => array(
+        'status' => 'Aps Classification',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'key_location' => array(
+        'status' => 'Job Category',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'key_salary_from' => array(
+        'status' => 'Salary From',
+        'type' => 'float',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'key_salary_to' => array(
+        'status' => 'Salary To',
+        'type' => 'float',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'frequency' => array(
+        'status' => 'Alert Frequency',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => 'weekly',
+      ),
+      'data' => array(
+        'status' => 'Data searches',
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'status' => array(
+        'status' => 'Status',
+        'type' => 'int',
+        'size' => 'normal',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'created' => array(
+        'status' => 'Created',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'changed' => array(
+        'status' => 'Changed',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+    ),
+    'primary key' => array('ssid'),
+  );
+  return $schema;
+}

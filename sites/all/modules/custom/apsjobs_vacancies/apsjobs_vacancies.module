@@ -1,0 +1,99 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once drupal_get_path('module', 'apsjobs_vacancies') . '/forms/apsjobs_vacancies_new_vacancy.form.inc';
+require_once drupal_get_path('module', 'apsjobs_vacancies') . '/forms/apsjobs_vacancies_new_vacancy.utils.inc';
+require_once drupal_get_path('module', 'apsjobs_vacancies') . '/includes/apsjobs_vacancies_validate.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_vacancies_menu() {
+  $items = array();
+  $items['vacancies-location/autocomplete'] = array(
+    'title' => 'Autocomplete for location',
+    'page callback' => 'apsjobs_vacancies_location_autocomplete',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function apsjobs_vacancies_block_info() {
+  $blocks = array();
+
+  $blocks['apsjobs_vacancies_new_vacancy'] = array(
+    'info' => t('APSJobs New Vacancy'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function apsjobs_vacancies_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'apsjobs_vacancies_new_vacancy':
+      $block['subject'] = 'New Vacancy Block';
+      $form = drupal_get_form('apsjobs_vacancies_new_vacancy_form');
+      $block['content'] = render($form);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_init().
+ */
+function apsjobs_vacancies_init() {
+  drupal_add_js(drupal_get_path("module", "apsjobs_vacancies") . "/js/apsjobs_vacancies.js");
+}
+
+/**
+ * Implements hook_mail().
+ */
+function apsjobs_vacancies_mail($key, &$message, $params){
+  switch ($key) {
+    case "apsjobs_mail":
+      // Set the mail content type to html to send an html e-mail (optional).
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+
+      // Grab the subject and body from params and add it to the message.
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body']; // Drupal 7
+      break;
+  }
+}
+
+function apsjobs_vacancies_location_autocomplete($term) {
+  $matches = array();
+  $db_or = db_or();
+  $db_or->condition('suburb', $term . '%', 'LIKE');
+  $db_or->condition('state', $term . '%', 'LIKE');
+  $db_or->condition('postcode', $term . '%', 'LIKE');
+  $results = db_select('apsjobs_location', 'l')
+  ->fields('l', array('postcode', 'suburb', 'state'))
+  ->condition($db_or)
+  ->range(0,10)
+  ->execute()
+  ->fetchAll();
+
+  foreach($results as $result) {
+    $location = $result->postcode . ', ' . $result->suburb . ', ' . $result->state;
+
+    $matches[$location] = $location;
+  }
+  echo drupal_json_output($matches);
+}

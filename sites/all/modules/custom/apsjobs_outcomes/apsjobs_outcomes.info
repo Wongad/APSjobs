@@ -1,0 +1,4 @@
+name = APSJobs Outcomes
+description = ApsJobs OutCome
+core = 7.x
+package = APSJobs

@@ -1,0 +1,11 @@
+name = Options Flatten
+description = Provide additional options for "select" widget.
+core = 7.x
+package = Fields
+
+; Information added by Drupal.org packaging script on 2017-08-25
+version = "7.x-2.14"
+core = "7.x"
+project = "govcms"
+datestamp = "1503628449"
+

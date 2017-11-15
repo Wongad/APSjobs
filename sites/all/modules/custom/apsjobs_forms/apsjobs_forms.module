@@ -1,0 +1,44 @@
+<?php
+/** 
+ * Implements hook_init().
+ */
+function apsjobs_forms_init() {
+  drupal_add_js(drupal_get_path('module', 'jquery_update') .'/replace/ui/ui/minified/jquery-ui.min.js');  
+
+  drupal_add_css(drupal_get_path('module', 'jquery_update') .'/replace/ui/themes/base/minified/jquery.ui.slider.min.css');
+
+  drupal_add_css(drupal_get_path('module', 'jquery_update') .'/replace/ui/themes/base/minified/jquery.ui.theme.min.css');
+}
+
+function apsjobs_forms_flag_flag($flag, $entity_id, $account, $flagging) {
+  print_r($flag);
+  print_r($entity_id);
+  print_r($account);
+  print_r($flagging);
+  $flag_name = $flagging->flag_name;
+  switch($flag_name) {
+  	case 'approved_date':
+  	  db_query("DELETE FROM flagging WHERE entity_type = 'node' AND entity_id = '$entity_id' AND fid IN (SELECT fid from flag where name = 'rejected_date')");
+  	  break;
+  	case 'rejected_date':
+  	  db_query("DELETE FROM flagging WHERE entity_type = 'node' AND entity_id = '$entity_id' AND fid IN (SELECT fid from flag where name = 'approved_date')");
+  	  break;
+  	case 'approved_detail':
+  	  db_query("DELETE FROM flagging WHERE entity_type = 'node' AND entity_id = '$entity_id' AND fid IN (SELECT fid from flag where name = 'rejected_detail')");
+  	  break;
+  	case 'rejected_detail':
+  	  db_query("DELETE FROM flagging WHERE entity_type = 'node' AND entity_id = '$entity_id' AND fid IN (SELECT fid from flag where name = 'approved_detail')");
+  	  break;
+  }
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+function apsjobs_forms_form_alter(&$form, &$form_state, $form_id){
+  if ($form_id == 'views_exposed_form') {
+    if ($form['#id'] == 'views-exposed-form-aps-vacancy-panel-pane-1') {
+      $form['title']['#attributes'] = array('placeholder' => t('Enter job number or keyword'));
+    }    
+  }   
+}

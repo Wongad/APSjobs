@@ -1,0 +1,81 @@
+<?php
+
+function apsjobs_parser_schema() {
+  $schema = array();
+  $schema['apsjobs_parser_tracking'] = array(
+    'description' => 'Storage for normal (user-defined) apsjobs_parser',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a apsjobs_parser',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'agency_name' => array(
+        'description' => 'Name of agency.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'agency_id' => array(
+        'description' => 'Id of agency',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'recruitment_url' => array(
+        'description' => 'Recruitment url',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'job_detail_url' => array(
+        'description' => 'Job detail url',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'html' => array(
+        'description' => 'HTML',
+        'type' => 'text',
+        'size' => 'big',
+        'serialize' => TRUE,
+      ),      
+      'status' => array(
+        'description' => 'Boolean indicating whether the council is active.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'created' => array(
+        'description' => 'Created',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'changed' => array(
+        'description' => 'Changed',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'indexes' => array(
+      'agency_name' => array('agency_name'),
+      'agency_id' => array('agency_id'),
+      'status' => array('status'),
+      'agency_id' => array('agency_id'),
+      'recruitment_url' => array('recruitment_url'),
+      'job_detail_url' => array('job_detail_url'),
+      'created' => array('created'),
+      'changed' => array('changed'),
+    ),
+    'primary key' => array(
+      'id'
+    ),
+  );
+
+  return $schema;
+}

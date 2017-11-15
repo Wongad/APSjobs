@@ -1,0 +1,4 @@
+name = APS Jobs Assignments Movements
+description = APS Jobs Assignments Movements Entity.
+package = APSJobs
+core = 7.x 

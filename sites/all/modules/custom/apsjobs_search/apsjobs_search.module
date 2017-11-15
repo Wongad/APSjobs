@@ -1,0 +1,166 @@
+<?php
+
+require_once drupal_get_path("module", "apsjobs_search") . "/includes/apsjobs_search.advanced_search.inc";
+
+function apsjobs_search_init() {
+  $options = array(
+    'scope' => 'footer'
+  );
+  drupal_add_js(drupal_get_path('module', 'apsjobs_search') .'/js/apsjobs_search.js', $options);
+  drupal_add_js(drupal_get_path('module', 'apsjobs_search') .'/js/apsjobs_search_agency.js', $options);
+  drupal_add_js(drupal_get_path('module', 'apsjobs_search') .'/js/apsjobs_search_advance_search.js', $options);
+}
+
+function apsjobs_search_block_info() {
+  $blocks = array();
+
+  $blocks['apsjobs_jobs_search_form'] = array(
+    'info' => t('APSJobs Jobs Search'),
+  );
+  $blocks['apsjobs_agencies_search_form'] = array(
+		'info' => t('APSJobs Agencies Search'),
+		'visibility' => 1,
+		'status' => FALSE,
+	);
+  $blocks['apsjobs_gazette_search_form'] = array(
+    'info' => t('APSJobs Gazette Search'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+  $blocks['apsjobs_jobs_advanced_search'] = array(
+		'info' => t('APSJobs Job Advanced Search'),
+		'visibility' => 1,
+		'status' => FALSE,
+  );
+
+  $blocks['apsjobs_search_form_vacancy'] = array(
+    'info' => t('APSJobs Search Form Vacancy'),
+    'visibility' => 1,
+    'status' => FALSE,
+  );
+
+  return $blocks;
+}
+
+function apsjobs_search_menu() {
+  $items['test/test'] = array(
+    'title'            => 'Custom page',
+    'page callback'    => 'apsjobs_search_render_terms',
+    'access arguments' => array('access content'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+function apsjobs_search_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'apsjobs_jobs_search_form':
+      $data = apsjobs_advance_search_argument();
+      $block['content'] = theme('apsjobs_search_jobs_search', array('data' => $data));
+      break;
+    case 'apsjobs_agencies_search_form':
+      $block['content'] = theme('apsjobs_search_agencies_search', array());
+      break;
+    case 'apsjobs_gazette_search_form':
+      $block['content'] = theme('aps_gazette_block_search', array());
+      break;
+    case 'apsjobs_jobs_advanced_search':
+      $block['content'] = theme('apsjobs_jobs_advanced_search', array());
+      break;
+    case 'apsjobs_search_form_vacancy':
+      $block['content'] = theme('apsjobs_search_form_vacancy', array());
+      break;
+  }
+  return $block;
+}
+
+function apsjobs_search_theme() {
+  $result = array();
+    $result['apsjobs_search_jobs_search'] = array(
+      'variables' => array('block' => array()),
+      'template' => 'apsjobs_search_jobs_search',
+      'path' => drupal_get_path('module', 'apsjobs_search') . '/templates',
+    );
+
+    $result['apsjobs_search_agencies_search'] = array(
+      'variables' => array('block' => array()),
+      'template' => 'apsjobs_search_agencies_search',
+      'path' => drupal_get_path('module', 'apsjobs_search') . '/templates',
+    );
+
+    $result['aps_gazette_block_search'] = array(
+      'variables' => array('block' => array()),
+      'template' => 'aps_gazette_block_search',
+      'path' => drupal_get_path('module', 'apsjobs_search') . '/templates',
+    );
+
+    $result['apsjobs_jobs_advanced_search'] = array(
+      'variables' => array('block' => array()),
+      'template' => 'apsjobs_search_jobs_advanced_search',
+      'path' => drupal_get_path('module', 'apsjobs_search') . '/templates',
+    );
+
+    $result['apsjobs_search_form_vacancy'] = array(
+      'variables' => array('block' => array()),
+      'template' => 'apsjobs_search_search_form_vacancy',
+      'path' => drupal_get_path('module', 'apsjobs_search') . '/templates',
+    );
+
+  return $result;
+}
+
+function apsjobs_advance_search_argument() {
+  $items = array();
+
+  //Load job level
+  $job_level = taxonomy_get_tree(9);
+  foreach ($job_level as $key => $term) {
+    if($term->parents[0] == 0) {
+      $items['job_level'][$term->tid] = taxonomy_get_tree(9,$term->tid);
+    }
+  }
+  //load working hour and Engagement type
+
+  $salary_range = entity_load('taxonomy_term', FALSE, array('vid' => 19));
+  $items['salary_range'] = $salary_range;
+
+  $working_hours = entity_load('taxonomy_term', FALSE, array('vid' => 16));
+  $items['working_hours'] = $working_hours;
+
+  $engagement = entity_load('taxonomy_term', FALSE, array('vid' => 17));
+  $items['engagement'] = $engagement;
+
+  $considerations = entity_load('taxonomy_term', FALSE, array('vid' => 18));
+  $items['considerations'] = $considerations;
+
+  $clearance  = entity_load('taxonomy_term', FALSE, array('vid' => 13));
+  $items['clearance'] = $clearance;
+
+  $occupation  = entity_load('taxonomy_term', FALSE, array('vid' => 2));
+  $items['occupation'] = $occupation;
+
+  $voc = taxonomy_vocabulary_machine_name_load('aps_agency');
+  $agency  = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+  $items['agency'] = $agency;
+  //structure/block/manage/search_api_saved_searches/aps_vacancy_search/configure
+  //load block save search
+  // $block_save_search = block_load('search_api_saved_searches', 'aps_vacancy_search');
+  // $render_block = _block_render_blocks(array($block_save_search));
+  // $render_array = _block_get_renderable_array($render_block);
+  // $out1 = drupal_render($render_array);
+  // $items['block_save_search'] = $out1;
+
+  return $items;
+}
+
+function apsjobs_search_form_alter(&$form, $form_state, $form_id) {
+    // A switch is used because you may want to alter more than
+    // one form and it is easy to add a new case for each form.
+
+  if($form['#id'] == 'views-exposed-form-aps-vacancy-search-panel-pane-1') {
+    $form['#action'] = '/search-jobs';
+  }
+}
+

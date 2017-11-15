@@ -1,0 +1,38 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_location_menu() {
+  $items = array();
+  $items['apsjobs_location_autocomplete'] = array(
+    'path' => 'aps-location/autocomplete',
+    'title' => 'Autocomplete for location',
+    'page callback' => 'apsjobs_location_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+  return $items;
+}
+
+function apsjobs_location_autocomplete() {
+  $params = drupal_get_query_parameters();
+  $term = trim($params['term']);
+  $matches = array();
+  // searching in database, only city suburb
+  $db_or = db_or();
+  $db_or->condition('suburb', $term . '%', 'LIKE');
+  $db_or->condition('state', $term . '%', 'LIKE');
+  $db_or->condition('postcode', $term . '%', 'LIKE');
+  $results = db_select('apsjobs_location', 'gl')
+  ->fields('gl', array('postcode', 'suburb', 'state'))
+  ->condition($db_or)
+  ->range(0,10)
+  ->execute()
+  ->fetchAll();
+
+  foreach($results as $result) {
+    $matches[] = $result->postcode . ', ' . $result->suburb . ', ' . $result->state;
+  }
+  echo json_encode($matches);
+  exit();
+}

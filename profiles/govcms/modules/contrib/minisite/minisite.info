@@ -1,0 +1,14 @@
+name = Minisite
+description = Provides the ability to upload arbitrary 'minisites' to a Drupal website.
+package = Minisite
+core = 7.x
+dependencies[] = file
+
+files[] = includes/minisite.archive.inc
+
+; Information added by Drupal.org packaging script on 2016-09-14
+version = "7.x-1.0-alpha2"
+core = "7.x"
+project = "minisite"
+datestamp = "1473834250"
+

@@ -1,0 +1,4 @@
+name = APS Jobs - Job Alerts
+description = Send mail job available for user subscribe on special schedule.
+package = APSJobs
+core = 7.x

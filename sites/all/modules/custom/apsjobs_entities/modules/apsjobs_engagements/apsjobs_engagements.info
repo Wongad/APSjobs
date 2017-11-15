@@ -1,0 +1,4 @@
+name = APS Jobs Engagements
+description = APS Jobs Engagements Entity.
+package = APSJobs
+core = 7.x 

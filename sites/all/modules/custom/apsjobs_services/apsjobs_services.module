@@ -1,0 +1,10 @@
+<?php
+
+module_load_include('inc', 'apsjobs_services', 'resources/apsjobs_services.resource_build');
+/**
+ * Implementation of hook_services_resources().
+ */
+function apsjobs_services_services_resources() {
+  // Return resources representing legacy services
+  return _services_apsjobs_resources();
+}

@@ -1,0 +1,37 @@
+name = govCMS_bootstrap
+description = Theme for ApsJobs.
+version = VERSION
+core = 7.x
+engine = 'phptemplate'
+
+regions[headline] = Headline
+regions[header] = Header
+regions[main_menu] = Main Menu
+regions[help] = Help
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[content_bottom] = Content Bottom
+regions[footer_top] = Footer Top
+regions[footer_bottom_left] = Footer bottom lert
+regions[footer_bottom_right] = Footer bottom right
+
+; CSS - General
+stylesheets[all][] = assets/includes/jquery-ui-slider-pips/jquery-ui-slider-pips.min.css
+stylesheets[all][] = assets/css/style.css
+
+; CSS - Conditional
+stylesheets-conditional[lte IE 9][all][]    = assets/css/ie.css
+stylesheets-conditional[IE 7][all][]        = assets/css/ie7.css
+stylesheets-conditional[IE 8][all][]        = assets/css/ie8.css
+
+; Javascript
+scripts[] = assets/includes/bootstrap/js/bootstrap.min.js
+scripts[] = assets/includes/jquery-ui-slider-pips/jquery-ui-slider-pips.min.js
+scripts[] = assets/js/jquery.smooth-scroll.js
+scripts[] = assets/js/mobile_menu.js
+scripts[] = assets/js/scripts.js
+scripts[] = assets/js/flags.js
+
+; Panels
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles] = panels/styles

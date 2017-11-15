@@ -1,0 +1,4 @@
+name = APSJobs Entities
+description = Module is used to create new entities
+package = "APSJobs"
+core = 7.x

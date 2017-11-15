@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="69px" viewBox="0 0 76 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>stairs</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="2.0-APS-Work-v14.0" transform="translate(-273.000000, -2543.000000)" stroke="#3A98CA" stroke-width="5">
+            <g id="New-public-service" transform="translate(0.000000, 2160.000000)">
+                <g id="Stairs" transform="translate(260.000000, 386.000000)">
+                    <polyline id="stairs" transform="translate(51.000000, 31.500000) scale(-1, 1) rotate(-270.000000) translate(-51.000000, -31.500000) " points="19.5 66.5 19.5049315 43.1666667 40.5 43.1666667 40.5 19.8333333 61.5 19.8333333 61.5 -3.5 82.5 -3.5"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

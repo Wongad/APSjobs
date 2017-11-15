@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions.
+ */
+
+/**
+* Implements hook_uninstall()
+*/
+function apsjobs_location_uninstall(){
+  drupal_uninstall_schema('apsjobs_location');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function apsjobs_location_schema() {
+  $schema['apsjobs_location'] = array(
+    'description' => 'Location',
+    'fields' => array(
+      'lid' => array(
+        'description' => t('Location Id'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'postcode' => array(
+        'status' => 'name',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'suburb' => array(
+        'status' => 'name',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'state' => array(
+        'status' => 'type',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'latitude' => array(
+        'status' => 'type',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'longitude' => array(
+        'status' => 'type',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+    ),
+    'primary key' => array('lid'),
+  );
+  return $schema;
+}

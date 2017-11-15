@@ -1,0 +1,3469 @@
+// ====================
+// Section, Region, Aside, Article, Node, ....
+// ---
+.section{
+	@at-root{
+		// Section Banner
+		// Section Filter
+		// ....
+	}
+}
+
+// ====================
+// Pages: about us, front, not-front, ....
+// ---
+.page{
+    @at-root{
+        // About Us Page
+        // Home Page
+     	// ....
+    }     
+}
+.logged-in,.not-logged-in{
+	.main .tabs.primary{
+		display: none;
+	}
+}
+html, body{
+	height: auto !important;
+	&.overlay-open{
+		overflow-y: scroll;
+		position:relative;
+	}
+}
+#overlay-container{
+	html{
+		overflow-y: hidden;
+	}
+}
+.captcha{
+	legend{
+		border-bottom: none;
+		@include wp-font(font-bold);
+		@include sizeRem(margin-bottom, 15);
+	}
+	.fieldset-description{
+		@include sizeRem(margin-bottom, 10);
+	}
+}
+
+///////////////////////////////
+//view-abs-job-relation
+//
+.view-abs-job-relation{
+	@include sizeRem(margin-top, 55);
+	@include sizeRem(margin-bottom, 20);
+	.views-field-field-image{
+		// @include sizeRem(min-width, 665);
+	}
+	// .group-abs-job-relation{
+	// 	@include sizeRem(padding-left, 92);
+	// 	@include sizeRem(padding-top, 68);
+	// }
+	.views-field-field-job-category,.views-field-title{
+		@include sizeRem(font-size, 28);
+		@include sizeRem(margin-bottom, 3);
+	}
+	.views-field-field-job-category{
+		color: $blue-color1;
+	}
+	.views-field-title{
+		@include sizeRem(margin-bottom, 20);
+	}
+	.views-field-body{
+		@include sizeRem(margin-bottom, 25);
+		// @include sizeRem(max-width, 355);
+	}
+	.views-field-view-node a{
+		@include sizeRem(padding, 6.5, 2, 25);
+		@include sizeRem(min-width, 101);
+	}
+	
+}
+//view-abs-job-agency
+.view-abs-job-agency{
+	@include sizeRem(margin-bottom, 35);
+	.views-row{
+		position: relative;
+	}
+	.views-field-title,.views-field-field-job-category{
+		font-family: $font-second-body;
+	}
+	.views-field-field-job-category{
+		@include sizeRem(margin-bottom, 3);
+		@include sizeRem(margin-top, 20);
+	}
+	.views-field-title{
+		@include sizeRem(margin-bottom, 20);
+		@include sizeRem(font-size, 20);
+		font-weight: normal;
+	}
+	.views-field-view-node{
+		position: absolute;
+		@include sizeRem(bottom, 25);
+		@include sizeRem(left, 30);
+		@include sizeRem(margin-bottom, 0);
+	}
+	.views-field-body{
+		@include sizeRem(margin-bottom, 55);
+	}
+	.views-field-field-job-description{
+		@include sizeRem(margin-bottom, 30);
+		@include sizeRem(padding-left, 10);
+		@include sizeRem(padding-right, 20);
+	}
+	.views-field-title,.views-field-field-job-category,.views-field-body{
+		@include sizeRem(padding-left, 10);
+		@include sizeRem(padding-right, 20);
+	}
+}
+//view-agency
+//
+
+///
+.banner{
+	.panel-pane{
+		margin-top: 0;
+	}
+}
+
+.view-jobs{
+	.group-second{
+		@include sizeRem(font-size,16);
+		@include wp-font(font-title-med);
+		color: $place-color;
+	}
+	.views-field-ops{
+		@include sizeRem(margin-top, 58);
+		@include sizeRem(margin-bottom, 0);
+	}
+	.views-field-created{
+		@include sizeRem(margin-top, 30);
+		@include sizeRem(margin-bottom, 17);
+		@include sizeRem(margin-right, 37);
+		color: $place-color;
+	}
+	.group-info{
+		@include sizeRem(padding-left, 40);
+		@include sizeRem(padding-right, 40);
+		@include sizeRem(padding-top, 35);
+		@include sizeRem(padding-bottom, 40);
+	}
+	.views-field-field-closing-date{
+		@include sizeRem(font-size,16);
+		font-weight: $font-weight-medium;
+		color: $place-color;
+		.field-content{
+			display: inline-block;
+		}
+	}
+	.views-field-title{
+		a{
+			@include wp-font(font-title);
+			@include sizeRem(font-size, 28);
+		    color: $blue-color1;
+		    text-decoration: underline;
+		    &:hover,&:focus{
+		    	text-decoration:none;
+		    }
+		}
+	}
+	.views-field-field-job-category{
+		a{
+			@include sizeRem(font-size,16);
+			font-weight: $font-weight-medium;
+			color: $place-color;
+			&:hover, &:focus{
+				text-decoration: underline;
+				color: $blue-color;
+			}
+		}
+	}
+	.views-field-field-salary-from,.views-field-field-salary-to{
+		display: inline-block;
+		@include sizeRem(font-size,16);
+		font-weight: $font-weight-medium;
+		color: $place-color;
+	}
+	.views-field-field-salary-from{
+		&:after{
+			content:"-";
+			display: inline-block;
+			@include sizeRem(margin-left, 2);
+		}
+		.field-content{
+			display: inline-block;
+		}
+	}
+
+}
+.ui-accordion{
+	.ui-state-default{
+		border:0;
+		background: none;
+	}
+	.ui-widget-content{
+		border:0;
+	}
+	.ui-accordion-header{
+	    @include border-radius-rem(4);
+	    background-color: $white;
+	    @include sizeRem(height, 153);
+		@include sizeRem(font-size, 28);
+	    font-weight: $font-weight-medium;
+	    color: $black;
+	    @include sizeRem(padding-top, 55);
+		@include sizeRem(padding-bottom, 55);
+	}
+
+}
+#content-first-wrapper{
+	.pane-agency-panel-pane-agencies{
+		margin-top: 0;
+	}
+}
+.view-aps-vacancy{
+	.views-field{
+		@include sizeRem(margin-bottom, 5);
+	}
+	.views-row{
+		@include border-radius(4px);
+		background-color:$white;
+		@include sizeRem(margin-top, 55);
+		position: relative;
+		@include sizeRem(padding-top, 35);
+		@include sizeRem(padding-bottom, 30);
+		@include sizeRem(padding-left, 40);
+		@include sizeRem(padding-right, 40);
+		.views-field-created{
+			position: absolute;
+			@include sizeRem(left, -37);
+			@include sizeRem(right, 40);
+			color: $place-color;
+		}
+	}
+	.view-header{
+		position: relative;
+	    @include sizeRem(left, 35);
+	    @include sizeRem(top, 39);
+	    @include sizeRem(font-size, 16);
+	    color: $black;
+	    @include wp-font(font-title-med);
+	}
+	// .views-fieldset{
+	// 	text-align: right;
+	// 	@include sizeRem(font-size, 16);
+	// 	@include wp-font(font-title-med);
+	// 	color: $place-color;
+	// 	text-transform: capitalize;
+	// }
+	.views-field-field-aps-level{
+		.field-content{
+			display: inline-block;
+			margin-left: 3px;
+		}
+	}
+	.views-field-field-aps-job-categories{
+		a{
+			color: $blue-color1;
+		    @include sizeRem(font-size, 20);
+		    border-bottom: 1px solid $blue-color1;
+		    &:hover,&:focus{
+		    	border-bottom:0;
+		    }
+		}
+	}
+	.views-field-title{
+	    color: $place-color;
+	    font-weight: $font-weight-medium;
+	    @include sizeRem(margin-bottom, 45);
+	    .field-content{
+	    	&:hover{
+	    		border-bottom: 0;
+	    	}
+	    }
+	    a{
+	    	color: $blue-color1;
+	    	text-decoration: underline;
+	    	&:hover,&:focus{
+	    		color:$black ;
+	    		text-decoration: none;
+	    	}
+	    }
+	}
+	.views-field-field-agency{
+		 @include sizeRem(font-size, 16);
+		 a{
+		 	color: $black;
+		    	&:hover,&:focus{
+		    		text-decoration: underline;
+		    	}
+		 }
+	}
+	.views-field-field-job-description{
+		font-weight: normal;
+		@include sizeRem(font-size, 14);
+		font-family: $font-body;
+		@include sizeRem(margin-top, 35);
+	}
+	.views-field-ops{
+		a{
+			@include sizeRem(width, 160);
+		    text-align: center;
+		    border-radius: 5px;
+		    background-color: $blue-color;
+		    &:hover,&:focus{
+		    	background-color: $hover-color;
+    			border-color: $hover-color;
+		    }
+		}
+	}
+	.views-field-field-name-hr,.views-field-field-phone-contact{
+		display: inline-block;
+		@include sizeRem(font-size, 16);
+		color: $place-color;
+		@include wp-font(font-title-med);
+	}
+	.views-field-nothing,.views-field-nothing-2,.views-field-nothing-1{
+		p.show-more{
+			text-transform: capitalize;
+		}
+		@include sizeRem(font-size, 15);
+	    color: $black;
+	    @include sizeRem(width, 120);
+	    position: relative;
+	    cursor:pointer;
+	    @include sizeRem(margin-top, 30);
+	    .field-content{
+	    	p{
+	    		&:before{
+					content: "\f107";
+			        position:absolute;
+			        color: #00a886;
+			        @include sizeRem(right, 20);
+			        text-align: center;
+			        @include fontawesome;
+			        @include translate(0,-50%);
+			        @include sizeRem(font-size, 24);
+			        transform: rotate(180deg);
+			        top:-3px;
+				}
+	    	}
+	    	p.show-more{
+	    		cursor:pointer;
+	    		&:before{
+	    			transform: rotate(0deg);
+	    		}
+	    	}
+	    }    
+	}
+	.views-field-body{
+		@include sizeRem(margin-top, 10);
+		a.toc-filter-processed{
+		    @include sizeRem(width, 121);
+  			@include sizeRem(height, 34);
+		    border-radius: 5px;
+		    background-color: $blue-color;
+		    display: block;
+		    color: $black;
+		    text-align: center;
+		    @include sizeRem(padding-top, 8);
+		    font-weight: $font-weight-medium;
+		    @include sizeRem(margin-top, 35);
+		    &:hover,&:focus{
+		    	color:$white;
+		    	background-color: #00a886;
+		    }
+		}
+	}
+	.agency-list-approval,.agency-list-draft,.agency-list-archived{
+		.views-field{
+			.field-content{
+				font-weight: normal;
+				a{
+					display: inline-block;
+					@include sizeRem(width, 180);
+					@include sizeRem(padding-top, 10);
+					@include sizeRem(padding-bottom, 10);
+					@include sizeRem(margin-right, 15);
+				    text-align: center;
+				    border: 1px solid $blue-color;
+    				background-color: $blue-color;
+				    border-radius: 4px;
+				    font-size: 12px;
+				    font-family: $font-body;
+				    font-weight: $font-weight-medium;
+				    &:hover,&:focus{
+				    	background-color:$hover-color;
+    					border-color: $hover-color;
+				    }
+				}
+				a#approve-vacancy{
+					background-color: $hover-color;
+				    border-color: $hover-color;
+				    color: $black;
+				}
+			}
+		}
+		.views-field-nothing-1,.views-field-view-node{
+			display: inline-block !important;
+
+		}
+		.views-field-nothing-1{
+			width: auto;
+			span{
+				&>div{
+					@include display-flex;
+				}
+				a{
+					@include sizeRem(min-width, 180);
+				}
+			}
+		}
+		.views-field-view-node{
+			a{
+				border: 1px solid #00d1a7 !important;
+    			background-color: #00d1a7 !important;
+    			font-size: 1rem;
+    			color: $black;
+				font-family: $font-body;
+				font-weight: $font-weight-medium;
+    			padding-top: 8px !important;
+    			padding-bottom: 8px !important;
+			}
+		}
+		.views-field{
+			@include display-flex;
+			span{
+				@include sizeRem(min-width, 200);
+			}
+		}
+		.views-field-field-job-description{
+			border-bottom: 1px solid #9b9b9b;
+    		border-top: 1px solid #9b9b9b;
+    		@include sizeRem(padding-top, 15);
+    		@include sizeRem(padding-bottom, 15);
+    		span{
+    			font-family: $font-second-bold;
+			    font-weight: $font-weight-medium;
+			    color: $place-color;
+			    @include sizeRem(font-size, 16);
+    		}
+			div.field-content{
+				padding-left: 0;
+			}
+		}
+	}
+}
+.view-aps-vacancy{
+	.group-right{
+		.views-field-nothing-1,.views-field-nothing{
+			width: auto;
+			margin-top: 0;
+			color: $place-color;
+		}
+	}
+    
+}
+.views-exposed-widgets{
+	.views-widget-sort-by{
+		display: none;
+	}
+	.views-widget-sort-order{
+		text-align: right;
+		@include sizeRem(margin-bottom, -35);
+    	@include sizeRem(margin-top, 40);
+		label{
+			display: none;
+		}
+		.sort_order,#edit-sort-order{
+			@include sizeRem(width, 250);
+		}
+	}
+}
+//............vacancy--------outcome..................//
+@mixin font-vacancy{
+	//text-align: right;
+	@include sizeRem(font-size, 16);
+	@include wp-font(font-title-med);
+	color: $place-color;
+	text-transform: capitalize;
+}
+.group-date{
+	float: none;
+	@include display-flex;
+	@include align-items(center);
+	.views-field-title{
+		width: 70%;
+		text-align: left;
+	}
+	.views-field-created{
+		width: 30%;
+		text-align: right;
+	}
+    @include font-vacancy;
+}
+.group-left{
+	float: left;
+	text-align: left;
+	width: 70%;
+	padding-right: 15px;
+	@include font-vacancy;
+	.views-field-field-location-raw,.views-field-field-position-number{
+		position: static;
+		text-align: left;
+		@include display-flex;
+		span{
+			@include sizeRem(margin-right, 5);
+		}
+	}
+}
+.group-right{
+	float: right;
+	width: 30%;
+	position: relative;
+	text-align: right;
+	@include font-vacancy;
+	.views-field-field-job-category{
+		margin-top: -20px;
+	}
+}
+
+.group-showmore{
+	@include display-flex;
+	@include align-items(center);
+	@include justify-content(space-between);
+	clear: both;
+	@include font-vacancy;
+	p{
+		margin-bottom: 0;
+	}
+	.views-field{
+		margin-top: 30px;
+	}
+	.views-field-nothing-2{
+		text-align: left;
+		width: 70%;
+		p{
+			position: relative;
+			width: 120px;
+			text-align: left;
+		}
+	}
+	.views-field-nothing-1{
+		text-align: left;
+		width: 70%;
+		p{
+			position: relative;
+			width: 120px;
+			text-align: left;
+		}
+	}
+	// div[class="views-field-nothing"]{
+	// 	text-align: left;
+	// 	width: 70%;
+	// 	p{
+	// 		position: relative;
+	// 		width: 120px;
+	// 		text-align: left;
+	// 	}
+	// }
+	.views-field-nothing{
+		cursor:pointer;
+		text-align: left;
+		width: 70%;
+		p{
+			position: relative;
+			width: 120px;
+			text-align: left;
+		}
+		.field-content{
+	    	p{
+	    		&:before{
+					content: "\f107";
+			        position:absolute;
+			        color: #00a886;
+			        @include sizeRem(right, 20);
+			        text-align: center;
+			        @include fontawesome;
+			        @include translate(0,-50%);
+			        @include sizeRem(font-size, 24);
+			        transform: rotate(180deg);
+			        top:-3px;
+				}
+	    	}
+	    	p.show-more{
+	    		cursor:pointer;
+	    		&:before{
+	    			transform: rotate(0deg);
+	    		}
+	    	}
+    	}    
+	}
+}
+.outcome-list-item{
+			.views-field{
+				@include display-flex;
+				.views-label{
+					min-width:200px;
+				}
+				a{
+					color:$color-descrition;
+					&:hover,&:focus{
+						 color:$blue-color1;
+					}
+				}
+			}
+			.views-field-view-node{
+				a{
+					color: $black-color;
+					&:hover,&:focus{
+						color: $black-color;
+					}
+				}
+			}
+}
+//............vacancy--------outcome............end......//
+.page-aps-agency{
+	.view-aps-vacancy{
+		.group-left{
+			.views-field-field-location-raw{
+				margin-bottom: 0;
+			}
+			.views-field-field-job-description{
+				margin-top: 0;
+			}
+		}
+		.group-number{
+			@include align-items(center);
+			.views-field-nothing{
+				margin-top: 30px;
+				width: 70%;
+			}
+		}
+	}
+	.group-salary{
+		clear: both;
+		@include display-flex;
+		@include align-items(center);
+		#edit-salary-type{
+			@include display-flex;
+			@include align-items(center);
+			.form-type-radio{
+				&:first-child{
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+	#edit-group-btn{
+		padding-right: 15px;
+	}
+	.view-aps-vacancy{
+		.agency-list-draft{
+			text-align: left;
+		}
+		.group-number{
+			.views-field-field-position-number{
+				width: 30%;
+				margin-top: 30px;
+			}
+		}
+		.views-field-field-position-number{
+			margin-top: 30px;
+			margin-bottom: 0;
+		}
+	}
+	.view-aps-notificaitons{
+		.views-row{
+			padding:15px;
+			@include display-flex;
+			@include align-items(center);
+			border:1px solid #eee;
+			@include sizeRem(margin-bottom, 20);
+			@include border-radius-rem(4);
+			.views-field{
+				margin-bottom: 0;
+			}
+			.views-field-noid{
+				width: 10%;
+				position: relative;
+				color: $white;
+				&:before{
+					content: "\f2b4";
+					text-align: center;
+	        		@include fontawesome;
+	        		display: inline-block;
+	        		@include sizeRem(font-size, 28);
+	        		@include sizeRem(padding-right, 15);
+	        		position: absolute;
+	        		top:50%;
+	        		width: 100%;
+	        		@include translate(0,-50%);
+	        		color: $black;
+				}
+
+			}
+			.views-field-body{
+				width: 65%;
+				@include sizeRem(padding-right, 15);
+			}
+			.views-field-nothing{
+				width: 25%;
+				text-align: right;
+			}
+		}
+	}
+	.view-view-gazette{
+		.views-row{
+			@include clearfix;
+			@include sizeRem(margin-top, 15);
+			.views-field-created{
+				position: relative;
+			    top: 0;
+			    right: 0;
+			}
+		}
+		.view-header{
+			background-color: $white;
+		    position: absolute;
+		    right: 0;
+		    left: auto;
+		    @include sizeRem(top, -65);
+		    @include sizeRem(width, 185);
+		    @include sizeRem(padding-top, 10);
+		    @include sizeRem(padding-right, 25);
+		    @include sizeRem(height, 39);
+		    @include sizeRem(padding-bottom,10);
+		    text-align: center;
+		    @include border-radius-rem(4);
+		    a{
+		    	color: $black;
+		    }
+		    &:before{
+	        content: "\f107";
+	        position:absolute;
+	        color: $border-color-un-title;
+	        top: 50%;
+	        @include sizeRem(right, 5);
+	        text-align: center;
+	        @include fontawesome;
+	        @include translate(-50%,-50%);
+	        color: #00d1a7;
+	        @include sizeRem(font-size, 20);
+    		}
+		}
+	}
+	.pane-govcms-blocks-govcms-agency-welcome{
+		.pane-content{
+				position: relative;
+			.last-login{
+				position: absolute;
+				@include sizeRem(top, 14);
+				@include sizeRem(right, 10);
+			}
+			.welcome-back{
+				@include sizeRem(font-size, 26);
+			}
+		}
+	}
+	.view-view-gazette{
+		.views-field-field-aps-notice-type{
+			margin: 0;
+		}
+		.views-field-title{
+			a{
+				color: $blue-color1; 
+			}
+		}
+		.views-row{
+			background-color:$white;
+			@include sizeRem(padding-top, 35);
+			@include sizeRem(padding-bottom, 30);
+			@include sizeRem(padding-left, 40);
+			@include sizeRem(padding-right, 40);
+			@include sizeRem(margin-top, 15);
+			@include border-radius-rem(4);
+		}
+	}
+	#subnav{
+		@include sizeRem(margin-top, 15);
+		margin-bottom: 0;
+		background: transparent;
+	}
+	.view-notifications{
+		.views-row{
+			@include display-flex;
+			@include align-items(center);
+			border: 1px solid #666;
+			@include sizeRem(margin-bottom, 15);
+			@include sizeRem(padding, 10);
+		}
+		.views-field-noid{
+			@include sizeRem(width, 120);
+			@include sizeRem(font-size, 24);
+			text-align: center;
+		}
+		.views-field{
+			margin-bottom: 0;
+		}
+		.views-field-nothing{
+			text-align: right;
+			width: 35%;
+		}
+	}
+	.view-aps-vacancy{
+		position: relative;
+		.view-header{
+			text-transform: capitalize;
+			position: absolute;
+			@include sizeRem(top, -65);
+		    right: 0;
+		    left:auto;
+		    background-color: #fff;
+		    @include sizeRem(padding, 10);
+		    @include sizeRem(padding-right, 40);
+		    @include border-radius(4px);
+		    p{
+		    	margin-bottom: 0;
+		    	a{
+		    		color:$black; 
+		    		&:hover,&:focus{
+		    			color: $blue-color1;
+		    		}
+		    	}
+		    }
+		    &:before{
+		        content: "\f107";
+		        position:absolute;
+		        color: #00a886;
+		        top: 50%;
+		        @include sizeRem(right, 10);
+		        text-align: center;
+		        @include fontawesome;
+		        @include translate(0,-50%);
+		        @include sizeRem(font-size, 24);
+		    }
+		}
+
+	}
+	.paner-aps-vacancy-panel-title{
+		.view-empty{
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+		.view-aps-vacancy .view-header:before{
+			display: none;
+		}
+	}
+	.footer-copyright{
+		.col-md-4{
+			text-align: right;
+			color:#00a886;
+		}
+		.block-icon-social{
+			clear: both;
+			@include sizeRem(padding-top, 15);
+			@include sizeRem(padding-bottom, 15);
+		}
+		.block-menu-menu-bottom{
+			@include sizeRem(font-size, 12);
+			a{
+				@include sizeRem(padding-left, 10);
+				&:hover,&:focus{
+					text-decoration: underline;
+				}
+			}
+		}
+		.region-footer-bottom-right{
+			.panel-title{
+				a{
+					@include sizeRem(padding, 10);
+				    float: right;
+				    background-color: #00a886;
+				    @include sizeRem(font-size, 12);
+				    color: $black;
+				    font-weight: $font-weight-second-bold;
+				    @include border-radius(4px);
+				}
+			    a{
+			    	&:hover,&:focus{
+			    		background-color: $hover-color;
+					    border-color: $hover-color;
+					    color: $black;
+			    	}
+			    }
+
+			}
+		}
+	}
+    .view-notifications{
+        td.views-field{
+			@include sizeRem(padding, 15);
+        }
+        .views-field-noid:first-child{
+	        position: relative;
+	        font-size: 0;
+	        &:before{
+	        content: "\f2b4";
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        color: $title-color;
+	        @include translate(-50%,-50%);
+	        @include fontawesome;
+	        font-size: 22px !important;
+            }
+        }
+    }
+
+    .view-footer{ 
+        p{
+      		margin-bottom: 0;
+     	}
+     	a{
+      		color: $black;
+      		display: block;
+      		@include wp-font(font-medium);
+      		text-align: center;
+      		border: 1.5px solid $blue-color;
+		    @include sizeRem(font-size,12);
+		    @include sizeRem(padding, 10, 1);
+		    @include sizeRem(margin-top, 15);
+		    @include border-radius(4px);
+		    &:hover,&:focus{
+		    	background:$hover-color;
+		    	border: 1.5px solid $hover-color;
+		    }
+     	}
+    }
+}
+
+.view-aps-vacancy{
+		.views-row{
+			@include border-radius(4px);
+			@include sizeRem(margin-top, 15);
+			overflow: hidden;
+			.views-field-created{
+				position: relative;
+			    top: 0;
+			    right: 0;
+			    left: auto;
+			    @include sizeRem(margin-top, 10);
+			    @include sizeRem(margin-bottom, 45);
+			}
+			.views-field-field-job-category{
+				a{
+					@include sizeRem(font-size, 16);
+					color: $place-color;
+					&:hover,&:focus{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.views-field-field-job-category,
+		.views-field-field-job-level,
+		.views-field-field-salary-from,
+		.views-field-field-salary-to,
+		.views-field-field-position-number{
+			text-align: right;
+		}
+		.views-field-field-salary-from,.views-field-field-salary-to{
+			display: inline-block;
+		}
+		.views-field-field-salary-from{
+			@include sizeRem(padding-right, 10);
+		    position: relative;
+			&:after{
+				content:"-";
+				position: absolute;
+				top:0;
+				right:-1px;
+			}
+		}
+		.views-field-nothing-2{
+			clear: both;
+			overflow: hidden;
+			margin-bottom: 0;
+			p{
+				margin-bottom: 0;
+			}
+		}
+		.views-field-field-location-raw{
+			@include sizeRem(margin-bottom, 30);
+		}
+		.agency-list-approval.views-fieldset{
+			float: none;
+			text-align: left;
+			@include sizeRem(margin-top, 15);
+		}
+	}
+#page{
+	position: relative;
+}
+.node-type-aps-agencies{
+	.paner-aps-dashboard-govcms-search-form-vacancy{
+		width: 50%;
+		@include sizeRem(margin-bottom, -45);
+		position: relative;
+    	z-index: 10;
+	}
+	.paner-aps-dasboard-govcms-sort-date{
+		@include sizeRem(height, 45);
+		@include sizeRem(bottom, -5);
+		.sort-date{
+			position: absolute;
+			right:0;
+
+		}
+		.sort-date{
+			// position: relative;
+			background: $white-color;
+			z-index: 22;
+		  	&:before{
+			   content: "";
+			   position: absolute;
+			   width: 10px;
+			   height: 10px;
+			   top: 15px;
+			   right: 24px;
+			   color: $blue-color;
+			   border-left: 1px solid $blue-color;
+			   border-bottom: 1px solid $blue-color;
+			   @include rotate(315deg);
+			   z-index: 3;
+		  }
+		  .form-select{
+		   background-color: transparent;
+		   @include sizeRem(padding-right, 45);
+		   z-index: 6;
+		   border:0;
+		  }
+		}
+	}
+	.pane-node-body{
+		@include sizeRem(margin-bottom, 70);
+	}
+	.paner-aps-dasboard-govcms-sort-date{
+		#edit_sort_date_chosen{
+			@include sizeRem(margin-bottom, 25);
+		}
+	}
+	.view-aps-vacancy{
+		.group-right{
+			position: relative;
+			.views-field-field-position-number{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+	}
+}
+.node-type-aps-jobs{
+	.pane-node-field-salary-to,.pane-node-field-salary-from{
+		display: inline-block;
+		div{
+			display: inline-block;
+		}
+	}
+	.panel-separator{
+		display: inline-block;
+	}
+	.pane-node-title,.pane-node-body,.pane-node-field-job-category{
+		float: left;
+		width: 60%;
+	}
+	.pane-node-title{
+		h2{
+			margin: 0;
+			@include sizeRem(font-size, 20);
+		}
+	}
+	.pane-node-body{
+		margin: 0;
+		@include sizeRem(padding-right, 100);
+	}
+	.pane-node-field-closing-date{
+		h2{
+			&:after{
+				content:":";
+				display: inline-block;
+			}
+		}
+		.pane-title,.pane-content{
+			@include sizeRem(font-size, 16);
+			@include wp-font(font-title-med);
+    		color: $place-color;
+    		display: inline-block;
+		}
+	}
+	.pane-node-field-closing-date,.pane-node-field-salary-to,.pane-node-field-salary-from,.pane-node-field-image{
+		text-align: right;
+		@include wp-font(font-title-med);
+    	color: $place-color;
+    	@include sizeRem(font-size, 16);
+	}
+	.pane-node-field-salary-to{
+		&:after{
+			content: "-";
+			display: inline-block;
+		}
+	}
+}
+#edit-detail{
+	input#edit-save-draft{
+		@include sizeRem(margin-right, 50);
+		float: right;
+	}
+	.form-type-textarea,.form-type-textfield{
+		position: relative;
+		label{
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		.form-textarea-wrapper{
+			@include sizeRem(padding-left, 250);
+			@include sizeRem(padding-right, 50);
+		}
+		input{
+			@include sizeRem(margin-left, 250);
+			@include sizeRem(max-width, 762);
+		}
+	}
+}
+#govcms-forms-employment-vacancy-form{
+	input#edit-cancel,input#edit-prev,input#edit-next{
+		@include sizeRem(margin-right, 10);
+		@include sizeRem(margin-top, 45);
+		@include sizeRem(margin-bottom, 25);
+	}
+	input#edit-next{
+		@include sizeRem(margin-right, 50);
+	}
+}
+#edit-duties,#edit-header,#edit-notice-details{
+	text-align:left;
+}
+#edit-agency-detail{
+	legend{
+		margin-bottom: 0;
+		border-bottom: 0;
+		@include wp-font(font-title);
+	}
+	.form-type-item{
+		@include display-flex;
+		@include wp-font(font-title);
+		label{
+			font-weight: normal;
+		}
+	}
+	#edit-aps-class{
+		label{
+			@include sizeRem(padding-right, 130);
+		}
+	}
+}
+#edit-detail{
+	legend{
+		margin-bottom: 0;	
+		border-bottom: 0;
+		@include wp-font(font-title);
+	}
+	.form-item-include-logo{
+		position: relative;
+		input{
+			position: absolute;
+			left:250px;
+			top:0;
+		}
+		label{
+			@include wp-font(font-title);
+		}
+	}
+	.form-item-publish-to-my-notices{
+		@include sizeRem(margin-left, 250);
+		span{
+			@include wp-font(font-title);
+		}
+		input{
+			top:-4px;
+		}
+	}
+}
+#edit-selection-contact,#edit-selection-email{
+	.form-item-email,.form-item-contact{
+		float: left;
+		width: 50%;
+		@include sizeRem(margin-top, 10);
+		@include sizeRem(margin-bottom, 10);
+		input{
+			max-width:300px;
+		}
+	}
+	.form-item-ph{
+		@include sizeRem(margin-top, 10);
+		@include sizeRem(margin-bottom, 10);
+		float: right;
+		width: 50%;
+		input{
+			@include sizeRem(max-width, 300);
+			@include sizeRem(margin-left, 90);
+		}
+		label{
+			@include sizeRem(left, 60);
+		}
+	}
+
+}
+#edit-admin-info{
+	legend{
+		margin-bottom: 0;
+		border-bottom: 0;
+		@include wp-font(font-title);
+	}
+	#edit-notice-number{
+		label{
+			@include sizeRem(margin-right, 145);
+		}
+	}
+	.form-type-textarea{
+		position: relative;
+		label{
+			position: absolute;
+			top:0;
+			left: 0;
+		}
+		.form-textarea-wrapper{
+			@include sizeRem(padding-left, 250);
+			@include sizeRem(padding-right, 50);
+		}
+	}
+}
+#edit-duties,#edit-notice-details{
+	background: $white;
+    padding: 2.5rem;
+}
+#edit-engagement,#edit-position{
+	@include background-vacy;
+}
+#govcms-promotion-add-new-promotion-form,#govcms-engagement-add-new-engagement-form{
+	#edit-position{
+		position: relative;
+		legend{
+			border-bottom: 3px solid #e5e5e5;
+			font-weight: $font-weight-second-bold;
+			@include sizeRem(padding-left, 10);
+		}
+		#edit-engagement-no{
+			margin: 0;
+			position: absolute;
+			@include sizeRem(right, 50);
+		    width: auto;
+		}
+		#edit-agency-details{
+			#edit-department,#edit-aps-class{
+				@include sizeRem(padding-left, 200);
+				label{
+					font-weight: $font-weight-body;
+					@include sizeRem(margin-right, 80);
+				}
+			}
+			#edit-aps-class{
+				label{
+					@include sizeRem(margin-right, 80);
+				}
+			}
+		}
+		.form-item{
+			@include display-flex;
+			@include align-items(center);
+			width: 70%;
+			> label{
+				@include sizeRem(min-width, 196);
+				@include sizeRem(padding-left, 20);
+			}
+		}
+		#edit-agency-details{
+			.form-item{
+				width: 100%;
+			}
+		}
+		#edit-employee-details{
+			.form-item-something{
+				width: 50%;
+				input{
+					@include sizeRem(width, 330);
+				}
+			}
+			.fieldset-wrapper{
+				position: relative;
+				& > p{
+					position: absolute;
+					@include sizeRem(left, 560);
+					@include sizeRem(margin-top, 10);
+				}
+			}
+		}
+		#edit-postion-details{
+			position: relative;
+			.form-item-expected-vacancy{
+				position: relative;
+				width: auto;
+				.form-type-radio{
+					&:first-child{
+						position: absolute;
+    					@include sizeRem(left, 260);
+					}
+					input{
+						margin-top: 0;
+						@include sizeRem(margin-right, 5);
+					}
+					label{
+						min-width: auto;
+					}
+				}
+				
+			}
+			.form-item-location{
+				@include sizeRem(width, 280);
+				input{
+					background-color:$border-color-streght;
+					width: 80px;
+					height: 39px;
+				    padding-left: 10px;
+				    padding-right: 10px;
+				}
+			}
+			#edit-group-location{
+				position: relative;
+				#edit-verify{
+					position: absolute;
+				    @include sizeRem(left,300);
+				    @include sizeRem(top, 0);
+				}
+				.form-item-suburb{
+					@include sizeRem(width, 260);
+				    position: absolute;
+				    @include sizeRem(top, -20);
+				    @include sizeRem(left,480);
+				    & > label{
+				    	@include sizeRem(min-width, 65);
+				    	padding-left: 0;
+				    	@include sizeRem(padding-right, 10);
+				    }
+				    select{
+				    	@include sizeRem(height, 30);
+				    }
+				}
+			}
+			.form-item-notes{
+				.textarea-processed{
+					@include sizeRem(width, 541);
+				}
+			}
+
+		}
+		#edit-prev{
+			@include sizeRem(margin-left, 20);
+			@include sizeRem(margin-right, 10);	
+		}
+	}
+	#edit-recruitability{
+		.form-type-radios{
+			position: relative;
+			& >label{
+				@include sizeRem(width, 440);
+			}
+		}
+		.form-type-radio{
+			width: auto;
+			input{
+				margin:0;
+			}
+			label{
+    			margin-bottom: 0;
+			}
+		}
+		.form-radios{
+			.form-type-radio{
+				&:first-child{
+					position: absolute;
+					@include sizeRem(right, -165);
+	    			top:0;
+				}
+				&:last-child{
+					position: absolute;
+	    			@include sizeRem(right, -90);
+	    			top:0;
+				}
+			}
+		}
+	}
+}
+#edit-search-vacancy{
+	@include sizeRem(margin-top, 30);
+	& > legend{
+		@include sizeRem(font-size, 30);
+		font-weight: $font-weight-second-bold;
+		border-bottom: 0;
+		@include sizeRem(margin-bottom, 10);
+	}
+	.fieldset-description{
+		width: 80%;
+		@include sizeRem(margin-bottom, 25);
+		a{
+			color: $darkgray;
+			text-decoration: underline;
+			&:hover,&:focus{
+				text-decoration: none;
+			}
+		}
+	}
+	#edit-agency-detail{
+		legend{
+			float: left;
+			@include sizeRem(margin-bottom, 30);
+		}
+	}
+}
+// .node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group{
+// 	padding-right: 40px;
+// }
+.page-search-vacancy{
+	#edit-agency-detail{
+		@include background-vacy;
+		#edit-group-left{
+			width: 50%;
+			.form-item{
+				@include display-flex;
+				@include align-items(center);
+				margin-top: 0;
+				@include sizeRem(margin-bottom, 5);
+			}
+		}
+		#edit-group-right{
+			width: 50%;
+			float: left;
+			.fieldset-wrapper{
+				float: left;
+				@include display-flex;
+				@include align-items(center);
+				.form-item-from{
+					@include sizeRem(width, 80);
+					@include sizeRem(margin-right, 11);
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+				.form-item-to{
+					@include display-flex;
+					@include align-items(center);
+					@include sizeRem(width, 105);
+					& > label{
+						@include sizeRem(min-width, 25);
+					}
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+			}
+			#edit-salary{
+				legend{
+					@include sizeRem(width, 165);
+				    float:left;
+				    @include sizeRem(padding-top, 5);
+				    @include sizeRem(font-size, 15);
+				    color: $darkgray;
+				}
+			}
+			.form-item-opportunity{
+				@include display-flex;
+				& > label{
+					@include sizeRem(min-width, 165);
+					color: $darkgray;
+				}
+				.form-checkboxes{
+					@include sizeRem(width, 345);
+					.form-item{
+						float: left;
+						width: 50%;
+						@include sizeRem(font-size, 14);
+					}
+				}
+			}
+		}
+	}
+}
+#govcms-engagement-add-new-engagement-form{
+	legend{
+		border-bottom: 3px solid #e5e5e5;
+		@include wp-font(font-title);
+	}
+	#edit-submit{
+		position: relative;
+		#edit-engagement-no{
+			margin: 0;
+			position: absolute;
+			@include sizeRem(right, 40);
+		    width: auto;
+		}
+		p{
+			@include sizeRem(padding-left, 20);
+			margin-bottom: 0;
+		}
+	}
+	#edit-engagement{
+		position: relative;
+		#edit-engagement-no{
+			margin: 0;
+			position: absolute;
+			@include sizeRem(right, 40);
+		    width: auto;
+		}
+		#edit-agency-details{
+			#edit-department,#edit-aps-class{
+				@include sizeRem(padding-left, 200);
+				label{
+					@include wp-font(font-body);
+					@include sizeRem(margin-right, 80);
+				}
+			}
+			#edit-aps-class{
+				label{
+					@include sizeRem(margin-right, 80);
+				}
+			}
+		}
+	}
+	#edit-admin-instruction{
+		.form-item-editor-instructions{
+			position: relative;
+			label{
+				@include sizeRem(padding-left, 20);
+				@include sizeRem(margin-right, 150);
+			}
+		}
+		.description{
+			position: absolute;
+			@include sizeRem(top, 15);
+			@include sizeRem(left, 20);
+    		&:before{
+    			content:"(";
+    			display: inline-block;
+    		}
+    		&:after{
+    			content:")";
+    			display: inline-block;
+    		}
+		}
+		.form-type-item{
+			label{
+				@include sizeRem(padding-left, 20);
+				@include sizeRem(margin-right, 225);
+			}
+		}
+		#edit-last-modified{
+			label{
+				@include sizeRem(margin-right, 180);
+			}
+		}
+	}
+}
+.page-outcomes-create-list-detail{
+	.pane-apsjobs-forms-apsjob-create-free-outcome{
+		margin-top: -50px;
+		position: relative;
+		z-index: 15;
+	}
+	.pane-apsjobs-forms-apsjob-create-outcome{
+		margin-top: -75px;
+		position: relative;
+		z-index: 15;
+	}
+	.form-apsjobs-create-outcome{
+		padding-top: 0;
+		@include border-radius-rem(4);
+	}
+	.form-item-publication-date{
+		.description{
+			display: none;
+		}
+	}
+	.form-item-engagement-date{
+		.description{
+			display: none;
+		}
+	}
+	.form-item-employment-status{
+		width: auto;
+	}
+}
+.page-outcomes-create-list-detail{
+	#edit-job-type{
+		.fieldset-wrapper{
+			@include justify-content(space-between);
+			@include display-flex;
+		    @include sizeRem(padding-right, 40);
+			@include sizeRem(padding-left, 40);
+			.form-item{
+				display: block;
+				width: 100%;
+			}
+			.form-item-working-hours{
+				width: 33.33%;
+			}
+			.form-item-specific-considerations{
+				width: 33.33%;
+			}
+			#edit-engagement-container{
+				width: 33.33%;
+				.form-type-checkboxes{
+					width: 100%;
+				}
+			}
+
+			.form-item-non-ongoing-duration{
+				@include sizeRem(padding-right, 30);	
+				position: relative;
+				min-height: 35px;
+				line-height: 15px;
+				margin: 0 0 10px;
+				&:before{
+					content: "";
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					top: 15px;
+					right: 45px;
+					color: $blue-color;
+					border-left: 1px solid $blue-color;
+					border-bottom: 1px solid $blue-color;
+					@include rotate(315deg);
+					z-index: 3;
+					display: none;
+				}
+				.form-select{
+					background-color: transparent;
+					z-index: 6;
+					position: relative;
+					height: 35px;
+				}
+			}
+			#edit-engagement{
+				background:none;
+				padding:0;
+				border: 0;
+			}
+		}
+	}
+	.form-apsjobs-create-outcome{
+		.form-item-working-hours,.form-item-engagement-types,.form-item-specific-considerations{
+			.form-checkboxes{
+				label{
+					font-weight: normal;
+				}
+			}
+		}
+		.form-item-job-title{
+			width: 100%;
+			margin-top: 0;
+		}
+		.form-item-location{
+			width: 100%;
+		}
+		.form-item-closing-date{
+			label{
+				min-width: 130px;
+			}
+			.form-item-closing-date-date{
+				width: 100%;
+			}
+			.description{
+				display: none;
+			}
+		}
+		.form-type-textfield,.form-type-select{
+			position: relative;
+			.description{
+				a{
+					position: absolute;
+					color: $title-color;
+					background: $blue-color;
+					display: block;
+					text-align: center;
+					@include sizeRem(top, 0);
+					@include sizeRem(right, 10);
+					@include border-radius(50%);
+					@include sizeRem(width, 15);
+					@include sizeRem(height, 15);
+				}
+			}	
+		}
+		#edit-candidate{
+			clear: both;
+		}
+		#edit-job-type{
+			clear: both;
+		}
+		.form-item-job-title{
+			display: block;
+		}
+		.form-item-location{
+			display: block;
+		}
+		// .form-item{
+		// 	display: block;
+		// }
+		.form-item-position-number{
+			display: block;
+			float: left;
+			width: 35%;
+			@include sizeRem(padding-right, 5);
+		}
+		.form-item-employer{
+			width: 65%;
+			display: inline-block;
+			@include sizeRem(padding-left, 10);
+		}
+		.form-item-location{
+			position: relative;
+			input{
+				width: 50%;
+
+			}
+			.description{
+				width: 50%;
+				float: right;
+				@include sizeRem(padding-left, 30);
+			}
+		}
+	}
+}
+.page-outcomes-create-list-detail{
+	.group-salary{
+		.form-item-salary-type{
+			// width: 50%;
+			position: relative;
+			
+			.description{
+				position: absolute;
+				top:2px;
+				left: 65px;
+			}
+		}
+		.form-item-salary-from{
+			padding-right: 10px;
+			width: 25%;
+			padding-left: 0;
+		}
+		.form-item-salary-to{
+			padding-left: 10px;
+			width: 25%;
+		}
+	}
+	.form-apsjobs-create-outcome{
+		// .form-type-select{
+		// 	position: relative;
+		// 	.description{
+		// 		a{
+
+		// 		}
+		// 	}
+		// }
+		.form-item-job-category{
+			width: 33.3333%;
+			display: block;
+			float: left;
+			padding-right: 10px;
+		}
+		.form-item-job-level{
+			width: 33.3333%;
+			display: block;
+			float: left;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		.form-item-clearance-level{
+			width: 33.3333%;
+			display: block;
+			float: left;
+			padding-left: 10px;
+		}
+		.group-salary{
+			.form-item-salary-type{
+				display: block;
+				width: 50%;
+			}
+			.form-type-radio{
+				// width: 25%;
+			}
+			
+		}
+	}
+	.group-salary{
+		clear: both;
+		@include display-flex;
+		@include align-items(center);
+		#edit-salary-type{
+			@include display-flex;
+			@include align-items(center);
+			.form-type-radio{
+				&:first-child{
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
+.page-panel-form-basic{
+	.group-salary{
+		.form-item-salary-type{
+			width: 50%;
+			position: relative;
+			.form-type-radio{
+				width: 25%;
+			}
+			.description{
+				position: absolute;
+				top:2px;
+				left: 65px;
+			}
+		}
+		.form-item-salary-from{
+			width: 25%;
+			padding-left: 0;
+		}
+		.form-item-salary-to{
+			width: 25%;
+		}
+	}
+	.paner-apsjobs-vacancies-new-vacancy{
+		position: relative;
+		#edit-preview-container{
+			& > h2{
+				position: absolute;
+				left: 40px;
+				z-index: 15;
+				top:-5px;
+			}
+		}
+		.form-item-job-title{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.form-item-apply-url{
+			margin-top: 0;
+		}
+	}
+	.form-item-publication-date{
+		@include display-flex;
+		@include align-items(center);
+		& > label{
+			display: block;
+			// @include sizeRem(margin-bottom, 20);
+			@include sizeRem(min-width, 150);
+		}
+		.form-item{
+			margin-bottom: 0;
+		}
+	}
+	.form-item-publication-date-date{
+		@include display-flex;
+		@include align-items(center);
+		@include sizeRem(margin-bottom, 20);
+		label.element-invisible{
+			display: none;
+			position: static !important;
+			overflow: inherit;
+			@include sizeRem(min-width, 80);
+		}
+		.description{
+			display: none;
+		}
+
+	}
+	.form-item-closing-date{
+		@include sizeRem(margin-left, 30);
+		@include display-flex;
+		@include align-items(center);
+		& > label{
+			display: block;
+			@include sizeRem(min-width, 150);
+		}
+		.form-item-closing-date-date{
+			.description{
+				display: none;
+			}
+		}
+	}
+	#edit-vacancy{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.pane-govcms-vacancies-govcms-vacancies-new-vacancy{
+		background-color:$white;
+		#edit-group-btn{
+			input{
+				border: 1px solid $blue-color;
+	    		background-color: $blue-color;
+	    		@include sizeRem(font-size, 12);
+	    		&:hover,&:focus{
+					background-color: $hover-color;
+				    border-color: $hover-color;
+				    color: $black;
+	    		}
+			}
+		}
+	}
+	#edit-vacancy{
+		@include sizeRem(padding-right, 20);
+		@include sizeRem(padding-left, 20);
+		& > legend{
+		    display: none;
+		}
+		.container-inline-date{
+				display: inline-block;
+		}
+	}
+
+	.form-item-position-number{
+		float: left;
+		width: 35%;
+		@include sizeRem(padding-right, 5);
+	}
+	.form-item-employer{
+		width: 65%;
+		display: inline-block;
+		@include sizeRem(padding-left, 10);
+	}
+	.form-item-location{
+		position: relative;
+		input{
+			width: 50%;
+
+		}
+		.description{
+			width: 50%;
+			float: right;
+			@include sizeRem(padding-left, 30);
+		}
+	}
+	legend{
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+	#edit-job-type{
+		.fieldset-wrapper{
+			@include justify-content(space-between);
+			@include display-flex;
+		    @include sizeRem(padding-right, 40);
+			@include sizeRem(padding-left, 40);
+			.form-item-working-hours{
+				width: 33.33%;
+			}
+			.form-item-specific-considerations{
+				width: 33.33%;
+			}
+			#edit-engagement-container{
+				width: 33.33%;
+				.form-type-checkboxes{
+					width: 100%;
+				}
+			}
+
+			.form-item-non-ongoing-duration{
+				@include sizeRem(padding-right, 30);	
+				position: relative;
+				min-height: 35px;
+				line-height: 15px;
+				margin: 0 0 10px;
+				&:before{
+					content: "";
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					top: 15px;
+					right: 45px;
+					color: $blue-color;
+					border-left: 1px solid $blue-color;
+					border-bottom: 1px solid $blue-color;
+					@include rotate(315deg);
+					z-index: 3;
+					display: none;
+				}
+				.form-select{
+					background-color: transparent;
+					z-index: 6;
+					position: relative;
+					height: 35px;
+				}
+			}
+			#edit-engagement{
+				background:none;
+				padding:0;
+				border: 0;
+			}
+		}
+	}
+	.form-item-salary,.form-item-job-category,.form-item-job-level,.form-item-clearance-level{
+		float: left;
+		width: 33.33%;
+	}
+	.form-item-salary,.form-item-job-category{
+		@include sizeRem(padding-right, 5);
+	}
+	.form-item-clearance-level{
+		@include sizeRem(padding-left, 5);
+	}
+	.form-item-job-level{
+		@include sizeRem(padding-right, 10);
+		@include sizeRem(padding-left, 10);
+		.chosen-container .chosen-results li.group-result{
+			&:first-child{
+				// display: none;
+			}
+		}
+	}
+	.form-item-salary-from{
+		float: left;
+		width: 36.66%;
+		@include sizeRem(padding-left, 80);
+		@include sizeRem(padding-right, 10);
+		position: relative;
+		input{
+			@include sizeRem(margin-top, 24);
+		}
+		label{
+			position: absolute;
+			@include sizeRem(top, 27);
+			@include sizeRem(left, 25);
+			@include sizeRem(font-size, 24);
+		    @include wp-font(font-title-med);
+		}
+	}
+	.form-item-salary-to{
+		float: left;
+		width: 30%;
+		@include sizeRem(padding-left, 5);
+		input{
+			@include sizeRem(margin-top, 24);
+		}
+	}
+	.form-item-job-description-value{
+		clear: both;
+	}
+	.form-item-apply-url{
+		position: relative;
+		.description{
+			position: absolute;
+			top:0;
+			@include sizeRem(left, 90);
+		}
+	}
+}
+#edit-to{
+	position: relative;
+	legend{
+		position: absolute;
+    	@include sizeRem(top, 40);
+	    font-weight: normal !important;
+	    @include sizeRem(font-size, 16);
+	    border-bottom: 0 !important;
+	}
+}
+.pane-govcms-blocks-govcms-agencies-search-form{
+	.form-aps-job-search{
+		#edit-field-portfolio-tid{
+			@include sizeRem(padding-right, 40);
+		}
+		#agencies-filter-agencies,#edit-sort-order-items{
+			position: relative;
+			&:before{
+		        content: "\f107";
+		        position:absolute;
+		        color: #00a886;
+		        top: 50%;
+		        @include sizeRem(right, 10);
+		        text-align: center;
+		        @include fontawesome;
+		        @include translate(0,-50%);
+		        @include sizeRem(font-size, 24);
+		    }
+		}
+	}
+}
+.view-view-gazette{
+	.group-left{
+		float: left;
+		text-align: left;
+	}
+	.views-field-field-aps-notice-type{
+		a{
+			color:$black;
+			&:hover,&:focus{
+				text-decoration: underline;
+			}
+		}
+	}
+	.views-field-title{
+		@include sizeRem(margin-bottom, 10);
+	}
+}
+.view-notifications{
+	.views-table{
+		tbody{
+			border-top: 1px solid #eee;
+		}
+		tr{
+			background-color: $white;
+			@include border-radius(4px);
+			border-right: 1px solid #eee;
+			border-left: 1px solid #eee;
+			border-bottom:1px solid #eee;
+		}
+
+	}
+}
+///
+.page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-field-link a{
+	min-width:185px;
+}
+/////////////////////////////////////////////////
+.footer-copyright{
+	.col-md-4{
+		text-align: right;
+	}
+	.contextual-links-region{
+		    .region-footer-bottom-right{
+				.panel-title{
+					a{
+						@include sizeRem(padding, 10);
+					    float: right;
+					    border: 1px solid $blue-color;
+    					background-color: $blue-color;
+					    @include sizeRem(font-size, 12);
+					    color: $black;
+					    @include wp-font(font-title);
+					    @include border-radius(4px);
+					    width: 185px;
+					    text-align: center;
+					    height: 41px;
+					    padding-top: 14px;
+					}
+				    a{
+				    	&:hover,&:focus{
+				    	background-color: $hover-color;
+						border-color: $hover-color;
+						color: $black;
+				    }
+				}
+			}
+			.block-icon-social{
+				clear: both;
+				@include sizeRem(padding-top, 15);
+				@include sizeRem(padding-bottom, 15);
+			}
+			.block-menu-menu-bottom{
+				@include sizeRem(font-size, 12);
+				p{
+					margin-bottom: 0;
+				}
+				a{
+					@include sizeRem(padding-left, 10);
+					&:hover,&:focus{
+						text-decoration: underline;
+					}
+					display: inline-block;
+				}
+				color:#00a886;
+			}
+	    }
+    }
+}
+///content-third-wrapper
+#content-third-wrapper{
+	.container-fluid{
+		padding:{
+	        @include sizeRem(left, 15);
+	        @include sizeRem(right, 15);
+	    }
+	    margin: 0 auto;
+	    @media (min-width: $desktop) {
+	        width: 1170px;
+	    }
+	    @media (min-width: $tablet-ht) and (max-width: $desktop - 1) {
+	        width: 970px;
+	    }
+	    @media (min-width: $tablet-vt) and (max-width: $tablet-ht - 1) {
+	        width: 750px;
+	    }
+	}
+}
+///
+///view-aps-outcomes
+.view-aps-outcomes{
+	.views-row{
+		background-color:$white;
+		@include sizeRem(padding-top, 35);
+		@include sizeRem(padding-bottom, 30);
+		@include sizeRem(padding-left, 40);
+		@include sizeRem(padding-right, 40);
+		@include sizeRem(margin-top, 15);
+		@include border-radius-rem(4);
+	}
+	.views-field-title{
+		@include sizeRem(margin-bottom, 45);
+		a{
+			color: $blue-color1;
+			text-decoration: underline;
+			&:hover,&:focus{
+				text-decoration: none;
+				color: $black;
+			}
+		}
+	}
+	.views-field-created{
+		@include sizeRem(margin-bottom, 45);
+	}
+	.views-field-field-outcome-type{
+		@include sizeRem(margin-bottom, 30);
+	}
+	.views-field-field-vacancy{
+		a{
+			color: $black;
+			&:hover,&:focus{
+				text-decoration: underline;
+			}
+		}
+	}	
+	.views-field-field-outcome-type{
+		@include wp-font(font-body);
+		@include sizeRem(font-size, 16);
+    	color: $boder-bottom;
+		a{
+			color: $boder-bottom;
+			&:hover,&:focus{
+				text-decoration: underline;
+			}
+		}
+	}
+	.views-field-body{
+		width: 70%;
+		@include wp-font(font-body);
+	}
+}
+//////////////////////////////////////////////
+.view-aps-vacancy{
+	.group-right{
+		color: $place-color;
+		.views-field-field-job-category{
+			@include sizeRem(font-size, 16);
+			color: $place-color;
+		}
+	}
+	.group-left{
+		.views-field-field-location-raw,.views-field-field-position-number{
+			position: static;
+			text-align: left;
+			@include display-flex;
+			span{
+				@include sizeRem(margin-right, 5);
+			}
+		}
+		.views-fieldset{
+			text-align: left;
+			.views-field-field-job-description{
+				margin-top: 0;
+			}	
+		}
+	}
+	.views-field-field-position-number{
+		@include wp-font(font-body);
+		@include sizeRem(font-size, 16);
+	}
+	
+}
+.view-view-gazette{
+	.views-field-title{
+		.field-content{
+			a{
+				text-decoration: underline;
+
+				&:hover,&:focus{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+//pane-aps-outcomes-panel-pane-1
+//
+.pane-aps-outcomes-panel-pane-1{
+	margin-top: 0;
+	h2{
+		margin-top: 0;
+	}
+}
+.view-aps-vacancy{
+	.group-left{
+		.agency-list-draft.views-fieldset,.agency-list-approval.views-fieldset{
+			float: none;
+		}
+	}
+}
+.node-type-aps-agencies{
+	// .field-type-image{
+	// 	.field-items{
+	// 		display: block;
+	// 	}
+	// }
+	.views-exposed-form{
+		.views-widget-sort-order{
+			@include sizeRem(margin-bottom, 5);
+		}
+	}
+}
+////pane-govcms-blocks-govcms-agencies-search-form
+.pane-govcms-blocks-govcms-agencies-search-form{
+	.form-aps-job-search{
+		#edit-sort-order-items{
+			z-index: 12;
+			width: 100%;
+		    text-align: right;
+		    margin-left: 0;
+		    @include sizeRem(margin-top, 18);
+		    @include sizeRem(margin-bottom, -25);
+		    .chosen-container-single{
+		    	width: 185px !important;
+			    text-align: center;
+			    @include wp-font(font-body);
+			    @include sizeRem(font-size, 14);
+		    }
+		}
+	}
+}
+////page-agencies
+
+//node-type-aps-vacancies
+.node-type-aps-vacancies{
+	.content-fifth{
+		.pane-aps-vacancies-detail-page-panel-pane-4{
+			margin-right: 15px;
+		}
+		.panel-pane{
+			width: auto;
+		}
+		.pane-custom{
+			margin-bottom: 10px;
+		}
+		.unpublish a{
+			width: 160px;
+			height: 40px;
+			padding-top: 12px;
+		}
+		.panel-pane-ap-online{
+			display: block;
+			@include flex-width-col-xs(0%);
+			@include justify-content(flex-start);
+		}
+	}
+	.edit-vacancy-detail{
+		a{
+			border: 1px solid $blue-color;
+		    background-color: $blue-color;
+		    color: $black;
+		    @include sizeRem(font-size, 12);
+			@include sizeRem(width, 160);
+		    @include border-radius-rem(4);
+		    display: inline-block;
+		    @include sizeRem(padding-top, 10);
+			@include sizeRem(padding-bottom, 10);
+		    text-align: center;
+		    @include wp-font(font-medium);
+		    &:hover,&:focus{
+		    	background-color: $hover-color;
+			    border-color: $hover-color;
+			    color: $black;
+		    }
+		}
+	}
+}
+.page-agencies{
+	#edit-sort-order-items{
+		.chosen-container-active.chosen-with-drop .chosen-single{
+			border:0;
+		}
+		.chosen-container .chosen-drop{
+			border:0;
+		}
+		.chosen-container .chosen-results{
+			width: 100%;
+			@include sizeRem(padding-right, 4);
+			li{
+				width: 100%;
+				height: auto;
+				@include sizeRem(padding-top, 10);
+				@include sizeRem(padding-bottom, 10);
+				border-radius: 0;
+				background: transparent !important;
+				color: $black;
+				@include sizeRem(font-size, 14);
+				font-weight: $font-weight-medium;
+				&:hover,&:focus{
+					border: 1.5px solid $bg-active;
+					background-color:$bg-active !important;
+					color: $white !important;
+				}
+			}
+			li.result-selected{
+				border: 1.5px solid $blue-color1;
+				background-color:$blue-color1 !important;
+				color: $white !important;
+				&:hover,&:focus{
+					border: 1.5px solid $bg-active;
+					background-color:$bg-active !important;
+					color: $white !important;
+				}
+			}
+		}
+	}
+	
+}
+.pane-govcms-blocks-govcms-agencies-search-form{
+	#edit-sort-order-items{
+		#edit-sort-order{
+			@include sizeRem(width, 185);
+			z-index: 12;
+		}
+	}
+}
+///view-aps-vacancy
+.view-aps-vacancy{
+	.group-number{
+		clear: both;
+		@include display-flex;
+		.views-field-nothing{
+			width: 50%;
+			text-align: left;
+			margin-top: 0;
+		}
+		.views-field-field-position-number{
+			width: 50%;
+		}
+	}
+	.views-field-nothing-1{
+		clear: both;
+	}
+	.agency-list-archived.views-fieldset{
+		text-align: left;
+	}
+}
+.pane-govcms-blocks-govcms-agencies-search-form{
+	#agencies-filter-agencies{
+		@include sizeRem(width, 235);
+	}
+}
+///
+.pane-govcms-blocks-govcms-agencies-search-form ul{
+	cursor: pointer;
+}
+//node-type-aps-agencies
+.node-type-aps-agencies{
+	.views-exposed-widgets{
+		position: relative;
+		.views-widget-sort-order{
+			margin-top: 0;
+		}
+		.views-submit-button{
+			display: none;
+		}
+	}
+}
+//.........page-aps-gazette
+.page-aps-gazette{
+	.views-submit-button{
+		display: none;
+	}
+}
+//view-view-job
+.view-view-job{
+	.group-abs-job-relation{
+		.views-field-title{
+			a{
+				color:$black;
+				&:hover{
+					color: $blue-color1;
+				} 
+			}
+		}
+	}
+	.views-field-title{
+		a{
+			color:$black;
+			&:hover{
+				color: $blue-color1;
+			} 
+		}
+	}
+}
+.node-type-aps-agencies{
+	.view-aps-vacancy{
+		.view-header{
+			top:0;
+		}
+	}
+}
+//.paner-menu-dashbord-vacancy-state li.active a
+.paner-menu-dashbord-vacancy-state li a{
+	height:100%;
+}
+//paner-aps-dasboard-govcms-sort-date
+.paner-aps-dasboard-govcms-sort-date{
+	.sort-date{
+		z-index: 10;
+   		@include sizeRem(width, 218);
+	}
+}
+.form-apsjobs-create-outcome{
+	#edit-actions{
+		text-align: right;
+		@include sizeRem(margin-top, 20);
+		input{
+			@include sizeRem(margin-left,15);
+			padding: 5px 25px;
+			min-height: 40px;
+			text-transform: capitalize;
+			@include sizeRem(font-size, 12);
+			@include wp-font(font-medium);
+			&:hover,&:focus{
+				color: $title-color;
+			}
+		}
+	}
+	.form-item-publication-date-date{
+		label{
+			display: none;
+		}
+	}
+	legend{
+		border-bottom:2px solid #eee !important;
+		@include sizeRem(font-size,28);
+		@include sizeRem(padding-top,10);
+	}
+	.container-inline-date{
+		@include sizeRem(margin-top,25);
+		#edit-engagement-date{
+			label{
+				display: none;
+			}
+		}
+	}
+	.form-item-employment-status{
+		#edit-employment-status{
+			@include display-flex;
+		}
+	}
+}
+//node-type-aps-outcomes
+.node-type-aps-outcomes{
+	.view-aps-vacancy{
+		.group-right,.group-date{
+			.views-field{
+				display: block;
+			}
+		}
+		.views-field-field-position-number{
+			display: block;
+		}
+		.agency-list-approval{
+			.views-label{
+				min-width: 12.5rem;
+			}
+		}
+	}
+	.view-aps-vacancy .view-header{
+		@include sizeRem(top, 20);
+		z-index: 10;
+	}
+
+}
+//page-outcomes-create-outcome-engagement
+.page-outcomes-create-list-detail{
+	#edit-candidate{
+		.form-item{
+			width: 60%;
+		}
+	}
+	#edit-compliance{
+		.form-item{
+			width: 60%;
+		}
+	}
+}
+//page-outcomes-create-outcome-promotion
+.page-outcomes-create-outcome-promotion{
+	.form-apsjobs-create-outcome{
+			.form-item-publication-date-date{
+				.description{
+					display: none;
+				}
+			}
+	}
+	.view-aps-vacancy{
+		.views-row{
+			// position: relative;
+			.views-field-field-position-number{
+				// position: absolute;
+			 //    left: auto;
+			 //    @include sizeRem(right, 40);
+			 //    @include sizeRem(bottom, 25);
+			}
+		}
+	}
+}
+//page-outcomes-create-outcome
+.page-outcomes-create-outcome{
+	.form-apsjobs-create-outcome{
+		.form-item-publication-date{
+			.description{
+				display: none;
+			}
+		}
+		.form-item-engagement-date{
+			.description{
+				display: none;
+			}
+		}
+		.form-type-radios{
+			width: 100%;
+			.form-type-radio{
+				&:last-child{
+					width: 100%;
+				}
+			}
+		}
+	}
+	.view-aps-vacancy{
+		.group-showmore{
+			.views-field-field-position-number{
+				@include sizeRem(margin-top, 30);
+				text-align: right;
+				width: 30%;
+			}
+		}
+	}
+	
+}
+.node-type-aps-vacancies .content-fifth .views-field-field-outcome{
+	@include sizeRem(margin-left, 40);
+}
+.node-type-aps-vacancies .content-fifth .container{
+	@include sizeRem(padding-left, 15);
+	@include sizeRem(padding-right, 15);
+}
+//page-aps-agency-dashboard
+.page-aps-agency-dashboard{
+	h2.pane-title{
+		cursor: pointer;
+		width: 50%;
+	}
+	.view-aps-vacancy .view-header{
+		padding:0;
+		// @include border-radius-rem(0);
+	}
+	.view-aps-vacancy{
+		.group-left{
+			.views-field-ops{
+				margin-top: 28px;
+			}
+		}
+		.view-header{
+			@include border-radius-rem(4);
+			p{
+				@include border-radius-rem(4);
+				// position: relative;
+				// &:before{
+				// 	content:"+";
+				// 	display: inline-block;
+				// 	margin-right: 5px;
+				// 	position: absolute;
+				// 	top:50%;
+				// 	transform: translate(0,-50%);
+				// 	left:8px;
+				// }
+				a{
+					@include border-radius-rem(4);
+					border: 1px solid $blue-color;
+    				background-color: $blue-color;
+    				width: 185px;
+				    display: inline-block;
+				    height: 41px;
+				    padding-top: 14px;
+				    padding-bottom: 14px;
+				    font-size: 0.75rem;
+				    font-family: "Roboto", sans-serif;
+				    font-weight: 500;
+				    // padding-left:10px;
+				    text-align: center;
+					&:hover,&:focus{
+						color:$black;
+						background-color: $hover-color;
+    					border-color: $hover-color;
+					}
+				}
+				&:hover,&:focus{
+					color:$black;
+					background-color: $hover-color;
+    				border-color: $hover-color;
+				}
+			}
+		}
+	}
+	.view-inner{
+		@include display-flex;
+		@include align-items(center);
+		-webkit-flex-wrap: wrap;
+    	flex-wrap: wrap;
+    	.views-field-title{
+    		margin-bottom: 10px;
+    	}
+		.views-field{
+			width: 50%;
+		}
+		.views-field-field-link{
+			margin-top: 4px;
+			text-align: right;
+			@include sizeRem(margin-bottom, 10);
+			a{
+			    @include sizeRem(width, 185);
+				@include sizeRem(height, 41);
+				@include sizeRem(padding-top, 12);
+				@include sizeRem(padding-bottom, 12);
+				font-size: 0.75rem;
+			    @include wp-font(font-medium);
+			}
+		}
+		.views-field-nothing{
+			margin-bottom: 25px;
+			margin-left: 20px;
+			text-align: right;
+			height: 41px;
+			width: 100%;
+			position: relative;
+    		right: 0px;
+    		br{
+    			display: none;
+    		}
+			.dropdown{
+				// width: 185px;
+				.create-outcome{
+					width: 185px;
+				}
+				.dropdown-menu{
+					width: 185px;
+				    right: 1px;
+				    left: auto;
+				    &>li{
+				    	&:last-child{
+				    		a{
+				    			border-bottom-right-radius: 4px;
+				    			border-bottom-left-radius: 4px;
+				    		}
+				    	}
+				    }
+				}
+				.dropdown-menu > li > a{
+					border-radius: 0;
+				    border: 1px solid #00d1a7;
+				    background-color: #00d1a7;
+				    border-bottom: 1px solid #e3e7e8;
+				    color: #000000;
+				    padding: 0.59375rem 1.5625rem 0.59375rem 1.5625rem;
+				    font-size: 0.75rem;
+				    font-family: "Roboto", sans-serif;
+				    font-weight: 500;
+				    &:hover,&:focus{
+				    	background-color: #29e3be;
+					    sor: #000000;
+				    }
+				}
+			}
+		}
+	}
+}
+.page-outcomes-create-outcome{
+	.view-aps-vacancy .view-header{
+		position: static;
+	}
+}
+.node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group{
+	padding-right: 40px;
+}
+// .node-type-aps-vacancies{
+// 	// #apsjobs-vacancy-approval-form{
+// 		#edit-btn-group{
+// 			padding-right: 40px;
+// 		}
+// 	// }
+// }
+//
+.page-panel-form-basic #edit-job-type .fieldset-wrapper #edit-engagement-container label{
+	display:block;
+}
+.node-type-aps-vacancies{
+ 	.content-fifth .view-aps-vacancies-detail-page{
+		.views-field-field-outcome{
+			margin-left: 0;
+		}
+	}
+	.content-fifth .container{
+		padding-left: 55px;
+	}
+	.unpublish a{
+		width: 165px;
+
+	}
+	.field-name-field-job-description{
+		padding-top: 30px;
+	}
+	#content-sixth-wrapper{
+		.container{
+			padding-top: 0;
+			padding-left: 55px;
+			@include justify-content(flex-start);
+		}
+		.pane-custom{
+			margin-top: 0;
+		}
+			// position: absolute;
+		//     top: -90px;
+		//     left: 235px;
+		    .unpublish{
+				a{
+					width: 160px;
+				    height: 41px;
+				    padding-top: 12px;
+				}
+		    }
+		// }
+	}
+}
+.page-aps-agency-dashboard-up{
+	.pane-aps-notificaitons-panel-pane-1{
+		h2{
+			width: 80%;
+		}
+	}
+}
+.view-aps-vacancy-search .view-header{
+	color:$black;
+}
+.page-search-jobs{
+	.content-second{
+		.container{
+			position: relative;
+			.create-alert-open-popup-save-job{
+				position: relative;
+    			bottom: -2px;
+			}
+		}
+	}
+}
+//responsive
+//
+//
+
+@media (max-width: 1024px){
+	.page-outcomes-create-outcome{
+		.view-aps-vacancy .views-row {
+		    border: 0;
+		}
+	}
+}
+// 1200
+@media (max-width: $desktop - 1) {
+	.page-aps-agency-dashboard-up{
+		.container{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.content-feature{
+			.container{
+				padding-top: 1.5625rem;
+			}
+		}
+		.content-third{
+			.pane-view-gazette-panel-pane-2{
+				margin-top: 0;
+			}
+		}
+	}
+	.page-search-jobs .content-second .container .create-alert-open-popup-save-job{
+		// bottom:25px;
+	}
+	.page-outcomes-create-outcome{
+		.form-apsjobs-create-outcome {
+			.form-type-radios{
+				.form-type-radio{
+					@include sizeRem(width, 150);
+				}
+			}
+		}
+	}
+	
+}
+@media (max-width: $desktop - 1){
+	.page-outcomes-create-list-detail{
+		.form-type-checkbox{
+			label{
+				display: block;
+			}
+			
+		}
+	}
+	// .page-outcomes-create-outcome-engagement #edit-compliance .form-item{
+	// 	width: 80%;
+	// }
+	.page-outcomes-create-list-detail #edit-compliance .form-item{
+		width: 80%;
+	}
+	// .page-outcomes-create-outcome-engagement #edit-candidate .form-item{
+	// 	width: 80%;
+	// }
+	.page-outcomes-create-list-detail #edit-candidate .form-item{
+		width: 80%;
+	}
+	.page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-body{
+		max-width: 500px;
+	}
+	.page-panel-form-basic .group-salary .form-item-salary-type .form-type-radio{
+		width: 50%;
+	}
+
+	.page-aps-agency{
+		.view-aps-vacancy .views-row{
+			@include sizeRem(padding, 30, 2, 25);
+		}
+		.group-salary{
+			.form-item-salary-from{
+				width: 33.3333%;
+    			padding-left: 10px;
+			}
+			.form-item-salary-to{
+				width: 33.3333%;
+			}
+		}
+	}
+	.form-apsjobs-create-outcome .form-item{
+		width: 80%;
+	}
+	.form-apsjobs-create-outcome .form-item-employment-status #edit-employment-status{
+		-webkit-flex-wrap: wrap;
+    	flex-wrap: wrap;
+	}
+}
+@media (max-width: $tablet-ht - 1){
+	.page-aps-agency-dashboard h2.pane-title{
+		width: 80%;
+	}
+	.page-aps-agency-dashboard-up{
+		.views-aps-block-govcms-agency-count{
+			margin-bottom: 0px;
+		}
+		#content-second-wrapper{
+			.container{
+				padding-bottom: 0;
+			}
+			.pane-aps-outcomes-panel-pane-1{
+				margin-bottom: 0;
+			}
+		}
+		.content-first{
+			.paner-aps-vacancy-panel-title{
+				margin-bottom: 0;
+			}
+		}
+
+	}
+	.page-search-jobs .content-second .container{
+		.create-alert-open-popup-save-job{
+			// bottom:160px;
+			position: relative;
+			left:50%;
+			@include translate(-50%,0%);
+		}
+		ul.pager{
+			margin-top: 100px;
+		}
+	} 
+}
+@media (max-width: $tablet-vt - 1){
+	.page-aps-agency-dashboard-up{
+		.view-inner{
+			.views-field-field-link{
+				margin-top: 0 !important;
+				margin-bottom: 0;
+			}
+			.views-field-nothing{
+				margin-bottom: 0;
+				position: relative;
+			    top: -40px;
+			    left: 200px;
+			    // width: auto !important;
+			    right: auto;
+			    text-align: left;
+			    width: 50% !important;
+			}
+
+		}
+		.view-aps-job-baner{
+			padding-bottom: 0 !important;
+		}
+		.paner-apsjobs-block-agency-welcome{
+			p{
+				margin-top: 10px;
+			}
+		}
+		.view-aps-outcomes .views-row{
+			border: 0;
+		}
+		.view-view-gazette .views-row{
+			border: 0 !important;
+		}
+		 
+	}
+	.page-aps-agency-dashboard .view-inner .views-field-nothing{
+		margin-left: 0;
+	}
+	.page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-field-link{
+		margin-top: 0;
+		display: block;
+		float: none;
+	}
+	.page-aps-agency-my-job-vacancies{
+		.view-aps-vacancy{
+			.group-right{
+				padding-bottom: 0;
+			}
+		}
+	}
+	.node-type-aps-outcomes{
+		.view-aps-vacancy{
+			.group-right{
+				padding-bottom: 0;
+			}
+		}
+	}
+	.page-aps-agency{
+		.view-aps-vacancy .views-row{
+			@include sizeRem(padding, 30, 2, 20);
+		}
+		.view-aps-outcomes .views-field-field-outcome-type{
+			margin-bottom: 0;
+		}
+		.view-aps-outcomes {
+			.group-right{
+				padding-bottom: 0;
+			}
+
+		}
+		.view-aps-vacancy{
+			.group-date{
+				.views-field-title{
+					font-size: 20px;
+				}
+			}
+			.views-field-title{
+					font-size: 20px;
+			}
+			.group-left{
+				margin-bottom: 15px;
+			}
+			.group-right{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.page-aps-agency-dashboard{
+		// .container{
+		// 	padding-top: 10px;
+		// 	padding-bottom: 10px;
+		// }
+		.views-aps-block-govcms-agency-count{
+			margin-bottom: 0;
+		}
+		.view-inner{
+			display: block;
+			.views-field-field-link{
+				text-align: left;
+			}
+		}
+		.view-aps-vacancy{
+			.group-right{
+				@include sizeRem(margin-bottom, 40);
+				.views-field-field-position-number{
+					text-align: left;
+				}
+			}
+		}
+	}
+	.page-aps-agency-dashboard.admin-menu{
+		.view-aps-vacancy{
+			.group-right{
+				margin-bottom:0;
+			}
+		}
+	}
+	.page-outcomes-create-outcome{
+		.view-aps-outcomes .view-header{
+			padding-left: 0 !important;
+		}
+
+		.view-aps-vacancy{
+			.group-date{
+				.views-field-title{
+					a{
+						font-size: 22px;
+					}
+				}
+			}
+			.group-left{
+				margin-bottom: 20px;
+			}
+			.group-right{
+				padding-bottom: 0;
+			}
+		}
+		#edit-compliance{
+			.form-item{
+				width:80%;
+			}
+		}
+		#edit-candidate{
+			.form-item{
+				width:80%;
+			}
+		}
+		.form-apsjobs-create-outcome{
+			@include sizeRem(padding-left, 15);
+			@include sizeRem(padding-right, 15);
+		}
+		.form-item-publication-date-date{
+			input{
+				width: 100%;
+			}
+		}
+		.form-item-engagement-date-date{
+			input{
+				width: 100%;
+			}
+		}
+	}
+	.page-panel-form-basic #edit-vacancy .container-inline-date{
+		display: block;
+		.form-type-date-popup{
+			label{
+				min-width: 150px;
+			}
+		}
+		.form-item-closing-date{
+			margin-left: 0;
+			margin-top: 20px;
+		}
+	}
+}
+@media (max-width: $mobile){
+	.page-outcomes-create-list-detail{
+		.form-apsjobs-create-outcome .container-inline-date{
+			margin-top: 15px;
+		}
+		.container-inline-date .date-padding{
+			float: none;
+		}
+		.form-apsjobs-create-outcome .form-item{
+			display: block;
+			width: 100%;
+		}
+		#edit-compliance .form-item{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+		.form-item-closing-date{
+			.form-item-closing-date-date{
+				input{
+					width: 100%;
+				}
+			}
+		}
+		.form-item-engagement-date{
+			.form-item-engagement-date-date{
+				input{
+					width: 100%;
+				}
+			}
+		}
+		#edit-candidate .form-item{
+			width: 100%;
+		}
+		.form-item-publication-date{
+			width: 100%;
+			.form-item-publication-date-date{
+				width: 100%;
+				input{
+					width: 100%;
+				}
+			}
+		}
+		.form-apsjobs-create-outcome{
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 10px;
+			.form-item-position-number{
+				float: none;
+				width: 100%;
+				margin-bottom: 0;
+			}
+			.form-item-employer{
+				width: 100%;
+				padding-left: 0;
+			}
+			.form-item-location{
+				input{
+					width: 100%;
+					float: none;
+				}
+				.description{
+					float: none;
+					padding-left: 0;
+					width: 100%;
+					padding-top: 15px;
+				}
+			}
+		}
+	}
+	.page-search-jobs .content-second .container{
+		.create-alert-open-popup-save-job{
+			display: none;
+		}
+	
+	} 
+	.view-view-gazette,.view-aps-vacancy{
+		.agency-list-approval,.agency-list-draft{
+			.views-field-field-job-description{
+				display: block;
+			}
+		}
+	}
+	.page-aps-agency{
+		.view-aps-vacancy{
+			.agency-list-approval{
+
+			}
+		}
+	}
+	// .page-aps-agency .view-aps-vacancy .views-field-field-position-number{
+	// 	margin-top: 30px;
+	// }
+	// .page-aps-agency-dashboard-up .view-inner .views-field-nothing{
+	// 	bottom:60px;
+	// }
+	// .page-aps-agency-dashboard-up{
+	// 	.banner{
+	// 		// overflow: hidden;
+	// 	}
+	// 	.view-inner{
+	// 		// padding-top: 20px;
+ //    		// padding-bottom: 75px;
+ //    		.views-field-title{
+ //    			margin-bottom: 0;
+ //    		}
+ //    		.views-field-field-link{
+ //    			left: 0;
+ //    			bottom:0;
+ //    		}
+ //    		.views-field-nothing{
+ //    			top:0;
+ //    			left: 0;
+ //    		}
+	// 	}
+	// }
+	.page-panel-form-basic{
+		.paner-apsjobs-vacancies-new-vacancy{
+			.form-item-employer{
+				margin-top: 0;
+			}
+
+		}
+	}
+	.page-aps-agency-my-job-vacancies{
+		.view-aps-vacancy{
+			.group-number{
+				.views-field-nothing{
+					a{
+						min-width: 120px;
+						width: 165px;
+					}
+				}
+			}
+		}
+	}
+	.page-aps-agency .group-salary{
+		display: block;
+	}
+	.page-aps-agency-dashboard{
+		.container{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		#content-second-wrapper .container{
+			padding-bottom: 10px;
+		}
+		.panel-pane{
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+	}
+	.node-type-aps-outcomes .content-second .views-label{
+		min-width: 170px;
+	}
+	.page-outcomes-create-outcome{
+		.form-apsjobs-create-outcome{
+			@include sizeRem(padding-left, 15);
+			@include sizeRem(padding-right, 15);
+			@include sizeRem(padding-bottom, 10);
+			.form-item{
+				display: block;
+				width: 100%;
+			}
+			#edit-candidate{
+				clear: both;
+				.form-item{
+					display: block;
+					width: 100%;
+				}
+			}
+			#edit-compliance{
+				.form-item{
+					display: block;
+					width: 100%;
+				}
+			}
+			.form-type-radios{
+				.form-type-radio{
+					width: 100%;
+					&:last-child{
+						width: 80%;
+					}
+				}
+			}
+		}
+		.container-inline-date{
+			overflow: hidden;
+			.date-padding{
+				float: none;
+			}
+		} 
+		#edit-actions{
+			text-align: left;
+			input{
+				display: block;
+    			width: 100%;
+    			@include sizeRem(margin-bottom, 15);
+    			margin-left: 0;
+			}
+		}
+	}
+	.page-panel-form-basic{
+		#edit-publication-date{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+		#edit-closing-date{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+		#edit-group-btn{
+			@include sizeRem(padding-left, 15);
+			@include sizeRem(padding-right, 15);
+		}
+	}
+	 .page-panel-form-basic #edit-job-type .fieldset-wrapper #edit-engagement-container{
+	 	width: 100%;
+	 	label{
+	 		display: block;
+	 		width: 100%;
+	 	}
+	 } 
+}
+@media (max-width: $mobile-md){
+	.view-view-gazette,.view-aps-vacancy{
+		.agency-list-approval,.agency-list-draft{
+			.views-field{
+				display: block;
+			}
+		}
+	}
+	.page-aps-agency-dashboard-up{
+		.view-inner .views-field-nothing{
+			left: 0px;
+			top:15px;
+		}
+		.view-inner{
+			// padding-top: 10px !important;
+			// padding-bottom: 65px !important;
+		}
+	}
+	.form-apsjobs-create-outcome .form-item-employment-status #edit-employment-status{
+		label{
+			display: block;
+		}
+	}
+	.page-aps-agency-dashboard .view-aps-vacancy .view-header p a{
+		width: 100%;
+	}
+	.node-type-aps-outcomes .content-first .pane-content .views-field-field-outcome{
+		margin-bottom: 0;
+	}
+	.page-aps-agency-my-job-vacancies .view-aps-job-baner .view-inner .views-field-field-link{
+		display: inline-block;
+	}
+	.page-outcomes-create-outcome .form-apsjobs-create-outcome .form-type-radios .form-type-radio:last-child{
+		width: 100%;
+
+	}
+	.node-type-aps-vacancies{
+		.node-aps-vacancies .field .field-label{
+			float: none;
+			display: block;
+		}
+	}
+	.node-type-aps-outcomes .views-field-field-outcome .dropdown-menu{
+		width: 100%;
+	}
+	.page-node.node-type-aps-vacancies .field .field-label{
+		@include sizeRem(min-width, 180);
+	}
+	.node-type-aps-vacancies .content-fifth .panel-pane{
+		width: 100%;
+	}
+	.node-type-aps-vacancies .content-fifth .views-field-field-outcome{
+		width: 100%;
+		margin-left:0;
+		@include sizeRem(padding-left, 15);
+		@include sizeRem(padding-right, 15);
+	}
+	.page-node.node-type-aps-vacancies .field .field-label{
+		min-width: 170px !important;
+	}
+	.node-type-aps-vacancies form#apsjobs-vacancy-approval-form #edit-btn-group{
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}

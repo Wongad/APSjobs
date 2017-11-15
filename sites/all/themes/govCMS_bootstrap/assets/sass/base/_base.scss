@@ -1,0 +1,96 @@
+/*------------------------------------------------------------------*/
+/* Typography */
+
+html{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+}
+
+body {
+    color: $body-color;
+    @include wp-font(font-body);
+    @include sizeRem(font-size, 15);
+    line-height: 1.33;
+    background:  $white-color;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    color: $title-color;
+    @include wp-font(font-title-med);
+    @include sizeRem(margin-bottom, 20);
+}
+h1, h2, h3,
+.h1, .h2, .h3{
+    line-height: 1.1;
+    color: $title-color;
+}
+
+h1, .h1{
+    @include sizeRem(font-size, 80);
+}
+h2, .h2{
+    @include sizeRem(font-size, 28);
+}
+h3, .h3{
+    @include sizeRem(font-size, 20);
+}
+h4, .h4{
+    @include sizeRem(font-size, 16);
+}
+h5, .h5{
+    @include sizeRem(font-size, 16);
+}
+h6, .h6{
+    @include sizeRem(font-size, 16);
+}
+
+a {
+    @include transition(all 0.3s ease-out);
+    color: $link-color;
+    outline: none;
+    &:hover, &:focus {
+        color: darken($link-color, 8%);
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+strong {
+    font-weight: $font-weight-bold;
+}
+
+ul, ol {
+    @include sizeRem(margin-bottom, 15);
+}
+
+p {
+    @include sizeRem(margin-bottom, 15);
+}
+
+address {}
+
+label {}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input, select, textarea {
+    max-width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+

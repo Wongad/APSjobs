@@ -1,0 +1,15 @@
+name = Goutte
+description = Goutte is a screen scraping and web crawling library for PHP.
+php = 5.3.3
+core = 7.x
+
+files[] = plugins/FeedsGoutteFetcher.inc
+files[] = plugins/FeedsGoutteParser.inc
+
+dependencies[] = feeds
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "goutte"
+datestamp = "1380581327"
+

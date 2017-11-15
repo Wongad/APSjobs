@@ -1,0 +1,13 @@
+name = "Module Permissions UI"
+description = "Administrative interface to Module Permissions module"
+package = Administration
+core = 7.x
+configure = admin/config/system/managed-modules/config
+dependencies[] = module_permissions
+
+; Information added by Drupal.org packaging script on 2016-05-23
+version = "7.x-1.3"
+core = "7.x"
+project = "module_permissions"
+datestamp = "1463976545"
+

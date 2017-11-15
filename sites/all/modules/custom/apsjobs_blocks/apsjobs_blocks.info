@@ -1,0 +1,4 @@
+name = APSJobs Blocks
+description = Module is used to create custom advanced blocks
+package = APSJobs
+core = 7.x

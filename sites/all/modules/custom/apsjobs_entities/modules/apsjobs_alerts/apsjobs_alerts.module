@@ -1,0 +1,802 @@
+<?php
+
+require_once drupal_get_path('module', 'apsjobs_alerts') . '/libraries/jwt.php';
+
+define('SECRET_KEY', '@#$$*#YIHjkhfds');
+
+/**
+ * Implements hook_init().
+ */
+function apsjobs_alerts_init() {
+  drupal_add_js(drupal_get_path('module', 'apsjobs_alerts') . '/js/apsjobs_alerts.js');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_alerts_menu() {
+  $items = array();
+  $items['manage-alert/%/active'] = array(
+    'title' => 'Active alert',
+    'description' => 'Active an alert',
+    'page callback' => 'apsjobs_alerts_active_alert',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/enable'] = array(
+    'title' => 'Enable alert',
+    'description' => 'Enable an alert.',
+    'page callback' => 'apsjobs_alerts_enable_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/disable'] = array(
+    'title' => 'Delete alert',
+    'description' => 'Delete an alert.',
+    'page callback' => 'apsjobs_alerts_disable_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/edit'] = array(
+    'title' => 'Edit alert',
+    'description' => 'Edit an alert.',
+    'page callback' => 'apsjobs_alerts_edit_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/delete'] = array(
+    'title' => 'Delete alert',
+    'description' => 'Delete an alert.',
+    'page callback' => 'apsjobs_alerts_delete_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/renew'] = array(
+    'title' => 'Renew alert',
+    'description' => 'Renew an alert.',
+    'page callback' => 'apsjobs_alerts_renew_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/cancel-all'] = array(
+    'title' => 'Cancel all alert',
+    'description' => 'Cancel all alert.',
+    'page callback' => 'apsjobs_alerts_cancel_all_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['manage-alert/delete-all'] = array(
+    'title' => 'Cancel all alert',
+    'description' => 'Cancel all alert.',
+    'page callback' => 'apsjobs_alerts_delete_all_alert',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function apsjobs_alerts_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'search-api-saved-searches-save-form') {
+    print_r($form);exit;
+    $form['submit']['#value'] = 'Save';
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function apsjobs_alerts_block_info() {
+  $blocks = array();
+  $blocks['apsjobs_alerts_manage_alerts'] = array(
+    'info' => t('APSJobs Manage Alerts'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_ctools_block_info().
+ */
+function apsjobs_alerts_ctools_block_info($module, $delta, &$info) {
+  $info['category'] = t('APSJobs');
+  //Allow blocks to be used before the search results in Panels
+  $info['render laset'] = TRUE;
+}
+
+/**
+ * Implements hook block_view().
+ */
+function apsjobs_alerts_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'apsjobs_alerts_manage_alerts':
+      $block['subject'] = t('Manage Alerts');
+      $params = drupal_get_query_parameters();
+      $data = apsjobs_alerts_validate_params($params);
+      if ($data) {
+        $variables = apsjobs_alerts_get_theme_variables($data->mail);
+        //$block['content'] = array('#markup' => '<h2>'.print_r($params,TRUE).'</h2>');
+        $block['content'] = theme('apsjobs_alerts_manage_alerts', $variables);
+      }
+      else {
+        $block['content'] = array('#markup' => '<h2>'.t('Invalid token').'</h2>');
+      }
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function apsjobs_alerts_theme() {
+  return array(
+    'apsjobs_alerts_manage_alerts' => array(
+      'variables' => array('block' => array()),
+      'template' => 'apsjobs_alerts_manage_alerts',
+      'path' => drupal_get_path('module', 'apsjobs_alerts') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Implements hook_token_info().
+ * Builds placeholder replacement tokens for user-related data.
+ * Provides the following tokens:
+ * - [apsjobs-alert:manage-alert-url]
+ * - [apsjobs-alert:active-alert-url]
+ */
+function apsjobs_alerts_token_info() {
+  $info['types']['apsjobs-alert'] = array(
+    'name' => t('APSJobs alert'),
+    'description' => t('Tokens related to a alert.'),
+    'needs-data' => 'search_api_saved_search_info',
+  );
+
+  $info['tokens']['apsjobs-alert']['manage-alert-url'] = array(
+    'name' => t('Manage Alerts URL'),
+    'description' => t('The URL under which a user can manage their alert'),
+    'type' => 'url',
+  );
+  $info['tokens']['apsjobs-alert']['active-alert-url'] = array(
+    'name' => t('Active Alerts URL'),
+    'description' => t('The URL under which a user can active their alert'),
+    'type' => 'url',
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ *
+ * @see apsjobs_alerts_token_info()
+ */
+function apsjobs_alerts_tokens($type, array $tokens, array $data = array(), array $options = array()) {
+  $url_options = array('absolute' => TRUE);
+  if (isset($options['language'])) {
+    $url_options['language'] = $options['language'];
+    $language_code = $options['language']->language;
+  }
+  else {
+    $language_code = NULL;
+  }
+  $sanitize = !empty($options['sanitize']);
+
+  $replacements = array();
+
+  switch ($type) {
+    case 'apsjobs-alert':
+      if (isset($tokens['manage-alert-url'])) {
+        $url_tokens = token_find_with_prefix($tokens, 'manage-alert-url');
+        if (!empty($data['search_api_saved_search_info']['search'])) {
+          $search = $data['search_api_saved_search_info']['search'];
+          $token = JWT::encode(array('mail' => $search->mail), SECRET_KEY);
+          $url = url('manage-alert', $url_options + array('query' => array('token' => $token)));
+
+          $replacements[$tokens['manage-alert-url']] = $url;
+        }
+        else {
+          $replacements[$tokens['manage-alert-url']] = 'error';
+          foreach ($url_tokens as $token) {
+            $replacements[$token] = '';
+          }
+        }
+      }
+      if (isset($tokens['active-alert-url'])) {
+        $url_tokens = token_find_with_prefix($tokens, 'active-alert-url');
+        if (!empty($data['search_api_saved_search_info']['search'])) {
+          $search = $data['search_api_saved_search_info']['search'];
+          $token = JWT::encode(array('mail' => $search->mail), SECRET_KEY);
+          $path = 'manage-alert/' . $search->id . '/active';
+          $url = url($path, $url_options + array('query' => array('token' => $token)));
+
+          $replacements[$tokens['active-alert-url']] = $url;
+        }
+        else {
+          $replacements[$tokens['active-alert-url']] = 'error';
+          foreach ($url_tokens as $token) {
+            $replacements[$token] = '';
+          }
+        }
+      }
+    break;
+  }
+
+  return $replacements;
+}
+
+/**
+ * Check params
+ */
+function apsjobs_alerts_validate_params($params) {
+  if (empty($params) || !isset($params['token'])) {
+    return FALSE;
+  }
+
+  try {
+    $data = JWT::decode($params['token'], SECRET_KEY);
+    if (!isset($data->mail)) return FALSE;
+    return valid_email_address($data->mail) ? $data : FALSE;
+  } catch (Exception $e) {
+    return FALSE;
+  }
+}
+
+/**
+ * Retrieves the saved searches of user.
+ */
+function apsjobs_alerts_get_user_saved_searches($mail) {
+  return entity_load('search_api_saved_search', FALSE, array('mail' => $mail));
+}
+
+/**
+ * Retrives render variables each saved searches for template.
+ */
+function apsjobs_alerts_get_theme_variables($mail) {
+  $base_path = 'search-api/saved-search/';
+  $header = array(
+    t('Name'),
+    t('Status'),
+    t('Created date'),
+    t('Expiration date'),
+    t('Frequency'),
+    t('Operations'),
+  );
+  $searches = apsjobs_alerts_get_user_saved_searches($mail);
+  $rows = array();
+  foreach ($searches as $search) {
+    $settings = $search->settings();
+    if (empty($search->options['page'])) {
+      $name = check_plain($search->name);
+    }
+    else {
+      $name = $search->l($search->name);
+    }
+    $created_date = format_date($search->created, 'custom', 'd/m/Y');
+    $expire_date = format_date(strtotime("+3 month", $search->created), 'custom', 'd/m/Y');
+
+    // Get the translated label for the interval.
+    $available_intervals = $settings->getTranslatedOption('interval_options');
+    if (isset($available_intervals[$search->notify_interval])) {
+      $interval = $available_intervals[$search->notify_interval];
+    }
+    elseif ($search->notify_interval < 0) {
+      $interval = t('Never');
+    }
+    else {
+      $interval = format_interval($search->notify_interval, 1);
+    }
+
+    // Operations for saved search
+    if ($search->enabled) {
+      $status = t('Actived');
+      $enable = array(
+        'title' => 'Cancel',
+        'class' => 'btn-warning alert-action',
+        'attributes' => array(
+          'data-toggle' => 'modal',
+          'data-target' => '#modal-alert-action',
+          'data-id' => $search->id,
+          'data-action' => 'disable',
+        ),
+      );
+    }
+    else {
+      $status = t('Cancelled');
+      $enable = array(
+        'title' => 'Active',
+        'class' => 'btn-success alert-action',
+        'attributes' => array(
+          'data-id' => $search->id,
+          'data-action' => 'enable',
+        ),
+      );
+    }
+    $edit = array(
+      'title' => 'Edit',
+      'class' => 'btn-info alert-action',
+      'attributes' => array(
+        'data-toggle' => 'modal',
+        'data-target' => '#modal-alert-action',
+        'data-id' => $search->id,
+        'data-action' => 'edit',
+      ),
+    );
+    $delete = array(
+      'title' => 'Delete',
+      'class' => 'btn-danger alert-action',
+      'attributes' => array(
+        'data-toggle' => 'modal',
+        'data-target' => '#modal-alert-action',
+        'data-id' => $search->id,
+        'data-action' => 'delete',
+      ),
+    );
+    $renew = array(
+      'title' => 'Renew',
+      'class' => 'btn-primary alert-action',
+      'attributes' => array(
+        'data-id' => $search->id,
+        'data-action' => 'renew',
+      ),
+    );
+    $rows[] = array(
+      'id' => $search->id,
+      'info' => array(
+        $name,
+        $status,
+        $created_date,
+        $expire_date,
+        $interval,
+      ),
+      'op' => array($enable, $edit, $delete, $renew),
+    );
+  }
+  $cancel_all = array(
+    'title' => 'Cancel selected alerts',
+    'class' => 'btn-danger alert-action all-cancel',
+    'attributes' => array(
+      'data-toggle' => 'modal',
+      'data-target' => '#modal-alert-action',
+      'data-action' => 'cancel-all',
+    ),
+  );
+  $delete_all = array(
+    'title' => 'Delete selected alerts',
+    'class' => 'btn-danger alert-action all-delete',
+    'attributes' => array(
+      'data-toggle' => 'modal',
+      'data-target' => '#modal-alert-action',
+      'data-action' => 'delete-all',
+    ),
+  );
+  return array('mail' => $mail, 'header' => $header, 'rows' => $rows, 'cancel_all' => $cancel_all, 'delete_all' => $delete_all);
+}
+
+//=========MENU=CALLBACKS========
+
+function apsjobs_alerts_active_alert($id) {
+  $search = entity_load('search_api_saved_search', array($id));
+  $error = FALSE;
+  $search = isset($search[$id]) ? $search[$id] : NULL;
+  $params = drupal_get_query_parameters();
+  $data = apsjobs_alerts_validate_params($params);
+  if ($search && $data && $data->mail == $search->mail) {
+    $search->enabled = TRUE;
+    if ($search->save()) {
+      drupal_set_message(t('A new alert has been created.'));
+    }
+    else {
+      drupal_set_message(t('Your alert could not be create.'), 'error');
+    }
+    drupal_goto('/manage-alert', array('query' => array(
+      'token' => JWT::encode(array('mail' => $search->mail), SECRET_KEY),
+    )));
+  }
+  else {
+    return array('#markup' => '<h2>'.t('Invalid token').'</h2>');
+  }
+}
+
+function apsjobs_alerts_enable_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $id = $data['ids'][0];
+    $search = entity_load('search_api_saved_search', array($id))[$id];
+    $search->enabled = TRUE;
+    if ($search->save()) {
+      drupal_set_message(t('Your alert has been actived.'));
+    }
+    else {
+      drupal_set_message(t('Your alert could not be active.'), 'error');
+    }
+  }
+  else {
+    drupal_set_message(t('Please select an alert to action!'), 'error');
+  }
+  echo 'reload';
+}
+
+function apsjobs_alerts_disable_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $id = $data['ids'][0];
+    $search = entity_load('search_api_saved_search', array($id))[$id];
+    $form = drupal_get_form('apsjobs_alerts_disable_alert_form', $search);
+    if (isset($form['url'])) unset($form['url']);
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Do you really want to cancel this alert?').'</h3>
+    </div>';
+    echo drupal_render($form);
+  }
+  else {
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <h4>'.t('Please select an alert to action!').'</h4>
+    <button type="button" class="btn btn-default" data-dismiss="modal">'
+      .t('OK').
+    '</button>';
+  }
+}
+
+function apsjobs_alerts_edit_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $id = $data['ids'][0];
+    $search = entity_load('search_api_saved_search', array($id))[$id];
+    $form = drupal_get_form('apsjobs_alerts_edit_alert_form', $search);
+    if (isset($form['url'])) unset($form['url']);
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Edit Alert').'</h3>
+    </div>';
+    echo drupal_render($form);
+  }
+  else {
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3>'.t('Please select an alert to action!').'</h3>
+      <button type="button" class="btn btn-default" data-dismiss="modal">'.t('OK').'</button>
+    </div>';
+  }
+}
+
+function apsjobs_alerts_delete_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $id = $data['ids'][0];
+    $search = entity_load('search_api_saved_search', array($id))[$id];
+    $form = drupal_get_form('apsjobs_alerts_delete_alert_form', $search);
+    if (isset($form['url'])) unset($form['url']);
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Do you really want to delete this alert?').'</h3>
+    </div>';
+    echo drupal_render($form);
+  }
+  else {
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3>'.t('Please select an alert to action!').'</h3>
+      <button type="button" class="btn btn-default" data-dismiss="modal">'.t('OK').'</button>
+    </div>';
+  }
+}
+
+function apsjobs_alerts_renew_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $id = $data['ids'][0];
+    $search = entity_load('search_api_saved_search', array($id))[$id];
+    $search->created = time();
+    if ($search->save()) {
+      drupal_set_message(t('Your alert has been renewed.'));
+    }
+    else {
+      drupal_set_message(t('Your alert could not be renew.'), 'error');
+    }
+  }
+  else {
+    drupal_set_message(t('Please select an alert to action!'), 'error');
+  }
+  echo 'reload';
+}
+
+function apsjobs_alerts_cancel_all_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $ids = $data['ids'];
+    $form = drupal_get_form('apsjobs_alerts_cancel_all_alert_form', $ids);
+    if (isset($form['url'])) unset($form['url']);
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Do you really want to cancel selected alerts?').'</h3>
+    </div>';
+    echo drupal_render($form);
+  }
+  else {
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Cancel selected alerts').'</h3>
+    </div>
+    <h4>'.t('Please select an alert to action!').'</h4>
+    <button type="button" class="btn form-submit" data-dismiss="modal">'
+      .t('OK').
+    '</button>';
+  }
+}
+
+function apsjobs_alerts_delete_all_alert() {
+  $data = drupal_get_query_parameters();
+  if (!empty($data) && isset($data['ids']) && !empty($data['ids'])) {
+    $ids = $data['ids'];
+    $form = drupal_get_form('apsjobs_alerts_delete_all_alert_form', $ids);
+    if (isset($form['url'])) unset($form['url']);
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Do you really want to delete selected alerts?').'</h3>
+    </div>';
+    echo drupal_render($form);
+  }
+  else {
+    echo '<div class="modal-title">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h3 class="modal-title">'.t('Delete selected alerts').'</h3>
+    </div>
+    <h4>'.t('Please select an alert to action!').'</h4>
+    <button type="button" class="btn form-submit" data-dismiss="modal">'
+      .t('OK').
+    '</button>';
+  }
+}
+
+//===================BEGIN=FORMS================
+
+function apsjobs_alerts_disable_alert_form($form, &$form_state, $search) {
+  $form_state['search'] = $search;
+
+  // $form['question'] = array(
+  //   '#markup' => '<h3>' . t('Do you really want to cancel this alert?') . '</h3>',
+  // );
+  $form['description'] = array(
+    '#markup' => '<h4>' . t('You will not receive any notification for this alert until it is re-activated.') . '</h4>',
+  );
+  $form['cancel'] = array(
+    '#type' => 'button',
+    '#value' => t('No'),
+    '#attributes' => array(
+      'class' => array('btn-default'),
+      'data-dismiss' => array('modal')
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Yes'),
+  );
+  return $form;
+}
+
+function apsjobs_alerts_disable_alert_form_submit($form, &$form_state) {
+  $search = $form_state['search'];
+  $search->enabled = FALSE;
+  if ($search->save()) {
+    drupal_set_message(t('Your alert has been cancelled.'));
+  }
+  else {
+    drupal_set_message(t('Your alert could not be cancelled.'), 'error');
+  }
+  drupal_goto('/manage-alert', array('query' => array(
+    'token' => JWT::encode(array('mail' => $search->mail), SECRET_KEY),
+  )));
+}
+
+//========
+
+function apsjobs_alerts_edit_alert_form($form, &$form_state, $search) {
+  $form_state['search'] = $search;
+  $settings = $search->settings();
+
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Choose a Title for your Alert'),
+    '#maxlength' => 50,
+    '#required' => TRUE,
+    '#default_value' => $search->name,
+  );
+
+  if ($settings->options['user_select_interval'] && count($settings->options['interval_options']) > 1) {
+    $form['notify_interval'] = array(
+      '#type' => 'select',
+      '#title' => t('Alert frequency'),
+      '#options' => $settings->getTranslatedOption('interval_options'),
+      '#required' => TRUE,
+      '#default_value' => $search->notify_interval,
+    );
+  }
+  // $form['cancel'] = array(
+  //   '#type' => 'button',
+  //   '#value' => t('Close'),
+  //   '#attributes' => array(
+  //     'class' => array('btn-default'),
+  //     'data-dismiss' => array('modal')
+  //   ),
+  // );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+
+  return $form;
+}
+
+function apsjobs_alerts_edit_alert_form_submit($form, &$form_state) {
+  $values = $form_state['values'];
+  $search = $form_state['search'];
+  $search->name = $values['name'];
+  if (isset($values['notify_interval'])) {
+    $search->notify_interval = $values['notify_interval'];
+  }
+  if (isset($form_state['redirect'])) unset($form_state['redirect']);
+
+  if ($search->save()) {
+    drupal_set_message(t('Your alert has been updated.'));
+  }
+  else {
+    drupal_set_message(t('An error occurred while trying to update the alert.'), 'error');
+  }
+  drupal_goto('/manage-alert', array('query' => array(
+    'token' => JWT::encode(array('mail' => $search->mail), SECRET_KEY),
+  )));
+}
+
+//========
+
+function apsjobs_alerts_delete_alert_form($form, &$form_state, $search) {
+  $form_state['search'] = $search;
+
+  // $form['question'] = array(
+  //   '#markup' => '<h3>' . t('Do you really want to delete this alert?') . '</h3>',
+  // );
+  $form['description'] = array(
+    '#markup' => '<h4>' . t('This action cannot be undone.') . '</h4>',
+  );
+  $form['cancel'] = array(
+    '#type' => 'button',
+    '#value' => t('No'),
+    '#attributes' => array(
+      'class' => array('btn-default'),
+      'data-dismiss' => array('modal')
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Yes'),
+  );
+  return $form;
+}
+
+function apsjobs_alerts_delete_alert_form_submit($form, &$form_state) {
+  $search = $form_state['search'];
+  $search->delete();
+  drupal_set_message(t('Your alert has been deleted.'));
+  drupal_goto('/search-jobs');
+}
+
+//========
+
+function apsjobs_alerts_cancel_all_alert_form($form, &$form_state, $ids) {
+  $form_state['ids'] = $ids;
+  $searchs = entity_load('search_api_saved_search', $ids);
+
+  $markup_selected = '<ul>';
+  foreach ($searchs as $search) {
+    $markup_selected .= '<li>' . $search->name . '</li>';
+  }
+  $markup_selected .= '</ul>';
+
+  $form['list_seleted'] = array(
+    '#markup' => $markup_selected,
+  );
+
+  $form['description'] = array(
+    '#markup' => '<h4>' . t('You will not receive any notification for these job alert until they are re-activated.') . '</h4>',
+  );
+
+  $form['cancel'] = array(
+    '#type' => 'button',
+    '#value' => t('No'),
+    '#attributes' => array(
+      'class' => array('btn-default'),
+      'data-dismiss' => array('modal')
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Yes'),
+  );
+  return $form;
+}
+
+function apsjobs_alerts_cancel_all_alert_form_submit($form, &$form_state) {
+  $ids = $form_state['ids'];
+  $searchs = entity_load('search_api_saved_search', $ids);
+  $mail = $searchs[$ids[0]]->mail;
+  $error = FALSE;
+  foreach ($searchs as $search) {
+    $search->enabled = FALSE;
+    if (!$search->save()) {
+      $error = TRUE;
+    }
+  }
+  if (!$error) {
+    drupal_set_message(t('All of your job alerts have been cancelled.'));
+    drupal_goto("/search-jobs");
+  }
+  else {
+    drupal_set_message(t('An error occurred while trying to cancel your selected alerts.'), 'error');
+    drupal_goto('/search-jobs', array('query' => array(
+      'token' => JWT::encode(array('mail' => $mail), SECRET_KEY),
+    )));
+  }
+}
+
+//========
+
+function apsjobs_alerts_delete_all_alert_form($form, &$form_state, $ids) {
+  $form_state['ids'] = $ids;
+  $searchs = entity_load('search_api_saved_search', $ids);
+
+  $markup_selected = '<ul>';
+  foreach ($searchs as $search) {
+    $markup_selected .= '<li>' . $search->name . '</li>';
+  }
+  $markup_selected .= '</ul>';
+
+  $form['list_seleted'] = array(
+    '#markup' => $markup_selected,
+  );
+
+  $form['description'] = array(
+    '#markup' => '<h4>' . t('This action can\'t be undone.') . '</h4>',
+  );
+  $form['cancel'] = array(
+    '#type' => 'button',
+    '#value' => t('No'),
+    '#attributes' => array(
+      'class' => array('btn-default'),
+      'data-dismiss' => array('modal')
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Yes'),
+  );
+  return $form;
+}
+
+function apsjobs_alerts_delete_all_alert_form_submit($form, &$form_state) {
+  $ids = $form_state['ids'];
+  $searchs = entity_load('search_api_saved_search', $ids);
+  $mail = $searchs[$ids[0]]->mail;
+  $error = FALSE;
+  foreach ($searchs as $search) {
+    $search->delete();
+  }
+  if (!$error) {
+    drupal_set_message(t('Your selected alerts have been deleted.'));
+    drupal_goto("/search-jobs");
+  }
+  else {
+    drupal_set_message(t('An error occurred while trying to delete your selected alerts.'), 'error');
+    drupal_goto('/manage-alert', array('query' => array(
+    'token' => JWT::encode(array('mail' => $mail), SECRET_KEY),
+  )));
+  }
+}
+//===================END=FORMS================

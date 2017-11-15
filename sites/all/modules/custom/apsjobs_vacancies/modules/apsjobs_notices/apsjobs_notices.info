@@ -1,0 +1,4 @@
+name = APS Jobs Notices
+description = Send email jobs notices to user.
+package = APSJobs
+core = 7.x

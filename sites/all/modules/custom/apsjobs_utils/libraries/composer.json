@@ -1,0 +1,7 @@
+{
+    "require": {
+        "symfony/dom-crawler": "^3.3",
+        "symfony/finder": "^3.3",
+        "symfony/symfony": "^3.3"
+    }
+}

@@ -1,0 +1,65 @@
+<?php
+// module_load_include('phar', 'goutte', 'goutte');
+require_once drupal_get_path('module', 'apsjobs_utils') . '/vendor/autoload.php';
+require_once(drupal_get_path('module', 'apsjobs_utils') . '/generator/field_generator.inc');
+require_once(drupal_get_path('module', 'apsjobs_utils') . '/generator/node_generator.inc');
+require_once(drupal_get_path('module', 'apsjobs_utils') . '/apsjobs_utils.get.inc');
+// require_once(drupal_get_path('module', 'apsjobs_utils') . '/vendor/phpoffice/bootstrap.php');
+require_once(drupal_get_path('module', 'apsjobs_parser') . '/apsjobs_parser.content.load.inc');
+require_once(drupal_get_path('module', 'apsjobs_parser') . '/apsjobs_parser.content.fields.inc');
+
+use Goutte\Client;
+use Symfony\Component\DomCrawler\Crawler;
+
+
+/**
+ * Implements hook_init().
+ */
+function apsjobs_parser_init () {
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function apsjobs_parser_views_api() {
+}
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_parser_menu () {
+  $items = array();
+
+  $items['admin/apsjobs-agency-parser'] = array(
+    'title' => 'APSJobs Agency Crawler',
+    'description' => 'APSJobs Agency Crawler',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('apsjobs_agency_parser_form'),
+    'access arguments' => array('administer apsjobs_parser'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'apsjobs_parser.pages.inc',
+  );
+
+  $items['admin/apsjobs-word-parser'] = array(
+    'title' => 'APSJobs Word Parser',
+    'description' => 'APSJobs Word Parser',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('apsjobs_word_parser_form'),
+    'access arguments' => array('administer apsjobs_parser'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'apsjobs_parser.pages.inc',
+  );
+
+  $items['admin/apsjobs-vacancies-parser'] = array(
+    'title' => 'APSJobs Crawler',
+    'description' => 'APSJobs Crawler',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('apsjobs_parser_form'),
+    'access arguments' => array('administer apsjobs_parser'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'apsjobs_parser.pages.inc',
+  );
+
+  return $items;
+}
+

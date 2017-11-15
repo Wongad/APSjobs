@@ -1,0 +1,4 @@
+name = APS Jobs Notifications
+description = APS Jobs Notifications Entity.
+package = APSJobs
+core = 7.x 

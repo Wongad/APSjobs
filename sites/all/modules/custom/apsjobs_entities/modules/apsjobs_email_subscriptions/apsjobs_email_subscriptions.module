@@ -1,0 +1,116 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once drupal_get_path('module', 'aps_email_subscriptions') . '/aps_email_subscriptions.form.inc';
+require_once drupal_get_path('module', 'aps_email_subscriptions') . '/aps_email_subscriptions.entity.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function aps_email_subscriptions_menu() {
+  $items = array();
+  $items['admin/structure/apsjobs-entities/apsjobs-email-subscriptions'] = array(
+    'title' => 'APS Email Subscriptions',
+    'description' => 'Manage APS Email Subscriptions Entities',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Access callback for project entities.
+ */
+function aps_email_subscriptions_access_callback($op, $project = NULL, $account = NULL) {
+  if ($op == 'view' || $op == 'update' || $op == 'create' || $op == 'delete') {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Implements hook_permisstion().
+ */
+function aps_email_subscriptions_permission(){
+  return array(
+    #Define permisstion
+  );
+}
+
+
+function apsjobs_entities_views_api() {
+  return array(
+    'api' => 3,
+    'template path' => drupal_get_path('module', 'apsjobs_entities') . '/templates',
+  );
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function aps_email_subscriptions_entity_info() {
+  $info = array();
+
+  $info['aps_email_subscriptions'] = array(
+    'label' => t('APS Email Subscriptions'),
+    'base table' => 'aps_email_subscriptions',
+    'entity keys' => array(
+      'id' => 'esid',
+      'label' => 'Email Subscription Id',
+    ),
+    'entity class' => 'APSEmailSubscriptionsEntity',
+    'controller class' => 'EntityAPIController',
+    'access callback' => 'aps_email_subscriptions_access_callback',
+    'uri callback' => 'entity_class_uri',
+    'admin ui' => array(
+      'path' => 'admin/structure/apsjobs-entities/apsjobs-email-subscriptions',
+      'controller class' => 'EntityDefaultUIController',
+    ),
+    'fieldable' => TRUE,
+    'bundles' => array(
+      'aps_email_subscriptions' => array(
+        'label' => t('APS Email Subscriptions'),
+        'admin' => array(
+          'path' => 'admin/structure/apsjobs-entities/apsjobs-email-subscriptions',
+        ),
+      ),
+    ),
+    'views controller class' => 'EntityDefaultViewsController',
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function aps_email_subscriptions_field_extra_fields() {
+  $return = array();
+  $info = entity_get_info('aps_email_subscriptions');
+  foreach (array_keys($info['bundles']) as $bundle) {
+    $return['aps_email_subscriptions'][$bundle] = array(
+      'form' => array(
+        'esid' => array(
+          'label' => t('Email Subscription Id'),
+          'description' => t('Email Subscription Id'),
+          'weight' => -5,
+        ),
+        'name' => array(
+          'label' => t('Name'),
+          'description' => t('Config Name'),
+          'weight' => -5,
+        ),
+        'data' => array(
+          'label' => t('Data'),
+          'description' => t('Config Data'),
+          'weight' => -5,
+        ),
+      ),
+    );
+  }
+
+  return $return;
+}

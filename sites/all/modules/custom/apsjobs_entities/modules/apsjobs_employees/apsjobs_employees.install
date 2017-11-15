@@ -1,0 +1,60 @@
+<?php
+/**
+ * Implements hook_uninstall().
+ */
+function apsjobs_employees_uninstall() {
+  drupal_uninstall_schema('apsjobs_employees');
+}
+
+/**
+ * Implements hook_install().
+ */
+function apsjobs_employees_install() {
+}
+
+/**
+ * Implements hook_schema().
+ */
+function apsjobs_employees_schema() {
+  $schema['apsjobs_employees'] = array(
+    'description' => 'Employees entity',
+    'fields' => array(
+      'eid' => array(
+        'description' => t('Private Key'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'summary' => array(
+        'status' => 'Status',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'body' => array(
+        'status' => 'Status',
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'created' => array(
+        'status' => 'Created',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'changed' => array(
+        'status' => 'Changed',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+    ),
+    'primary key' => array('eid'),
+  );
+  return $schema;
+} 

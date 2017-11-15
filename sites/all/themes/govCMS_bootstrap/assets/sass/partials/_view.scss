@@ -1,0 +1,1567 @@
+// ====================
+// View lists : view, view-frontpage, view-view ,view-type-[class], .....
+// ---
+
+.views-field{
+	@include sizeRem(margin-bottom, 10);	
+	a{
+		//color:$title-color;
+		&:hover,&:focus{
+			color: $black-color;
+		}
+	}
+}
+
+.views-field-title a,.views-field-title .field-content{
+	&:hover{
+		//color:$blue-color1;
+	}
+}
+
+.views-field-field-job-category{
+	@include sizeRem(font-size, 20);
+	color: $blue-color1;
+	@include wp-font(font-title-med);
+	a{
+		color: $blue-color1;
+	}
+}
+
+.views-field-title,.views-field-name{
+	color: $title-color;
+	text-transform: capitalize;
+	line-height: 1.11;
+	cursor: pointer;
+	@include wp-font(font-title-med);
+	@include sizeRem(font-size, 28);
+	// font-style: italic;
+}
+
+.views-field-body{
+	color:$body-color;
+	line-height: 1.43;
+	@include wp-font(font-body);
+	//@include sizeRem(font-size, 20);
+}
+
+.views-field-view-node a{
+    @include button-btn;
+    @include sizeRem(font-size, 12);
+    @include wp-font(font-medium);
+    text-align: center;
+}
+
+.views-field-nothing a,.views-field-ops a{
+	@include button-btn;
+	@include sizeRem(font-size, 12);
+    @include wp-font(font-medium);
+    text-align: center;
+
+}
+.views-field-nothing .unpublish{
+	a{
+		min-width: 160px;
+	}
+}
+
+.views-field-ops a{
+	background-color: transparent;
+}
+.views-field-field-link a{
+	@include button-btn;
+	text-align: center;
+	@include sizeRem(min-width, 96);
+	@include sizeRem(padding, 6.5, 2 , 9);
+	@include sizeRem(font-size, 12);
+	@include wp-font(font-medium);
+}
+
+.views-field-number{
+	@include sizeRem(font-size, 40);
+	@include wp-font(font-title-med);
+}
+.views-field-field-job-description{
+	color: $color-descrition ;
+    @include wp-font(font-body);
+    @include sizeRem(font-size, 14);
+    line-height: 1.43;
+}
+/*........Baner.............*/
+.paner-apsjobs-blocks-search-form{
+	margin-bottom:0 !important;
+	margin-top: 0 !important;
+	p{
+		color: $white-color;
+		margin-bottom: 0;
+		@include sizeRem(font-size, 20);
+		@include wp-font(font-title-med);
+	}
+    .find-under{
+		@include sizeRem(font-size, 12);
+	}
+	.ad-location{
+		position: absolute;
+		z-index: 12;
+		//float: right;
+		@include sizeRem(right, 45);
+		@include sizeRem(bottom, 25);
+    }
+	.location-australia{
+		@include sizeRem(font-size, 12);
+		@include wp-font(font-body);
+		a{
+			color: $white-color;
+			&:before,&:after{
+				content: "\f030";
+		        position: relative;
+		        color: $white-color;
+		        text-align: center;
+		        @include sizeRem(top, 0);
+		        @include sizeRem(margin-right, 8);
+		        @include fontawesome;
+		        @include translate(0,0);
+		        @include sizeRem(font-size, 12);
+			}
+			&:after{
+				content: "\f105";
+		        @include sizeRem(margin-left, 8);
+			}
+		}
+	}
+	p.fitler-togled{
+		display: none;
+		text-align: center;
+	    position: relative;
+	    width: 110px;
+	    color: $white-color;
+	    cursor: pointer;
+		z-index: 33;
+	    //left: 50%;
+	    margin: 0 auto;
+	    @include sizeRem(bottom, 25);
+	    @include sizeRem(font-size, 12);
+	    @include wp-font(font-body);
+	    //@include translate(-50%,0);
+	    @include transition(all 0.3s ease-out);
+	    a,span{
+	    	color: $white-color;
+	    	border-bottom: 1px solid $white-color;
+	    	display: inline-block;
+	    	line-height: 1;
+	    }
+	    &:after{
+	        content: "\f107";
+	        position: relative;
+	        color: $white-color;
+	        top: 1px;
+	        margin-left: 8px;
+	        text-align: center;
+	        @include fontawesome;
+	        //@include translate(0,-50%);
+	    }
+	    .active{
+	    	&:before{
+				@include rotate(-180deg);
+            }
+	    }
+	}
+	.custom-advance-search.show{
+		p.fitler-togled::after{
+			@include rotate(-180deg);
+		}
+	}
+}
+.banner{
+	margin-top: -111px;
+}
+.view-banner{
+	margin-bottom: 0;
+	position: relative;
+	.views-field{
+		margin-bottom: 0;
+	}
+	&.panel-pane{
+		margin-bottom: 0;
+	}
+	.views-field-field-image-slide{
+		position: relative;
+		overflow: hidden;
+		&:before,&:after{
+			content: "";
+		    background-image: linear-gradient(to right, rgba(16, 34, 111, 0.81), rgba(16, 34, 111, 0));
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    z-index: 11;
+		    bottom: 0;
+		    left: 0;
+		}
+		&:after{
+			content: "";
+		    background-image: linear-gradient(-10deg, rgba(91,132,216,0.80) 0%, rgba(16,34,111,0.00) 23%);
+		    display: block;
+		    left: auto;
+		    right: 0;
+		}
+		.owlcarousel-fields-250{
+			div[class*="item-"]{
+				overflow: hidden;
+				position: relative;
+				height: 768px;
+				max-width: 100%;
+				//height: calc(100vh - 110px);
+				//@include sizeRem(margin-top, 110);
+			    @include display-flex;
+			    @include align-items(center);
+			    @include justify-content(center);
+			    display: none;
+		   }
+		   div[class*="item-0"]{
+		   	display: block;
+		   }
+		   &.owl-carousel{
+		   	 	div[class*="item-"]{
+		   	 		display: block;
+		   	 	}
+		   }
+		}
+		img{
+			width: auto;
+			height: auto;
+			max-width: inherit;
+		    ///display: none;/////
+
+
+		    position: absolute;
+		    left: 50%;
+		    //right: 0%;
+		    bottom: 0;
+		    margin: 0 auto;
+		    // min-width: 100%;
+		    // min-height: 100%;
+		    -webkit-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		    min-width: fit-content;
+		    min-width: -moz-fit-content;
+		}
+	}
+	//.views-field-field-image-slide,
+	.views-field-field-image{
+		position: relative;
+		overflow: hidden;
+		&:before,&:after{
+			content: "";
+		    background-image: linear-gradient(to right, rgba(16, 34, 111, 0.81), rgba(16, 34, 111, 0));
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    z-index: 11;
+		    bottom: 0;
+		    left: 0;
+		}
+		&:after{
+			content: "";
+		    background-image: linear-gradient(-10deg, rgba(91,132,216,0.80) 0%, rgba(16,34,111,0.00) 23%);
+		    display: block;
+		    left: auto;
+		    right: 0;
+		}
+		.field-content{
+			overflow: hidden;
+			height: 768px;
+			//height: calc(100vh - 110px);
+			//@include sizeRem(margin-top, 110);
+		    @include display-flex;
+		    @include align-items(center);
+		    @include justify-content(center);
+		}
+		img{
+			width: auto;
+			height: auto;
+			max-width: inherit;
+			///position: absolute;///
+			///margin: 0 auto;////
+		    ///display: none;/////
+		    position: absolute;
+		    left: 50%;
+		    bottom: 0;
+		    // min-width: 100%;
+		    // min-height: 100%;
+		    -webkit-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		}
+	}
+	
+	.views-field-body{
+		position:absolute;
+		top:50%;
+		left:50%;
+		z-index:23;
+		text-align:left;
+		@include translate(-50%,-50%);
+		@include container;
+		.panel-title-home h2{
+            color:$white-color;
+			max-width: 570px;
+			line-height: 1.28;
+			margin-top: 0;
+			@include sizeRem(font-size, 40);
+			@include wp-font(font-title);
+			@include sizeRem(margin-bottom, 68);
+			span{
+				display: inline-block;
+				border-bottom: 1.5px solid $white-color;
+				line-height: 1;
+			}
+			.highlight{
+				clear: left;
+				display: inline-block;
+				line-height: 1;
+
+				&:hover,&:focus,&.active{
+					cursor: pointer;
+					color: $blue-color;
+					border-bottom: 1.5px solid $blue-color;
+				}
+			}
+		}
+	}
+}
+.banner{
+	position: relative;
+	.paner-apsjobs-blocks-search-form{
+		position: relative;
+		// top:50%;
+		// left:50%;
+		// z-index:22;
+		text-align:left;
+		width: 100%;
+		height: 100%;
+		//@include translate(-50%,-50%);
+		@include sizeRem(padding-top, 350);
+	}
+	.paner-apsjobs--gazette-search-form{
+        position:relative;
+		top:0;
+		left:0;
+		transform:none;
+		//@include sizeRem(padding-bottom,90);
+		z-index:22;
+		text-align:left;
+		@include container;
+		@include sizeRem(margin-top, 50, $important:true);
+		.pane-content{
+			@include display-flex;
+			@include align-items(flex-end);	
+		}
+		select,button,input{
+			width: 100%;
+			@include sizeRem(height, 45);
+			@include border-radius(0);
+			border: transparent;
+			-webkit-appearance: none;
+			@include placeholder(#606060);
+		}
+		
+		.aps-gazette{
+			width: 68%;
+			label{
+				display: block;
+				color: $white-color;
+				@include wp-font(font-body);
+			}
+			form{
+				width: 100%;
+				@include display-flex;
+			    @include align-items(flex-end);
+			}
+			.form-required{
+				color: $white-color;
+			}
+			div{
+				width: 40%;
+				//float: left;
+				&:first-child{
+					position: relative;
+					z-index: 22;
+					//background: $white-color;
+			        @include ico-auto;
+			        select{
+						@include border-top-left-radius(4px);
+						@include border-bottom-left-radius(4px);
+						//background-color: transparent;
+					}
+			        &:before{
+			        	color: $blue-color;
+			        	top: 48px;
+			        	right: 20px;
+			        	font-size: 20px;
+			        }
+			        
+			  //       position: relative;
+					// z-index: 22;
+					// background: $white-color;
+					// &:before{
+					// 	content: "";
+					// 	position: absolute;
+					// 	width: 10px;
+					// 	height: 10px;
+					// 	top: 15px;
+					// 	right: 24px;
+					// 	color: $blue-color;
+					// 	border-left: 1px solid $blue-color;
+					// 	border-bottom: 1px solid $blue-color;
+					// 	@include rotate(315deg);
+					// }
+					// .form-select{
+					// 	background-color: transparent;
+					// 	border: 1px solid transparent;
+					// }
+			        //
+				}
+				&:nth-child(2){
+					width: 55%;
+					input{
+						border-left: solid 1px #979797;
+						//border-right: solid 1px #979797;
+					}
+				}
+				.chosen-container{
+					div{
+						float: none;
+						width: 100%;
+					}
+				}
+			}
+			.form-item-find-button{
+				width: 5%;
+				margin: 0;
+				.form-submit {
+			        font-size: 0;
+			        background-color: $blue-color;
+			        border: 0 none;
+			        position: relative;
+			        // z-index: 2;
+			        // right: 0px;
+			        // top: 0px;
+			        @include border-top-right-radius(4px);
+			        @include border-bottom-right-radius(4px);
+			        @include sizeRem(width, 45);
+			        @include sizeRem(height, 45);
+			        &:before{
+			        	//content: "\f002";
+			        	content: url("../images/icon/ico-search.svg");
+			        	position: absolute;
+			        	left: 50%;
+			        	top:50%;
+			        	color: $title-color;
+			        	font-size: 18px !important;
+			        	@include fontawesome;
+			        	@include translate(-50%,-50%);
+			        }
+			    }
+			}
+		}
+	}
+}
+
+.view-aps-job-baner {
+    margin-bottom: 0 !important;
+    .views-field-field-image {
+        margin-bottom: 0;
+    }
+    .view-info{
+      @include sizeRem(max-width, 580);
+    }
+    .view-inner {
+        position: relative;
+        z-index: 22;
+        text-align: center;
+        @include container;
+        margin: 0;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .views-field-title {
+        display: block;
+        line-height: 1.2;
+        color: $white-color;
+        text-transform: none;
+        
+        @include sizeRem(font-size, 40);
+        @include wp-font(font-title);
+        @include sizeRem(margin-bottom, 25);
+        position: relative;
+        cursor: initial;
+        a {
+            color: $white-color;
+            &:hover, &:focus {
+                color: $link-color;
+            }
+        }
+    }
+    .views-field-body {
+        color: $white-color;
+        margin-top: 0;
+        // @include sizeRem(max-width, 470);
+        @include sizeRem(font-size, 14);
+        position: relative;
+        @include wp-font(font-body);
+        a {
+            @include btn;
+            @include sizeRem(padding, 11, 2, 28);
+            @include sizeRem(padding-right, 40);
+            @include sizeRem(min-width, 225);
+            @include sizeRem(margin-left, 20);
+            @include sizeRem(font-size, 15);
+            position: relative;
+            text-align: left;
+            &:hover, &:focus {
+                background-color: $hover-color;
+                border-color: $hover-color;
+                color: $title-color;
+            }
+        }
+    }
+    &.fixed-btn{
+        a{
+         	padding: 0;
+         	background-color: transparent;
+         	margin: 0;
+        }
+    }
+}
+//1201-1399
+@media (min-width: 1201px) and (max-width: 1399px){
+	.front {
+		.inside{
+			min-height: 540px !important;
+			// min-height: auto !important;
+		}
+		.banner .paner-apsjobs-blocks-search-form{
+			@include sizeRem(padding-top, 220);
+		}
+		.advanced-search{
+			@include sizeRem(margin-top, 72);
+		}
+	}
+	
+	.view-banner .views-field-field-image-slide .owlcarousel-fields-250 div[class*="item-"]{
+		height: 540px;
+	}
+	.view-banner .views-field-field-image .field-content{
+		height: 540px;
+	}
+}
+
+@media (min-width: 1400px){
+	// .view-banner .views-field-field-image-slide img{
+	// 	min-width: fit-content;
+	// }
+}
+
+.page-panel-banner{
+   	section.message{
+      	@include sizeRem(margin-bottom, 111);
+   	}
+}
+.pane-banner-basic{
+    .inside{
+       	overflow: hidden;
+      	position: relative;
+      	padding-bottom: 70px;
+      	&:before{
+         	content: "";
+          	background: rgba(16, 34, 111, 0.6);
+          	display: block;
+          	width: 100%;
+          	height: 100%;
+         	position: absolute;
+          	z-index: 11;
+         	bottom: 0;
+          	left: 0;
+      	}
+   }
+   &.pane-banner-468{
+        .inside{
+           @include sizeRem(min-height, 468);
+        }
+   }
+   &.pane-banner-300{
+        .inside{
+           @include sizeRem(min-height, 300);
+        }
+        .view-banner-basic{
+           padding-bottom: 20px;
+        }
+        .view-inner{
+            @include sizeRem(padding-top, 50);
+        }
+   }
+}
+.pane-banner-aps{
+   overflow: hidden;
+}
+.pane-banner-basic-stt-banner-300 .view-inner{
+    @include sizeRem(padding-top, 65);
+}
+.view-banner-basic{
+   	position: static;
+   	@include sizeRem(padding-top,111);
+   	.view-inner{
+      	@include sizeRem(padding-top,60);
+      	> *:first-child{
+         
+      	}
+   	}
+   	//.views-field-field-image-slide,
+   	.views-field-field-image{
+      	img{
+	        position:absolute;
+	        max-width:inherit;
+	        //max-width: 100%;
+	        top:0;
+	        left:50%;
+	        transform:translateX(-50%);
+	    }
+   	}
+   	&.view-type-aps{
+      	@include sizeRem(min-height, 520);
+      	img{
+	      	top:auto;
+	      	bottom:-10px;
+      	}
+	    .view-inner{
+	      	@include sizeRem(padding-top,95);
+	    }
+	    .views-field-body{
+			@include sizeRem(max-width,470);
+			margin-bottom:0;
+	    }
+	    .views-row{
+	      	height:100%;
+	    }
+   	}
+}
+
+.page-search-jobs .form-search-jobs{
+   margin-top: 40px;
+}
+
+.view-aps-job-baner-gazette .view-inner .views-field-body {
+   	a{
+     	margin-left: 0;
+     	text-decoration: underline;
+      	&:hover, &:focus{
+         	color: $white-color;
+         	text-decoration: none;
+      	}
+  	}
+   	p{
+     	&:last-child{
+        	@include wp-font(font-medium);
+        	a{
+               @include wp-font(font-medium); 
+            }
+    	}
+   	}
+}
+
+.page-aps-gazette{
+	.panels-flexible-region-16-center{
+		width:100%;
+	}
+	.view-aps-job-baner{
+		&:before{
+			display:none;
+		}
+	}
+	.panels-flexible-16{
+		
+	}	
+}
+
+.view-aps-job-baner-gazette{
+	.view-inner {
+		position:relative;
+		top:0;
+		left:0;
+		transform:none;
+		@include sizeRem(padding-top,75);
+		.views-field-title{
+			@include sizeRem(padding-bottom, 25);
+			margin-bottom: 0;
+			max-width: 100%;
+		}
+		.views-field-body{
+			max-width: 100%;
+			@include sizeRem(font-size, 14);
+			a{
+				background-color: transparent;
+			    border-color: transparent;
+			    padding: 0;
+			    display: initial;
+			    border-radius: 0;
+			    color: $white-color;
+			    @include sizeRem(font-size, 14);
+			    &:hover, &:focus{
+			        background-color: transparent;
+			        border-color: transparent;
+			        color: $title-color;
+			    }
+			}
+		}
+	}
+}
+/*..........form-search................*/
+//{
+	
+//}
+.form-search-jobs{
+	@include display-flex;
+	@include align-items(flex-end);
+	@include sizeRem(margin-bottom, 5);
+	@include container;
+	position: relative;
+	z-index: 44;
+	// top:50%;
+	// left:50%;
+	text-align:left;
+	//@include translate(-50%,-50%);
+	@include sizeRem(margin-top, 150);
+}
+
+.form-aps-job-secrh{
+	ul{
+		li{
+			padding: 0;
+			list-style: none;
+		}
+	}
+	.form-required{
+		display: none;
+	}
+	.form-item{
+		@include sizeRem(width, 215);
+		@include sizeRem(margin-top, 15);
+		@include sizeRem(margin-bottom, 0);
+		input, select,button{
+			width: 100%;
+			@include sizeRem(height, 45);
+			@include border-radius(0);
+			border: transparent;
+			-webkit-appearance: none;
+			@include placeholder(#606060);
+			text-align: left;
+			background:  $white-color;
+			.caret{
+				display: none;
+			}
+		}
+		select{
+			cursor: pointer;
+		}
+		label{
+			text-transform: capitalize;
+			//@include sizeRem(margin-bottom, 6);
+		}
+	}
+	.form-item-key-salary{ 
+	    margin-top: 0;    
+        a.chosen-single{
+        	//position: relative;
+        	color: $title-color;
+        	&:after {
+		        content: "";
+		        background: url('../images/icon/information-icon.svg') 0 0 no-repeat;
+		        display: inline-block;
+		        height: 18px;
+		        width:18px;
+		        top: 50%;
+	        	right: 20px;
+	        	font-size: 20px;
+		        z-index: 5;
+		        position: absolute;
+		        background-size: 18px 18px;
+		        background-position:center;
+		        @include translateY(-50%);
+		    }
+        }
+        label{
+		    position: absolute;
+   			top: -23px;
+   			left: 0;
+		}
+	}
+    
+    .form-item-salary-range{
+	    background-color: $white-color;
+		min-width: 316px;
+		padding: 0 20px;
+		margin-top: 0;
+		position: relative;
+		min-height: 45px;
+		// margin-bottom: -20px;
+		// @include border-bottom-left-radius(4px);
+		// @include border-bottom-right-radius(4px);
+		label{
+		    position: absolute;
+   			top: -23px;
+   			left: 0;
+		}
+		.type-rate{
+			position: relative;
+		    bottom: -35px;
+		    right: 0;
+		    //width: 70px;
+		}
+		ul{
+			padding: 0;
+			margin: 0;
+			// @include display-flex;
+			// @include align-items(center);
+			// @include justify-content(center);
+			text-align: center;
+			li{
+				//width: 50%;
+				padding: 0;
+				margin: 0 5px;
+				list-style: none;
+				display: inline-block;
+				@include sizeRem(font-size, 12);
+				color: $white-color;
+				//border-bottom: solid 1px $white-color; 
+				cursor: pointer;
+				line-height: 1;
+				&:hover,&:focus,&.active{
+					border-bottom: solid 1px $white-color;
+					color: $white-color;
+				}
+			}
+			.salary-type{
+				display: inline-block;
+			}
+		}
+	}
+	.salary{
+		width: auto;
+		position: relative;
+		margin-top: 0;
+		.select-range{
+		    text-align: center;
+		    @include sizeRem(font-size, 13);
+		    @include sizeRem(margin-top, 2);
+	    	@include sizeRem( margin-bottom, 8);
+		}
+		.chosen-container-single .chosen-single{
+			border-radius: 0;
+		}
+		#slider-salary-range{
+			min-height: 12px;
+		}
+		.ui-slider.ui-slider-horizontal.ui-slider-pips {
+            margin-bottom: 0;
+            @include sizeRem(margin-top, 0);
+            @include sizeRem(top, 10); //10
+            margin-left: -3px;
+            //width: 265px;
+        }
+        .ui-slider-pips .ui-slider-pip-label {
+            @include sizeRem(top, 11);
+            &.ui-slider-pip-150000 {
+                left: 88%!important;
+            }
+            &:hover {
+                .ui-slider-label {
+                    color: $place-color !important;
+                }
+            }
+        }
+        .ui-slider-label {
+            color: $place-color;
+            //margin: 0;
+            // @include sizeRem(font-size, 10);
+            // top: 0;
+        }
+        .ui-slider-pip-last {
+        	left: auto !important;
+        	right: -5%;
+        	.ui-slider-label{
+        		left: auto;
+        		right: 0;
+        		width: auto;
+        	}
+        }
+        .form-item-salary-range {
+            //@include sizeRem(height, 45);
+        }
+        .select-range {
+            display: none;
+        }
+		.ui-slider-horizontal.ui-slider-pips{
+			@include sizeRem(margin-top, 5);
+	    	@include sizeRem( margin-bottom, 8);
+		}
+		.ui-slider-horizontal{
+			height: 12px;//12px;
+		}
+		.ui-slider-pips {
+			.ui-slider-pip-inrange{
+				color: $white-color;
+			}
+			.ui-slider-pip{
+				color: $white-color;
+			}
+			[class*=ui-slider-pip-selected]{
+				color: $white-color;
+				font-weight: normal;
+				.ui-slider-line{
+					background: $white-color;
+				}
+			}
+			.ui-slider-pip-selected-2{
+				color: $white-color;	
+			}
+			.ui-slider-pip-inrange .ui-slider-line{
+				background: $white-color;
+			}
+			.ui-slider-line{
+				background: $white-color;	
+			}
+		}
+		.ui-slider-pips:not(.ui-slider-disabled) .ui-slider-pip:hover .ui-slider-label{
+			color: $white-color;	
+			font-weight: normal;
+		}
+		.ui-slider .ui-slider-handle{
+			width: 10px;//10px;
+			//height: 12px;
+			margin-left: -3px;
+		}
+		.ui-state-default, 
+		.ui-widget-content .ui-state-default, 
+		.ui-widget-header .ui-state-default{
+			background: $blue-color1;
+			border-color: $blue-color1;
+		}
+	}
+	#switch-select-slider{
+		cursor: pointer;
+		position: absolute;
+	    border: 1px solid  $white-color;
+		background-color: transparent;
+		@include border-radius-rem(4);
+		top: -25px;
+	    @include sizeRem(padding, 1, 1);
+	    @include sizeRem(padding-left, 10);
+	    @include sizeRem(padding-right, 10);
+	    right: 0;
+	    color:  $white-color;
+	    text-transform: capitalize;
+	    @include sizeRem(font-size, 12);
+	    @include wp-font(font-body);
+	    &:hover{
+	    	background-color: $hover-color;
+		    border-color: $hover-color;
+		    color: $black;
+	    }
+	}
+    //
+	.form-item-key-location{
+		input{
+			border-left: solid 1px #979797;
+			border-right: solid 1px #979797;
+		}
+		.ui-helper-hidden-accessible{
+			display: none;
+		}
+	}
+
+	.form-item-key-word{
+		input{
+			@include border-top-left-radius(4px);
+			@include border-bottom-left-radius(4px);
+		}
+	}
+
+	.classification{
+		margin-top: 0;
+		position: relative;
+		min-height: 45px;
+		label{
+		    position: absolute;
+   			top: -23px;
+   			left: 0;
+		}
+		.btn{
+			&:after{
+		        content: "\f107";
+		        position: absolute;
+		        color: $blue-color;
+		        top: 50%;
+		        right: 15px;
+		        text-align: center;
+		        @include fontawesome;
+		        @include translate(0,-50%);
+		        font-size: 20px !important;
+		    }
+		}
+		.dropdown.open{
+			.dropdown-menu{
+				opacity: 1;
+				transform: none;
+				visibility: visible;
+			}
+		}
+		.dropdown-menu{
+	       	width: 320px;
+			right: auto;
+			left: auto;
+			max-height: 385px;
+			overflow-y: scroll;
+			padding: 20px;
+			box-shadow: 0 9px 30px rgba(0,0,0,.4);
+			@include translateY(-35px);
+			@include opacity(0);
+			@include transition(all .25s cubic-bezier(.02,1.505,.745,1.235));
+			li{
+				@include flex-width-col-xs(100%);
+				width: 100%;
+				//margin-bottom: 5px;
+				list-style: none;
+				label{
+					white-space: nowrap;
+				    text-overflow: ellipsis;
+				    overflow: hidden;
+				    max-width: 225px;
+				    cursor: pointer;
+				    color: $title-color;
+				    @include sizeRem(font-size, 14);
+				    @include wp-font(font-body);
+				}
+			}
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			h3{
+				//@include sizeRem(margin, 0);
+				@include sizeRem(padding, 18, 2,0);
+				padding-top: 0;
+				@include sizeRem(font-size, 16);
+				@include wp-font(font-title-med);
+				text-transform: capitalize;
+				margin-top: 0;
+				margin-bottom: 0;
+				position: relative;
+				top: -18px;
+			}
+			div:first-child{
+				padding-top: 20px;
+				h3{
+					//display: none;
+				}
+			}
+		}
+	}
+	.form-item-find-button{
+		@include sizeRem(width, 375);//175
+		//margin-top: 0;
+		@include display-flex;
+		button,.form-submit{
+			width: 215px;//100%;
+			text-align: center;
+			cursor: pointer;
+			@include sizeRem(padding, 11, 2, 25);
+			@include border-top-left-radius(0px);
+			@include border-bottom-left-radius(0px);
+			//margin-top: -2px;
+			@include sizeRem(height, 45);
+			@include sizeRem(font-size, 15);
+			&:hover, &:focus{
+	            background-color: $hover-color;
+	            border-color: $hover-color;
+	            color: $title-color;
+	        }
+		}
+		img{
+			width: 15px;
+			height: 15px;
+			margin-left: 20px;
+			margin-top: 15px;
+		}
+	}
+	.form-item-button-save-search{
+		display: inline-block;
+		width: auto;
+		@include sizeRem(margin-left, 15);
+		margin-top: 0;
+		button{
+			width: 100%;
+			@include border-radius(4px);
+			@include sizeRem(padding, 11, 2, 25);
+			@include wp-font(font-medium);
+			background-color: $blue-color;
+            border-color: $blue-color;
+            color: $title-color;
+            //margin-bottom: -4px;
+			&:hover, &:focus{
+	            background-color: $hover-color;
+	            border-color: $hover-color;
+	            color: $title-color;
+	        }
+		}
+		.front &{
+			display: none;
+		}
+	}
+	label{
+		color:$white-color;
+		@include wp-font(font-body);
+		font-weight: 300;
+		@include sizeRem(font-size, 14);
+		text-transform: capitalize;
+	}
+	.find-job{
+		position: absolute;
+		top: -20px;
+	}
+	.find-under{
+		position: absolute;
+		bottom: -20px;
+		color: $white-color;
+		left: 15px;
+		a{
+			color: $white-color;
+			text-decoration: underline;
+		}
+	}
+}
+
+//..........//
+.advanced-search{
+	width: 100%;
+	//background: $bg-menu-color;
+	position: relative;
+	bottom: 0;
+	z-index: 20;
+	text-align: center;
+	@include sizeRem(margin-top, 160);
+	.adv-search-wrapper{
+		width: 100%;
+		background: $bg-menu-color;
+		margin-top: -2px;
+	}
+    &.show{
+    	.advanced{
+    		@include sizeRem(height, 45);
+    	    overflow: visible;
+    	}
+    	.togled::after{
+    		@include rotate(-180deg);
+    	}
+    }
+	.advanced{
+        @include container;
+        display: inherit !important;
+        overflow: hidden;
+        background: #2d4092;
+        @include sizeRem(height, 0);
+        @include transition(all 0.3s ease-out);
+	}
+	.togled{
+		text-align: center;
+	    position: relative;
+	    width: 110px;
+	    color: $white-color;
+	    cursor: pointer;
+	    //left: 50%;
+	    margin: 0 auto;
+	    @include sizeRem(bottom, 25);
+	    @include sizeRem(font-size, 12);
+	    @include wp-font(font-body);
+	    //@include translate(-50%,0);
+	    @include transition(all 0.3s ease-out);
+	    a,span{
+	    	color: $white-color;
+	    	border-bottom: 1px solid $white-color;
+	    	display: inline-block;
+	    	line-height: 1;
+	    }
+	    &:after{
+	        content: "\f107";
+	        position: relative;
+	        color: $white-color;
+	        top: 1px;
+	        margin-left: 8px;
+	        text-align: center;
+	        @include fontawesome;
+	        //@include translate(0,-50%);
+	        @include transition(all 0.3s ease-out);
+	    }
+	    .active{
+	    	&:before{
+				@include rotate(-180deg);
+            }
+	    }
+	}
+	.nav-tabs > li > a:hover{
+		background-color: transparent;
+		border-color: transparent;
+		border-right: 1px solid rgba($white-color, .8);
+	}
+	ul.nav-tabs{
+		@include display-flex;
+		@include flex-wrap(nowrap);
+		padding-left: 0;
+		border-bottom: none;
+		> li{
+			> a{
+               color: $white-color;
+               text-align: center;
+               margin-right: 0;
+               border-right: 1px solid rgba($white-color, .8);
+               @include border-radius(0);
+               @include sizeRem( padding, 10, 2,15);
+               position: relative;
+               @include transition(none);
+               cursor: pointer;
+               @include transition(all 0.3s ease-out);
+               &:after{
+			        content: "\f107";
+			        position:relative;
+			        color: $white-color;
+			        top: 3px;
+			        margin-left: 8px;
+			        text-align: center;
+			        @include fontawesome;
+			        //@include translate(0,-50%);
+			        font-size: 20px !important;
+			    }
+			}
+			&.active > a,&.open > a{
+                background-color: transparent;
+                border-color: transparent;
+                color: $white-color;
+                background: $bg-active;
+                text-align: center;
+                @include border-radius(0);
+                @include sizeRem(font-size, 14);
+                @include wp-font(font-body);
+		        &::after{
+		    		@include rotate(-180deg);
+		    	}
+                &:hover,&:focus{
+                	background-color: $bg-active;
+                	border-color: $bg-active;
+                }
+                &:before{
+					@include rotate(-180deg);
+					top: 11px;
+                }
+
+			}
+			&:last-child{
+				> a{
+					border-right: none;
+					 &:before{
+						right: 30px;
+	                }
+				}
+			}
+		}
+		li{
+			@include sizeRem(width, 231);
+			@include sizeRem(font-size, 14);
+            @include wp-font(font-body);
+			list-style: none;
+			&.open{
+                .dropdown-block{
+                	display: block;
+                }
+			}
+			.menu-label{
+				color: $white-color;
+				@include sizeRem(font-size, 14);
+				display: none;
+				text-align: left;
+				margin-bottom: 5px;
+				width: 100%;
+			}
+		}
+	}
+	.active{
+		background: $bg-menu-inner;
+	}
+	.caret{
+		display: none;
+	}
+	.dropdown-block,.dropdown-menu{
+		display: none;
+		position: absolute;
+	    top: 100%;
+	    left: 0;
+	    z-index: 1000;
+	    display: none;
+	    float: left;
+	    width: 305px;
+		padding: 0;
+	    margin: 0;
+	    font-size: 14px;
+	    text-align: left;
+	    list-style: none;
+	    background-color: #fff;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    // border: 1px solid #ccc;
+	    // border: 1px solid rgba(0, 0, 0, 0.15);
+	    border-top: 0;
+	    margin-top: 0px;
+	    margin-left: -1px;
+	    @include border-radius(4px);
+	    @include border-top-left-radius(0);
+	    @include border-top-right-radius(0);
+	    
+	    // -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	    // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	}
+	.dropdown-menu,.dropdown-block{
+		width: 305px;
+		padding: 0;
+		max-height: 400px;
+        overflow-y: scroll;
+        box-shadow: none;
+        border: none;
+		> div{
+            background: $bg-menu-inner;
+            @include sizeRem(padding, 20, 2, 30);
+            &:nth-child(2n){
+                background: #b9c6ff;
+            }
+            a{
+            	color: $white-color;
+            	@include sizeRem(font-size, 16);
+            }
+		}
+		.form-filter{
+			position: relative;
+			@include sizeRem(margin-bottom, 20);
+			input{
+				@include placeholder($place-color);
+
+				background: $white-color;
+				border: 1px solid $border-color-streght;
+				border-bottom-color: none;
+				white-space: normal;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 100%;
+				@include sizeRem(font-size, 12);
+				@include wp-font(font-body);
+				@include sizeRem(padding-right, 30);
+				@include sizeRem(height, 40);
+				@include border-radius(4px);
+			}
+			.btn-clear{
+				display: block !important;
+				position: absolute;
+                top: 6px;
+                right: 10px;
+                width: 15px;
+                height: 20px;
+                text-align: center;
+                cursor: pointer;
+                @include sizeRem(font-size, 20);
+			}
+			button {
+		        font-size: 0;
+		        background-color: $blue-color1;
+		        border: 0 none;
+		        position: absolute;
+		        z-index: 2;
+		        right: 0px;
+		        top: 0px;
+		        @include border-top-left-radius(0);
+		        @include border-bottom-left-radius(0);
+		        @include sizeRem(width, 40);
+		        @include sizeRem(height, 40);
+		        &:before{
+		        	content: "\f002";
+		        	position: absolute;
+		        	left: 50%;
+		        	top:50%;
+		        	color: $white-color;
+		        	font-size: 18px !important;
+		        	@include fontawesome;
+		        	@include translate(-50%,-50%);
+		        }
+		    }
+		}
+		h3{
+			@include sizeRem(margin, 0);
+			@include sizeRem(padding, 18, 2,0);
+			padding-top: 0;
+			@include sizeRem(font-size, 16);
+			@include wp-font(font-title-med);
+			text-transform: capitalize;
+		}
+		div:first-child{
+			h3{
+				//display: none;
+			}
+		}
+		ul{
+			padding-left: 0;
+			li{
+				@include flex-width-col-xs(100%);
+				width: 100%;
+				label{
+					white-space: nowrap;
+				    text-overflow: ellipsis;
+				    overflow: hidden;
+				    max-width: 225px;
+				    cursor: pointer;
+				    color: $title-color;
+				    @include sizeRem(font-size, 14);
+				    @include wp-font(font-body);
+				}
+			}
+		}
+		input[type=radio], input[type=checkbox]{
+			width: 18px;
+			height: 18px;
+			top: -4px;
+			@include sizeRem(margin-right, 20);
+		}
+	}
+}
+
+//move{
+.pane-banner-basic-stt-banner-300 .view-inner{
+    @include sizeRem(padding-top, 65);
+}
+
+.front{
+	.banner .view-banner{
+		.pane-content{
+			position: absolute;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+	.inside{
+		min-height: 768px;
+	}
+}
+
+//search
+.page-search-jobs{
+	.pane-banner-basic.pane-banner-300 .inside{
+		@include sizeRem(min-height, 355);
+	}
+	.banner {
+		@include sizeRem(padding-bottom, 40);
+		.pane-banner-basic.pane-banner-300{
+			.pane-content{
+				width: 100%;
+				position: absolute;
+			}
+		}	
+	}
+	.banner .paner-apsjobs-blocks-search-form{
+		@include sizeRem(padding-top, 145);
+	}
+	.advanced-search{
+		@include sizeRem(margin-top, 72);
+	}
+	.paner-apsjobs-blocks-search-form .ad-location{
+		display: none;
+	}
+    .paner-aps-gazatte-govcms-sort-date{
+        width: 251px;
+        float: right;
+        .sort-date{
+        	@include sizeRem(margin-top, 45);
+            .chosen-container-single .chosen-single{
+            	@include sizeRem(font-size, 14);
+                color: $title-color;
+            	&:before{
+	            	right: 24px;
+	            }
+	            
+            }
+            .chosen-results{
+            	li{
+	            	&:after{
+	            		//content: "\f176";
+	            		//position: relative;
+	            		//margin-left: 5px; 
+	            		//@include fontawesome;
+	            	}
+	            	&:last-child{
+	            		&:after{
+		            		//content: "\f176";
+		            		@include rotate(-180deg)
+		            	}
+	            	}
+	            }
+            }
+            .chosen-container-active.chosen-with-drop .chosen-single{
+	    		border: 1px solid #aaa;
+	    	}
+        }
+    }
+    .content-first{
+    	.container{
+    		padding-bottom: 0;
+    	}
+    	.panel-pane{
+    		margin: 0;
+    	}
+    }
+    .content-second{
+    	.container{
+    		@include sizeRem(margin-top, -28);
+    	}
+    }
+}
+.paner-aps-govcm-search-create{
+	display: inline-block;
+	float: left;
+	p{
+		@include sizeRem(font-size, 20);
+		@include wp-font(font-title-med);
+		color: $title-color;
+	}
+	a{
+		@include button-btn;
+		background-color: transparent;
+		//@include sizeRem(margin-left, 12);
+		@include sizeRem(padding, 10, 2, 15);
+		@include sizeRem(min-width, 176);
+		border: 1.5px solid $blue-color;
+		@include sizeRem(font-size, 16);
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: 1400px){
+	.advanced-search{
+		margin-top: 170px;
+	}
+	.view-banner {
+		.views-field-field-image-slide img{
+			//min-height: 768px;
+		}
+	} 
+	.advanced-search .adv-search-wrapper{
+		margin-top: -2px;
+	}
+}

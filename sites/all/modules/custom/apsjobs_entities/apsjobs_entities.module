@@ -1,0 +1,23 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once drupal_get_path('module', 'apsjobs_entities') . '/apsjobs_entities.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function apsjobs_entities_menu() {
+  $items = array();
+  $items['admin/structure/apsjobs-entities'] = array(
+    'title' => 'APS Entities',
+    'description' => 'Manage APS Entities',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file path' => drupal_get_path('module', 'system'),
+    'file' => 'system.admin.inc',
+    'weight' => -7,
+  );
+  return $items;
+}
+

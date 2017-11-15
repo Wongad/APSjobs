@@ -1,0 +1,4 @@
+name = APSJobs Agencies
+description = Module is used to create agencies related features
+package = "APSJobs"
+core = 7.x

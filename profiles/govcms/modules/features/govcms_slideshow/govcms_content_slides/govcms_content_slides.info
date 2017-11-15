@@ -1,0 +1,18 @@
+name = Slides Content
+description = Slides for govCMS Slideshow
+core = 7.x
+package = govCMS content
+project = govcms_content_slides
+dependencies[] = defaultcontent
+features[content][] = slide_1
+features[content][] = slide_2
+features[content][] = slide_3
+features[features_api][] = api:2
+project path = profiles/govcms/modules/features
+
+; Information added by Drupal.org packaging script on 2017-08-25
+version = "7.x-2.14"
+core = "7.x"
+project = "govcms"
+datestamp = "1503628449"
+

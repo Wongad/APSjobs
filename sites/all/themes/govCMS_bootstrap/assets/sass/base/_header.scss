@@ -1,0 +1,284 @@
+// ====================
+// Header
+// ---
+#header{
+	@at-root{
+		
+	}	
+}
+.admin-menu{
+	padding-top: 0 !important;
+}
+// Header
+#name-and-slogan{
+	@include sizeRem(font-size, 25);
+	@include wp-font(font-medium);
+	@include sizeRem(padding-left, 15);
+	//letter-spacing: 3px;
+	text-transform: uppercase;
+	@include sizeRem(width, 350);
+	h1{
+		@include sizeRem(font-size, 25);
+		@include wp-font(font-medium);
+		margin: 0;
+	}
+	a{
+		color: $title-color;
+		@include wp-font(font-body);
+		font-weight: 500;
+		text-transform: none;
+		span.home-title{
+			@include sizeRem(font-size, 20);
+			@include wp-font(font-bold);
+			text-transform: uppercase;
+		}
+	}
+	strong{
+		@include wp-font(font-medium);
+	}
+}
+#site-name{
+	@include sizeRem(font-size, 18);
+}
+#site-slogan{
+	@include sizeRem(font-size, 14);
+	// letter-spacing: 0.5px;
+	@include wp-font(font-title-med);
+	color: $title-color;
+	text-transform: capitalize;
+}
+#logo{
+	position: relative;
+	border-right: 1px solid #979797;
+	@include sizeRem(padding-right, 18);
+	a{
+		background: url('../images/icon/logo.svg') 0 0 no-repeat;
+		background-size: 102.9px 51.5px;
+		width:  102.9px;
+		height: 51.5px;
+		display: block;
+	}
+	img{
+		display: none;
+	}
+}
+.region-header,.region-main-menu{
+	@include flex(1);
+	@include display-flex;
+	@include align-items(center);
+	@include justify-content(flex-end);
+}
+.panels-flexible-region-14-center{
+	width: 100%;
+	float: none;
+}
+.panels-flexible-region-13-center{
+    width: 100%;
+	float: none;
+}
+div[class*="panels-flexible-region-13-center"]{
+	width: 100%;
+	float: none;
+}
+.panel-flexible .panel-separator{
+	margin: 0;
+}
+.header{
+	background-color:#ecedf2;
+	color: $title-color;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	@include opacity(.9);
+	.container{
+		@include display-flex;
+		@include align-items(center);
+		//@include sizeRem(height, 10);
+		@include sizeRem(min-height, 111);
+		width: auto;
+		@include sizeRem(padding-left, 15);
+		@include sizeRem(padding-right, 15);
+		position: relative;
+		//@include justify-content(space-between);
+	}
+	@media (min-width: 1440px){
+		.container{
+			@include sizeRem(width, 1440);
+		}
+	}
+	@media (min-width: $tablet-ht){
+		.block-menu,.menu-name-main-menu{
+			@include sizeRem(padding-right, 20);
+			ul.menu{
+				@include display-flex;
+				padding: 0;
+				margin: 0;
+				li{
+					margin: 0;
+					padding: 0;
+					@include sizeRem(padding-left, 16);
+					@include sizeRem(padding-right, 16);
+					list-style: none;
+					a{
+						color: rgba(  $title-color,.75);
+						@include sizeRem(font-size, 16);
+						@include wp-font(font-body);
+						text-transform: capitalize;
+						line-height: 1.25;
+						display: block;
+						&:hover, &:focus{
+							text-decoration: underline;
+							color: $blue-color1;
+						}
+						&.active{
+							color: $blue-color1;	
+						}
+					}
+				}
+			}
+		}
+	}
+	.navbar-collapse{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#block-system-user-menu{
+		@include sizeRem(margin-left, 15);
+        text-align: center;
+        
+        padding-right: 0;
+        &:hover, &:focus{
+        }
+        ul.menu{
+        	background-color: $blue-color;
+	        border-color: $blue-color;
+	        @include border-radius(4px);
+	        &:hover, &:focus{
+	        	background-color: $hover-color;
+	            border-color: $hover-color;
+	            color: $title-color;
+	        }
+			li{
+				padding: 0 5px;
+				@include sizeRem(margin-left, 0);
+				@include sizeRem(margin-right, 0);
+				list-style: none;
+				position: relative;
+				&:before{
+					content: "/";
+					position: absolute;
+					top:50%;
+					right: 0;
+					@include translateY(-50%);
+				}
+				&:nth-child(2){	
+					.logged-in &{
+						display: none;
+					}
+				}
+				&:last-child{
+					padding-left: 0;
+					&:before{
+						display: none;
+					}
+				}
+				a{
+					
+				    display: inline-block;
+				    color: $title-color;
+			        // background-color: $blue-color;
+			        // border-color: $blue-color;
+			        margin-bottom: 0;
+			        padding: 12px 15px;
+			        @include wp-font(font-medium);
+			        @include sizeRem(font-size, 12);
+			        @include border-radius(4px);
+			        &:hover{
+			        	text-decoration: none;
+			        }
+				}
+			}
+		}
+	}
+	.not-front &{
+        & + *{
+            @include sizeRem(padding-top, 111);
+        }
+    }
+}
+.block-menu-agency-right{
+	@include display-flex;
+}
+// .block-menu{
+// 	@include sizeRem(padding-right, 30);
+// 	ul.menu{
+// 		@include display-flex;
+// 		padding: 0;
+// 		margin: 0;
+// 		li{
+// 			margin: 0;
+// 			padding: 0;
+// 			@include sizeRem(margin-left, 10);
+// 			@include sizeRem(margin-right, 10);
+// 			list-style: none;
+// 			a{
+// 				color: $title-color;
+// 				@include sizeRem(font-size, 13);
+// 				@include wp-font(font-bold);
+// 				text-transform: capitalize;
+// 				&:hover, &:focus{
+// 					text-decoration: underline;
+// 					//color: $white-color;
+// 				}
+// 				&.active{
+// 					// color: $blue-color-read-more;
+// 					//text-decoration: underline;
+// 					//color: $white-color;	
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+#block-block-1{
+	.btn{
+        @include wp-font(font-medium);
+        @include sizeRem(font-size, 12);
+        @include border-radius(4px);
+        width: 100px;
+        text-align: center;
+        @include sizeRem(padding, 5,1);
+        color: $title-color;
+        background-color: $blue-color;
+        border-color: $blue-color;
+        margin-bottom: 0;
+        &:hover, &:focus{
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $title-color;
+        }
+        .glyphicon{
+            display: none;
+        }
+    }
+}
+
+#block-block-1 p{
+	margin-bottom: 0;
+	a{
+		color: $title-color;
+        background-color: $blue-color;
+        border-color: $blue-color;
+        margin-bottom: 0;
+        display: inline-block;
+        padding: 12px 15px;
+        @include wp-font(font-medium);
+        @include sizeRem(font-size, 12);
+        @include border-radius(4px);
+        &:hover, &:focus{
+            background-color: $hover-color;
+            border-color: $hover-color;
+            color: $title-color;
+        }
+	}
+}

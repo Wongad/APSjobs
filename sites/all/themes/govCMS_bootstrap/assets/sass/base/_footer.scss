@@ -1,0 +1,169 @@
+// ====================
+// Footer
+// ---
+.footer-copyright{
+    background: #212121;
+    //@include sizeRem(margin-top, 6);
+    .container{
+        @include sizeRem(padding-top, 45);
+        @include sizeRem(padding-bottom, 45);
+    }
+    .block-privacy-menu{
+        ul{
+            list-style-type: none;
+            @include display-flex;
+            @include justify-content(flex-end);
+            li{
+                @include sizeRem(padding-left, 10);
+                a{
+                    @include sizeRem(font-size, 12);
+
+                }
+            }
+        }
+    }
+	@at-root{}
+    .region-footer-bottom-left{
+        @include display-flex;
+        //@include flex-wrap(wrap);
+    }
+	.block-menu{
+        //display: inline-block;
+        @include flex-width-col-xs(25%);
+        ul.menu{
+            @include display-flex;
+            @include flex-wrap(wrap);
+            padding: 0;
+            margin: 0;
+            li{
+                margin: 0;
+                padding: 0;
+                @include sizeRem(margin-left, 10);
+                @include sizeRem(margin-right, 10);
+                list-style: none;
+                width: 100%;
+                a{
+                    color: #22bd9d;
+                    @include sizeRem(font-size, 14);
+                    @include wp-font(font-medium);
+                    text-transform: capitalize;
+                    @include sizeRem(padding, 5,1);
+                    display: inline-block;
+                    
+                    &:hover, &:focus{
+                        text-decoration: underline;
+                        //color: $white-color;
+                    }
+                    &.active{
+                        // color: $blue-color-read-more;
+                        //text-decoration: underline;
+                        //color: $white-color;  
+                    }
+                }
+            }
+        }
+    }
+    .region-footer-bottom-right{
+        h2{
+            margin-top: 0;
+            text-align: right;
+            color: $white-color;
+            @include sizeRem(font-size, 18);
+        }
+        .fl--footer {
+            text-align: right;
+            a{
+                
+                color: #22bd9d;
+            }
+        }
+    }
+}
+.block-icon-social{
+    padding: 0 0 25px 0;
+    display: block;
+    text-align: right;
+    ul {
+        padding-left: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            &:first-child{
+            	a{
+            		margin-left: 0;
+            	}
+            }
+            a {
+                @include border-radius(50%);
+                display:block;
+                text-align: center;
+                @include sizeRem(margin, 0, 1);
+                @include sizeRem(width, 32);
+                @include sizeRem(height, 32);
+                @include sizeRem(font-size, 22);
+                line-height: 32px;
+				color: $white-color;
+                .fa {
+                    @include sizeRem(font-size, 0);
+                    text-align: center;
+                    &:before {
+                        @include sizeRem(font-size, 22);
+                        @include transition(all 0.3s ease-out);
+                        color: #22bd9d;
+                        text-align:center;
+                        //display: inline-block;
+                    }
+                     &:hover, &:focus{
+                        &:before {
+                            //color:$black-color-title;
+                        }
+                    }
+                }
+                &.twitter, &.google{
+                	//color: $black-color;
+                }
+                &:hover, &:hover{
+                    //background:$white-color;
+                    //color:$blue-color-read-more;
+                    //border-color: $blue-color-read-more;
+                    .fa:before {
+                        //color:$blue-color-read-more;
+                    }
+                }
+            }
+            &:last-child{
+                a{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+//move
+.footer-top{
+    .block-block{
+        ul{
+            padding: 0;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $border-color-streght;
+        }
+        li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            a{
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
+
+
+

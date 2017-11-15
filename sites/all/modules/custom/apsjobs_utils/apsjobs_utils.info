@@ -1,0 +1,4 @@
+name = APSJobs Utils
+description = Module is used to keep general functions/libraries
+package = "APSJobs"
+core = 7.x
